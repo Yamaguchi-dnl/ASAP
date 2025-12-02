@@ -29,7 +29,7 @@ export function Header() {
 
   const headerClasses = cn(
     'sticky top-0 z-50 transition-colors duration-300',
-    isScrolled ? 'bg-background shadow-md' : 'bg-transparent'
+    isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
   );
 
   const linkColor = isScrolled ? 'text-foreground' : 'text-white';
@@ -52,7 +52,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'text-sm font-medium transition-colors hover:text-white/80',
+                    'text-sm font-medium transition-colors hover:text-primary',
                     linkColor
                   )}
                 >
