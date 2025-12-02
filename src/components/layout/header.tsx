@@ -62,7 +62,7 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center" style={{width: '150px', justifyContent: 'flex-end'}}>
-             <Button variant="outline" className={cn('border-white text-white hover:bg-white/10 hover:text-white', isScrolled ? 'border-primary text-primary hover:bg-primary/10 hover:text-primary bg-background' : 'bg-transparent')} asChild>
+             <Button variant="outline" className={cn('rounded-full border-white text-white hover:bg-white/10 hover:text-white', isScrolled ? 'border-primary text-primary hover:bg-primary/10 hover:text-primary bg-background' : 'bg-transparent')} asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
