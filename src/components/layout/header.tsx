@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '#beneficios', label: 'Benefícios' },
+  { href: '#sobre', label: 'Sobre Nós' },
   { href: '#servicos', label: 'Serviços' },
   { href: '#depoimentos', label: 'Depoimentos' },
   { href: '#patrocinio', label: 'Patrocínio' },
@@ -37,38 +38,36 @@ export function Header() {
   return (
     <header className={headerClasses}>
       <Container>
-        <div className="flex h-20 items-center">
+        <div className="flex h-20 items-center justify-between">
           <Link
             href="/"
-            className={cn("text-2xl font-normal font-headline flex-shrink-0", linkColor)}
+            className={cn("text-2xl font-normal font-headline", linkColor)}
           >
             PulsoASAP
           </Link>
           
-          <div className="flex-1 flex justify-center">
-            <nav className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    'text-sm font-medium transition-colors hover:text-primary',
-                    linkColor
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'text-sm font-medium transition-colors hover:text-primary',
+                  linkColor
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-          <div className="hidden md:flex flex-shrink-0" style={{width: '150px', justifyContent: 'flex-end'}}>
+          <div className="hidden md:flex items-center" style={{width: '150px', justifyContent: 'flex-end'}}>
              <Button variant="outline" className={cn('border-white text-white hover:bg-white/10 hover:text-white', isScrolled ? 'border-primary text-primary hover:bg-primary/10 hover:text-primary bg-background' : 'bg-transparent')} asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
 
-          <div className="md:hidden ml-auto">
+          <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button
