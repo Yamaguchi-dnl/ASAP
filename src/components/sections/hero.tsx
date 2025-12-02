@@ -19,15 +19,15 @@ export function HeroSection() {
           />
         )}
       </div>
-      <Container className="relative z-10 flex h-full items-end pb-24">
-        <div className="text-left max-w-2xl">
+      <Container className="relative z-10 flex h-full items-end pb-32">
+        <div className="text-left max-w-4xl">
           <p className="text-base font-medium text-white">
             Gestão de Riscos e Compliance para prevenir a exaustão profissional.
           </p>
-           <h1 className="text-[120px] font-normal text-white uppercase leading-none mt-2">
+           <h1 className="text-[150px] font-normal text-white uppercase leading-none">
             PULSOASAP
-          </h1>
-          <p className="mt-4 text-base md:text-lg text-white">
+           </h1>
+          <p className="mt-6 text-base md:text-lg text-[#8F8F8F]">
             Atuamos com soluções integradas que fortalecem a cultura corporativa e impulsionam transformações profissionais que sustentam ambientes de trabalho mais saudáveis no curto, médio e longo prazos.
           </p>
         </div>
