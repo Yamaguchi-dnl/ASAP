@@ -25,6 +25,7 @@ import {
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Container } from '../layout/container';
+import { MotionWrapper } from '@/components/animation/motion-wrapper';
 
 const formSchema = z.discriminatedUnion('contactType', [
   z.object({
@@ -74,16 +75,32 @@ export function ContactSection() {
     form.reset();
     form.setValue('contactType', contactType);
   };
+  
+  const titleVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
 
   return (
     <section id="contato" className="py-20 sm:py-32">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-normal text-foreground">Entre em Contato</h2>
-          <p className="mt-4 text-lg text-foreground/80">
-            Estamos prontos para ajudar. Preencha o formulário e nossa equipe entrará em contato.
-          </p>
+          <MotionWrapper variants={titleVariants}>
+            <h2 className="text-5xl md:text-6xl font-normal text-foreground">Entre em Contato</h2>
+          </MotionWrapper>
+          <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
+            <p className="mt-4 text-lg text-foreground/80">
+              Estamos prontos para ajudar. Preencha o formulário e nossa equipe entrará em contato.
+            </p>
+          </MotionWrapper>
         </div>
+        <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
         <div className="mt-16 max-w-2xl mx-auto">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -239,12 +256,13 @@ export function ContactSection() {
                   />
                 </>
               )}
-               <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-opacity">
+               <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-all duration-300 hover:scale-105">
                 Enviar Mensagem
               </Button>
             </form>
           </Form>
         </div>
+        </MotionWrapper>
       </Container>
     </section>
   );

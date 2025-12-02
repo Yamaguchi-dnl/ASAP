@@ -15,6 +15,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Container } from '@/components/layout/container';
 import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
+import { MotionWrapper } from '@/components/animation/motion-wrapper';
 
 interface Testimonial {
   quote: string;
@@ -45,18 +46,33 @@ const testimonials: Testimonial[] = [
 ];
 
 export function TestimonialsSection() {
+    const titleVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section id="depoimentos" className="py-20 sm:py-32">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-normal text-foreground">
-            O que Nossos Clientes Dizem
-          </h2>
-          <p className="mt-4 text-lg text-foreground/80">
-            Histórias reais de quem já foi transformado pela nossa metodologia.
-          </p>
+           <MotionWrapper variants={titleVariants}>
+            <h2 className="text-5xl md:text-6xl font-normal text-foreground">
+              O que Nossos Clientes Dizem
+            </h2>
+          </MotionWrapper>
+          <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
+            <p className="mt-4 text-lg text-foreground/80">
+              Histórias reais de quem já foi transformado pela nossa metodologia.
+            </p>
+          </MotionWrapper>
         </div>
 
+        <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
         <Carousel
           opts={{
             align: 'start',
@@ -68,7 +84,7 @@ export function TestimonialsSection() {
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                 <div className="p-1">
-                  <Card className="h-full flex flex-col justify-between p-6 shadow-lg">
+                  <Card className="h-full flex flex-col justify-between p-6 shadow-lg transition-transform duration-300 hover:-translate-y-1.5">
                     <CardContent className="p-0">
                       <p className="text-lg italic text-foreground/90">
                         "{testimonial.quote}"
@@ -94,6 +110,7 @@ export function TestimonialsSection() {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+        </MotionWrapper>
       </Container>
     </section>
   );

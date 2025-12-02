@@ -9,6 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
+import { MotionWrapper } from '@/components/animation/motion-wrapper';
 
 interface Service {
   id: string;
@@ -45,20 +46,35 @@ const services: Service[] = [
 ];
 
 export function ServicesSection() {
+    const titleVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section id="servicos" className="py-20 sm:py-32">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-normal text-foreground">
-            Nossos Produtos e Serviços
-          </h2>
-          <p className="mt-4 text-lg text-foreground/80">
-            Oferecemos um portfólio completo de soluções para impulsionar o potencial humano na sua organização.
-          </p>
+           <MotionWrapper variants={titleVariants}>
+            <h2 className="text-5xl md:text-6xl font-normal text-foreground">
+              Nossos Produtos e Serviços
+            </h2>
+          </MotionWrapper>
+          <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
+            <p className="mt-4 text-lg text-foreground/80">
+              Oferecemos um portfólio completo de soluções para impulsionar o potencial humano na sua organização.
+            </p>
+          </MotionWrapper>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-          {services.map((service) => (
-            <Card key={service.title} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row">
+          {services.map((service, index) => (
+            <MotionWrapper key={service.id} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-full hover:-translate-y-1.5">
               <div className="sm:w-1/3">
                 {service.image && (
                     <div className="aspect-w-1 aspect-h-1 h-full">
@@ -87,6 +103,7 @@ export function ServicesSection() {
                 </div>
               </div>
             </Card>
+            </MotionWrapper>
           ))}
         </div>
       </Container>
