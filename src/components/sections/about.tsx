@@ -29,6 +29,7 @@ export function AboutSection() {
             </h2>
             <hr className="my-8 border-foreground/30" />
             <div className="text-foreground/80 text-base space-y-6">
+                <p>Com presença no Brasil e na Espanha, o Pulso ASAP (Ação, Sustentabilidade, Autoconhecimento e Propósito) surgiu da necessidade de abordar o tema de exaustão profissional de maneira clara, objetiva e aplicável ao dia a dia corporativo.</p>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
