@@ -29,7 +29,7 @@ export function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent text-primary-foreground'
+        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
       <Container>
@@ -42,7 +42,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-foreground/80 hover:text-primary' : 'hover:text-primary-foreground/80'}`}
+                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-foreground/80 hover:text-primary' : 'text-primary-foreground hover:text-primary-foreground/80'}`}
               >
                 {link.label}
               </Link>
@@ -56,7 +56,7 @@ export function Header() {
           <div className="md:hidden ml-auto">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className={`${isScrolled ? '' : 'text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground'}`}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
                 </Button>

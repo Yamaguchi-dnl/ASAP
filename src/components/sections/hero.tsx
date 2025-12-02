@@ -19,14 +19,14 @@ export function HeroSection() {
       )}
       <Container className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
         <div className="text-left">
-          <p className="text-lg md:text-xl text-primary-foreground mb-4">
+          <p className="text-lg md:text-xl text-white mb-4">
             Atuamos com soluções integradas que fortalecem a cultura corporativa e impulsionam transformações profissionais que sustentam ambientes de trabalho mais saudáveis no curto, médio e longo prazos.
           </p>
-          <h1 className="text-8xl sm:text-9xl md:text-[160px] font-black tracking-tighter text-primary-foreground uppercase leading-none">
+          <h1 className="text-8xl sm:text-9xl md:text-[160px] font-black tracking-tighter text-white uppercase leading-none">
             PULSOASAP
           </h1>
         </div>
-        <div className="text-left text-primary-foreground max-w-md md:ml-auto">
+        <div className="text-left text-white max-w-md md:ml-auto">
           <p>
             A PulsoASAP é uma consultoria especializada em promover a saúde mental e o bem-estar no ambiente de trabalho. Acreditamos que o sucesso de uma empresa está diretamente ligado à felicidade e ao equilíbrio de seus colaboradores.
           </p>
