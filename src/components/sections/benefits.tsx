@@ -45,11 +45,11 @@ export function BenefitsSection() {
   return (
     <section id="beneficios" className="py-20 sm:py-32">
       <Container>
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <h2 className="text-5xl md:text-6xl font-normal text-foreground">
             Vantagens que <br /> Transformam
           </h2>
-          <p className="mt-4 text-lg text-foreground/80">
+          <p className="text-lg text-foreground/80">
             Descubra como a PulsoASAP pode beneficiar tanto a sua empresa quanto seus colaboradores, criando um ciclo virtuoso de crescimento e bem-estar.
           </p>
         </div>
