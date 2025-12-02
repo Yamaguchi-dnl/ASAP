@@ -27,9 +27,7 @@ export function HeroSection() {
           </p>
         </div>
         <div className="text-left text-white max-w-md md:ml-auto">
-          <p>
-            A PulsoASAP é uma consultoria especializada em promover a saúde mental e o bem-estar no ambiente de trabalho. Acreditamos que o sucesso de uma empresa está diretamente ligado à felicidade e ao equilíbrio de seus colaboradores.
-          </p>
+          
           <p className="mt-4">
             Através de mentorias, workshops e programas de desenvolvimento, ajudamos a construir culturas corporativas mais fortes, aumentar a produtividade e reter os melhores talentos.
           </p>
