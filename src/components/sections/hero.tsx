@@ -27,7 +27,7 @@ export function HeroSection() {
            <h1 className="text-[150px] font-normal text-white uppercase leading-none">
             PULSOASAP
            </h1>
-          <p className="mt-6 text-base md:text-lg text-[#8F8F8F]">
+          <p className="mt-6 text-base md:text-lg text-white">
             Atuamos com soluções integradas que fortalecem a cultura corporativa e impulsionam transformações profissionais que sustentam ambientes de trabalho mais saudáveis no curto, médio e longo prazos.
           </p>
         </div>
