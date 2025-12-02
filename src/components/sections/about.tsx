@@ -24,7 +24,7 @@ export function AboutSection() {
             )}
           </div>
           <div className="flex flex-col justify-center">
-            <h2 className="text-5xl md:text-6xl font-normal text-foreground tracking-wider">
+            <h2 className="text-5xl md:text-6xl font-normal text-foreground">
               Nossa Jornada
             </h2>
             <hr className="my-8 border-foreground/30" />
