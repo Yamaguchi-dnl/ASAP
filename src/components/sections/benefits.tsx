@@ -39,7 +39,7 @@ export function BenefitsSection() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="border-2 border-primary p-8 rounded-lg">
+          <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg">
             <h4 className="text-2xl font-bold text-foreground mb-6">
               Para Empresas:
             </h4>
@@ -52,7 +52,7 @@ export function BenefitsSection() {
               ))}
             </ul>
           </div>
-          <div className="border-2 border-primary p-8 rounded-lg">
+          <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg">
             <h4 className="text-2xl font-bold text-foreground mb-6">
               Para Colaboradores:
             </h4>
