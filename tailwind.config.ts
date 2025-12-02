@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Manrope', 'sans-serif'],
-        headline: ['Manrope', 'sans-serif'],
+        body: ['Satoshi', 'sans-serif'],
+        headline: ['Satoshi', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
