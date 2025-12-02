@@ -9,7 +9,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          className="absolute z-0 w-auto min-w-full min-h-full max-w-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-30"
+          className="absolute z-0 w-auto min-w-full min-h-full max-w-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-20"
         >
           <source
             src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/1202%20(1).mp4"
