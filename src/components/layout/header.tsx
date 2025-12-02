@@ -35,27 +35,29 @@ export function Header() {
       )}
     >
       <Container>
-        <div className="flex h-20 items-center">
-          <Link href="/" className="text-2xl font-bold font-headline text-primary">
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="text-2xl font-bold font-headline text-primary flex-shrink-0">
             PulsoASAP
           </Link>
-          <nav className="hidden md:flex items-center gap-6 mx-auto">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-white transition-colors hover:text-white/80"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="hidden md:block ml-auto">
+          <div className="flex-1 flex justify-center">
+            <nav className="hidden md:flex items-center gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-white transition-colors hover:text-white/80"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div className="hidden md:block flex-shrink-0">
             <Button variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
-          <div className="md:hidden ml-auto">
+          <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
