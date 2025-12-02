@@ -29,31 +29,31 @@ export function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-background/0'
+        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent text-primary-foreground'
       }`}
     >
       <Container>
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-20 items-center">
           <Link href="/" className="text-2xl font-bold font-headline text-primary">
             PulsoASAP
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 mx-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-foreground/80 hover:text-primary' : 'hover:text-primary-foreground/80'}`}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <div className="hidden md:block">
-            <Button asChild className="bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-opacity">
-              <a href="#contato">Fale Conosco</a>
+          <div className="hidden md:block ml-auto">
+            <Button variant="outline" className={`${isScrolled ? '' : 'border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground'}`} asChild>
+              <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden ml-auto">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -61,7 +61,7 @@ export function Header() {
                   <span className="sr-only">Abrir menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background text-foreground">
                 <div className="flex justify-between items-center p-4 border-b">
                    <Link href="/" className="text-2xl font-bold font-headline text-primary">
                     PulsoASAP

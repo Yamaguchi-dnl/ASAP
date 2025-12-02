@@ -3,7 +3,7 @@ import { Container } from './container';
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-8">
+    <footer className="bg-secondary text-secondary-foreground py-8">
       <Container className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} PulsoASAP. Todos os direitos reservados.

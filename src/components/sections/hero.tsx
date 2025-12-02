@@ -1,41 +1,38 @@
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ArrowRight } from 'lucide-react';
 
 export function HeroSection() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
-    <section id="home" className="relative h-screen min-h-[700px] w-full flex items-center justify-center">
+    <section id="home" className="relative h-screen min-h-[700px] w-full flex items-center justify-center bg-black">
       {heroImage && (
         <Image
           src={heroImage.imageUrl}
           alt={heroImage.description}
           data-ai-hint={heroImage.imageHint}
           fill
-          className="object-cover"
+          className="object-cover opacity-30"
           priority
         />
       )}
-      <div className="absolute inset-0 bg-black/50" />
-      <Container className="relative z-10 flex flex-col items-center text-center">
-        <div className="max-w-4xl">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-primary-foreground drop-shadow-lg">
-            Riscos e Compliance para a prevenção do burnout profissional.
-          </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/90">
-            Promovemos saúde, bem-estar e alta performance em empresas que se importam. Descubra nossas soluções de mentoria e desenvolvimento profissional.
+      <Container className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+        <div className="text-left">
+          <p className="text-lg md:text-xl text-primary-foreground/80 mb-4">
+            Gestão de Riscos e Compliance para prevenir a exaustão profissional no ambiente corporativo.
           </p>
-          <div className="mt-10">
-            <Button asChild size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground shadow-lg hover:opacity-90 transition-opacity transform hover:scale-105">
-              <a href="#servicos">
-                Nossas Soluções
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-          </div>
+          <h1 className="text-8xl sm:text-9xl md:text-[160px] font-black tracking-tighter text-primary-foreground uppercase leading-none">
+            PULSOASAP
+          </h1>
+        </div>
+        <div className="text-left text-primary-foreground/80 max-w-md md:ml-auto">
+          <p>
+            A PulsoASAP é uma consultoria especializada em promover a saúde mental e o bem-estar no ambiente de trabalho. Acreditamos que o sucesso de uma empresa está diretamente ligado à felicidade e ao equilíbrio de seus colaboradores.
+          </p>
+          <p className="mt-4">
+            Através de mentorias, workshops e programas de desenvolvimento, ajudamos a construir culturas corporativas mais fortes, aumentar a produtividade e reter os melhores talentos.
+          </p>
         </div>
       </Container>
     </section>
