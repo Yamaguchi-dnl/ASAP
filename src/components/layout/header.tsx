@@ -49,7 +49,7 @@ export function Header() {
             ))}
           </nav>
           <div className="hidden md:block ml-auto">
-            <Button variant="outline" className={`${isScrolled ? '' : 'border-white text-white hover:bg-white/10 hover:text-white'}`} asChild>
+            <Button variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
