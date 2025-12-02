@@ -20,7 +20,7 @@ export function HeroSection() {
       <Container className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
         <div className="text-left">
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-4">
-            Gestão de Riscos e Compliance para prevenir a exaustão profissional no ambiente corporativo.
+            Atuamos com soluções integradas que fortalecem a cultura corporativa e impulsionam transformações profissionais que sustentam ambientes de trabalho mais saudáveis no curto, médio e longo prazos.
           </p>
           <h1 className="text-8xl sm:text-9xl md:text-[160px] font-black tracking-tighter text-primary-foreground uppercase leading-none">
             PULSOASAP
