@@ -50,7 +50,7 @@ export function SponsorshipSection() {
     <section id="patrocinio" className="py-20 sm:py-32">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight text-foreground">
+          <h2 className="text-4xl font-normal tracking-tight text-foreground">
             Seja um Patrocinador
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
