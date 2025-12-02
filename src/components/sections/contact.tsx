@@ -79,7 +79,7 @@ export function ContactSection() {
     <section id="contato" className="py-20 sm:py-32">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight">Entre em Contato</h2>
+          <h2 className="text-4xl font-extrabold tracking-tight text-foreground">Entre em Contato</h2>
           <p className="mt-4 text-lg text-foreground/80">
             Estamos prontos para ajudar. Preencha o formulário e nossa equipe entrará em contato.
           </p>
