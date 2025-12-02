@@ -40,7 +40,7 @@ export function Header() {
         <div className="flex h-20 items-center">
           <Link
             href="/"
-            className="text-2xl font-normal font-headline text-white flex-shrink-0"
+            className={cn("text-2xl font-normal font-headline flex-shrink-0", linkColor)}
           >
             PulsoASAP
           </Link>
