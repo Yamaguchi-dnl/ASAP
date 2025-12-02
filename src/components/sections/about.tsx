@@ -57,16 +57,6 @@ export function AboutSection() {
                 <p><span className="font-bold">Reputação positiva:</span> Partimos da premissa de que pessoas são o principal ativo de qualquer organização. Por isso, acreditamos que uma mudança verdadeira precisa contemplar, de forma equilibrada, ambos os lados dessa balança.</p>
               </div>
             </div>
-            <div className="mt-8 flex gap-4">
-                 <Button variant="outline" size="icon">
-                    <ArrowLeft className="h-4 w-4" />
-                    <span className="sr-only">Anterior</span>
-                </Button>
-                <Button variant="outline" size="icon">
-                    <ArrowRight className="h-4 w-4" />
-                    <span className="sr-only">Próximo</span>
-                </Button>
-            </div>
           </div>
         </div>
       </Container>
