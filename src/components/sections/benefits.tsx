@@ -54,12 +54,12 @@ export function BenefitsSection() {
             <p className="text-lg text-foreground/80">
               Descubra como a PulsoASAP pode beneficiar tanto a sua empresa quanto seus colaboradores, criando um ciclo virtuoso de crescimento e bem-estar.
             </p>
-            <Button variant="link" className="p-0 mt-4">Saiba mais &rarr;</Button>
+            <Button variant="outline" className="mt-4">Saiba mais &rarr;</Button>
           </div>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit) => (
-            <Card key={benefit.title} className="text-center border shadow-none hover:shadow-lg transition-shadow duration-300">
+            <Card key={benefit.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <benefit.icon className="h-6 w-6" aria-hidden="true" />
