@@ -63,7 +63,7 @@ export function Header() {
           </div>
 
           <div className="hidden md:flex flex-shrink-0" style={{width: '150px', justifyContent: 'flex-end'}}>
-             <Button variant="outline" className={cn('border-white text-white hover:bg-white/10 hover:text-white', isScrolled && 'border-primary text-primary hover:bg-primary/10 hover:text-primary')} asChild>
+             <Button variant="outline" className={cn('border-white text-white hover:bg-white/10 hover:text-white bg-transparent', isScrolled && 'border-primary text-primary hover:bg-primary/10 hover:text-primary bg-background')} asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
