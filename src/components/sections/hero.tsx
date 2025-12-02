@@ -28,9 +28,7 @@ export function HeroSection() {
         </div>
         <div className="text-left text-white max-w-md md:ml-auto">
           
-          <p className="mt-4">
-            Através de mentorias, workshops e programas de desenvolvimento, ajudamos a construir culturas corporativas mais fortes, aumentar a produtividade e reter os melhores talentos.
-          </p>
+          
         </div>
       </Container>
     </section>
