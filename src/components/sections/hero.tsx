@@ -1,23 +1,22 @@
-import Image from 'next/image';
 import { Container } from '@/components/layout/container';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function HeroSection() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
-
   return (
     <section id="home" className="relative h-screen min-h-[700px] w-full -mt-20">
-      <div className="absolute inset-0 z-0 bg-black">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            data-ai-hint={heroImage.imageHint}
-            fill
-            className="object-cover opacity-30"
-            priority
+      <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute z-0 w-auto min-w-full min-h-full max-w-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-30"
+        >
+          <source
+            src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/1202%20(1).mp4"
+            type="video/mp4"
           />
-        )}
+          Your browser does not support the video tag.
+        </video>
       </div>
       <Container className="relative z-10 flex h-full items-end pb-32">
         <div className="text-left max-w-4xl">
