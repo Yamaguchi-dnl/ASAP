@@ -59,7 +59,7 @@ export function BenefitsSection() {
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit) => (
-            <Card key={benefit.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card key={benefit.title} className="text-center border shadow-none hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <benefit.icon className="h-6 w-6" aria-hidden="true" />
