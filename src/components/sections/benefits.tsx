@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Container } from '@/components/layout/container';
 import { Check } from 'lucide-react';
 import { Button } from '../ui/button';
@@ -37,15 +36,6 @@ export function BenefitsSection() {
               Saiba mais &rarr;
             </Button>
           </div>
-        </div>
-
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-primary">
-            Funcionários que as empresas querem manter
-          </h3>
-          <h3 className="text-2xl font-bold text-primary">
-            Empresas onde os profissionais querem trabalhar
-          </h3>
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
