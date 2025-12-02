@@ -21,7 +21,7 @@ export function HeroSection() {
       </div>
       <Container className="relative z-10 flex h-full items-center">
         <div className="text-left max-w-2xl">
-           <h1 className="text-[92px] font-normal text-white uppercase leading-none">
+           <h1 className="text-[120px] font-normal text-white uppercase leading-none">
             PULSOASAP
           </h1>
           <p className="mt-4 text-base md:text-lg text-white">
