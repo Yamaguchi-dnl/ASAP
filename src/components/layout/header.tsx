@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Container } from './container';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '#beneficios', label: 'Benefícios' },
@@ -28,9 +29,10 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={cn(
+        'sticky top-0 z-50 transition-all duration-300',
         isScrolled ? 'bg-background shadow-md' : 'bg-transparent'
-      }`}
+      )}
     >
       <Container>
         <div className="flex h-20 items-center">

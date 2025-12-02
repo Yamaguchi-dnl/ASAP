@@ -9,11 +9,13 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <BenefitsSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <SponsorshipSection />
-      <ContactSection />
+      <div className="relative z-10 bg-background">
+        <BenefitsSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <SponsorshipSection />
+        <ContactSection />
+      </div>
     </>
   );
 }
