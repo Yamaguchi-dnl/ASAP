@@ -21,7 +21,7 @@ export function HeroSection() {
       </div>
       <Container className="relative z-10 flex h-full items-end pb-24">
         <div className="text-left max-w-2xl">
-          <p className="text-lg font-medium text-white">
+          <p className="text-base font-medium text-white">
             Gestão de Riscos e Compliance para prevenir a exaustão profissional no ambiente corporativo.
           </p>
            <h1 className="text-[120px] font-normal text-white uppercase leading-none mt-2">
