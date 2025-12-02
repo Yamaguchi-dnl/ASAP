@@ -23,7 +23,7 @@ export function HeroSection() {
       <Container className="relative z-10 flex flex-col items-center text-center">
         <div className="max-w-4xl">
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-primary-foreground drop-shadow-lg">
-            Gestão de Riscos e Compliance para prevenir a exaustão profissional no ambiente corporativo.
+            Riscos e Compliance para a prevenção do burnout profissional.
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/90">
             Promovemos saúde, bem-estar e alta performance em empresas que se importam. Descubra nossas soluções de mentoria e desenvolvimento profissional.
