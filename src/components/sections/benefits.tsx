@@ -54,7 +54,7 @@ export function BenefitsSection() {
             <p className="text-lg text-foreground/80">
               Descubra como a PulsoASAP pode beneficiar tanto a sua empresa quanto seus colaboradores, criando um ciclo virtuoso de crescimento e bem-estar.
             </p>
-            <Button variant="outline" className="mt-4">Saiba mais &rarr;</Button>
+            <Button variant="outline" className="mt-4 rounded-full">Saiba mais &rarr;</Button>
           </div>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
