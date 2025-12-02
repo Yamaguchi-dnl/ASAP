@@ -6,7 +6,7 @@ export function HeroSection() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
-    <section id="home" className="relative h-screen min-h-[700px] w-full overflow-hidden">
+    <section id="home" className="relative h-screen min-h-[700px] w-full -mt-20">
       <div className="absolute inset-0 z-0 bg-black">
         {heroImage && (
           <Image
