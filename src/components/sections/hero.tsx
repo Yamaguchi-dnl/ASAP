@@ -6,7 +6,7 @@ export function HeroSection() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
-    <section id="home" className="h-screen min-h-[700px] w-full">
+    <section id="home" className="relative h-screen min-h-[700px] w-full overflow-hidden">
       <div className="absolute inset-0 z-0 bg-black">
         {heroImage && (
           <Image
@@ -19,7 +19,7 @@ export function HeroSection() {
           />
         )}
       </div>
-      <Container className="relative z-10 flex h-full pt-48">
+      <Container className="relative z-10 flex h-full pt-96">
         <div className="text-left max-w-2xl">
            <h1 className="text-[120px] font-normal text-white uppercase leading-none">
             PULSOASAP
