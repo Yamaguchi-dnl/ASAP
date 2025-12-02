@@ -7,6 +7,7 @@ import {
 import { Container } from '@/components/layout/container';
 import { HeartHandshake, Users, Zap, Award } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { Button } from '../ui/button';
 
 interface Benefit {
   icon: LucideIcon;
@@ -49,9 +50,12 @@ export function BenefitsSection() {
           <h2 className="text-5xl md:text-6xl font-normal text-foreground">
             Vantagens que <br /> Transformam
           </h2>
-          <p className="text-lg text-foreground/80">
-            Descubra como a PulsoASAP pode beneficiar tanto a sua empresa quanto seus colaboradores, criando um ciclo virtuoso de crescimento e bem-estar.
-          </p>
+          <div>
+            <p className="text-lg text-foreground/80">
+              Descubra como a PulsoASAP pode beneficiar tanto a sua empresa quanto seus colaboradores, criando um ciclo virtuoso de crescimento e bem-estar.
+            </p>
+            <Button variant="link" className="p-0 mt-4">Saiba mais &rarr;</Button>
+          </div>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit) => (
