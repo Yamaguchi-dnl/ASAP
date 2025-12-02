@@ -25,7 +25,7 @@ export function MotionWrapper({
   initial = 'hidden',
   whileInView = 'visible',
   viewport = { once: true, amount: 0.2 },
-  transition = { duration: 0.6, ease: 'easeOut' },
+  transition = { duration: 0.8, ease: 'easeOut' },
 }: MotionWrapperProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, viewport);
