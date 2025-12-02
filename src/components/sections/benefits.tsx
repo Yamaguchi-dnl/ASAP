@@ -51,7 +51,7 @@ export function BenefitsSection() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-secondary/30 p-8 rounded-lg">
             <h4 className="text-2xl font-bold text-foreground mb-6">
-              📌 Para Empresas:
+              Para Empresas:
             </h4>
             <ul className="space-y-4">
               {benefitsForCompanies.map((benefit, index) => (
@@ -64,7 +64,7 @@ export function BenefitsSection() {
           </div>
           <div className="bg-secondary/30 p-8 rounded-lg">
             <h4 className="text-2xl font-bold text-foreground mb-6">
-              📌 Para Colaboradores:
+              Para Colaboradores:
             </h4>
             <ul className="space-y-4">
               {benefitsForEmployees.map((benefit, index) => (
