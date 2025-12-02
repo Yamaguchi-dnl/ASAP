@@ -19,7 +19,7 @@ export function HeroSection() {
           />
         )}
       </div>
-      <Container className="relative z-10 flex h-full pt-96">
+      <Container className="relative z-10 flex h-full items-end pb-24">
         <div className="text-left max-w-2xl">
            <h1 className="text-[120px] font-normal text-white uppercase leading-none">
             PULSOASAP
