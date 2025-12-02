@@ -28,12 +28,9 @@ export function AboutSection() {
               Nossa Jornada
             </h2>
             <hr className="my-8 border-foreground/30" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-foreground/80 text-base">
+            <div className="text-foreground/80 text-base">
               <p>
-                A PulsoASAP nasceu da visão de Cátia Bazzan, uma executiva com mais de 25 anos de experiência em Recursos Humanos e Comunicação Corporativa. Após vivenciar os desafios do burnout e da busca por equilíbrio, ela decidiu criar uma solução que realmente fizesse a diferença na vida das pessoas e na cultura das empresas.
-              </p>
-              <p>
-                Junto com uma equipe de especialistas, transformamos a PulsoASAP em uma referência em saúde corporativa, oferecendo programas integrados que previnem a exaustão profissional, fortalecem a liderança e promovem ambientes de trabalho mais saudáveis e produtivos em todo o Brasil.
+                Com presença no Brasil e na Espanha, o Pulso ASAP (Ação, Sustentabilidade, Autoconhecimento e Propósito) surgiu da necessidade de abordar o tema de exaustão profissional de maneira clara, objetiva e aplicável ao dia a dia corporativo.
               </p>
             </div>
             <div className="mt-8 flex gap-4">
