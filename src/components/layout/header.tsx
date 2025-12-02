@@ -29,7 +29,7 @@ export function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent'
+        isScrolled ? 'bg-background shadow-md' : 'bg-transparent'
       }`}
     >
       <Container>
@@ -42,21 +42,21 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${isScrolled ? 'text-foreground/80 hover:text-primary' : 'text-primary-foreground hover:text-primary-foreground/80'}`}
+                className="text-sm font-medium text-white transition-colors hover:text-white/80"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
           <div className="hidden md:block ml-auto">
-            <Button variant="outline" className={`${isScrolled ? '' : 'border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground'}`} asChild>
+            <Button variant="outline" className={`${isScrolled ? '' : 'border-white text-white hover:bg-white/10 hover:text-white'}`} asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
           <div className="md:hidden ml-auto">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={`${isScrolled ? '' : 'text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground'}`}>
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
                 </Button>
