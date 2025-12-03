@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import {
   Card,
@@ -10,6 +12,15 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
+import React from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 interface Service {
   id: string;
@@ -55,6 +66,10 @@ export function ServicesSection() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+  
+   const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
 
   return (
     <section id="servicos" className="py-20 sm:py-32">
@@ -71,41 +86,58 @@ export function ServicesSection() {
             </p>
           </MotionWrapper>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-          {services.map((service, index) => (
-            <MotionWrapper key={service.id} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-full hover:-translate-y-1.5">
-              <div className="sm:w-1/3">
-                {service.image && (
-                    <div className="aspect-w-1 aspect-h-1 h-full">
-                        <Image
-                            src={service.image.imageUrl}
-                            alt={service.image.description}
-                            data-ai-hint={service.image.imageHint}
-                            width={600}
-                            height={400}
-                            className="object-cover h-full w-full"
-                        />
+        <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
+        <Carousel
+            plugins={[plugin.current]}
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            className="w-full mt-16"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+          >
+          <CarouselContent>
+            {services.map((service) => (
+              <CarouselItem key={service.id} className="md:basis-1/2">
+                 <div className="p-4 h-full">
+                  <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-full hover:-translate-y-1.5">
+                    <div className="sm:w-1/3">
+                      {service.image && (
+                          <div className="aspect-w-1 aspect-h-1 h-full">
+                              <Image
+                                  src={service.image.imageUrl}
+                                  alt={service.image.description}
+                                  data-ai-hint={service.image.imageHint}
+                                  width={600}
+                                  height={400}
+                                  className="object-cover h-full w-full"
+                              />
+                          </div>
+                      )}
                     </div>
-                )}
-              </div>
-              <div className="sm:w-2/3 flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <CardDescription className="text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-                <div className="p-6 pt-0">
-                    <Button variant="link" className="p-0">Saiba mais &rarr;</Button>
+                    <div className="sm:w-2/3 flex flex-col">
+                      <CardHeader>
+                        <CardTitle className="text-2xl">{service.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <CardDescription className="text-base">
+                          {service.description}
+                        </CardDescription>
+                      </CardContent>
+                      <div className="p-6 pt-0">
+                          <Button variant="link" className="p-0">Saiba mais &rarr;</Button>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-              </div>
-            </Card>
-            </MotionWrapper>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+          <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+        </Carousel>
+        </MotionWrapper>
       </Container>
     </section>
   );
