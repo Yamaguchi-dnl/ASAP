@@ -100,9 +100,9 @@ export function TestimonialsSection() {
                     key={index}
                     className="pt-4 basis-1/3"
                   >
-                    <div className="p-1 w-full h-full">
-                      <Card className="h-full flex flex-col justify-center bg-gray-800/50 border-gray-700 text-white p-6 shadow-lg">
-                        <CardContent className="p-0">
+                    <div className="p-1 h-full">
+                      <Card className="h-full flex flex-col justify-center bg-gray-800/50 border-gray-700 text-white shadow-lg">
+                        <CardContent className="p-6 flex flex-col justify-center flex-grow">
                           <blockquote className="text-base italic border-l-4 border-primary pl-4">
                            {testimonial.quote}
                           </blockquote>
