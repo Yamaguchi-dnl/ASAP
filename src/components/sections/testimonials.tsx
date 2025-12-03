@@ -90,7 +90,7 @@ export function TestimonialsSection() {
             }}
             className="w-full max-w-4xl mx-auto mt-16"
             onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin-current.reset}
+            onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
