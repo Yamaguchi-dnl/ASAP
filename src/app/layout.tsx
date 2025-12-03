@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { FaqSection } from '@/components/sections/faq';
 
 export const metadata: Metadata = {
   title: 'PulsoASAP',
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className="font-body antialiased text-foreground">
         <Header />
         <main>{children}</main>
+        <FaqSection />
         <Footer />
         <Toaster />
       </body>

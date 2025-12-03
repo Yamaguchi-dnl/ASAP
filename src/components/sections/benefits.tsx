@@ -1,5 +1,5 @@
 import { Container } from '@/components/layout/container';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 
@@ -40,21 +40,15 @@ export function BenefitsSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-5xl md:text-6xl font-normal text-foreground">
-              Vantagens que <br /> Transformam
+            <h2 className="text-4xl md:text-5xl font-normal text-foreground leading-tight">
+              Funcionários que as empresas querem manter. <br />
+              <span className="text-primary">Empresas onde os profissionais querem trabalhar.</span>
             </h2>
           </MotionWrapper>
           <div>
-            <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-              <p className="text-lg text-foreground/80">
-                Descubra como a PulsoASAP pode beneficiar tanto a sua empresa
-                quanto seus colaboradores, criando um ciclo virtuoso de
-                crescimento e bem-estar.
-              </p>
-            </MotionWrapper>
-            <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
-               <Button variant="outline" size="lg" className="mt-4 rounded-full">
-                Saiba mais &rarr;
+             <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
+               <Button variant="link" size="lg" className="mt-4 p-0 text-base">
+                Explore as soluções que tornam esses benefícios possíveis <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </MotionWrapper>
           </div>

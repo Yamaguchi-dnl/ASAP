@@ -1,16 +1,15 @@
 'use client';
 
-import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
-import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import React from 'react';
 import {
@@ -21,39 +20,52 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import { ArrowRight } from 'lucide-react';
 
 interface Service {
   id: string;
   title: string;
   description: string;
-  image: ImagePlaceholder | undefined;
+  subItems: string[];
+  cta: string;
 }
 
 const services: Service[] = [
   {
-    id: 'service-workshop',
-    title: 'Palestras e Workshops',
-    description: 'Eventos dinâmicos sobre liderança, comunicação, saúde mental e muito mais, adaptados para a sua equipe.',
-    image: PlaceHolderImages.find(p => p.id === 'service-workshop'),
+    id: 'produto-asap',
+    title: 'Produto ASAP',
+    description: 'Livro: Crachá Atômico: Pré-lançamento: fevereiro de 2026. Um relato profundo sobre os bastidores da rotina corporativa, a exaustão profissional e autoconhecimento.',
+    subItems: [],
+    cta: 'Quero ser avisado do lançamento',
   },
   {
-    id: 'service-mentorship',
-    title: 'Mentoria Individual',
-    description: 'Programas de mentoria personalizados para acelerar o desenvolvimento de carreira e habilidades dos colaboradores.',
-    image: PlaceHolderImages.find(p => p.id === 'service-mentorship'),
+    id: 'mentoria-asap',
+    title: 'Mentoria ASAP',
+    description: 'Sem receitas mágicas ou fórmulas prontas. Nossa metodologia foi criada para oferecer uma experiência de mentoria personalizada, alinhada aos objetivos e ao momento de cada profissional.',
+    subItems: ['ASAP Essencial', 'ASAP Social', 'ASAP Evolution', 'ASAP Anônimos'],
+    cta: 'Explore as opções',
   },
   {
-    id: 'service-wellness',
-    title: 'Programas de Bem-Estar',
-    description: 'Iniciativas completas focadas na saúde física e mental, promovendo um estilo de vida equilibrado.',
-    image: PlaceHolderImages.find(p => p.id === 'service-wellness'),
+    id: 'palestra-asap',
+    title: 'Palestra ASAP',
+    description: 'Trata-se de uma jornada estruturada de reflexão e expansão de consciência sobre comportamento, estratégia de carreira, relações e responsabilidade compartilhada.',
+    subItems: ['Crachá Atômico', 'Corporativa', 'Áreas Redflag'],
+    cta: 'Explore as opções',
   },
   {
-    id: 'service-consulting',
-    title: 'Consultoria de RH',
-    description: 'Apoio estratégico para o seu RH na criação de políticas e programas de desenvolvimento humano e organizacional.',
-    image: PlaceHolderImages.find(p => p.id === 'service-consulting'),
+    id: 'solucoes-asap',
+    title: 'Soluções Regulatórias ASAP',
+    description: 'Atuamos na interseção entre gestão de riscos, compliance e cultura organizacional, oferecendo diagnósticos precisos, implantações eficientes e práticas que fortalecem a responsabilidade institucional.',
+    subItems: ['DRPS NR1', 'Implantação NR1', 'Assessment GRC'],
+    cta: 'Conheça nossas soluções',
   },
+  {
+    id: 'treinamento-asap',
+    title: 'Treinamento ASAP',
+    description: 'Uma metodologia criada para atuar diretamente em comportamentos, práticas e percepções que impactam a segurança, a ética e a cultura corporativa.',
+    subItems: ['Treinamento Interventivos'],
+    cta: 'Conheça nossa opção',
+  }
 ];
 
 export function ServicesSection() {
@@ -67,8 +79,8 @@ export function ServicesSection() {
     visible: { opacity: 1, y: 0 },
   };
   
-   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   return (
@@ -79,11 +91,6 @@ export function ServicesSection() {
             <h2 className="text-5xl md:text-6xl font-normal text-foreground">
               Nossos Produtos e Serviços
             </h2>
-          </MotionWrapper>
-          <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-            <p className="mt-4 text-lg text-foreground/80">
-              Oferecemos um portfólio completo de soluções para impulsionar o potencial humano na sua organização.
-            </p>
           </MotionWrapper>
         </div>
         <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
@@ -99,36 +106,29 @@ export function ServicesSection() {
           >
           <CarouselContent>
             {services.map((service) => (
-              <CarouselItem key={service.id} className="md:basis-1/2">
+              <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3">
                  <div className="p-4 h-full">
-                  <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col sm:flex-row h-full hover:-translate-y-1.5">
-                    <div className="sm:w-1/3">
-                      {service.image && (
-                          <div className="aspect-w-1 aspect-h-1 h-full">
-                              <Image
-                                  src={service.image.imageUrl}
-                                  alt={service.image.description}
-                                  data-ai-hint={service.image.imageHint}
-                                  width={600}
-                                  height={400}
-                                  className="object-cover h-full w-full"
-                              />
-                          </div>
+                  <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full hover:-translate-y-1.5 bg-blue-50/30 border-blue-200">
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <CardDescription className="text-base mb-4">
+                        {service.description}
+                      </CardDescription>
+                      {service.subItems.length > 0 && (
+                        <ul className="space-y-2 text-sm text-foreground">
+                            {service.subItems.map(item => (
+                                <li key={item} className="font-medium">{item}</li>
+                            ))}
+                        </ul>
                       )}
-                    </div>
-                    <div className="sm:w-2/3 flex flex-col">
-                      <CardHeader>
-                        <CardTitle className="text-2xl">{service.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="flex-grow">
-                        <CardDescription className="text-base">
-                          {service.description}
-                        </CardDescription>
-                      </CardContent>
-                      <div className="p-6 pt-0">
-                          <Button variant="link" className="p-0">Saiba mais &rarr;</Button>
-                      </div>
-                    </div>
+                    </CardContent>
+                    <CardFooter>
+                        <Button variant="link" className="p-0 text-primary">
+                          {service.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                    </CardFooter>
                   </Card>
                 </div>
               </CarouselItem>

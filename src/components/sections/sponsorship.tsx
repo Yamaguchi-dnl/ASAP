@@ -7,42 +7,19 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Check } from 'lucide-react';
 import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 
 const tiers = [
   {
-    name: 'Prata',
-    price: 'Cota',
-    features: [
-      'Logo no site',
-      'Agradecimento em eventos',
-      '1 Workshop gratuito',
-    ],
-    isPopular: false,
+    name: 'Cota Prata',
   },
   {
-    name: 'Ouro',
-    price: 'Cota',
-    features: [
-      'Todos os benefícios Prata',
-      'Destaque em redes sociais',
-      'Participação em 1 mentoria',
-      'Selo "Empresa Amiga"',
-    ],
+    name: 'Cota Ouro',
     isPopular: true,
   },
   {
-    name: 'Master',
-    price: 'Cota',
-    features: [
-      'Todos os benefícios Ouro',
-      'Parceria estratégica',
-      'Evento exclusivo para sua empresa',
-      'Relatório de impacto',
-    ],
-    isPopular: false,
+    name: 'Cota Master',
   },
 ];
 
@@ -67,14 +44,14 @@ export function SponsorshipSection() {
           </MotionWrapper>
           <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
             <p className="mt-4 text-lg text-foreground/80">
-              Associe sua marca à promoção de um ambiente de trabalho saudável e valorize o capital humano.
+              Torne-se um patrocinador e reforce o posicionamento da sua empresa na promoção de ambientes de trabalho saudáveis.
             </p>
           </MotionWrapper>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {tiers.map((tier, index) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
-            <Card  className={`flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 h-full hover:-translate-y-1.5 ${tier.isPopular ? 'border-primary border-2 relative' : ''}`}>
+            <Card  className={`flex flex-col justify-center items-center shadow-lg hover:shadow-2xl transition-all duration-300 h-48 hover:-translate-y-1.5 ${tier.isPopular ? 'border-primary border-2 relative' : 'bg-secondary'}`}>
                {tier.isPopular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-3 py-1 text-sm font-bold rounded-full">
                   Mais Popular
@@ -82,27 +59,25 @@ export function SponsorshipSection() {
               )}
               <CardHeader className="text-center">
                 <CardTitle className="text-3xl font-headline">{tier.name}</CardTitle>
-                <CardDescription className="text-lg">{tier.price}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <ul className="space-y-4">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-primary" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
-                <Button size="lg" className={`w-full transition-transform duration-300 hover:scale-105 ${tier.isPopular ? 'bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground' : 'bg-primary'}`}>
-                  Quero Patrocinar
-                </Button>
-              </CardFooter>
             </Card>
             </MotionWrapper>
           ))}
         </div>
+        <MotionWrapper variants={textVariants} transition={{ delay: 1 }}>
+          <p className="text-center mt-8 text-sm text-muted-foreground italic">* A aceitação da parceria ocorre somente após o processo de due diligence.</p>
+        </MotionWrapper>
+        <MotionWrapper variants={textVariants} transition={{ delay: 1.2 }}>
+          <div className="mt-12 text-center">
+             <h3 className="text-xl font-bold text-foreground">Nossos Patrocinadores</h3>
+             <div className="mt-8 flex justify-center items-center gap-8 flex-wrap">
+                {/* Espaço para logos de patrocinadores */}
+                <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
+                <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
+                <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
+             </div>
+          </div>
+        </MotionWrapper>
       </Container>
     </section>
   );
