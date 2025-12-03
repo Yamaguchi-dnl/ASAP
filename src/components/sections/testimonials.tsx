@@ -94,12 +94,9 @@ export function TestimonialsSection() {
               onMouseEnter={plugin.current.stop}
               onMouseLeave={plugin.current.reset}
             >
-              <CarouselContent className="-mt-4 h-full">
+              <CarouselContent className="h-full -mt-4">
                 {testimonials.map((testimonial, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="pt-4 basis-1/3"
-                  >
+                  <CarouselItem key={index} className="pt-4 basis-1/3">
                     <div className="p-1 h-full">
                       <Card className="h-full flex flex-col justify-center bg-gray-800/50 border-gray-700 text-white shadow-lg">
                         <CardContent className="p-6 flex flex-col justify-center flex-grow">
