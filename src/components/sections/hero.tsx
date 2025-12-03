@@ -13,7 +13,7 @@ export function HeroSection() {
   };
   
   return (
-    <section id="home" className="relative h-screen min-h-[700px] w-full -mt-20">
+    <section id="home" className="sticky top-0 h-screen min-h-[700px] w-full -mt-20">
       <div className="absolute inset-0 z-0 bg-black overflow-hidden">
         <video
           autoPlay
