@@ -1,7 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import { Container } from '@/components/layout/container';
 import { Check, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export function BenefitsSection() {
   const benefitsForCompanies = [
@@ -29,11 +33,6 @@ export function BenefitsSection() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-  
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   return (
     <section id="beneficios" className="py-20 sm:py-32">
@@ -42,48 +41,47 @@ export function BenefitsSection() {
           <MotionWrapper variants={titleVariants}>
             <h2 className="text-4xl md:text-5xl font-normal text-foreground leading-tight">
               Funcionários que as empresas querem manter. <br />
-              <span className="text-primary">Empresas onde os profissionais querem trabalhar.</span>
+              <span className="text-primary">
+                Empresas onde os profissionais querem trabalhar.
+              </span>
             </h2>
-          </MotionWrapper>
-          <div>
-             <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
-               <Button variant="link" size="lg" className="mt-4 p-0 text-base">
-                Explore as soluções que tornam esses benefícios possíveis <ArrowRight className="ml-2 h-4 w-4" />
+             <Button variant="link" size="lg" className="mt-4 p-0 text-base">
+                Explore as soluções que tornam esses benefícios possíveis{' '}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </MotionWrapper>
-          </div>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <MotionWrapper variants={cardVariants} transition={{ delay: 0.2 }}>
-            <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5">
-              <h4 className="text-2xl font-bold text-foreground mb-6">
-                Para Empresas:
-              </h4>
-              <ul className="space-y-4">
-                {benefitsForCompanies.map((benefit, index) => (
-                  <li key={index} className="flex items-start">
-                    <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </MotionWrapper>
-          <MotionWrapper variants={cardVariants} transition={{ delay: 0.4 }}>
-            <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5">
-              <h4 className="text-2xl font-bold text-foreground mb-6">
-                Para Colaboradores:
-              </h4>
-              <ul className="space-y-4">
-                {benefitsForEmployees.map((benefit, index) => (
-                  <li key={index} className="flex items-start">
-                    <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+          <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
+            <Tabs defaultValue="empresas" className="w-full">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="empresas">Para Empresas</TabsTrigger>
+                <TabsTrigger value="colaboradores">Para Colaboradores</TabsTrigger>
+              </TabsList>
+              <TabsContent value="empresas">
+                <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
+                  <ul className="space-y-4">
+                    {benefitsForCompanies.map((benefit, index) => (
+                      <li key={index} className="flex items-start">
+                        <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </TabsContent>
+              <TabsContent value="colaboradores">
+                <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
+                  <ul className="space-y-4">
+                    {benefitsForEmployees.map((benefit, index) => (
+                      <li key={index} className="flex items-start">
+                        <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </TabsContent>
+            </Tabs>
           </MotionWrapper>
         </div>
       </Container>
