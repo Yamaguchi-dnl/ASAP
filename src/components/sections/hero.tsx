@@ -19,7 +19,7 @@ export function HeroSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.3, delayChildren: 0 },
     },
   };
 
@@ -46,7 +46,7 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8, ease: 'easeOut', delay: 0.6 },
+      transition: { duration: 0.8, ease: 'easeOut', delay: 0.8 },
     },
   };
 
