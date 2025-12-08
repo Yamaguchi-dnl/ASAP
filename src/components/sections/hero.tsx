@@ -46,7 +46,7 @@ export function HeroSection() {
         </video>
       </div>
       <Container className="relative z-10 flex h-full items-end pb-32">
-        <motion.div style={{ y }} className="text-left max-w-4xl">
+        <motion.div style={{ y }} className="text-left">
           <MotionWrapper
             variants={textVariants}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
