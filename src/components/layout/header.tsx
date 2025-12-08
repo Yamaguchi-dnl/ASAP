@@ -26,7 +26,7 @@ export function Header() {
             href="/"
             className="flex items-center justify-center"
           >
-            <div className="h-16 w-16 bg-white rounded-lg p-2 overflow-hidden flex items-center justify-center">
+            <div className="h-16 w-16 bg-white rounded-lg overflow-hidden flex items-center justify-center">
               <Image 
                 src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
                 alt="PulsoASAP Logo"
@@ -77,7 +77,7 @@ export function Header() {
                     className="flex items-center justify-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                     <div className="h-14 w-14 bg-white rounded-lg p-2 overflow-hidden flex items-center justify-center">
+                     <div className="h-14 w-14 bg-white rounded-lg overflow-hidden flex items-center justify-center">
                       <Image 
                           src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
                           alt="PulsoASAP Logo"
