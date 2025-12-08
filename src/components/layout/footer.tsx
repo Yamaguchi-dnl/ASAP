@@ -27,9 +27,9 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg font-bold">Links Úteis</h3>
-            <ul className="mt-4 space-y-2 text-sm">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="flex items-center gap-2 hover:underline">
                   <FileText size={16} /> Código de ética e de conduta
@@ -42,9 +42,9 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg font-bold">Contato</h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <ul className="space-y-2 text-sm text-muted-foreground">
                <li className="flex items-center gap-2">
                 <Mail size={16} /> contato@projetoasap.com.br
               </li>

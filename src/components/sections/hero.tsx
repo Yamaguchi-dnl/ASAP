@@ -38,13 +38,13 @@ export function HeroSection() {
       <Container className="relative z-10 h-full">
         <motion.div
           style={{ opacity, scale }}
-          className="absolute bottom-32 left-4 sm:left-6 lg:left-8 text-left"
+          className="absolute bottom-24 md:bottom-32 left-4 sm:left-6 lg:left-8 text-left"
         >
-          <p className="text-base font-medium text-white max-w-2xl">
+          <p className="text-base font-medium text-white max-w-sm md:max-w-2xl">
             Gestão de Riscos e Compliance para <br />prevenir a exaustão
             profissional.
           </p>
-          <h1 className="text-[180px] font-bold text-white uppercase leading-[0.8]">
+          <h1 className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]">
             PULSO<br />ASAP<span className='text-primary'>.</span>
           </h1>
         </motion.div>

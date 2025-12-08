@@ -88,7 +88,7 @@ export function ServicesSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
            <MotionWrapper variants={titleVariants}>
-            <h2 className="text-5xl md:text-6xl font-normal text-foreground">
+            <h2 className="text-4xl md:text-6xl font-normal text-foreground">
               Nossos Produtos e Serviços
             </h2>
           </MotionWrapper>
@@ -134,8 +134,8 @@ export function ServicesSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
-          <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+          <CarouselPrevious className="absolute left-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+          <CarouselNext className="absolute right-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
         </Carousel>
         </MotionWrapper>
       </Container>

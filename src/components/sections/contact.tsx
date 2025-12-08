@@ -76,7 +76,7 @@ export function ContactSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-5xl md:text-6xl font-normal text-foreground">Entre em Contato</h2>
+            <h2 className="text-4xl md:text-6xl font-normal text-foreground">Entre em Contato</h2>
           </MotionWrapper>
           <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
             <p className="mt-4 text-lg text-foreground/80">

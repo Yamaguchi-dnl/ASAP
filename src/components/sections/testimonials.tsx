@@ -62,7 +62,7 @@ export function TestimonialsSection() {
       <Container>
         <div className="max-w-4xl mx-auto text-center">
             <MotionWrapper variants={titleVariants}>
-              <h2 className="text-5xl md:text-6xl font-normal text-foreground">
+              <h2 className="text-4xl md:text-6xl font-normal text-foreground">
                 O que Nossos Clientes Dizem
               </h2>
             </MotionWrapper>
@@ -89,7 +89,7 @@ export function TestimonialsSection() {
                   {testimonials.map((testimonial, index) => (
                     <CarouselItem key={index}>
                       <div className="p-4 text-center">
-                        <blockquote className="max-w-3xl mx-auto text-2xl md:text-3xl font-semibold text-foreground leading-snug">
+                        <blockquote className="max-w-3xl mx-auto text-xl md:text-3xl font-semibold text-foreground leading-snug">
                           “{testimonial.quote}”
                         </blockquote>
                         <footer className="mt-6">
@@ -102,8 +102,8 @@ export function TestimonialsSection() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
-                <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+                <CarouselPrevious className="absolute left-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+                <CarouselNext className="absolute right-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
               </Carousel>
             </MotionWrapper>
         </div>

@@ -54,7 +54,7 @@ export function FaqSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-5xl md:text-6xl font-normal text-foreground">
+            <h2 className="text-4xl md:text-6xl font-normal text-foreground">
               Perguntas Frequentes
             </h2>
           </MotionWrapper>

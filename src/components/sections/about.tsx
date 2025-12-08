@@ -24,7 +24,7 @@ export function AboutSection() {
       <Container>
         <div className="max-w-4xl mx-auto">
           <MotionWrapper variants={titleVariants} className="text-center">
-            <h2 className="text-5xl md:text-6xl font-normal text-foreground">
+            <h2 className="text-4xl md:text-6xl font-normal text-foreground">
               Quem Somos
             </h2>
           </MotionWrapper>
@@ -53,7 +53,7 @@ export function AboutSection() {
         
         <div className="mt-24">
           <MotionWrapper variants={titleVariants} className="text-center">
-            <h3 className="text-4xl font-normal text-foreground">O que entregamos? Reputação positiva</h3>
+            <h3 className="text-3xl md:text-4xl font-normal text-foreground">O que entregamos? Reputação positiva</h3>
              <p className="mt-4 max-w-3xl mx-auto text-foreground/80 text-base">
               Partimos da premissa de que pessoas são o principal ativo de qualquer organização. Por isso, acreditamos que uma mudança verdadeira precisa contemplar, de forma equilibrada, ambos os lados dessa balança:
             </p>
@@ -90,7 +90,7 @@ export function AboutSection() {
 
         <div className="mt-24">
           <MotionWrapper variants={titleVariants} className="text-center">
-             <h3 className="text-4xl font-normal text-foreground">Sócias</h3>
+             <h3 className="text-3xl md:text-4xl font-normal text-foreground">Sócias</h3>
           </MotionWrapper>
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <MotionWrapper variants={textVariants} transition={{delay: 0.2}}>
