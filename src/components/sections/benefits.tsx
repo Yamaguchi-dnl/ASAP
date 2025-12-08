@@ -6,6 +6,7 @@ import { Check, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import TextRevealOnScroll from '@/components/animation/text-reveal-on-scroll';
 
 export function BenefitsSection() {
   const benefitsForCompanies = [
@@ -24,34 +25,21 @@ export function BenefitsSection() {
     'Evolução profissional alinhada ao propósito, às habilidades e ao momento de carreira.',
   ];
 
-  const titleVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <section id="beneficios" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-5xl font-normal leading-tight">
-              Funcionários que as empresas querem manter. <br />
-              <span className="text-accent">
-                Empresas onde os profissionais querem trabalhar.
-              </span>
-            </h2>
+          <div>
+            <TextRevealOnScroll>
+              Funcionários que as empresas querem manter. Empresas onde os profissionais querem trabalhar.
+            </TextRevealOnScroll>
              <Button variant="link" size="lg" className="mt-4 p-0 text-base text-primary-foreground hover:text-accent">
                 Explore as soluções que tornam esses benefícios possíveis{' '}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-          </MotionWrapper>
+          </div>
 
-          <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
+          <MotionWrapper transition={{ delay: 0.2 }}>
             <Tabs defaultValue="empresas" className="w-full">
               <TabsList className="grid w-full grid-cols-2 bg-primary-foreground/20 text-primary-foreground">
                 <TabsTrigger value="empresas" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Empresas</TabsTrigger>
