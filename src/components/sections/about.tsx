@@ -31,8 +31,8 @@ const sectionVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
+      staggerChildren: 0.25,
+      delayChildren: 0.3,
       ease: 'easeOut',
     },
   },
@@ -43,9 +43,9 @@ const imageVariants: Variants = {
   visible: { 
     opacity: 1, 
     x: 0,
-    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
+    transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] }
   },
-  exit: { opacity: 0, x: 50, transition: { duration: 0.5, ease: 'easeIn' } },
+  exit: { opacity: 0, x: 50, transition: { duration: 0.7, ease: 'easeIn' } },
 };
 
 const textContentVariants: Variants = {
@@ -53,26 +53,26 @@ const textContentVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    transition: { duration: 0.8, ease: 'easeOut' },
   },
 };
 
 const founderNameVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
-    exit: { opacity: 0, scale: 0.98, transition: { duration: 0.3, ease: 'easeIn' } },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: 'easeOut' } },
+    exit: { opacity: 0, scale: 0.98, transition: { duration: 0.4, ease: 'easeIn' } },
 };
 
 const bioParagraphsVariants: Variants = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.2 } },
-    exit: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
+    visible: { transition: { staggerChildren: 0.3 } },
+    exit: { transition: { staggerChildren: 0.15, staggerDirection: -1 } },
 }
 
 const bioParagraphVariant: Variants = {
     hidden: { opacity: 0, y: 15 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-    exit: { opacity: 0, y: -10, transition: { duration: 0.3, ease: 'easeIn' } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+    exit: { opacity: 0, y: -10, transition: { duration: 0.4, ease: 'easeIn' } },
 }
 
 export function AboutSection() {
