@@ -21,12 +21,12 @@ export function Header() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
-      <div className="flex h-20 items-center justify-between bg-background shadow-lg rounded-full px-6 border border-white/20">
+      <div className="flex h-16 items-center justify-between bg-background shadow-lg rounded-full px-6 border border-white/20">
           <Link
             href="/"
             className="flex items-center justify-center"
           >
-            <div className="h-16 w-16 bg-white rounded-lg overflow-hidden flex items-center justify-center">
+            <div className="h-12 w-12 bg-white rounded-lg overflow-hidden flex items-center justify-center">
               <Image 
                 src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
                 alt="PulsoASAP Logo"
@@ -77,7 +77,7 @@ export function Header() {
                     className="flex items-center justify-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                     <div className="h-14 w-14 bg-white rounded-lg overflow-hidden flex items-center justify-center">
+                     <div className="h-12 w-12 bg-white rounded-lg overflow-hidden flex items-center justify-center">
                       <Image 
                           src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
                           alt="PulsoASAP Logo"
