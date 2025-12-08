@@ -21,10 +21,10 @@ export function Header() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
-      <div className="flex h-16 items-center justify-between bg-background backdrop-blur-sm shadow-lg rounded-full px-6 border border-white/20">
+      <div className="flex h-20 items-center justify-between bg-background/80 backdrop-blur-sm shadow-lg rounded-full px-6 border border-white/20">
           <Link
             href="/"
-            className="flex items-center"
+            className="flex items-center justify-center h-16 w-16 bg-white rounded-lg p-2"
           >
             <Image 
               src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
@@ -48,7 +48,7 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center" style={{width: '150px', justifyContent: 'flex-end'}}>
-             <Button variant="outline" className='rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary bg-background' asChild>
+             <Button variant="outline" className='rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary bg-transparent' asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
@@ -70,8 +70,9 @@ export function Header() {
                 className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
               >
                 <div className="flex justify-between items-center p-4 border-b">
-                  <Link
+                   <Link
                     href="/"
+                    className="flex items-center justify-center h-14 w-14 bg-white rounded-lg p-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                      <Image 
