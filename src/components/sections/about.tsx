@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -6,8 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
-import { MotionWrapper } from '@/components/animation/motion-wrapper';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
 
 const founders = [
   {
@@ -26,6 +26,55 @@ const founders = [
   },
 ];
 
+const sectionVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+      ease: 'easeOut',
+    },
+  },
+};
+
+const imageVariants: Variants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: { duration: 0.8, ease: [0.25, 1, 0.5, 1] }
+  },
+  exit: { opacity: 0, x: 50, transition: { duration: 0.5, ease: 'easeIn' } },
+};
+
+const textContentVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const founderNameVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+    exit: { opacity: 0, scale: 0.98, transition: { duration: 0.3, ease: 'easeIn' } },
+};
+
+const bioParagraphsVariants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.2 } },
+    exit: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
+}
+
+const bioParagraphVariant: Variants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+    exit: { opacity: 0, y: -10, transition: { duration: 0.3, ease: 'easeIn' } },
+}
+
 export function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -41,24 +90,19 @@ export function AboutSection() {
 
   const currentFounder = founders[currentIndex];
 
-  const imageVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 50 },
-  };
-  
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  };
-
   return (
-    <section id="sobre" className="py-20 sm:py-32 bg-secondary/30">
+    <motion.section 
+      id="sobre" 
+      className="py-20 sm:py-32 bg-secondary/30"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={sectionVariants}
+    >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
-          <MotionWrapper className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden">
+          <motion.div className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>
             <AnimatePresence mode="wait">
               {currentFounder.image && (
                 <motion.div
@@ -67,7 +111,6 @@ export function AboutSection() {
                   animate="visible"
                   exit="exit"
                   variants={imageVariants}
-                  transition={{ duration: 0.5, ease: 'easeInOut' }}
                   className="absolute inset-0"
                 >
                   <Image
@@ -80,16 +123,16 @@ export function AboutSection() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </MotionWrapper>
+          </motion.div>
 
           {/* Coluna de Texto */}
           <div className="flex flex-col justify-between h-full min-h-[550px]">
-             <MotionWrapper>
+             <motion.div variants={textContentVariants}>
                <h2 className="text-4xl md:text-6xl font-normal text-foreground">
                 Quem somos
               </h2>
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
-            </MotionWrapper>
+            </motion.div>
 
             <div className="relative overflow-hidden min-h-[350px]">
                 <AnimatePresence mode="wait">
@@ -98,19 +141,20 @@ export function AboutSection() {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        variants={textVariants}
-                        transition={{ duration: 0.5, ease: 'easeInOut' }}
+                        variants={{ visible: { transition: { staggerChildren: 0.2 } }, exit: {} }}
                     >
-                        <h3 className="text-2xl font-bold text-foreground mb-6">{currentFounder.name}</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <p className="text-foreground/80">{currentFounder.bio1}</p>
-                            <p className="text-foreground/80">{currentFounder.bio2}</p>
-                        </div>
+                        <motion.h3 className="text-2xl font-bold text-foreground mb-6" variants={founderNameVariants}>
+                          {currentFounder.name}
+                        </motion.h3>
+                        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" variants={bioParagraphsVariants}>
+                            <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio1}</motion.p>
+                            <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
+                        </motion.div>
                     </motion.div>
                 </AnimatePresence>
             </div>
 
-            <div className="flex items-center justify-between mt-8 pt-4 border-t border-border">
+            <motion.div className="flex items-center justify-between mt-8 pt-4 border-t border-border" variants={textContentVariants}>
                 <div className='flex items-center gap-2'>
                     <span className="text-sm font-semibold">{`0${currentIndex + 1}`}</span>
                     <div className='w-20 h-px bg-border'>
@@ -138,10 +182,10 @@ export function AboutSection() {
                   <span className="sr-only">Próximo</span>
                 </Button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }
