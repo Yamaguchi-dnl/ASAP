@@ -86,7 +86,7 @@ export function AboutSection() {
           <div className="flex flex-col justify-center h-full">
              <MotionWrapper>
                <h2 className="text-4xl md:text-6xl font-normal text-foreground">
-                QUEM SOMOS
+                Quem somos
               </h2>
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
             </MotionWrapper>
