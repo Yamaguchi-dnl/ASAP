@@ -38,7 +38,7 @@ export function Header() {
       <div
         className={cn(
           'flex h-16 items-center justify-between rounded-full px-6 transition-all duration-300',
-          isScrolled ? 'bg-background/80 shadow-lg backdrop-blur-sm' : 'bg-black/20 backdrop-blur-sm'
+          isScrolled ? 'bg-background/80 shadow-lg backdrop-blur-sm' : 'bg-transparent'
         )}
       >
         <Link href="/" className="flex items-center justify-center">
