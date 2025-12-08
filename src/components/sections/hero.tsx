@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Container } from '@/components/layout/container';
-import { MotionWrapper } from '@/components/animation/motion-wrapper';
 
 export function HeroSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -12,17 +11,8 @@ export function HeroSection() {
     offset: ['end end', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '-50%']);
-
-  const titleVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-  };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
 
   return (
     <section
@@ -45,25 +35,18 @@ export function HeroSection() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <Container className="relative z-10 flex h-full items-end pb-32">
-        <motion.div style={{ y }} className="text-left">
-          <MotionWrapper
-            variants={textVariants}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-          >
-            <p className="text-base font-medium text-white max-w-2xl">
-              Gestão de Riscos e Compliance para <br />prevenir a exaustão
-              profissional.
-            </p>
-          </MotionWrapper>
-          <MotionWrapper
-            variants={titleVariants}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-          >
-            <h1 className="text-[180px] font-bold text-white uppercase leading-[0.8]">
-              PULSO<br />ASAP<span className='text-primary'>.</span>
-            </h1>
-          </MotionWrapper>
+      <Container className="relative z-10 h-full">
+        <motion.div
+          style={{ opacity, scale }}
+          className="absolute bottom-32 left-4 sm:left-6 lg:left-8 text-left"
+        >
+          <p className="text-base font-medium text-white max-w-2xl">
+            Gestão de Riscos e Compliance para <br />prevenir a exaustão
+            profissional.
+          </p>
+          <h1 className="text-[180px] font-bold text-white uppercase leading-[0.8]">
+            PULSO<br />ASAP<span className='text-primary'>.</span>
+          </h1>
         </motion.div>
       </Container>
     </section>
