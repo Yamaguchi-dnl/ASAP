@@ -15,12 +15,29 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
 
-  const textVariants = {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+    },
+  };
+
+  const h1Variants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
+  const pVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut', staggerChildren: 0.2 },
+      transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
 
@@ -28,6 +45,7 @@ export function HeroSection() {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.6 } },
   };
+
 
   return (
     <section
@@ -54,25 +72,25 @@ export function HeroSection() {
         <motion.div
           style={{ opacity, scale }}
           className="absolute bottom-24 md:bottom-32 left-4 sm:left-6 lg:left-8 text-left"
-          variants={textVariants}
+          variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.p
-            variants={textVariants}
+            variants={pVariants}
             className="text-base font-medium text-white max-w-sm md:max-w-2xl"
           >
             Gestão de Riscos e Compliance para <br />
             prevenir a exaustão profissional.
           </motion.p>
           <motion.h1
-            variants={textVariants}
+            variants={h1Variants}
             className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]"
           >
             PULSO
             <br />
             ASAP
-            <motion.span variants={pointVariant} className="text-primary inline-block">
+            <motion.span variants={pointVariant} className="text-accent inline-block">
               .
             </motion.span>
           </motion.h1>
