@@ -2,10 +2,10 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Container } from './container';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -24,9 +24,15 @@ export function Header() {
       <div className="flex h-16 items-center justify-between bg-background backdrop-blur-sm shadow-lg rounded-full px-6 border border-white/20">
           <Link
             href="/"
-            className="text-2xl font-normal font-headline text-foreground"
+            className="flex items-center"
           >
-            PulsoASAP
+            <Image 
+              src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
+              alt="PulsoASAP Logo"
+              width={120}
+              height={40}
+              className='object-contain'
+            />
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
@@ -66,10 +72,15 @@ export function Header() {
                 <div className="flex justify-between items-center p-4 border-b">
                   <Link
                     href="/"
-                    className="text-2xl font-bold font-headline text-primary"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    PulsoASAP
+                     <Image 
+                        src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
+                        alt="PulsoASAP Logo"
+                        width={120}
+                        height={40}
+                        className='object-contain'
+                      />
                   </Link>
                   <Button
                     variant="ghost"
