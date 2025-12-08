@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Container } from '@/components/layout/container';
+import { MotionWrapper } from '../animation/motion-wrapper';
 
 export function HeroSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -16,7 +17,16 @@ export function HeroSection() {
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut', staggerChildren: 0.2 },
+    },
+  };
+
+  const pointVariant = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.6 } },
   };
 
   return (
@@ -48,22 +58,23 @@ export function HeroSection() {
           initial="hidden"
           animate="visible"
         >
-          <motion.p 
+          <motion.p
             variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.2 }}
-            className="text-base font-medium text-white max-w-sm md:max-w-2xl">
-            Gestão de Riscos e Compliance para <br />prevenir a exaustão
-            profissional.
+            className="text-base font-medium text-white max-w-sm md:max-w-2xl"
+          >
+            Gestão de Riscos e Compliance para <br />
+            prevenir a exaustão profissional.
           </motion.p>
-          <motion.h1 
+          <motion.h1
             variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.4 }}
-            className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]">
-            PULSO<br />ASAP<span className='text-primary'>.</span>
+            className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]"
+          >
+            PULSO
+            <br />
+            ASAP
+            <motion.span variants={pointVariant} className="text-primary inline-block">
+              .
+            </motion.span>
           </motion.h1>
         </motion.div>
       </Container>
