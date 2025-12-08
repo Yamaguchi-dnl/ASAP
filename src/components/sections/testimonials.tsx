@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -58,24 +57,23 @@ export function TestimonialsSection() {
   return (
     <section
       id="depoimentos"
-      className="py-20 sm:py-32 bg-gray-900 text-white"
+      className="py-20 sm:py-32 bg-background"
     >
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-          <div className="lg:col-span-1">
+        <div className="max-w-4xl mx-auto text-center">
             <MotionWrapper variants={titleVariants}>
-              <h2 className="text-5xl md:text-6xl font-normal text-white">
+              <h2 className="text-5xl md:text-6xl font-normal text-foreground">
                 O que Nossos Clientes Dizem
               </h2>
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-              <p className="mt-4 text-lg text-white/80">
+              <p className="mt-4 text-lg text-foreground/80">
                 Histórias reais de quem já foi transformado pela nossa
                 metodologia e abordagem única.
               </p>
             </MotionWrapper>
-          </div>
-          <div className="lg:col-span-2">
+        </div>
+        <div className="mt-16">
             <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
               <Carousel
                 plugins={[plugin.current]}
@@ -83,35 +81,31 @@ export function TestimonialsSection() {
                   align: 'start',
                   loop: true,
                 }}
-                orientation="vertical"
-                className="w-full h-80"
+                className="w-full"
                 onMouseEnter={plugin.current.stop}
                 onMouseLeave={plugin.current.reset}
               >
-                <CarouselContent className="-mt-4 h-full">
+                <CarouselContent>
                   {testimonials.map((testimonial, index) => (
-                    <CarouselItem key={index} className="pt-4 basis-full">
-                      <div className="p-1 h-full">
-                        <Card className="h-full flex flex-col justify-center bg-gray-800/50 border-gray-700 text-white shadow-lg">
-                          <CardContent className="p-6">
-                            <blockquote className="text-base italic border-l-4 border-primary pl-4 mb-4">
-                             {testimonial.quote}
-                            </blockquote>
-                            <footer className="mt-4">
-                              <p className="font-bold text-sm">{testimonial.name}</p>
-                              <p className="text-xs text-white/70">
-                                {testimonial.title}
-                              </p>
-                            </footer>
-                          </CardContent>
-                        </Card>
+                    <CarouselItem key={index}>
+                      <div className="p-4 text-center">
+                        <blockquote className="max-w-3xl mx-auto text-2xl md:text-3xl font-semibold text-foreground leading-snug">
+                          “{testimonial.quote}”
+                        </blockquote>
+                        <footer className="mt-6">
+                          <p className="font-semibold text-lg text-foreground/90">{testimonial.name}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {testimonial.title}
+                          </p>
+                        </footer>
                       </div>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
+                <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+                <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex" />
               </Carousel>
             </MotionWrapper>
-          </div>
         </div>
       </Container>
     </section>
