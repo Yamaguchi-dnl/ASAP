@@ -1,11 +1,11 @@
 'use client';
 
+import React, { useRef, type ReactNode, FC } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import { useRef, type ReactNode, FC } from 'react';
 import { cn } from '@/lib/utils';
 
 interface TextRevealOnScrollProps {
-  children: ReactNode;
+  children: ReactNode[];
   className?: string;
 }
 
@@ -19,19 +19,32 @@ const TextRevealOnScroll: FC<TextRevealOnScrollProps> = ({
     offset: ['start 0.9', 'start 0.25'],
   });
 
-  const words = children?.toString().split(' ') || [];
+  const lines = React.Children.toArray(children).map(child =>
+    typeof child === 'string' ? child.trim().split(' ') : []
+  );
+  
+  const words = lines.flat();
+
+  let wordCount = 0;
+  const firstLineLength = lines[0] ? lines[0].length : 0;
 
   return (
     <h2 ref={targetRef} className={cn('text-4xl md:text-5xl font-normal leading-tight', className)}>
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = start + 1 / words.length;
-        return (
-          <Word key={i} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </Word>
-        );
-      })}
+      {lines.map((line, lineIndex) => (
+        <span key={lineIndex} className="block">
+          {line.map((word, wordIndex) => {
+            const start = (wordCount) / words.length;
+            const end = (wordCount + 1) / words.length;
+            wordCount++;
+            const isAccent = lineIndex === 1;
+            return (
+              <Word key={wordIndex} progress={scrollYProgress} range={[start, end]} isAccent={isAccent}>
+                {word}
+              </Word>
+            );
+          })}
+        </span>
+      ))}
     </h2>
   );
 };
@@ -40,14 +53,15 @@ interface WordProps {
   children: ReactNode;
   progress: any;
   range: [number, number];
+  isAccent?: boolean;
 }
 
-const Word: FC<WordProps> = ({ children, progress, range }) => {
+const Word: FC<WordProps> = ({ children, progress, range, isAccent = false }) => {
   const opacity = useTransform(progress, range, [0.1, 1]);
   return (
     <span className="relative inline-block mr-3 mt-3">
-      <span className="absolute opacity-10">{children}</span>
-      <motion.span style={{ opacity: opacity }}>{children}</motion.span>
+      <span className={cn("absolute opacity-10", isAccent ? "text-accent" : "text-primary-foreground")}>{children}</span>
+      <motion.span style={{ opacity: opacity }} className={cn(isAccent ? "text-accent" : "text-primary-foreground")}>{children}</motion.span>
     </span>
   );
 };

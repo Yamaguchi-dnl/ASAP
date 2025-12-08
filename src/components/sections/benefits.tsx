@@ -31,7 +31,8 @@ export function BenefitsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <TextRevealOnScroll>
-              Funcionários que as empresas querem manter. Empresas onde os profissionais querem trabalhar.
+              {'Funcionários que as empresas querem manter.'}
+              {'Empresas onde os profissionais querem trabalhar.'}
             </TextRevealOnScroll>
              <Button variant="link" size="lg" className="mt-4 p-0 text-base text-primary-foreground hover:text-accent">
                 Explore as soluções que tornam esses benefícios possíveis{' '}
