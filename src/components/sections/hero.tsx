@@ -42,8 +42,12 @@ export function HeroSection() {
   };
 
   const pointVariant = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.6 } },
+    hidden: { opacity: 0, x: 200 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut', delay: 0.6 },
+    },
   };
 
 
