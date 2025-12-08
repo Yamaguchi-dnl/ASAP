@@ -42,7 +42,7 @@ export function OurApproachSection() {
             {/* Coluna da Esquerda */}
             <div className="flex flex-col gap-10">
               <MotionWrapper variants={titleVariants}>
-                 <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase tracking-tighter">Nossa Abordagem</h2>
+                 <h2 className="text-4xl md:text-6xl font-normal text-foreground">Nossa Abordagem</h2>
                 <p className="mt-4 text-lg text-foreground/80">
                   Com presença no Brasil e na Espanha, o Pulso ASAP (Ação, Sustentabilidade, Autoconhecimento e Propósito) surgiu da necessidade de abordar o tema de exaustão profissional de maneira clara, objetiva e aplicável ao dia a dia corporativo.
                 </p>

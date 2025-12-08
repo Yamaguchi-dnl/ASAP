@@ -85,7 +85,7 @@ export function AboutSection() {
           {/* Coluna de Texto */}
           <div className="flex flex-col justify-center h-full">
              <MotionWrapper>
-               <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tighter">
+               <h2 className="text-4xl md:text-6xl font-normal text-foreground">
                 QUEM SOMOS
               </h2>
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
