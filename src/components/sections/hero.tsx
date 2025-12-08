@@ -60,8 +60,8 @@ export function HeroSection() {
             variants={titleVariants}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
           >
-            <h1 className="text-[150px] font-normal text-white uppercase leading-none">
-              PULSOASAP
+            <h1 className="text-[120px] font-bold text-white uppercase leading-none">
+              PULSO<br />ASAP<span className='text-primary'>.</span>
             </h1>
           </MotionWrapper>
           <MotionWrapper
