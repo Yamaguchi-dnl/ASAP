@@ -17,31 +17,14 @@ const navLinks = [
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const headerClasses = cn(
-    'sticky top-0 z-50 transition-colors duration-300',
-    isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-  );
-
-  const linkColor = isScrolled ? 'text-foreground' : 'text-white';
-
   return (
-    <header className={headerClasses}>
-      <Container>
-        <div className="flex h-20 items-center justify-between">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+      <div className="flex h-20 items-center justify-between bg-background/80 backdrop-blur-sm shadow-lg rounded-full px-6 border border-white/20">
           <Link
             href="/"
-            className={cn("text-2xl font-normal font-headline", linkColor)}
+            className="text-2xl font-normal font-headline text-foreground"
           >
             PulsoASAP
           </Link>
@@ -51,10 +34,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  linkColor
-                )}
+                className='text-sm font-medium transition-colors hover:text-primary text-foreground'
               >
                 {link.label}
               </Link>
@@ -62,7 +42,7 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center" style={{width: '150px', justifyContent: 'flex-end'}}>
-             <Button variant="outline" className={cn('rounded-full border-white text-white hover:bg-white/10 hover:text-white', isScrolled ? 'border-primary text-primary hover:bg-primary/10 hover:text-primary bg-background' : 'bg-transparent')} asChild>
+             <Button variant="outline" className='rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary bg-background' asChild>
               <a href="#contato">Entrar em contato</a>
             </Button>
           </div>
@@ -73,7 +53,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className={cn('hover:bg-white/10', linkColor)}
+                  className='hover:bg-accent/10 text-foreground'
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
@@ -127,7 +107,6 @@ export function Header() {
             </Sheet>
           </div>
         </div>
-      </Container>
     </header>
   );
 }

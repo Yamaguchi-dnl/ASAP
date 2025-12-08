@@ -26,7 +26,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased text-foreground">
         <Header />
-        <main>{children}</main>
+        <main className="pt-20">{children}</main>
         <FaqSection />
         <Footer />
         <Toaster />
