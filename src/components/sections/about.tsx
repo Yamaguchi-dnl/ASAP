@@ -100,10 +100,12 @@ export function AboutSection() {
                         exit="exit"
                         variants={textVariants}
                         transition={{ duration: 0.5, ease: 'easeInOut' }}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-8"
                     >
-                        <p className="text-foreground/80">{currentFounder.bio1}</p>
-                        <p className="text-foreground/80">{currentFounder.bio2}</p>
+                        <h3 className="text-2xl font-bold text-foreground mb-6">{currentFounder.name}</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <p className="text-foreground/80">{currentFounder.bio1}</p>
+                            <p className="text-foreground/80">{currentFounder.bio2}</p>
+                        </div>
                     </motion.div>
                 </AnimatePresence>
             </div>
