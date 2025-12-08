@@ -35,17 +35,17 @@ export function BenefitsSection() {
   };
 
   return (
-    <section id="beneficios" className="py-20 sm:py-32">
+    <section id="beneficios" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-5xl font-normal text-foreground leading-tight">
+            <h2 className="text-4xl md:text-5xl font-normal leading-tight">
               Funcionários que as empresas querem manter. <br />
-              <span className="text-primary">
+              <span className="text-accent">
                 Empresas onde os profissionais querem trabalhar.
               </span>
             </h2>
-             <Button variant="link" size="lg" className="mt-4 p-0 text-base">
+             <Button variant="link" size="lg" className="mt-4 p-0 text-base text-primary-foreground hover:text-accent">
                 Explore as soluções que tornam esses benefícios possíveis{' '}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -53,12 +53,12 @@ export function BenefitsSection() {
 
           <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
             <Tabs defaultValue="empresas" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="empresas">Para Empresas</TabsTrigger>
-                <TabsTrigger value="colaboradores">Para Colaboradores</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 bg-primary-foreground/20 text-primary-foreground">
+                <TabsTrigger value="empresas" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Empresas</TabsTrigger>
+                <TabsTrigger value="colaboradores" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Colaboradores</TabsTrigger>
               </TabsList>
               <TabsContent value="empresas">
-                <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
+                <div className="bg-background text-foreground p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
                   <ul className="space-y-4">
                     {benefitsForCompanies.map((benefit, index) => (
                       <li key={index} className="flex items-start">
@@ -70,7 +70,7 @@ export function BenefitsSection() {
                 </div>
               </TabsContent>
               <TabsContent value="colaboradores">
-                <div className="bg-blue-50/50 border-2 border-blue-200 p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
+                <div className="bg-background text-foreground p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
                   <ul className="space-y-4">
                     {benefitsForEmployees.map((benefit, index) => (
                       <li key={index} className="flex items-start">
