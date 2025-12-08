@@ -64,17 +64,6 @@ export function HeroSection() {
               PULSO<br />ASAP<span className='text-primary'>.</span>
             </h1>
           </MotionWrapper>
-          <MotionWrapper
-            variants={textVariants}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
-          >
-            <p className="mt-6 text-base md:text-lg text-white">
-              Atuamos com soluções integradas que fortalecem a cultura
-              corporativa e impulsionam transformações profissionais que
-              sustentam ambientes de trabalho mais saudáveis no curto, médio e
-              longo prazos.
-            </p>
-          </MotionWrapper>
         </motion.div>
       </Container>
     </section>
