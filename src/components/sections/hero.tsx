@@ -51,7 +51,7 @@ export function HeroSection() {
             variants={textVariants}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           >
-            <p className="text-base font-medium text-white ml-1 max-w-2xl">
+            <p className="text-base font-medium text-white max-w-2xl">
               Gestão de Riscos e Compliance para <br />prevenir a exaustão
               profissional.
             </p>
