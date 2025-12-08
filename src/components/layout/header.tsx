@@ -21,7 +21,7 @@ export function Header() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
-      <div className="flex h-20 items-center justify-between bg-background backdrop-blur-sm shadow-lg rounded-full px-6 border border-white/20">
+      <div className="flex h-16 items-center justify-between bg-background backdrop-blur-sm shadow-lg rounded-full px-6 border border-white/20">
           <Link
             href="/"
             className="text-2xl font-normal font-headline text-foreground"
