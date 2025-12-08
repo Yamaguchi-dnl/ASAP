@@ -14,6 +14,11 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
 
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  };
+
   return (
     <section
       id="home"
@@ -39,14 +44,27 @@ export function HeroSection() {
         <motion.div
           style={{ opacity, scale }}
           className="absolute bottom-24 md:bottom-32 left-4 sm:left-6 lg:left-8 text-left"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <p className="text-base font-medium text-white max-w-sm md:max-w-2xl">
+          <motion.p 
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+            className="text-base font-medium text-white max-w-sm md:max-w-2xl">
             Gestão de Riscos e Compliance para <br />prevenir a exaustão
             profissional.
-          </p>
-          <h1 className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]">
+          </motion.p>
+          <motion.h1 
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4 }}
+            className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]">
             PULSO<br />ASAP<span className='text-primary'>.</span>
-          </h1>
+          </motion.h1>
         </motion.div>
       </Container>
     </section>

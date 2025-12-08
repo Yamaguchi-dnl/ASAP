@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 const navLinks = [
   { href: '#beneficios', label: 'Benefícios' },
@@ -20,8 +21,12 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
-      <div className="flex h-16 items-center justify-between bg-background shadow-lg rounded-full px-6 border border-white/20">
+    <motion.header 
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+      <div className="flex h-16 items-center justify-between bg-background shadow-lg rounded-full px-6">
           <Link
             href="/"
             className="flex items-center justify-center"
@@ -123,6 +128,6 @@ export function Header() {
             </Sheet>
           </div>
         </div>
-    </header>
+    </motion.header>
   );
 }
