@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -8,23 +7,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
-
-const founders = [
-  {
-    id: 'rosa',
-    name: 'Rosa Azevedo',
-    image: PlaceHolderImages.find((p) => p.id === 'testimonial-1'),
-    bio1: 'Formada em Administração de Empresas e pós-graduada em Gestão de Projetos pela FAE Business School. Com liderança em áreas de GRC e dentro deste ecossistema nas frentes de gestão de riscos, Regulatório, Canal Ético, Prevenção a Fraudes, Due Diligence e PLD-FT.',
-    bio2: 'Com mais de 20 anos de experiência, atuou em grandes e médias empresas, desenvolvendo uma visão estratégica e prática sobre os desafios do mundo corporativo. Sua vivência real com exaustão profissional foi um dos principais impulsionadores para a criação do Pulso ASAP.'
-  },
-  {
-    id: 'helga',
-    name: 'Helga Orue',
-    image: PlaceHolderImages.find((p) => p.id === 'testimonial-3'),
-    bio1: 'Formada em Administração de Empresas pela PUC-Pr e pós-graduada em Contabilidade e com Master em compliance pela PUC de Buenos Aires. Com atuação em prevenção a fraudes, compliance e controles internos.',
-    bio2: 'Traz uma bagagem sólida na implementação de programas de integridade e na criação de culturas organizacionais éticas. Sua expertise contribui para a abordagem equilibrada do Pulso ASAP, que une o bem-estar dos colaboradores com a robustez da governança corporativa.'
-  },
-];
+import { useLanguage } from '@/context/language-context';
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0 },
@@ -77,6 +60,8 @@ const bioParagraphVariant: Variants = {
 
 export function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { translations } = useLanguage();
+  const founders = translations.about.founders;
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % founders.length);
@@ -89,6 +74,7 @@ export function AboutSection() {
   };
 
   const currentFounder = founders[currentIndex];
+  const founderImage = PlaceHolderImages.find((p) => p.id === currentFounder.imageId);
 
   return (
     <motion.section 
@@ -104,7 +90,7 @@ export function AboutSection() {
           {/* Coluna da Imagem */}
           <motion.div className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>
             <AnimatePresence mode="wait">
-              {currentFounder.image && (
+              {founderImage && (
                 <motion.div
                   key={currentFounder.id}
                   initial="hidden"
@@ -114,11 +100,11 @@ export function AboutSection() {
                   className="absolute inset-0"
                 >
                   <Image
-                    src={currentFounder.image.imageUrl}
+                    src={founderImage.imageUrl}
                     alt={currentFounder.name}
                     fill
                     className="object-cover"
-                    data-ai-hint={currentFounder.image.imageHint}
+                    data-ai-hint={founderImage.imageHint}
                   />
                 </motion.div>
               )}
@@ -129,7 +115,7 @@ export function AboutSection() {
           <div className="flex flex-col justify-between h-full min-h-[550px]">
              <motion.div variants={textContentVariants}>
                <h2 className="text-4xl md:text-6xl font-normal text-foreground">
-                Quem somos
+                {translations.about.title}
               </h2>
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
             </motion.div>

@@ -1,9 +1,14 @@
+'use client';
+
 import { Twitter, Linkedin, Instagram, FileText, Mail, Globe } from 'lucide-react';
 import { Container } from './container';
 import Link from 'next/link';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
+import { useLanguage } from '@/context/language-context';
 
 export function Footer() {
+  const { translations } = useLanguage();
+
   return (
     <footer className="bg-secondary text-secondary-foreground py-12">
       <Container>
@@ -12,7 +17,7 @@ export function Footer() {
             <div>
               <h3 className="text-lg font-bold">PulsoASAP</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Acesse nossas redes:
+                {translations.footer.social}
               </p>
               <div className="flex gap-4 mt-4">
                 <a href="#" className="hover:opacity-75 transition-opacity">
@@ -30,22 +35,22 @@ export function Footer() {
               </div>
             </div>
             <div className="space-y-4">
-              <h3 className="text-lg font-bold">Links Úteis</h3>
+              <h3 className="text-lg font-bold">{translations.footer.usefulLinks}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="#" className="flex items-center gap-2 hover:underline">
-                    <FileText size={16} /> Código de ética e de conduta
+                    <FileText size={16} /> {translations.footer.codeOfConduct}
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="flex items-center gap-2 hover:underline">
-                    <Mail size={16} /> Newsletters
+                    <Mail size={16} /> {translations.footer.newsletters}
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="space-y-4">
-              <h3 className="text-lg font-bold">Contato</h3>
+              <h3 className="text-lg font-bold">{translations.footer.contact}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                  <li className="flex items-center gap-2">
                   <Mail size={16} /> contato@projetoasap.com.br
@@ -61,7 +66,7 @@ export function Footer() {
               CNPJ XX.XXX.XXX-XX
             </p>
             <p className="text-xs text-muted-foreground mt-2 sm:mt-0">
-              &copy; {new Date().getFullYear()} PulsoASAP. Todos os direitos reservados.
+              &copy; {new Date().getFullYear()} {translations.footer.copy}
             </p>
           </div>
         </MotionWrapper>

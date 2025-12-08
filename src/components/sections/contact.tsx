@@ -24,6 +24,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
+import { useLanguage } from '@/context/language-context';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'O nome deve ter pelo menos 2 caracteres.' }),
@@ -43,6 +44,8 @@ type FormValues = z.infer<typeof formSchema>;
 
 export function ContactSection() {
   const { toast } = useToast();
+  const { translations } = useLanguage();
+  const t = translations.contact;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -55,8 +58,8 @@ export function ContactSection() {
   const onSubmit = (data: FormValues) => {
     console.log(data);
     toast({
-      title: 'Mensagem enviada com sucesso!',
-      description: 'Obrigado por entrar em contato. Retornaremos em breve.',
+      title: t.toast.title,
+      description: t.toast.description,
     });
     form.reset();
   };
@@ -76,11 +79,11 @@ export function ContactSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground">Entre em Contato</h2>
+            <h2 className="text-4xl md:text-6xl font-normal text-foreground">{t.title}</h2>
           </MotionWrapper>
           <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
             <p className="mt-4 text-lg text-foreground/80">
-              Preencha o formulário abaixo e entraremos em contato.
+              {t.subtitle}
             </p>
           </MotionWrapper>
         </div>
@@ -93,9 +96,9 @@ export function ContactSection() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Seu nome</FormLabel>
+                    <FormLabel>{t.form.name.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Seu nome completo" {...field} />
+                      <Input placeholder={t.form.name.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -106,9 +109,9 @@ export function ContactSection() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>E-mail</FormLabel>
+                    <FormLabel>{t.form.email.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder="seu@email.com" {...field} />
+                      <Input placeholder={t.form.email.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -119,9 +122,9 @@ export function ContactSection() {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Telefone</FormLabel>
+                    <FormLabel>{t.form.phone.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder="(XX) XXXXX-XXXX" {...field} />
+                      <Input placeholder={t.form.phone.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -132,20 +135,17 @@ export function ContactSection() {
                 name="service"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Selecione o serviço desejado</FormLabel>
+                    <FormLabel>{t.form.service.label}</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Selecione um serviço" />
+                          <SelectValue placeholder={t.form.service.placeholder} />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="mentorias">Mentorias ASAP</SelectItem>
-                        <SelectItem value="palestras">Palestras ASAP</SelectItem>
-                        <SelectItem value="patrocinio">Patrocínio ASAP</SelectItem>
-                        <SelectItem value="produto">Produto ASAP</SelectItem>
-                        <SelectItem value="solucoes">Soluções Regulatórias ASAP</SelectItem>
-                        <SelectItem value="treinamento">Treinamento ASAP</SelectItem>
+                        {t.form.service.options.map(option => (
+                           <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -157,9 +157,9 @@ export function ContactSection() {
                 name="companyName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Nome da empresa</FormLabel>
+                    <FormLabel>{t.form.companyName.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Sua empresa" {...field} />
+                      <Input placeholder={t.form.companyName.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -170,9 +170,9 @@ export function ContactSection() {
                 name="employeeCount"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Quantos funcionários possui?</FormLabel>
+                    <FormLabel>{t.form.employeeCount.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Ex: 50-100" {...field} />
+                      <Input placeholder={t.form.employeeCount.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -183,9 +183,9 @@ export function ContactSection() {
                 name="companySite"
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
-                    <FormLabel>Site da empresa</FormLabel>
+                    <FormLabel>{t.form.companySite.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder="www.suaempresa.com.br" {...field} />
+                      <Input placeholder={t.form.companySite.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -196,9 +196,9 @@ export function ContactSection() {
                 name="challenge"
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
-                    <FormLabel>Descreva o principal desafio que você ou sua empresa está enfrentando</FormLabel>
+                    <FormLabel>{t.form.challenge.label}</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Descreva aqui..." {...field} />
+                      <Textarea placeholder={t.form.challenge.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -209,9 +209,9 @@ export function ContactSection() {
                 name="goal"
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
-                    <FormLabel>Qual objetivo espera alcançar com os serviços do Pulso ASAP?</FormLabel>
+                    <FormLabel>{t.form.goal.label}</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Descreva aqui..." {...field} />
+                      <Textarea placeholder={t.form.goal.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -222,9 +222,9 @@ export function ContactSection() {
                 name="details"
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
-                    <FormLabel>Há alguma particularidade ou detalhe que gostaria de compartilhar?</FormLabel>
+                    <FormLabel>{t.form.details.label}</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Descreva aqui..." {...field} />
+                      <Textarea placeholder={t.form.details.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -235,9 +235,9 @@ export function ContactSection() {
                 name="howYouFoundUs"
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
-                    <FormLabel>Como conheceu o Pulso ASAP?</FormLabel>
+                    <FormLabel>{t.form.howYouFoundUs.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Ex: LinkedIn, Indicação..." {...field} />
+                      <Input placeholder={t.form.howYouFoundUs.placeholder} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -245,7 +245,7 @@ export function ContactSection() {
               />
               <div className="md:col-span-2">
                 <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-all duration-300 hover:scale-105">
-                  Enviar Mensagem
+                  {t.form.submitButton}
                 </Button>
               </div>
             </form>

@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Container } from '@/components/layout/container';
+import { useLanguage } from '@/context/language-context';
 
 export function HeroSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -10,6 +11,7 @@ export function HeroSection() {
     target: targetRef,
     offset: ['end end', 'end start'],
   });
+  const { translations } = useLanguage();
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
@@ -82,8 +84,8 @@ export function HeroSection() {
             variants={pVariants}
             className="text-lg font-medium text-white max-w-sm md:max-w-2xl ml-1"
           >
-            Gestão de Riscos e Compliance para <br />
-            prevenir a exaustão profissional.
+            {translations.hero.subtitle.line1} <br />
+            {translations.hero.subtitle.line2}
           </motion.p>
           <motion.h1
             variants={h1Variants}

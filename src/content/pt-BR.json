@@ -1,0 +1,275 @@
+{
+  "header": {
+    "navLinks": [
+      { "href": "#beneficios", "label": "Benefícios" },
+      { "href": "#sobre", "label": "Sobre Nós" },
+      { "href": "#servicos", "label": "Serviços" },
+      { "href": "#depoimentos", "label": "Depoimentos" },
+      { "href": "#patrocinio", "label": "Patrocínio" }
+    ],
+    "contactButton": "Entrar em contato",
+    "contactButtonMobile": "Fale Conosco"
+  },
+  "hero": {
+    "subtitle": {
+      "line1": "Gestão de Riscos e Compliance para",
+      "line2": "prevenir a exaustão profissional."
+    }
+  },
+  "benefits": {
+    "title": {
+      "line1": "Funcionários que as empresas querem manter.",
+      "line2": "Empresas onde os profissionais querem trabalhar."
+    },
+    "exploreSolutions": "Explore as soluções que tornam esses benefícios possíveis",
+    "tabs": {
+      "companies": "Para Empresas",
+      "employees": "Para Colaboradores"
+    },
+    "benefitsForCompanies": [
+      "Cultura corporativa mais sólida, ética, coerente e sustentável.",
+      "Redução de custos com turnover, absenteísmo e improdutividade.",
+      "Redução de riscos organizacionais ligados à exaustão, clima e relações de trabalho.",
+      "Equipes mais estáveis, preparadas e alinhadas às prioridades estratégicas.",
+      "Melhoria consistente na reputação, confiança interna e marca empregadora."
+    ],
+    "benefitsForEmployees": [
+      "Maior equilíbrio emocional e capacidade de lidar com pressão e incertezas.",
+      "Clareza sobre limites, prioridades e expectativas no trabalho.",
+      "Fortalecimento da autonomia, da responsabilidade e da confiança pessoal.",
+      "Melhor comunicação, relações mais saudáveis e menos conflitos.",
+      "Evolução profissional alinhada ao propósito, às habilidades e ao momento de carreira."
+    ]
+  },
+  "about": {
+    "title": "Quem somos",
+    "founders": [
+      {
+        "id": "rosa",
+        "name": "Rosa Azevedo",
+        "imageId": "testimonial-1",
+        "bio1": "Formada em Administração de Empresas e pós-graduada em Gestão de Projetos pela FAE Business School. Com liderança em áreas de GRC e dentro deste ecossistema nas frentes de gestão de riscos, Regulatório, Canal Ético, Prevenção a Fraudes, Due Diligence e PLD-FT.",
+        "bio2": "Com mais de 20 anos de experiência, atuou em grandes e médias empresas, desenvolvendo uma visão estratégica e prática sobre os desafios do mundo corporativo. Sua vivência real com exaustão profissional foi um dos principais impulsionadores para a criação do Pulso ASAP."
+      },
+      {
+        "id": "helga",
+        "name": "Helga Orue",
+        "imageId": "testimonial-3",
+        "bio1": "Formada em Administração de Empresas pela PUC-Pr e pós-graduada em Contabilidade e com Master em compliance pela PUC de Buenos Aires. Com atuação em prevenção a fraudes, compliance e controles internos.",
+        "bio2": "Traz uma bagagem sólida na implementação de programas de integridade e na criação de culturas organizacionais éticas. Sua expertise contribui para a abordagem equilibrada do Pulso ASAP, que une o bem-estar dos colaboradores com a robustez da governança corporativa."
+      }
+    ]
+  },
+    "ourApproach": {
+    "slides": [
+      {
+        "id": "approach",
+        "title": "Nossa Abordagem",
+        "imageId": "service-workshop",
+        "description": "Com presença no Brasil e na Espanha, o Pulso ASAP (Ação, Sustentabilidade, Autoconhecimento e Propósito) surgiu da necessidade de abordar o tema de exaustão profissional de maneira clara, objetiva e aplicável ao dia a dia corporativo.",
+        "points": [
+          "Vivência real de exaustão profissional de uma das fundadoras.",
+          "Mais de 20 anos de atuação em ambiente corporativo.",
+          "Experiência profissional nas áreas de Compliance, Gestão de Riscos, Canal Ético e Controles internos.",
+          "Metodologia com abordagem tripla: emocional, estratégica e cultural.",
+          "Soluções personalizadas para o cliente, seja empresa ou colaborador."
+        ]
+      },
+      {
+        "id": "delivery",
+        "title": "O que entregamos?",
+        "imageId": "service-consulting",
+        "reputation": "Reputação positiva",
+        "description": "Partimos da premissa de que pessoas são o principal ativo de qualquer organização. Por isso, acreditamos que uma mudança verdadeira precisa contemplar, de forma equilibrada, ambos os lados dessa balança:",
+        "forCompanies": {
+          "title": "Para Empresas",
+          "points": [
+            "Obrigatoriedades Regulatórias",
+            "Gestão de Riscos e Compliance",
+            "Melhores práticas"
+          ]
+        },
+        "forEmployees": {
+          "title": "Para Funcionários",
+          "points": [
+            "Autoconhecimento",
+            "Autoresponsabilidade",
+            "Inteligência Emocional"
+          ]
+        }
+      },
+      {
+        "id": "pillars",
+        "title": "Nossos Pilares",
+        "imageId": "service-mentorship",
+        "points": [
+          "Liderança consciente (Tone at the top e Cuidar de quem cuida)",
+          "GRC: Governança, Riscos e Compliance",
+          "Gestão responsável de pessoas",
+          "Cultura organizacional saudável e engajadora",
+          "Autoconsciência e desenvolvimento pessoal (Indivíduo)",
+          "Eficiência e inovação nos processos"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "Nossos Produtos e Serviços",
+    "items": [
+      {
+        "id": "produto-asap",
+        "title": "Produto ASAP",
+        "description": "Livro: Crachá Atômico: Pré-lançamento: fevereiro de 2026. Um relato profundo sobre os bastidores da rotina corporativa, a exaustão profissional e autoconhecimento.",
+        "subItems": [],
+        "cta": "Quero ser avisado do lançamento"
+      },
+      {
+        "id": "mentoria-asap",
+        "title": "Mentoria ASAP",
+        "description": "Sem receitas mágicas ou fórmulas prontas. Nossa metodologia foi criada para oferecer uma experiência de mentoria personalizada, alinhada aos objetivos e ao momento de cada profissional.",
+        "subItems": ["ASAP Essencial", "ASAP Social", "ASAP Evolution", "ASAP Anônimos"],
+        "cta": "Explore as opções"
+      },
+      {
+        "id": "palestra-asap",
+        "title": "Palestra ASAP",
+        "description": "Trata-se de uma jornada estruturada de reflexão e expansão de consciência sobre comportamento, estratégia de carreira, relações e responsabilidade compartilhada.",
+        "subItems": ["Crachá Atômico", "Corporativa", "Áreas Redflag"],
+        "cta": "Explore as opções"
+      },
+      {
+        "id": "solucoes-asap",
+        "title": "Soluções Regulatórias ASAP",
+        "description": "Atuamos na interseção entre gestão de riscos, compliance e cultura organizacional, oferecendo diagnósticos precisos, implantações eficientes e práticas que fortalecem a responsabilidade institucional.",
+        "subItems": ["DRPS NR1", "Implantação NR1", "Assessment GRC"],
+        "cta": "Conheça nossas soluções"
+      },
+      {
+        "id": "treinamento-asap",
+        "title": "Treinamento ASAP",
+        "description": "Uma metodologia criada para atuar diretamente em comportamentos, práticas e percepções que impactam a segurança, a ética e a cultura corporativa.",
+        "subItems": ["Treinamento Interventivos"],
+        "cta": "Conheça nossa opção"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "O que Nossos Clientes Dizem",
+    "subtitle": "Histórias reais de quem já foi transformado pela nossa metodologia e abordagem única.",
+    "items": [
+      {
+        "quote": "A mentoria me fez olhar para minha carreira com uma visão muito mais estratégica e madura. Foi um verdadeiro divisor de águas. A metodologia é prática, humana e profundamente transformadora, ao unir autoconhecimento com direcionamentos de carreira. Sem dúvida, o melhor investimento que fiz.",
+        "name": "Dafini Boldrini",
+        "title": "participante do programa ASAP Essencial"
+      },
+      {
+        "quote": "O programa de mentoria foi um divisor de águas na minha carreira. Consegui clareza e confiança para assumir novos desafios.",
+        "name": "Marcos Andrade",
+        "title": "Desenvolvedor Sênior, FinSolutions"
+      },
+      {
+        "quote": "Nunca imaginei que investir em bem-estar traria tanto retorno em produtividade. A PulsoASAP foi essencial nesse processo.",
+        "name": "Beatriz Lima",
+        "title": "CEO, Creative Co."
+      }
+    ]
+  },
+  "sponsorship": {
+    "title": "Seja um Patrocinador",
+    "subtitle": "Torne-se um patrocinador e reforce o posicionamento da sua empresa na promoção de ambientes de trabalho saudáveis.",
+    "tiers": [
+      { "name": "Cota Prata", "isPopular": false },
+      { "name": "Cota Ouro", "isPopular": true },
+      { "name": "Cota Master", "isPopular": false }
+    ],
+    "mostPopular": "Mais Popular",
+    "note": "* A aceitação da parceria ocorre somente após o processo de due diligence.",
+    "ourSponsors": "Nossos Patrocinadores"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Preencha o formulário abaixo e entraremos em contato.",
+    "toast": {
+      "title": "Mensagem enviada com sucesso!",
+      "description": "Obrigado por entrar em contato. Retornaremos em breve."
+    },
+    "form": {
+      "name": { "label": "Seu nome", "placeholder": "Seu nome completo" },
+      "email": { "label": "E-mail", "placeholder": "seu@email.com" },
+      "phone": { "label": "Telefone", "placeholder": "(XX) XXXXX-XXXX" },
+      "service": {
+        "label": "Selecione o serviço desejado",
+        "placeholder": "Selecione um serviço",
+        "options": [
+          { "value": "mentorias", "label": "Mentorias ASAP" },
+          { "value": "palestras", "label": "Palestras ASAP" },
+          { "value": "patrocinio", "label": "Patrocínio ASAP" },
+          { "value": "produto", "label": "Produto ASAP" },
+          { "value": "solucoes", "label": "Soluções Regulatórias ASAP" },
+          { "value": "treinamento", "label": "Treinamento ASAP" }
+        ]
+      },
+      "companyName": { "label": "Nome da empresa", "placeholder": "Sua empresa" },
+      "employeeCount": { "label": "Quantos funcionários possui?", "placeholder": "Ex: 50-100" },
+      "companySite": { "label": "Site da empresa", "placeholder": "www.suaempresa.com.br" },
+      "challenge": {
+        "label": "Descreva o principal desafio que você ou sua empresa está enfrentando",
+        "placeholder": "Descreva aqui..."
+      },
+      "goal": {
+        "label": "Qual objetivo espera alcançar com os serviços do Pulso ASAP?",
+        "placeholder": "Descreva aqui..."
+      },
+      "details": {
+        "label": "Há alguma particularidade ou detalhe que gostaria de compartilhar?",
+        "placeholder": "Descreva aqui..."
+      },
+      "howYouFoundUs": {
+        "label": "Como conheceu o Pulso ASAP?",
+        "placeholder": "Ex: LinkedIn, Indicação..."
+      },
+      "submitButton": "Enviar Mensagem"
+    }
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "items": [
+      {
+        "question": "O Pulso ASAP é um programa terapêutico?",
+        "answer": "O Pulso ASAP não oferece serviços terapêuticos. Toda a metodologia é fundamentada em GRC e em desenvolvimento profissional, sem caráter clínico."
+      },
+      {
+        "question": "O que significa ASAP?",
+        "answer": "No contexto utilizado pela empresa, ASAP significa Ação, Sustentabilidade, Autoconhecimento e Propósito. Esses pilares orientam todas as práticas e métodos aplicados pela empresa."
+      },
+      {
+        "question": "O Pulso ASAP atende empresas fora do Brasil?",
+        "answer": "Sim. Trabalhamos em português, espanhol e inglês. Realizamos atendimentos presenciais no Brasil e na Espanha. Para outras localidades, basta entrar em contato com nossa equipe para avaliarmos a melhor forma de atendimento."
+      },
+      {
+        "question": "Existe benefícios para clientes que contratam mais de um serviço?",
+        "answer": "Sim, entre em contato com nossa equipe de atendimento."
+      },
+      {
+        "question": "É possível medir o retorno sobre o investimento (ROI) do treinamento?",
+        "answer": "Sim. Podemos auxiliar na definição de indicadores de resultado e acompanhar impactos no engajamento e bem-estar da equipe."
+      },
+      {
+        "question": "Como o conteúdo é adaptado para diferentes níveis hierárquicos ou áreas da empresa?",
+        "answer": "O conteúdo é customizado após o alinhamento inicial, considerando as necessidades da empresa, da equipe, do setor ou do profissional."
+      },
+      {
+        "question": "As informações da minha empresa são tratadas com confidencialidade?",
+        "answer": "Sim. Todas as informações compartilhadas são tratadas com rigor ético e confidencialidade, de acordo com práticas de LGPD, GRC e compliance."
+      }
+    ]
+  },
+  "footer": {
+    "social": "Acesse nossas redes:",
+    "usefulLinks": "Links Úteis",
+    "codeOfConduct": "Código de ética e de conduta",
+    "newsletters": "Newsletters",
+    "contact": "Contato",
+    "copy": "PulsoASAP. Todos os direitos reservados."
+  }
+}

@@ -11,35 +11,13 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 import { Container } from '@/components/layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
-
-interface Testimonial {
-  quote: string;
-  name: string;
-  title: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      'A mentoria me fez olhar para minha carreira com uma visão muito mais estratégica e madura. Foi um verdadeiro divisor de águas. A metodologia é prática, humana e profundamente transformadora, ao unir autoconhecimento com direcionamentos de carreira. Sem dúvida, o melhor investimento que fiz.',
-    name: 'Dafini Boldrini',
-    title: 'participante do programa ASAP Essencial',
-  },
-  {
-    quote:
-      'O programa de mentoria foi um divisor de águas na minha carreira. Consegui clareza e confiança para assumir novos desafios.',
-    name: 'Marcos Andrade',
-    title: 'Desenvolvedor Sênior, FinSolutions',
-  },
-  {
-    quote:
-      'Nunca imaginei que investir em bem-estar traria tanto retorno em produtividade. A PulsoASAP foi essencial nesse processo.',
-    name: 'Beatriz Lima',
-    title: 'CEO, Creative Co.',
-  },
-];
+import { useLanguage } from '@/context/language-context';
 
 export function TestimonialsSection() {
+  const { translations } = useLanguage();
+  const t = translations.testimonials;
+  const testimonials = t.items;
+
   const titleVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },
@@ -63,13 +41,12 @@ export function TestimonialsSection() {
         <div className="max-w-4xl mx-auto text-center">
             <MotionWrapper variants={titleVariants}>
               <h2 className="text-4xl md:text-6xl font-normal text-foreground">
-                O que Nossos Clientes Dizem
+                {t.title}
               </h2>
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
               <p className="mt-4 text-lg text-foreground/80">
-                Histórias reais de quem já foi transformado pela nossa
-                metodologia e abordagem única.
+                {t.subtitle}
               </p>
             </MotionWrapper>
         </div>

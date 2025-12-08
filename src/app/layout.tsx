@@ -1,14 +1,17 @@
+'use client';
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FaqSection } from '@/components/sections/faq';
+import { LanguageProvider } from '@/context/language-context';
 
-export const metadata: Metadata = {
-  title: 'PulsoASAP',
-  description: 'Promovendo saúde e bem-estar no ambiente de trabalho.',
-};
+// export const metadata: Metadata = {
+//   title: 'PulsoASAP',
+//   description: 'Promovendo saúde e bem-estar no ambiente de trabalho.',
+// };
 
 export default function RootLayout({
   children,
@@ -25,11 +28,13 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased text-foreground">
-        <Header />
-        <main className="pt-20">{children}</main>
-        <FaqSection />
-        <Footer />
-        <Toaster />
+        <LanguageProvider>
+          <Header />
+          <main className="pt-20">{children}</main>
+          <FaqSection />
+          <Footer />
+          <Toaster />
+        </LanguageProvider>
       </body>
     </html>
   );
