@@ -24,15 +24,17 @@ export function Header() {
       <div className="flex h-20 items-center justify-between bg-background shadow-lg rounded-full px-6 border border-white/20">
           <Link
             href="/"
-            className="flex items-center justify-center h-16 w-16 bg-white rounded-lg p-2 overflow-hidden"
+            className="flex items-center justify-center"
           >
-            <Image 
-              src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
-              alt="PulsoASAP Logo"
-              width={120}
-              height={40}
-              className='object-cover'
-            />
+            <div className="h-16 w-16 bg-white rounded-lg p-2 overflow-hidden flex items-center justify-center">
+              <Image 
+                src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
+                alt="PulsoASAP Logo"
+                width={120}
+                height={40}
+                className='object-cover'
+              />
+            </div>
           </Link>
           
           <nav className="hidden md:flex items-center gap-6">
@@ -72,16 +74,18 @@ export function Header() {
                 <div className="flex justify-between items-center p-4 border-b">
                    <Link
                     href="/"
-                    className="flex items-center justify-center h-14 w-14 bg-white rounded-lg p-2 overflow-hidden"
+                    className="flex items-center justify-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                     <Image 
-                        src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
-                        alt="PulsoASAP Logo"
-                        width={120}
-                        height={40}
-                        className='object-cover'
-                      />
+                     <div className="h-14 w-14 bg-white rounded-lg p-2 overflow-hidden flex items-center justify-center">
+                      <Image 
+                          src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
+                          alt="PulsoASAP Logo"
+                          width={120}
+                          height={40}
+                          className='object-cover'
+                        />
+                      </div>
                   </Link>
                   <Button
                     variant="ghost"
