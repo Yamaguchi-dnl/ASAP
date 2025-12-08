@@ -87,23 +87,21 @@ const approachData = [
     title: 'Nossos Pilares',
     image: PlaceHolderImages.find((p) => p.id === 'service-mentorship'),
     content: (
-       <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
+       <ul className="space-y-4 mt-8">
         {[
-          { title: 'Liderança consciente', icon: <Target /> },
-          { title: 'GRC', icon: <Shield /> },
-          { title: 'Gestão de pessoas', icon: <Handshake /> },
-          { title: 'Cultura organizacional', icon: <Zap /> },
-          { title: 'Autoconsciência', icon: <Brain /> },
-          { title: 'Inovação nos processos', icon: <Lightbulb /> },
+          'Liderança consciente (Tone at the top e Cuidar de quem cuida)',
+          'GRC: Governança, Riscos e Compliance',
+          'Gestão responsável de pessoas',
+          'Cultura organizacional saudável e engajadora',
+          'Autoconsciência e desenvolvimento pessoal (Indivíduo)',
+          'Eficiência e inovação nos processos',
         ].map((pillar, index) => (
-          <Card key={index} className="bg-background/50 border-primary/20 text-center p-3">
-            <div className="text-primary mx-auto w-fit mb-1">
-              {React.cloneElement(pillar.icon, { size: 24 })}
-            </div>
-            <p className='font-medium text-foreground text-sm'>{pillar.title}</p>
-          </Card>
+          <li key={index} className="flex items-start">
+            <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+            <span className='text-foreground/90'>{pillar}</span>
+          </li>
         ))}
-      </div>
+      </ul>
     )
   }
 ];
