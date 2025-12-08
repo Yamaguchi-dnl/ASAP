@@ -58,7 +58,7 @@ export function AboutSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
-          <MotionWrapper className="relative w-full aspect-[4/5] rounded-lg overflow-hidden">
+          <MotionWrapper className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden">
             <AnimatePresence mode="wait">
               {currentFounder.image && (
                 <motion.div
