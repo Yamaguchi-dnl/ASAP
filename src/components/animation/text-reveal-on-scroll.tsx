@@ -16,7 +16,7 @@ const TextRevealOnScroll: FC<TextRevealOnScrollProps> = ({
   const targetRef = useRef<HTMLHeadingElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start end', 'end start'],
+    offset: ['start 0.9', 'start 0.25'],
   });
 
   const words = children?.toString().split(' ') || [];
