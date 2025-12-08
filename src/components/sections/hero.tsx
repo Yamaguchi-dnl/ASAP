@@ -80,7 +80,7 @@ export function HeroSection() {
         >
           <motion.p
             variants={pVariants}
-            className="text-base font-medium text-white max-w-sm md:max-w-2xl"
+            className="text-lg font-medium text-white max-w-sm md:max-w-2xl ml-1"
           >
             Gestão de Riscos e Compliance para <br />
             prevenir a exaustão profissional.
