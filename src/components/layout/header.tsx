@@ -38,7 +38,7 @@ export function Header() {
       <div
         className={cn(
           'flex h-16 items-center justify-between rounded-full px-6 transition-all duration-300',
-          isScrolled ? 'bg-background/80 shadow-lg backdrop-blur-sm' : 'bg-transparent'
+          isScrolled ? 'bg-background/80 shadow-lg backdrop-blur-sm' : 'bg-black/20 backdrop-blur-sm'
         )}
       >
         <Link href="/" className="flex items-center justify-center">
@@ -58,7 +58,10 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors hover:text-primary text-foreground"
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                isScrolled ? "text-foreground" : "text-white hover:text-accent"
+              )}
             >
               {link.label}
             </Link>
@@ -73,13 +76,21 @@ export function Header() {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="rounded-full text-foreground hover:bg-primary/10"
+              className={cn(
+                "rounded-full hover:bg-primary/10",
+                isScrolled ? "text-foreground" : "text-white hover:text-accent hover:bg-white/20"
+              )}
             >
               {language === 'pt-BR' ? 'ES' : 'PT'}
             </Button>
           <Button
             variant="outline"
-            className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary bg-transparent"
+            className={cn(
+              "rounded-full hover:bg-primary/10 bg-transparent",
+              isScrolled 
+                ? "border-primary text-primary hover:text-primary" 
+                : "border-white text-white hover:text-accent hover:border-accent"
+            )}
             asChild
           >
             <a href="#contato">{translations.header.contactButton}</a>
@@ -92,7 +103,10 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:bg-accent/10 text-foreground"
+                className={cn(
+                  "hover:bg-accent/10",
+                  isScrolled ? "text-foreground" : "text-white hover:text-accent"
+                )}
               >
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Abrir menu</span>
