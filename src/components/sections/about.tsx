@@ -83,7 +83,7 @@ export function AboutSection() {
           </MotionWrapper>
 
           {/* Coluna de Texto */}
-          <div className="flex flex-col justify-center h-full">
+          <div className="flex flex-col justify-between h-full min-h-[550px]">
              <MotionWrapper>
                <h2 className="text-4xl md:text-6xl font-normal text-foreground">
                 Quem somos
@@ -110,26 +110,34 @@ export function AboutSection() {
                 </AnimatePresence>
             </div>
 
-
-            <div className="flex items-center gap-4 mt-8">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handlePrev}
-                className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
-              >
-                <ArrowLeft size={20} />
-                <span className="sr-only">Anterior</span>
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handleNext}
-                className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
-              >
-                <ArrowRight size={20} />
-                <span className="sr-only">Próximo</span>
-              </Button>
+            <div className="flex items-center justify-between mt-8 pt-4 border-t border-border">
+                <div className='flex items-center gap-2'>
+                    <span className="text-sm font-semibold">{`0${currentIndex + 1}`}</span>
+                    <div className='w-20 h-px bg-border'>
+                        <motion.div className='h-px bg-primary' style={{width: `${((currentIndex + 1) / founders.length) * 100}%`}}/>
+                    </div>
+                    <span className="text-sm text-muted-foreground">{`0${founders.length}`}</span>
+                </div>
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handlePrev}
+                  className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
+                >
+                  <ArrowLeft size={20} />
+                  <span className="sr-only">Anterior</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleNext}
+                  className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
+                >
+                  <ArrowRight size={20} />
+                  <span className="sr-only">Próximo</span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
