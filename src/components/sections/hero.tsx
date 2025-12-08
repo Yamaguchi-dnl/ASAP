@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Container } from '@/components/layout/container';
-import { MotionWrapper } from '../animation/motion-wrapper';
 
 export function HeroSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -37,7 +36,7 @@ export function HeroSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: 'easeOut', delay: 0.8 },
     },
   };
 
@@ -49,7 +48,6 @@ export function HeroSection() {
       transition: { duration: 0.8, ease: 'easeOut', delay: 0.8 },
     },
   };
-
 
   return (
     <section
@@ -94,7 +92,10 @@ export function HeroSection() {
             PULSO
             <br />
             ASAP
-            <motion.span variants={pointVariant} className="text-accent inline-block">
+            <motion.span
+              variants={pointVariant}
+              className="text-accent inline-block"
+            >
               .
             </motion.span>
           </motion.h1>
