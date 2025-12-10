@@ -128,14 +128,14 @@
         "title": "Mentoría ASAP",
         "description": "Sin recetas mágicas ni fórmulas pre-hechas. Nuestra metodología fue creada para ofrecer una experiencia de mentoría personalizada, alineada a los objetivos y al momento de cada profesional.",
         "subItems": ["ASAP Esencial", "ASAP Social", "ASAP Evolution", "ASAP Anónimos"],
-        "cta": "Explora las opciones"
+        "cta": "Explora las options"
       },
       {
         "id": "palestra-asap",
         "title": "Conferencia ASAP",
         "description": "Se trata de un viaje estructurado de reflexión y expansión de la conciencia sobre comportamiento, estrategia de carrera, relaciones y responsabilidad compartida.",
         "subItems": ["Crachá Atômico", "Corporativa", "Áreas Redflag"],
-        "cta": "Explora las opciones"
+        "cta": "Explora las options"
       },
       {
         "id": "solucoes-asap",
@@ -183,7 +183,7 @@
       { "name": "Cota Master", "isPopular": false }
     ],
     "mostPopular": "Más Popular",
-    "note": "* La aceptación de la asociación ocurre solo después del proceso de due diligence.",
+    "note": "mude esse texto",
     "ourSponsors": "Nuestros Patrocinadores"
   },
   "contact": {
@@ -236,7 +236,7 @@
     "items": [
       {
         "question": "¿Pulso ASAP es un programa terapéutico?",
-        "answer": "Pulso ASAP no ofrece servicios terapéuticos. Toda la metodología se fundamenta en GRC y en desarrollo profesional, sin carácter clínico."
+        "answer": "Pulso ASAP no ofrece services terapéuticos. Toda la metodología se fundamenta en GRC y en desarrollo profesional, sin carácter clínico."
       },
       {
         "question": "¿Qué significa ASAP?",
