@@ -13,7 +13,9 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
       <div className="font-body antialiased text-foreground">
         <Header />
         <main className="pt-20">{children}</main>
-        <FaqSection />
+        <div className="hidden md:block">
+          <FaqSection />
+        </div>
         <Footer />
         <Toaster />
       </div>

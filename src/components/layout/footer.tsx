@@ -1,10 +1,18 @@
 'use client';
 
-import { Twitter, Linkedin, Instagram, FileText, Mail, Globe } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, FileText, Mail, Globe, ChevronDown } from 'lucide-react';
 import { Container } from './container';
 import Link from 'next/link';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { FaqAccordion } from '@/components/sections/faq-accordion';
+
 
 export function Footer() {
   const { translations } = useLanguage();
@@ -34,7 +42,7 @@ export function Footer() {
                 </a>
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="hidden md:block space-y-4">
               <h3 className="text-lg font-bold">{translations.footer.usefulLinks}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -49,7 +57,7 @@ export function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="space-y-4">
+             <div className="space-y-4">
               <h3 className="text-lg font-bold">{translations.footer.contact}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                  <li className="flex items-center gap-2">
@@ -61,6 +69,36 @@ export function Footer() {
               </ul>
             </div>
           </div>
+          
+          {/* Mobile Accordion */}
+          <div className="md:hidden mt-8 border-t border-border pt-4">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className='text-base font-semibold'>{translations.footer.usefulLinks}</AccordionTrigger>
+                <AccordionContent>
+                  <ul className="space-y-4 text-sm pl-2 pt-2">
+                    <li>
+                      <Link href="#" className="flex items-center gap-2 hover:underline">
+                        <FileText size={16} /> {translations.footer.codeOfConduct}
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#" className="flex items-center gap-2 hover:underline">
+                        <Mail size={16} /> {translations.footer.newsletters}
+                      </Link>
+                    </li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className='text-base font-semibold'>{translations.faq.title}</AccordionTrigger>
+                <AccordionContent>
+                  <FaqAccordion />
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
           <div className="mt-8 border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
             <p className="text-xs text-muted-foreground">
               CNPJ XX.XXX.XXX-XX
