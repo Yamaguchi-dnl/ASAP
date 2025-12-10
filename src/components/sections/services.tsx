@@ -14,7 +14,6 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { ArrowRight } from 'lucide-react';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
