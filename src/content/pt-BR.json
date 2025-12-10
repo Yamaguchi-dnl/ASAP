@@ -114,7 +114,10 @@
     ]
   },
   "services": {
-    "title": "Produtos e Serviços",
+    "title": {
+      "line1": "Produtos e",
+      "line2": "Serviços"
+    },
     "description": "Oferecemos soluções integradas para promover um ambiente de trabalho mais saudável e produtivo, focando no bem-estar dos colaboradores e na robustez da governança corporativa.",
     "ctaButton": "Fale com um especialista",
     "items": [
