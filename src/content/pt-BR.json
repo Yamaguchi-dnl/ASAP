@@ -122,35 +122,35 @@
         "title": "Produto ASAP",
         "description": "Livro: Crachá Atômico: Pré-lançamento: fevereiro de 2026. Um relato profundo sobre os bastidores da rotina corporativa, a exaustão profissional e autoconhecimento.",
         "subItems": [],
-        "cta": "👉 Quero ser avisado do lançamento"
+        "cta": "Saber mais"
       },
       {
         "id": "mentoria",
         "title": "Mentoria ASAP",
         "description": "Sem receitas mágicas ou fórmulas prontas. Nossa metodologia foi criada para oferecer uma experiência de mentoria personalizada, alinhada aos objetivos e ao momento de cada profissional.",
         "subItems": ["ASAP Essencial", "ASAP Social", "ASAP Evolution", "ASAP Anônimos"],
-        "cta": "👉 Explore as opções e selecione a que melhor apoia o seu momento de carreira."
+        "cta": "Ver opções de mentoria"
       },
       {
         "id": "palestra",
         "title": "Palestra ASAP",
         "description": "Trata-se de uma jornada estruturada de reflexão e expansão de consciência sobre comportamento, estratégia de carreira, relações e responsabilidade compartilhada, com insights que permanecem muito além do momento da palestra.",
         "subItems": ["Crachá Atômico", "Corporativa", "Áreas Redflag"],
-        "cta": "👉 Explore as opções e descubra como levar essa experiência para sua equipe ou organização."
+        "cta": "Leve para sua empresa"
       },
       {
         "id": "solucoes",
         "title": "Soluções Regulatórias ASAP",
         "description": "Atuamos na interseção entre gestão de riscos, compliance e cultura organizacional, oferecendo diagnósticos precisos, implantações eficientes e práticas que fortalecem a responsabilidade institucional.",
         "subItems": ["DRPS NR1", "Implantação NR1", "Assessment GRC"],
-        "cta": "👉 Conheça nossas soluções e veja como podemos fortalecer a governança da sua organização."
+        "cta": "Fortaleça sua governança"
       },
       {
         "id": "treinamento",
         "title": "Treinamento ASAP",
         "description": "Uma metodologia criada para atuar diretamente em comportamentos, práticas e percepções que impactam a segurança, a ética e a cultura corporativa.",
         "subItems": ["Treinamento Interventivos"],
-        "cta": "👉 Conheça nossa opção e em como podemos te ajudar."
+        "cta": "Capacite sua equipe"
       }
     ]
   },
