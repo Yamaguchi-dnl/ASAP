@@ -58,7 +58,7 @@ export function TestimonialsSection() {
                   align: 'start',
                   loop: true,
                 }}
-                className="w-full"
+                className="w-full max-w-4xl mx-auto"
                 onMouseEnter={plugin.current.stop}
                 onMouseLeave={plugin.current.reset}
               >
@@ -79,8 +79,8 @@ export function TestimonialsSection() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute left-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
-                <CarouselNext className="absolute right-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
+                <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12" />
+                <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12" />
               </Carousel>
             </MotionWrapper>
         </div>
