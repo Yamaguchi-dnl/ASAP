@@ -116,6 +116,7 @@
   "services": {
     "title": "Nuestros Servicios",
     "description": "Ofrecemos soluciones integradas para promover un ambiente de trabajo más saludable y productivo, enfocándonos en el bienestar de los colaboradores y la robustez de la gobernanza corporativa.",
+    "cta": "Quiero saber más",
     "items": [
       {
         "id": "mentoria",
