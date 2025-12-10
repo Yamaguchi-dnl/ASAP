@@ -3,7 +3,7 @@
     "navLinks": [
       { "href": "#beneficios", "label": "Benefícios" },
       { "href": "#sobre", "label": "Sobre Nós" },
-      { "href": "#servicos", "label": "Palestras" },
+      { "href": "#servicos", "label": "Serviços" },
       { "href": "#depoimentos", "label": "Depoimentos" },
       { "href": "#patrocinio", "label": "Patrocínio" }
     ],
@@ -114,15 +114,28 @@
     ]
   },
   "services": {
-    "title": {
-      "line1": "PALESTRAS",
-      "line2": "E EVENTOS"
-    },
-    "description": {
-      "paragraph1": "Um dos mais renomados palestrantes do Brasil, Rony compartilha sua experiência em grandes eventos e com grandes empresas do país.",
-      "paragraph2": "Suas palestras trazem os melhores insights e exemplos práticos daquilo que de fato fez e aprendeu ao longo de sua carreira nas áreas de inovação, empreendedorismo, gente, gestão, estratégia, vendas, customer experience e propósito nas organizações."
-    },
-    "cta": "Quero saber mais"
+    "title": "Nossos Serviços",
+    "description": "Oferecemos soluções integradas para promover um ambiente de trabalho mais saudável e produtivo, focando no bem-estar dos colaboradores e na robustez da governança corporativa.",
+    "items": [
+      {
+        "id": "mentoria",
+        "imageId": "service-mentorship",
+        "title": "Mentoria Individual ou em Grupo",
+        "description": "Programas de desenvolvimento focados em autoconhecimento, gestão de carreira e inteligência emocional para líderes e equipes."
+      },
+      {
+        "id": "consultoria",
+        "imageId": "service-consulting",
+        "title": "Consultoria em GRC e Cultura",
+        "description": "Análise e implementação de políticas de governança, riscos e compliance, alinhadas a uma cultura organizacional de bem-estar."
+      },
+      {
+        "id": "workshops",
+        "imageId": "service-workshop",
+        "title": "Palestras e Workshops",
+        "description": "Eventos customizados sobre prevenção ao burnout, liderança consciente e criação de ambientes de trabalho psicologicamente seguros."
+      }
+    ]
   },
   "testimonials": {
     "title": "O que Nossos Clientes Dizem",

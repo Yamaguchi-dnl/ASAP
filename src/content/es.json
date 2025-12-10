@@ -3,7 +3,7 @@
     "navLinks": [
       { "href": "#beneficios", "label": "Beneficios" },
       { "href": "#sobre", "label": "Sobre Nosotros" },
-      { "href": "#servicos", "label": "Conferencias" },
+      { "href": "#servicos", "label": "Servicios" },
       { "href": "#depoimentos", "label": "Testimonios" },
       { "href": "#patrocinio", "label": "Patrocinio" }
     ],
@@ -114,15 +114,28 @@
     ]
   },
   "services": {
-    "title": {
-      "line1": "CONFERENCIAS",
-      "line2": "Y EVENTOS"
-    },
-    "description": {
-      "paragraph1": "Uno de los más renombrados conferencistas de Brasil, Rony comparte su experiencia en grandes eventos y con grandes empresas del país.",
-      "paragraph2": "Sus conferencias traen los mejores insights y ejemplos prácticos de lo que de hecho hizo y aprendió a lo largo de su carrera en las áreas de innovación, emprendimiento, gente, gestión, estrategia, ventas, customer experience y propósito en las organizaciones."
-    },
-    "cta": "Quiero saber más"
+    "title": "Nuestros Servicios",
+    "description": "Ofrecemos soluciones integradas para promover un ambiente de trabajo más saludable y productivo, enfocándonos en el bienestar de los colaboradores y la robustez de la gobernanza corporativa.",
+    "items": [
+      {
+        "id": "mentoria",
+        "imageId": "service-mentorship",
+        "title": "Mentoría Individual o en Grupo",
+        "description": "Programas de desarrollo enfocados en autoconocimiento, gestión de carrera e inteligencia emocional para líderes y equipos."
+      },
+      {
+        "id": "consultoria",
+        "imageId": "service-consulting",
+        "title": "Consultoría en GRC y Cultura",
+        "description": "Análisis e implementación de políticas de gobernanza, riesgos y compliance, alineadas a una cultura organizacional de bienestar."
+      },
+      {
+        "id": "workshops",
+        "imageId": "service-workshop",
+        "title": "Conferencias y Talleres",
+        "description": "Eventos personalizados sobre prevención del burnout, liderazgo consciente y creación de ambientes de trabajo psicológicamente seguros."
+      }
+    ]
   },
   "testimonials": {
     "title": "Lo que Dicen Nuestros Clientes",
