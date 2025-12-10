@@ -53,6 +53,24 @@
       "description": "Portrait of a woman.",
       "imageUrl": "https://images.unsplash.com/photo-1554727242-77d625b04533?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzk2NTR8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTcyMDczOTY2Nnww&ixlib=rb-4.0.3&q=80&w=1080",
       "imageHint": "professional woman"
+    },
+    {
+      "id": "event-image-1",
+      "description": "Man sitting in a chair on a stage with red background, smiling and holding a microphone.",
+      "imageUrl": "https://images.unsplash.com/photo-1764330100532-610a822708ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGVha2VyJTIwc21pbGluZ3xlbnwwfHx8fDE3NjU0MDAxNDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "speaker smiling"
+    },
+    {
+      "id": "event-image-2",
+      "description": "Man speaking on a large stage with green lighting and a large screen with a logo.",
+      "imageUrl": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29uZmVyZW5jZSUyMHNwZWFrZXJ8ZW58MHx8fHwxNzY1MzUzOTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "conference speaker"
+    },
+    {
+      "id": "event-image-3",
+      "description": "Man speaking on stage with a colorful yellow, blue and green background.",
+      "imageUrl": "https://images.unsplash.com/photo-1627931539006-d5c4677e05ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGVha2VyJTIwc3RhZ2V8ZW58MHx8fHwxNzY1Mzc2NTQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "speaker stage"
     }
   ]
 }

@@ -3,7 +3,7 @@
     "navLinks": [
       { "href": "#beneficios", "label": "Beneficios" },
       { "href": "#sobre", "label": "Sobre Nosotros" },
-      { "href": "#servicos", "label": "Servicios" },
+      { "href": "#servicos", "label": "Conferencias" },
       { "href": "#depoimentos", "label": "Testimonios" },
       { "href": "#patrocinio", "label": "Patrocinio" }
     ],
@@ -114,44 +114,15 @@
     ]
   },
   "services": {
-    "title": "Nuestros Productos y Servicios",
-    "items": [
-      {
-        "id": "produto-asap",
-        "title": "Producto ASAP",
-        "description": "Libro: Crachá Atômico: Prelanzamiento: febrero de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",
-        "subItems": [],
-        "cta": "Quiero ser avisado del lanzamiento"
-      },
-      {
-        "id": "mentoria-asap",
-        "title": "Mentoría ASAP",
-        "description": "Sin recetas mágicas ni fórmulas pre-hechas. Nuestra metodología fue creada para ofrecer una experiencia de mentoría personalizada, alineada a los objetivos y al momento de cada profesional.",
-        "subItems": ["ASAP Esencial", "ASAP Social", "ASAP Evolution", "ASAP Anónimos"],
-        "cta": "Explora las options"
-      },
-      {
-        "id": "palestra-asap",
-        "title": "Conferencia ASAP",
-        "description": "Se trata de un viaje estructurado de reflexión y expansión de la conciencia sobre comportamiento, estrategia de carrera, relaciones y responsabilidad compartida.",
-        "subItems": ["Crachá Atômico", "Corporativa", "Áreas Redflag"],
-        "cta": "Explora las options"
-      },
-      {
-        "id": "solucoes-asap",
-        "title": "Soluciones Regulatorias ASAP",
-        "description": "Actuamos en la intersección entre gestión de riesgos, compliance y cultura organizacional, ofreciendo diagnósticos precisos, implementaciones eficientes y prácticas que fortalecen la responsabilidad institucional.",
-        "subItems": ["DRPS NR1", "Implantación NR1", "Assessment GRC"],
-        "cta": "Conoce nuestras soluciones"
-      },
-      {
-        "id": "treinamento-asap",
-        "title": "Entrenamiento ASAP",
-        "description": "Una metodología creada para actuar directamente en comportamientos, prácticas y percepciones que impactan la seguridad, la ética y la cultura corporativa.",
-        "subItems": ["Entrenamientos Interventivos"],
-        "cta": "Conoce nuestra opción"
-      }
-    ]
+    "title": {
+      "line1": "CONFERENCIAS",
+      "line2": "Y EVENTOS"
+    },
+    "description": {
+      "paragraph1": "Uno de los más renombrados conferencistas de Brasil, Rony comparte su experiencia en grandes eventos y con grandes empresas del país.",
+      "paragraph2": "Sus conferencias traen los mejores insights y ejemplos prácticos de lo que de hecho hizo y aprendió a lo largo de su carrera en las áreas de innovación, emprendimiento, gente, gestión, estrategia, ventas, customer experience y propósito en las organizaciones."
+    },
+    "cta": "Quiero saber más"
   },
   "testimonials": {
     "title": "Lo que Dicen Nuestros Clientes",

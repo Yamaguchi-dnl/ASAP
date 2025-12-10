@@ -1,101 +1,118 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { Container } from '@/components/layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
-import React from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useLanguage } from '@/context/language-context';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
-  const services = translations.services.items;
+  const t = translations.services; // Assuming 'services' content is now for 'palestras'
+
+  // Find images for the grid
+  const image1 = PlaceHolderImages.find((p) => p.id === 'event-image-1');
+  const image2 = PlaceHolderImages.find((p) => p.id === 'event-image-2');
+  const image3 = PlaceHolderImages.find((p) => p.id === 'event-image-3');
 
   const titleVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } },
   };
   
-  const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
-  );
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut', delay: 0.4 } },
+  };
+
+  const imageVariants = (delay: number) => ({
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1, 
+      transition: { duration: 1, ease: [0.25, 1, 0.5, 1], delay } 
+    },
+  });
+
 
   return (
-    <section id="servicos" className="py-20 sm:py-32">
+    <section id="servicos" className="py-20 sm:py-32 bg-secondary/40">
       <Container>
-        <div className="max-w-3xl mx-auto text-center">
-           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground">
-              {translations.services.title}
-            </h2>
-          </MotionWrapper>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <MotionWrapper variants={titleVariants}>
+              <h2 className="text-5xl md:text-7xl font-extrabold text-foreground uppercase leading-none tracking-tight">
+                {t.title.line1}
+                <br />
+                {t.title.line2}
+              </h2>
+            </MotionWrapper>
+
+            <div className="space-y-6">
+                <MotionWrapper variants={textVariants}>
+                    <p className="text-base text-foreground/80">
+                        {t.description.paragraph1}
+                    </p>
+                    <p className="text-base text-foreground/80 mt-4">
+                        {t.description.paragraph2}
+                    </p>
+                </MotionWrapper>
+                <MotionWrapper variants={buttonVariants}>
+                    <Button
+                        variant="outline"
+                        size="lg"
+                        className="rounded-full hover:bg-primary/10 bg-transparent border-foreground text-foreground hover:text-primary hover:border-primary"
+                    >
+                        {t.cta}
+                    </Button>
+                </MotionWrapper>
+            </div>
         </div>
-        <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
-        <Carousel
-            plugins={[plugin.current]}
-            opts={{
-              align: 'start',
-              loop: true,
-            }}
-            className="w-full mt-16"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-          >
-          <CarouselContent>
-            {services.map((service) => (
-              <CarouselItem key={service.id} className="md:basis-1/2 lg:basis-1/3">
-                 <div className="p-4 h-full">
-                  <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full hover:-translate-y-1.5 bg-blue-50/30 border-blue-200">
-                    <CardHeader>
-                      <CardTitle className="text-2xl">{service.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <CardDescription className="text-base mb-4">
-                        {service.description}
-                      </CardDescription>
-                      {service.subItems.length > 0 && (
-                        <ul className="space-y-2 text-sm text-foreground">
-                            {service.subItems.map(item => (
-                                <li key={item} className="font-medium">{item}</li>
-                            ))}
-                        </ul>
-                      )}
-                    </CardContent>
-                    <CardFooter>
-                        <Button variant="link" className="p-0 text-primary">
-                          {service.cta} <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                    </CardFooter>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
-          <CarouselNext className="absolute right-[-20px] top-1/2 -translate-y-1/2 hidden lg:flex" />
-        </Carousel>
-        </MotionWrapper>
+
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            {image1 && (
+                <MotionWrapper variants={imageVariants(0.2)} className="w-full aspect-[4/3] rounded-lg overflow-hidden">
+                    <Image
+                        src={image1.imageUrl}
+                        alt={image1.description}
+                        width={600}
+                        height={450}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        data-ai-hint={image1.imageHint}
+                    />
+                </MotionWrapper>
+            )}
+             {image2 && (
+                <MotionWrapper variants={imageVariants(0.4)} className="w-full aspect-[4/3] rounded-lg overflow-hidden">
+                    <Image
+                        src={image2.imageUrl}
+                        alt={image2.description}
+                        width={600}
+                        height={450}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        data-ai-hint={image2.imageHint}
+                    />
+                </MotionWrapper>
+            )}
+             {image3 && (
+                <MotionWrapper variants={imageVariants(0.6)} className="w-full aspect-[4/3] rounded-lg overflow-hidden">
+                    <Image
+                        src={image3.imageUrl}
+                        alt={image3.description}
+                        width={600}
+                        height={450}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        data-ai-hint={image3.imageHint}
+                    />
+                </MotionWrapper>
+            )}
+        </div>
       </Container>
     </section>
   );
