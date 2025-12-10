@@ -77,7 +77,7 @@ export function ServicesSection() {
                 return (
                   <CarouselItem key={service.id} className="pl-4 md:basis-1/2 lg:basis-1/3 group">
                     <div className="h-full p-1">
-                      <Card className="h-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col bg-card/80 backdrop-blur-sm border-border/50">
+                      <Card className="h-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col bg-card/80 backdrop-blur-sm border-border/50">
                         <CardHeader>
                           <CardTitle className="text-2xl">{service.title}</CardTitle>
                         </CardHeader>
