@@ -105,8 +105,8 @@ export function ServicesSection() {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12" />
-            <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12" />
+            <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary text-primary hover:bg-primary/10" />
+            <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary text-primary hover:bg-primary/10" />
           </Carousel>
         </div>
       </Container>
