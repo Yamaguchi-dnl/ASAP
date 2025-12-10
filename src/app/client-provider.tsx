@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FaqSection } from '@/components/sections/faq';
 import { LanguageProvider } from '@/context/language-context';
+import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 
 export function ClientProvider({ children }: { children: React.ReactNode }) {
   return (
@@ -18,6 +19,7 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
         </div>
         <Footer />
         <Toaster />
+        <WhatsAppButton />
       </div>
     </LanguageProvider>
   );
