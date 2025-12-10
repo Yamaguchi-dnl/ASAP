@@ -20,7 +20,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body antialiased text-foreground">
+      <body>
         <ClientProvider>{children}</ClientProvider>
       </body>
     </html>

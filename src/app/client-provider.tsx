@@ -10,11 +10,13 @@ import { LanguageProvider } from '@/context/language-context';
 export function ClientProvider({ children }: { children: React.ReactNode }) {
   return (
     <LanguageProvider>
-      <Header />
-      <main className="pt-20">{children}</main>
-      <FaqSection />
-      <Footer />
-      <Toaster />
+      <div className="font-body antialiased text-foreground">
+        <Header />
+        <main className="pt-20">{children}</main>
+        <FaqSection />
+        <Footer />
+        <Toaster />
+      </div>
     </LanguageProvider>
   );
 }
