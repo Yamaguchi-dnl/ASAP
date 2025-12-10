@@ -82,9 +82,13 @@ export function ServicesSection() {
                           )}
                         </CardContent>
                         <CardFooter>
-                           <Button variant="link" className="p-0 text-primary hover:text-accent">
-                              {service.cta}
-                           </Button>
+                          <Button 
+                            variant="outline"
+                            className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary"
+                            asChild
+                          >
+                             <a href="#contato">{service.cta}</a>
+                          </Button>
                         </CardFooter>
                       </Card>
                     </div>
