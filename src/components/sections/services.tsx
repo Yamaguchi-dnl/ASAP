@@ -6,15 +6,26 @@ import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useLanguage } from '@/context/language-context';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
-  const t = translations.services; // Assuming 'services' content is now for 'palestras'
+  const t = translations.services;
 
-  // Find images for the grid
-  const image1 = PlaceHolderImages.find((p) => p.id === 'event-image-1');
-  const image2 = PlaceHolderImages.find((p) => p.id === 'event-image-2');
-  const image3 = PlaceHolderImages.find((p) => p.id === 'event-image-3');
+  const services = [
+    {
+      id: 'mentoria',
+      imageId: 'event-image-1',
+    },
+    {
+      id: 'consultoria',
+      imageId: 'event-image-2',
+    },
+    {
+      id: 'workshops',
+      imageId: 'event-image-3',
+    },
+  ];
 
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -31,7 +42,7 @@ export function ServicesSection() {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut', delay: 0.4 } },
   };
 
-  const imageVariants = (delay: number) => ({
+  const cardVariants = (delay: number) => ({
     hidden: { opacity: 0, y: 30, scale: 0.95 },
     visible: { 
       opacity: 1, 
@@ -40,7 +51,6 @@ export function ServicesSection() {
       transition: { duration: 1, ease: [0.25, 1, 0.5, 1], delay } 
     },
   });
-
 
   return (
     <section id="servicos" className="py-20 sm:py-32 bg-secondary/40">
@@ -75,43 +85,27 @@ export function ServicesSection() {
             </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-            {image1 && (
-                <MotionWrapper variants={imageVariants(0.2)} className="w-full aspect-[4/3] rounded-lg overflow-hidden">
-                    <Image
-                        src={image1.imageUrl}
-                        alt={image1.description}
-                        width={600}
-                        height={450}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        data-ai-hint={image1.imageHint}
-                    />
-                </MotionWrapper>
-            )}
-             {image2 && (
-                <MotionWrapper variants={imageVariants(0.4)} className="w-full aspect-[4/3] rounded-lg overflow-hidden">
-                    <Image
-                        src={image2.imageUrl}
-                        alt={image2.description}
-                        width={600}
-                        height={450}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        data-ai-hint={image2.imageHint}
-                    />
-                </MotionWrapper>
-            )}
-             {image3 && (
-                <MotionWrapper variants={imageVariants(0.6)} className="w-full aspect-[4/3] rounded-lg overflow-hidden">
-                    <Image
-                        src={image3.imageUrl}
-                        alt={image3.description}
-                        width={600}
-                        height={450}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        data-ai-hint={image3.imageHint}
-                    />
-                </MotionWrapper>
-            )}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const serviceImage = PlaceHolderImages.find((p) => p.id === service.imageId);
+            return (
+              <MotionWrapper key={service.id} variants={cardVariants(0.4 + index * 0.2)}>
+                <Card className="h-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  {serviceImage && (
+                    <div className="aspect-[4/3] relative">
+                      <Image
+                        src={serviceImage.imageUrl}
+                        alt={serviceImage.description}
+                        fill
+                        className="object-cover"
+                        data-ai-hint={serviceImage.imageHint}
+                      />
+                    </div>
+                  )}
+                </Card>
+              </MotionWrapper>
+            );
+          })}
         </div>
       </Container>
     </section>
