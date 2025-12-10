@@ -114,27 +114,43 @@
     ]
   },
   "services": {
-    "title": "Nuestros servicios",
+    "title": "Productos y Servicios",
     "description": "Ofrecemos soluciones integradas para promover un ambiente de trabajo más saludable y productivo, enfocándonos en el bienestar de los colaboradores y la robustez de la gobernanza corporativa.",
-    "cta": "Quiero saber más",
     "items": [
       {
+        "id": "producto",
+        "title": "Producto ASAP",
+        "description": "Libro: Crachá Atômico: Prelanzamiento: febrero de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",
+        "subItems": [],
+        "cta": "👉 Quiero ser avisado del lanzamiento"
+      },
+      {
         "id": "mentoria",
-        "imageId": "service-mentorship",
-        "title": "Mentoría Individual o en Grupo",
-        "description": "Programas de desarrollo enfocados en autoconocimiento, gestión de carrera e inteligencia emocional para líderes y equipos."
+        "title": "Mentoría ASAP",
+        "description": "Sin recetas mágicas ni fórmulas listas. Nuestra metodología fue creada para ofrecer una experiencia de mentoría personalizada, alineada a los objetivos y al momento de cada profesional.",
+        "subItems": ["ASAP Esencial", "ASAP Social", "ASAP Evolution", "ASAP Anónimos"],
+        "cta": "👉 Explore las opciones y seleccione la que mejor apoya su momento de carrera."
       },
       {
-        "id": "consultoria",
-        "imageId": "service-consulting",
-        "title": "Consultoría en GRC y Cultura",
-        "description": "Análisis e implementación de políticas de gobernanza, riesgos y compliance, alineadas a una cultura organizacional de bienestar."
+        "id": "palestra",
+        "title": "Conferencia ASAP",
+        "description": "Se trata de un viaje estructurado de reflexión y expansión de conciencia sobre comportamiento, estrategia de carrera, relaciones y responsabilidad compartida, con ideas que permanecen mucho más allá del momento de la conferencia.",
+        "subItems": ["Crachá Atômico", "Corporativa", "Áreas Redflag"],
+        "cta": "👉 Explore las opciones y descubra cómo llevar esta experiencia a su equipo u organización."
       },
       {
-        "id": "workshops",
-        "imageId": "service-workshop",
-        "title": "Conferencias y Talleres",
-        "description": "Eventos personalizados sobre prevención del burnout, liderazgo consciente y creación de ambientes de trabajo psicológicamente seguros."
+        "id": "solucoes",
+        "title": "Soluciones Regulatorias ASAP",
+        "description": "Actuamos en la intersección entre gestión de riesgos, compliance y cultura organizacional, ofreciendo diagnósticos precisos, implementaciones eficientes y prácticas que fortalecen la responsabilidad institucional.",
+        "subItems": ["DRPS NR1", "Implementación NR1", "Assessment GRC"],
+        "cta": "👉 Conozca nuestras soluciones y vea cómo podemos fortalecer la gobernanza de su organización."
+      },
+      {
+        "id": "treinamento",
+        "title": "Entrenamiento ASAP",
+        "description": "Una metodología creada para actuar directamente en comportamientos, prácticas y percepciones que impactan la seguridad, la ética y la cultura corporativa.",
+        "subItems": ["Entrenamiento Interventivos"],
+        "cta": "👉 Conozca nuestra opción y cómo podemos ayudarle."
       }
     ]
   },

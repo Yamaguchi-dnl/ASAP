@@ -4,11 +4,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useLanguage } from '@/context/language-context';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -25,7 +22,7 @@ export function ServicesSection() {
   const services = t.items;
 
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+    Autoplay({ delay: 7000, stopOnInteraction: true })
   );
 
   const titleVariants = {
@@ -41,20 +38,16 @@ export function ServicesSection() {
   return (
     <section id="servicos" className="py-20 sm:py-32 bg-secondary/40">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <MotionWrapper variants={titleVariants}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
             <h2 className="text-5xl md:text-7xl font-normal text-foreground leading-tight">
               {t.title}
             </h2>
           </MotionWrapper>
           <MotionWrapper variants={textVariants}>
-            <p className="text-lg text-foreground/80">
+            <p className="text-lg text-foreground/80 mt-2">
               {t.description}
             </p>
-             <Button variant="link" size="lg" className="mt-4 p-0 text-base text-primary hover:text-accent">
-                {t.cta}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
           </MotionWrapper>
         </div>
         
@@ -70,29 +63,29 @@ export function ServicesSection() {
             onMouseLeave={plugin.current.reset}
           >
             <CarouselContent className="-ml-4">
-              {services.map((service: any, index: number) => {
-                const serviceImage = PlaceHolderImages.find((p) => p.id === service.imageId);
+              {services.map((service: any) => {
                 return (
-                  <CarouselItem key={service.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={service.id} className="pl-4 md:basis-1/2 lg:basis-1/3 group">
                     <div className="h-full p-1">
-                      <Card className="h-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
-                        {serviceImage && (
-                          <div className="aspect-[4/3] relative">
-                            <Image
-                              src={serviceImage.imageUrl}
-                              alt={service.title}
-                              fill
-                              className="object-cover"
-                              data-ai-hint={serviceImage.imageHint}
-                            />
-                          </div>
-                        )}
+                      <Card className="h-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col bg-card/80 backdrop-blur-sm border-border/50">
                         <CardHeader>
-                          <CardTitle>{service.title}</CardTitle>
+                          <CardTitle className="text-2xl">{service.title}</CardTitle>
                         </CardHeader>
-                        <CardContent className="flex-grow">
-                          <p className="text-muted-foreground text-sm">{service.description}</p>
+                        <CardContent className="flex-grow flex flex-col">
+                          <p className="text-muted-foreground text-sm flex-grow">{service.description}</p>
+                          {service.subItems && service.subItems.length > 0 && (
+                            <ul className="mt-4 space-y-2 text-sm">
+                              {service.subItems.map((item: string, i: number) => (
+                                <li key={i} className="font-medium text-foreground/90">{item}</li>
+                              ))}
+                            </ul>
+                          )}
                         </CardContent>
+                        <CardFooter>
+                           <Button variant="link" className="p-0 text-primary hover:text-accent">
+                              {service.cta}
+                           </Button>
+                        </CardFooter>
                       </Card>
                     </div>
                   </CarouselItem>
