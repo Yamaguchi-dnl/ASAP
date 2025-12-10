@@ -116,20 +116,21 @@
   "services": {
     "title": "Produtos e Serviços",
     "description": "Oferecemos soluções integradas para promover um ambiente de trabalho mais saudável e produtivo, focando no bem-estar dos colaboradores e na robustez da governança corporativa.",
+    "ctaButton": "Fale com um especialista",
     "items": [
       {
         "id": "produto",
         "title": "Produto ASAP",
         "description": "Livro: Crachá Atômico: Pré-lançamento: fevereiro de 2026. Um relato profundo sobre os bastidores da rotina corporativa, a exaustão profissional e autoconhecimento.",
         "subItems": [],
-        "cta": "Saber mais"
+        "cta": "Quero ser avisado"
       },
       {
         "id": "mentoria",
         "title": "Mentoria ASAP",
         "description": "Sem receitas mágicas ou fórmulas prontas. Nossa metodologia foi criada para oferecer uma experiência de mentoria personalizada, alinhada aos objetivos e ao momento de cada profissional.",
         "subItems": ["ASAP Essencial", "ASAP Social", "ASAP Evolution", "ASAP Anônimos"],
-        "cta": "Ver opções de mentoria"
+        "cta": "Explore as opções"
       },
       {
         "id": "palestra",

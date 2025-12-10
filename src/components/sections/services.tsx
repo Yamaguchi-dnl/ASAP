@@ -14,6 +14,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import { ArrowRight } from 'lucide-react';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
@@ -48,6 +49,12 @@ export function ServicesSection() {
             <p className="text-lg text-foreground/80 mt-2">
               {t.description}
             </p>
+            <Button variant="link" size="lg" className="mt-6 p-0 text-base text-primary hover:text-primary/80" asChild>
+                <a href="#contato">
+                    {t.ctaButton}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+            </Button>
           </MotionWrapper>
         </div>
         
