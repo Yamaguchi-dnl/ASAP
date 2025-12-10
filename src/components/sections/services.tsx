@@ -40,7 +40,7 @@ export function ServicesSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase leading-tight">
+            <h2 className="text-5xl md:text-7xl font-normal text-foreground uppercase leading-tight">
               {t.title}
             </h2>
           </MotionWrapper>
