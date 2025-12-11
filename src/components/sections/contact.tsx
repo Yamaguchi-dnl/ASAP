@@ -96,21 +96,21 @@ export function ContactSection() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const formInputStyles = "bg-secondary/50 border-border placeholder:text-muted-foreground focus:border-primary text-base";
-  const formLabelStyles = "text-foreground";
+  const formInputStyles = "bg-transparent border-primary-foreground/50 placeholder:text-primary-foreground/70 focus:border-accent text-base text-primary-foreground";
+  const formLabelStyles = "text-primary-foreground";
 
   return (
-    <section id="contato" className="py-20 sm:py-32 bg-background text-foreground">
+    <section id="contato" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="lg:sticky lg:top-24">
             <MotionWrapper variants={titleVariants}>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase leading-tight">
-                QUER CONTRATAR NOSSOS SERVIÇOS? PREENCHA O FORMULÁRIO ABAIXO QUE ENTRAREMOS EM CONTATO.
+              <h2 className="text-4xl md:text-5xl font-normal text-primary-foreground leading-tight">
+                Quer contratar nossos serviços? Preencha o formulário abaixo que entraremos em contato.
               </h2>
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-              <p className="mt-6 text-base text-foreground/80">
+              <p className="mt-6 text-base text-primary-foreground/80">
                 O formulário deve ser preenchido com as sugestões, ideias ou dúvidas, e, em breve, ele entrará em contato para ouvir as contribuições.
               </p>
             </MotionWrapper>
@@ -119,9 +119,9 @@ export function ContactSection() {
           <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
             <div className="w-full">
               <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-                <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="empresa">Para Empresas</TabsTrigger>
-                    <TabsTrigger value="colaborador">Para Colaboradores</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-2 bg-primary-foreground/20 text-primary-foreground">
+                  <TabsTrigger value="empresa" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Empresas</TabsTrigger>
+                  <TabsTrigger value="colaborador" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Colaboradores</TabsTrigger>
                 </TabsList>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6">
@@ -364,7 +364,7 @@ export function ContactSection() {
                       </div>
                     </TabsContent>
                     <div className="mt-8 md:col-span-2">
-                       <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105">
+                       <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-105">
                         {t.form.submitButton}
                       </Button>
                     </div>
