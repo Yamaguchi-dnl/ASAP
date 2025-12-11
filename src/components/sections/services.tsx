@@ -117,8 +117,8 @@ export function ServicesSection() {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-white text-white bg-black/20 hover:bg-black/40 ml-6" />
-            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-white text-white bg-black/20 hover:bg-black/40 mr-6" />
+            <CarouselPrevious className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-white text-white bg-black/20 hover:bg-black/40" />
+            <CarouselNext className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-white text-white bg-black/20 hover:bg-black/40" />
           </Carousel>
         </div>
       </Container>
