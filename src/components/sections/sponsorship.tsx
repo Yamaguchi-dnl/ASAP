@@ -20,7 +20,7 @@ export function SponsorshipSection() {
     };
     
   return (
-    <section id="patrocinio" className="py-20 sm:py-32">
+    <section id="apoiador" className="py-20 sm:py-32 bg-background">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
            <MotionWrapper variants={titleVariants}>

@@ -5,7 +5,7 @@
       { "href": "#sobre", "label": "Sobre Nosotros" },
       { "href": "#servicos", "label": "Servicios" },
       { "href": "#depoimentos", "label": "Testimonios" },
-      { "href": "#patrocinio", "label": "Patrocinio" }
+      { "href": "#apoiador", "label": "Apoyadores" }
     ],
     "contactButton": "Contactar",
     "contactButtonMobile": "Contáctenos"
@@ -185,7 +185,7 @@
     ]
   },
   "sponsorship": {
-    "title": "Apoye Nuestra Causa",
+    "title": "Sea un Apoyador",
     "subtitle": "Asocie su marca a un proyecto que transforma el ambiente corporativo. Sea un patrocinador y fortalezca la imagen de su empresa.",
     "tiers": [
       { "name": "Cota Plata", "isPopular": false },
@@ -194,7 +194,7 @@
     ],
     "mostPopular": "Más Popular",
     "note": "* La aceptación de la asociación ocurre solo después del proceso de due diligence.",
-    "ourSponsors": "Nuestros Patrocinadores"
+    "ourSponsors": "Nuestros Apoyadores"
   },
   "contact": {
     "title": "Contáctanos",
@@ -283,5 +283,3 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
-
-    

@@ -5,7 +5,7 @@
       { "href": "#sobre", "label": "Sobre Nós" },
       { "href": "#servicos", "label": "Serviços" },
       { "href": "#depoimentos", "label": "Depoimentos" },
-      { "href": "#patrocinio", "label": "Patrocínio" }
+      { "href": "#apoiador", "label": "Apoiador" }
     ],
     "contactButton": "Entrar em contato",
     "contactButtonMobile": "Fale Conosco"
@@ -185,7 +185,7 @@
     ]
   },
   "sponsorship": {
-    "title": "Apoie Nossa Causa",
+    "title": "Seja um Apoiador",
     "subtitle": "Associe sua marca a um projeto que transforma o ambiente corporativo. Seja um patrocinador e fortaleça a imagem da sua empresa.",
     "tiers": [
       { "name": "Cota Prata", "isPopular": false },
@@ -194,7 +194,7 @@
     ],
     "mostPopular": "Mais Popular",
     "note": "* A aceitação da parceria ocorre somente após o processo de due diligence.",
-    "ourSponsors": "Nossos Patrocinadores"
+    "ourSponsors": "Nossos Apoiadores"
   },
   "contact": {
     "title": "Entre em Contato",
@@ -283,5 +283,3 @@
     "copy": "PulsoASAP. Todos os direitos reservados."
   }
 }
-
-    
