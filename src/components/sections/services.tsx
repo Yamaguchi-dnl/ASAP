@@ -75,7 +75,7 @@ export function ServicesSection() {
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-             <div className="flex justify-end mb-4 -top-2 relative gap-2">
+             <div className="flex justify-end mb-4 -top-2 relative">
                 <CarouselPrevious className="relative top-0 h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
                 <CarouselNext className="relative top-0 right-0 h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
             </div>
