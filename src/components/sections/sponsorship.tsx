@@ -24,7 +24,7 @@ export function SponsorshipSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
            <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground uppercase">
+            <h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase">
               {t.title}
             </h2>
           </MotionWrapper>

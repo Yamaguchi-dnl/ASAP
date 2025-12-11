@@ -246,7 +246,7 @@ export function OurApproachSection() {
                   exit="exit"
                   variants={textContainerVariants}
                 >
-                  <motion.h2 className="text-4xl md:text-6xl font-normal text-foreground uppercase" variants={titleVariants}>
+                  <motion.h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase" variants={titleVariants}>
                     {currentSlide.title}
                   </motion.h2>
                   <motion.div 

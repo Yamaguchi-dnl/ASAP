@@ -105,7 +105,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="lg:sticky lg:top-24">
             <MotionWrapper variants={titleVariants}>
-              <h2 className="text-4xl md:text-5xl font-normal text-primary-foreground leading-tight">
+              <h2 className="text-3xl md:text-5xl font-normal text-primary-foreground leading-tight">
                 Quer contratar nossos serviços? Preencha o formulário abaixo que entraremos em contato.
               </h2>
             </MotionWrapper>
