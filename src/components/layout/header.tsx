@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/context/language-context';
+import { Container } from './container';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -18,10 +19,12 @@ export function Header() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -32,151 +35,143 @@ export function Header() {
   };
 
   return (
-    <header className={cn(
-      "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl transition-all duration-300",
-    )}>
-      <div
-        className={cn(
-          'flex h-16 items-center justify-between rounded-full px-6 transition-all duration-300',
-          isScrolled ? 'bg-primary/80 shadow-lg backdrop-blur-sm' : 'bg-transparent'
-        )}
-      >
-        <Link href="/" className="flex items-center justify-center">
-          <div className="h-12 w-12 bg-white rounded-lg overflow-hidden flex items-center justify-center">
-            <Image
-              src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
-              alt="PulsoASAP Logo"
-              width={120}
-              height={40}
-              className="object-cover"
-            />
-          </div>
-        </Link>
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        isScrolled ? 'bg-primary shadow-md' : 'bg-transparent'
+      )}
+    >
+      <Container>
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center justify-center">
+            <div className="relative h-14 w-40">
+              <Image
+                src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png"
+                alt="PulsoASAP Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                "text-white hover:text-accent"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'text-sm font-medium transition-colors',
+                  'text-white hover:text-accent'
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <div
-          className="hidden md:flex items-center gap-4"
-          style={{ width: '220px', justifyContent: 'flex-end' }}
-        >
-           <Button
+          <div
+            className="hidden md:flex items-center gap-4"
+            style={{ minWidth: '220px', justifyContent: 'flex-end' }}
+          >
+            <Button
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className={cn(
-                "rounded-full hover:bg-primary/10",
-                "text-white hover:text-accent hover:bg-white/20"
-              )}
+              className="rounded-full text-white hover:text-accent hover:bg-white/20"
             >
               {language === 'pt-BR' ? 'ES' : 'PT'}
             </Button>
-          <Button
-            variant="outline"
-            className={cn(
-              "rounded-full hover:bg-primary/10 bg-transparent",
-              "border-white text-white hover:text-accent hover:border-accent"
-            )}
-            asChild
-          >
-            <a href="#contato">{translations.header.contactButton}</a>
-          </Button>
-        </div>
-
-        <div className="md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={cn(
-                  "hover:bg-accent/10",
-                  "text-white hover:text-accent"
-                )}
-              >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Abrir menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
+            <Button
+              variant="outline"
+              className="rounded-full bg-transparent border-white text-white hover:text-accent hover:border-accent"
+              asChild
             >
-              <div className="flex justify-between items-center p-4 border-b">
-                <Link
-                  href="/"
-                  className="flex items-center justify-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <div className="h-12 w-12 bg-white rounded-lg overflow-hidden flex items-center justify-center">
-                    <Image
-                      src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/363c9083d_5.png"
-                      alt="PulsoASAP Logo"
-                      width={120}
-                      height={40}
-                      className="object-cover"
-                    />
-                  </div>
-                </Link>
+              <a href="#contato">{translations.header.contactButton}</a>
+            </Button>
+          </div>
+
+          <div className="md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white hover:text-accent hover:bg-white/20"
                 >
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Fechar menu</span>
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Abrir menu</span>
                 </Button>
-              </div>
-              <nav className="flex flex-col gap-6 p-4">
-                {navLinks.map((link) => (
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
+              >
+                <div className="flex justify-between items-center p-4 border-b">
                   <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-lg font-medium hover:text-primary transition-colors"
+                    href="/"
+                    className="flex items-center justify-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {link.label}
+                    <div className="h-12 w-32 relative">
+                      <Image
+                        src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png"
+                        alt="PulsoASAP Logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </Link>
-                ))}
-                 <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => {
-                    toggleLanguage();
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="w-full"
-                >
-                  {language === 'pt-BR' ? 'Cambiar a Español' : 'Mudar para Português'}
-                </Button>
-                <Button
-                  asChild
-                  className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-opacity"
-                >
-                  <a
-                    href="#contato"
+                  <Button
+                    variant="ghost"
+                    size="icon"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {translations.header.contactButtonMobile}
-                  </a>
-                </Button>
-              </nav>
-            </SheetContent>
-          </Sheet>
+                    <X className="h-6 w-6" />
+                    <span className="sr-only">Fechar menu</span>
+                  </Button>
+                </div>
+                <nav className="flex flex-col gap-6 p-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={() => {
+                      toggleLanguage();
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full"
+                  >
+                    {language === 'pt-BR'
+                      ? 'Cambiar a Español'
+                      : 'Mudar para Português'}
+                  </Button>
+                  <Button
+                    asChild
+                    className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-opacity"
+                  >
+                    <a
+                      href="#contato"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {translations.header.contactButtonMobile}
+                    </a>
+                  </Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }
