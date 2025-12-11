@@ -75,12 +75,12 @@ export function ServicesSection() {
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-             <div className="flex justify-end mb-4 relative -top-2 gap-2">
+             <div className="flex justify-end mt-8 relative gap-2">
                 <CarouselPrevious className="static h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
                 <CarouselNext className="static h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
             </div>
 
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-4 mt-4">
               {services.map((service: any) => {
                  const serviceImage = PlaceHolderImages.find((p) => p.id === service.imageId);
                 return (
