@@ -15,26 +15,32 @@
     {
       "id": "service-workshop",
       "description": "A person giving a presentation in a workshop.",
-      "imageUrl": "https://images.unsplash.com/photo-1733222765056-b0790217baa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b3Jrc2hvcCUyMHByZXNlbnRhdGlvbnxlbnwwfHx8fDE3NjQ2NjY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=750&fit=crop",
       "imageHint": "workshop presentation"
     },
     {
       "id": "service-mentorship",
       "description": "Two people having a one-on-one conversation in a cafe.",
-      "imageUrl": "https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZW50b3JpbmclMjBjb252ZXJzYXRpb258ZW58MHx8fHwxNzY0NjkzODgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=750&fit=crop",
       "imageHint": "mentoring conversation"
-    },
-    {
-      "id": "service-wellness",
-      "description": "A group of people doing yoga in an office space.",
-      "imageUrl": "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvZmZpY2UlMjB5b2dhfGVufDB8fHx8MTc2NDU4OTQ2OXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "office yoga"
     },
     {
       "id": "service-consulting",
       "description": "A human resources manager looking at charts.",
-      "imageUrl": "https://images.unsplash.com/photo-175851877653-5650fd9e146c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxIUiUyMGNvbnN1bHRpbmd8ZW58MHx8fHwxNzY0NjkzODgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1628348070889-cb656235b4eb?w=600&h=750&fit=crop",
       "imageHint": "HR consulting"
+    },
+    {
+      "id": "service-product",
+      "description": "A close-up of an open book on a wooden table.",
+      "imageUrl": "https://images.unsplash.com/photo-1524995767962-b1f592188546?w=600&h=750&fit=crop",
+      "imageHint": "book open"
+    },
+    {
+      "id": "service-training",
+      "description": "A team of professionals collaborating in a modern office.",
+      "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=750&fit=crop",
+      "imageHint": "team collaboration"
     },
     {
       "id": "testimonial-1",
@@ -51,7 +57,7 @@
     {
       "id": "testimonial-3",
       "description": "Portrait of a woman.",
-      "imageUrl": "https://images.unsplash.com/photo-1554727242-77d625b04533?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNzk2NTR8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHdvbWFufGVufDB8fHx8MTcyMDczOTY2Nnww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1554727242-77d625b04533?w=600&h=720&fit=crop",
       "imageHint": "professional woman"
     },
     {

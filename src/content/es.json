@@ -124,6 +124,7 @@
       {
         "id": "producto",
         "title": "Producto ASAP",
+        "imageId": "service-product",
         "description": "Libro: Crachá Atômico: Prelanzamiento: febrero de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",
         "subItems": [],
         "cta": "Quiero ser notificado"
@@ -131,6 +132,7 @@
       {
         "id": "mentoria",
         "title": "Mentoría ASAP",
+        "imageId": "service-mentorship",
         "description": "Sin recetas mágicas ni fórmulas listas. Nuestra metodología fue creada para ofrecer una experiencia de mentoría personalizada, alineada a los objetivos y al momento de cada profesional.",
         "subItems": ["ASAP Esencial", "ASAP Social", "ASAP Evolution", "ASAP Anónimos"],
         "cta": "Explore las opciones"
@@ -138,6 +140,7 @@
       {
         "id": "palestra",
         "title": "Conferencia ASAP",
+        "imageId": "service-workshop",
         "description": "Se trata de un viaje estructurado de reflexión y expansión de conciencia sobre comportamiento, estrategia de carrera, relaciones y responsabilidad compartida, con ideas que permanecen mucho más allá del momento de la conferencia.",
         "subItems": ["Crachá Atômico", "Corporativa", "Áreas Redflag"],
         "cta": "Lleve a su empresa"
@@ -145,6 +148,7 @@
       {
         "id": "solucoes",
         "title": "Soluciones Regulatorias ASAP",
+        "imageId": "service-consulting",
         "description": "Actuamos en la intersección entre gestión de riesgos, compliance y cultura organizacional, ofreciendo diagnósticos precisos, implementaciones eficientes y prácticas que fortalecen la responsabilidad institucional.",
         "subItems": ["DRPS NR1", "Implementación NR1", "Assessment GRC"],
         "cta": "Fortalezca su gobernanza"
@@ -152,6 +156,7 @@
       {
         "id": "treinamento",
         "title": "Entrenamiento ASAP",
+        "imageId": "service-training",
         "description": "Una metodología creada para actuar directamente en comportamientos, prácticas y percepciones que impactan la seguridad, la ética y la cultura corporativa.",
         "subItems": ["Entrenamiento Interventivos"],
         "cta": "Capacite a su equipo"

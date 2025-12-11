@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -14,6 +14,9 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
@@ -40,7 +43,7 @@ export function ServicesSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground leading-tight">
+            <h2 className="text-4xl md:text-5xl font-normal text-foreground leading-tight">
               {t.title.line1}<br />{t.title.line2}
             </h2>
           </MotionWrapper>
@@ -73,34 +76,43 @@ export function ServicesSection() {
           >
             <CarouselContent className="-ml-4">
               {services.map((service: any) => {
+                 const serviceImage = PlaceHolderImages.find((p) => p.id === service.imageId);
                 return (
                   <CarouselItem key={service.id} className="pl-4 md:basis-1/2 lg:basis-1/3 group">
-                    <div className="h-full p-1">
-                      <Card className="h-full overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col bg-card/80 backdrop-blur-sm border-border/50">
-                        <CardHeader>
-                          <CardTitle className="text-2xl">{service.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow flex flex-col">
-                          <p className="text-muted-foreground text-sm flex-grow">{service.description}</p>
-                          {service.subItems && service.subItems.length > 0 && (
-                            <ul className="mt-4 space-y-2 text-sm">
-                              {service.subItems.map((item: string, i: number) => (
-                                <li key={i} className="font-medium text-foreground/90">{item}</li>
-                              ))}
-                            </ul>
-                          )}
-                        </CardContent>
-                        <CardFooter>
+                    <Card className="h-[450px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg">
+                      {serviceImage && (
+                        <Image
+                          src={serviceImage.imageUrl}
+                          alt={service.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          data-ai-hint={serviceImage.imageHint}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-colors duration-500" />
+                      
+                      <div className="relative flex flex-col h-full p-6 text-white justify-end">
+                        <h3 className="text-2xl font-bold transition-all duration-500 group-hover:mb-2">{service.title}</h3>
+                        
+                        <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full transition-all duration-500 overflow-hidden">
+                           <p className="text-white/80 text-sm mt-2">{service.description}</p>
+                            {service.subItems && service.subItems.length > 0 && (
+                              <ul className="mt-4 space-y-2 text-sm">
+                                {service.subItems.map((item: string, i: number) => (
+                                  <li key={i} className="font-medium text-white/90">{item}</li>
+                                ))}
+                              </ul>
+                            )}
                           <Button 
                             variant="outline"
-                            className="rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary"
+                            className="mt-6 rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary"
                             asChild
                           >
                              <a href="#contato">{service.cta}</a>
                           </Button>
-                        </CardFooter>
-                      </Card>
-                    </div>
+                        </div>
+                      </div>
+                    </Card>
                   </CarouselItem>
                 );
               })}
