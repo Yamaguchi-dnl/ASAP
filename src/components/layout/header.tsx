@@ -38,7 +38,7 @@ export function Header() {
       <div
         className={cn(
           'flex h-16 items-center justify-between rounded-full px-6 transition-all duration-300',
-          isScrolled ? 'bg-background/80 shadow-lg backdrop-blur-sm' : 'bg-transparent'
+          isScrolled ? 'bg-primary/80 shadow-lg backdrop-blur-sm' : 'bg-transparent'
         )}
       >
         <Link href="/" className="flex items-center justify-center">
@@ -60,7 +60,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                isScrolled ? "text-foreground" : "text-white hover:text-accent"
+                "text-white hover:text-accent"
               )}
             >
               {link.label}
@@ -78,7 +78,7 @@ export function Header() {
               onClick={toggleLanguage}
               className={cn(
                 "rounded-full hover:bg-primary/10",
-                isScrolled ? "text-foreground" : "text-white hover:text-accent hover:bg-white/20"
+                "text-white hover:text-accent hover:bg-white/20"
               )}
             >
               {language === 'pt-BR' ? 'ES' : 'PT'}
@@ -87,9 +87,7 @@ export function Header() {
             variant="outline"
             className={cn(
               "rounded-full hover:bg-primary/10 bg-transparent",
-              isScrolled 
-                ? "border-primary text-primary hover:text-primary" 
-                : "border-white text-white hover:text-accent hover:border-accent"
+              "border-white text-white hover:text-accent hover:border-accent"
             )}
             asChild
           >
@@ -105,7 +103,7 @@ export function Header() {
                 size="icon"
                 className={cn(
                   "hover:bg-accent/10",
-                  isScrolled ? "text-foreground" : "text-white hover:text-accent"
+                  "text-white hover:text-accent"
                 )}
               >
                 <Menu className="h-6 w-6" />
