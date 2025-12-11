@@ -84,6 +84,7 @@ const contentVariants: Variants = {
       duration: 1.1,
       delay: 0.2,
       ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.2,
     },
   },
   exit: {
@@ -235,7 +236,7 @@ export function OurApproachSection() {
       className="py-20 sm:py-32 bg-secondary/30 text-foreground"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={sectionVariants}
     >
       <Container>
@@ -248,7 +249,7 @@ export function OurApproachSection() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  variants={textContainerVariants}
+                  variants={contentVariants}
                 >
                   <motion.h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase" variants={titleVariants}>
                     {currentSlide.title}
@@ -258,13 +259,7 @@ export function OurApproachSection() {
                     initial={{scaleX: 0, originX: 0}} 
                     animate={{scaleX: 1, transition: {duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1]}}} 
                   />
-                  <motion.div 
-                    initial="hidden" 
-                    animate="visible" 
-                    variants={contentVariants}
-                  >
-                    {renderContent(currentSlide)}
-                  </motion.div>
+                  {renderContent(currentSlide)}
                 </motion.div>
               </AnimatePresence>
             </div>
