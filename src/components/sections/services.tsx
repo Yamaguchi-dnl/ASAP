@@ -39,21 +39,21 @@ export function ServicesSection() {
   };
 
   return (
-    <section id="servicos" className="py-20 sm:py-32 bg-secondary/40">
+    <section id="servicos" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground leading-tight">
+            <h2 className="text-4xl md:text-6xl font-normal leading-tight">
               {t.title.line1}<br />{t.title.line2}
             </h2>
           </MotionWrapper>
           <MotionWrapper variants={textVariants}>
-            <p className="text-lg text-foreground/80 mt-2">
+            <p className="text-lg text-primary-foreground/80 mt-2">
               {t.description}
             </p>
             <Button 
               variant="outline"
-              className="mt-6 rounded-full border-primary text-primary hover:bg-primary/10 hover:text-primary"
+              className="mt-6 rounded-full border-white text-white hover:bg-white/10 hover:text-white"
               asChild
             >
                 <a href="#contato">
@@ -117,8 +117,8 @@ export function ServicesSection() {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary text-primary hover:bg-primary/10" />
-            <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary text-primary hover:bg-primary/10" />
+            <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-white text-white hover:bg-white/10" />
+            <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-white text-white hover:bg-white/10" />
           </Carousel>
         </div>
       </Container>
