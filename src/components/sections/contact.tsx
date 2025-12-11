@@ -96,15 +96,18 @@ export function ContactSection() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const formInputStyles = "bg-transparent border-white/50 placeholder:text-primary-foreground/60 focus:border-white text-base";
+  const formLabelStyles = "text-primary-foreground";
+
   return (
-    <section id="contato" className="py-20 sm:py-32 bg-secondary/30">
+    <section id="contato" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground">{t.title}</h2>
+            <h2 className="text-4xl md:text-6xl font-normal text-primary-foreground">{t.title}</h2>
           </MotionWrapper>
           <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-            <p className="mt-4 text-lg text-foreground/80">
+            <p className="mt-4 text-lg text-primary-foreground/80">
               {t.subtitle}
             </p>
           </MotionWrapper>
@@ -112,9 +115,9 @@ export function ContactSection() {
         <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
         <div className="mt-16 max-w-3xl mx-auto">
           <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="empresa">Para Empresas</TabsTrigger>
-              <TabsTrigger value="colaborador">Para Colaboradores</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 bg-primary-foreground/20 text-primary-foreground">
+                <TabsTrigger value="empresa" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Empresas</TabsTrigger>
+                <TabsTrigger value="colaborador" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Colaboradores</TabsTrigger>
             </TabsList>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6">
@@ -125,9 +128,9 @@ export function ContactSection() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.form.name.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.name.label}</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.form.name.placeholder} {...field} />
+                            <Input placeholder={t.form.name.placeholder} {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -138,9 +141,9 @@ export function ContactSection() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.form.email.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.email.label}</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.form.email.placeholder} {...field} />
+                            <Input placeholder={t.form.email.placeholder} {...field} className={formInputStyles}/>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -151,9 +154,9 @@ export function ContactSection() {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.form.phone.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.phone.label}</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.form.phone.placeholder} {...field} />
+                            <Input placeholder={t.form.phone.placeholder} {...field} className={formInputStyles}/>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -164,10 +167,10 @@ export function ContactSection() {
                       name="service"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.form.service.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.service.label}</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger>
+                              <SelectTrigger className={formInputStyles}>
                                 <SelectValue placeholder={t.form.service.placeholder} />
                               </SelectTrigger>
                             </FormControl>
@@ -186,9 +189,9 @@ export function ContactSection() {
                       name="companyName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.form.companyName.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.companyName.label}</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.form.companyName.placeholder} {...field}/>
+                            <Input placeholder={t.form.companyName.placeholder} {...field} className={formInputStyles}/>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -199,9 +202,9 @@ export function ContactSection() {
                       name="employeeCount"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t.form.employeeCount.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.employeeCount.label}</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.form.employeeCount.placeholder} {...field}/>
+                            <Input placeholder={t.form.employeeCount.placeholder} {...field} className={formInputStyles}/>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -212,9 +215,9 @@ export function ContactSection() {
                       name="companySite"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>{t.form.companySite.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.companySite.label}</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.form.companySite.placeholder} {...field}/>
+                            <Input placeholder={t.form.companySite.placeholder} {...field} className={formInputStyles}/>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -225,9 +228,9 @@ export function ContactSection() {
                       name="challenge"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>{t.form.challenge.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.challenge.label}</FormLabel>
                           <FormControl>
-                            <Textarea placeholder={t.form.challenge.placeholder} {...field} />
+                            <Textarea placeholder={t.form.challenge.placeholder} {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -238,9 +241,9 @@ export function ContactSection() {
                       name="goal"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>{t.form.goal.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.goal.label}</FormLabel>
                           <FormControl>
-                            <Textarea placeholder={t.form.goal.placeholder} {...field} />
+                            <Textarea placeholder={t.form.goal.placeholder} {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -251,9 +254,9 @@ export function ContactSection() {
                       name="details"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>{t.form.details.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.details.label}</FormLabel>
                           <FormControl>
-                            <Textarea placeholder={t.form.details.placeholder} {...field} />
+                            <Textarea placeholder={t.form.details.placeholder} {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -264,9 +267,9 @@ export function ContactSection() {
                       name="howYouFoundUs"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>{t.form.howYouFoundUs.label}</FormLabel>
+                          <FormLabel className={formLabelStyles}>{t.form.howYouFoundUs.label}</FormLabel>
                           <FormControl>
-                            <Input placeholder={t.form.howYouFoundUs.placeholder} {...field} />
+                            <Input placeholder={t.form.howYouFoundUs.placeholder} {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -281,9 +284,9 @@ export function ContactSection() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Nome completo</FormLabel>
+                          <FormLabel className={formLabelStyles}>Nome completo</FormLabel>
                           <FormControl>
-                            <Input placeholder="Seu nome completo" {...field} />
+                            <Input placeholder="Seu nome completo" {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -294,9 +297,9 @@ export function ContactSection() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>E-mail</FormLabel>
+                          <FormLabel className={formLabelStyles}>E-mail</FormLabel>
                           <FormControl>
-                            <Input placeholder="seu@email.com" {...field} />
+                            <Input placeholder="seu@email.com" {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -307,9 +310,9 @@ export function ContactSection() {
                       name="role"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Cargo ou função</FormLabel>
+                          <FormLabel className={formLabelStyles}>Cargo ou função</FormLabel>
                           <FormControl>
-                            <Input placeholder="Seu cargo" {...field} />
+                            <Input placeholder="Seu cargo" {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -320,9 +323,9 @@ export function ContactSection() {
                       name="department"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Setor</FormLabel>
+                          <FormLabel className={formLabelStyles}>Setor</FormLabel>
                           <FormControl>
-                            <Input placeholder="Seu setor" {...field} />
+                            <Input placeholder="Seu setor" {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -333,9 +336,9 @@ export function ContactSection() {
                       name="companyTime"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>Tempo de empresa</FormLabel>
+                          <FormLabel className={formLabelStyles}>Tempo de empresa</FormLabel>
                           <FormControl>
-                            <Input placeholder="Ex: 2 anos" {...field} />
+                            <Input placeholder="Ex: 2 anos" {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -346,9 +349,9 @@ export function ContactSection() {
                       name="description"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>Descrição do problema, dúvida ou solicitação</FormLabel>
+                          <FormLabel className={formLabelStyles}>Descrição do problema, dúvida ou solicitação</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Descreva aqui..." {...field} />
+                            <Textarea placeholder="Descreva aqui..." {...field} className={formInputStyles} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -357,7 +360,7 @@ export function ContactSection() {
                   </div>
                 </TabsContent>
                 <div className="mt-8 md:col-span-2">
-                  <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-all duration-300 hover:scale-105">
+                   <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-all duration-300 hover:scale-105">
                     {t.form.submitButton}
                   </Button>
                 </div>
@@ -370,3 +373,5 @@ export function ContactSection() {
     </section>
   );
 }
+
+    
