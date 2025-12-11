@@ -108,6 +108,7 @@ export function ContactSection() {
               <h2 className="text-3xl md:text-5xl font-normal text-primary-foreground leading-tight">
                 Quer contratar nossos serviços? Preencha o formulário abaixo que entraremos em contato.
               </h2>
+              <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
               <p className="mt-6 text-base text-primary-foreground/80">

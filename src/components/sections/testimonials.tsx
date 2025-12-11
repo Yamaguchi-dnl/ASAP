@@ -43,6 +43,7 @@ export function TestimonialsSection() {
               <h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase">
                 {t.title}
               </h2>
+              <hr className="border-t-2 border-primary w-24 mt-4 mb-8 mx-auto" />
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
               <p className="mt-4 text-lg text-foreground/80">

@@ -249,6 +249,7 @@ export function OurApproachSection() {
                   <motion.h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase" variants={titleVariants}>
                     {currentSlide.title}
                   </motion.h2>
+                  <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
                   <motion.div 
                     initial="hidden" 
                     animate="visible" 

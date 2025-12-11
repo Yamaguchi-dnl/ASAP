@@ -47,6 +47,7 @@ export function ServicesSection() {
             <h2 className="text-3xl md:text-5xl font-normal leading-tight uppercase">
               {t.title.line1}<br />{t.title.line2}
             </h2>
+             <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
           </MotionWrapper>
           <MotionWrapper variants={textVariants}>
             <p className="text-lg text-primary-foreground/80 mt-2">

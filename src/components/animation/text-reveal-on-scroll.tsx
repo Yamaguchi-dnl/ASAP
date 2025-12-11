@@ -29,23 +29,26 @@ const TextRevealOnScroll: FC<TextRevealOnScrollProps> = ({
   const firstLineLength = lines[0] ? lines[0].length : 0;
 
   return (
-    <h2 ref={targetRef} className={cn('text-3xl md:text-5xl font-normal leading-tight', className)}>
-      {lines.map((line, lineIndex) => (
-        <span key={lineIndex} className="block">
-          {line.map((word, wordIndex) => {
-            const start = (wordCount) / words.length;
-            const end = (wordCount + 1) / words.length;
-            wordCount++;
-            const isAccent = lineIndex === 1;
-            return (
-              <Word key={wordIndex} progress={scrollYProgress} range={[start, end]} isAccent={isAccent}>
-                {word}
-              </Word>
-            );
-          })}
-        </span>
-      ))}
-    </h2>
+    <div>
+      <h2 ref={targetRef} className={cn('text-3xl md:text-5xl font-normal leading-tight', className)}>
+        {lines.map((line, lineIndex) => (
+          <span key={lineIndex} className="block">
+            {line.map((word, wordIndex) => {
+              const start = (wordCount) / words.length;
+              const end = (wordCount + 1) / words.length;
+              wordCount++;
+              const isAccent = lineIndex === 1;
+              return (
+                <Word key={wordIndex} progress={scrollYProgress} range={[start, end]} isAccent={isAccent}>
+                  {word}
+                </Word>
+              );
+            })}
+          </span>
+        ))}
+      </h2>
+      <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
+    </div>
   );
 };
 
