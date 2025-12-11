@@ -47,7 +47,6 @@ const TextRevealOnScroll: FC<TextRevealOnScrollProps> = ({
           </span>
         ))}
       </h2>
-      <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
     </div>
   );
 };
