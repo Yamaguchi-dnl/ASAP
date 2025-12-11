@@ -44,19 +44,16 @@ const textContentVariants: Variants = {
 const founderNameVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.1, ease: 'easeOut' } },
-    exit: { opacity: 0, y: -10, transition: { duration: 0.4, ease: 'easeIn' } },
 };
 
 const bioParagraphsVariants: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
-    exit: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
 }
 
 const bioParagraphVariant: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
-    exit: { opacity: 0, y: -10, transition: { duration: 0.4, ease: 'easeIn' } },
 }
 
 export function AboutSection() {
@@ -122,25 +119,21 @@ export function AboutSection() {
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
             </motion.div>
 
-            <div className="relative overflow-hidden min-h-[350px]">
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={currentFounder.id}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        variants={{ visible: { transition: { staggerChildren: 0.2 } }, exit: {} }}
-                    >
-                        <motion.h3 className="text-2xl font-bold text-foreground mb-6" variants={founderNameVariants}>
-                          {currentFounder.name}
-                        </motion.h3>
-                        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" variants={bioParagraphsVariants}>
-                            <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio1}</motion.p>
-                            <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
-                        </motion.div>
-                    </motion.div>
-                </AnimatePresence>
-            </div>
+            <motion.div 
+              className="relative overflow-hidden min-h-[350px]"
+              key={currentFounder.id}
+              initial="hidden"
+              animate="visible"
+              variants={bioParagraphsVariants}
+            >
+                <motion.h3 className="text-2xl font-bold text-foreground mb-6" variants={founderNameVariants}>
+                  {currentFounder.name}
+                </motion.h3>
+                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" variants={bioParagraphsVariants}>
+                    <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio1}</motion.p>
+                    <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
+                </motion.div>
+            </motion.div>
 
             <motion.div className="flex items-center justify-between mt-8 pt-4 border-t border-border" variants={textContentVariants}>
                 <div className='flex items-center gap-2'>
