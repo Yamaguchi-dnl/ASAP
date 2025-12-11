@@ -123,7 +123,7 @@
     "items": [
       {
         "id": "produto",
-        "title": "LIVRO: CRACHÁ ATOMICO",
+        "title": "Livro: Crachá Atômico",
         "imageId": "service-product",
         "description": "Livro: Crachá Atômico: Pré-lançamento: fevereiro de 2026. Um relato profundo sobre os bastidores da rotina corporativa, a exaustão profissional e autoconhecimento.",
         "subItems": [],
@@ -227,7 +227,7 @@
         "placeholder": "Descreva aqui..."
       },
       "goal": {
-        "label": "Qual objetivo espera alcançar com os serviços do Pulso ASAP?",
+        "label": "Qual objetivo espera alcançar com os services do Pulso ASAP?",
         "placeholder": "Descreva aqui..."
       },
       "details": {
@@ -283,3 +283,5 @@
     "copy": "PulsoASAP. Todos os direitos reservados."
   }
 }
+
+    

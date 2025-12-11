@@ -123,7 +123,7 @@
     "items": [
       {
         "id": "producto",
-        "title": "LIBRO: CRACHÁ ATOMICO",
+        "title": "Libro: Crachá Atómico",
         "imageId": "service-product",
         "description": "Libro: Crachá Atômico: Prelanzamiento: febrero de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",
         "subItems": [],
@@ -283,3 +283,5 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
+
+    
