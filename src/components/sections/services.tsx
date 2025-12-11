@@ -75,16 +75,16 @@ export function ServicesSection() {
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
-             <div className="flex justify-end mb-4">
-                <CarouselPrevious className="relative -top-2 right-2 h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
-                <CarouselNext className="relative -top-2 right-0 h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
+             <div className="flex justify-end mt-8">
+                <CarouselPrevious className="relative top-0 right-2 h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
+                <CarouselNext className="relative top-0 right-0 h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
             </div>
 
             <CarouselContent className="-ml-4">
               {services.map((service: any) => {
                  const serviceImage = PlaceHolderImages.find((p) => p.id === service.imageId);
                 return (
-                  <CarouselItem key={service.id} className="pl-4 basis-full sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group">
+                  <CarouselItem key={service.id} className="pl-4 basis-[90%] sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group">
                     <Card className="h-[450px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg">
                       {serviceImage && (
                         <Image
