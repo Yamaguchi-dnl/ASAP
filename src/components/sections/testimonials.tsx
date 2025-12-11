@@ -40,7 +40,7 @@ export function TestimonialsSection() {
       <Container>
         <div className="max-w-4xl mx-auto text-center">
             <MotionWrapper variants={titleVariants}>
-              <h2 className="text-4xl md:text-6xl font-normal text-foreground">
+              <h2 className="text-4xl md:text-6xl font-normal text-foreground uppercase">
                 {t.title}
               </h2>
             </MotionWrapper>

@@ -29,7 +29,7 @@ export function FaqSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground">
+            <h2 className="text-4xl md:text-6xl font-normal text-foreground uppercase">
               {translations.faq.title}
             </h2>
           </MotionWrapper>
