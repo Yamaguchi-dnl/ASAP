@@ -99,18 +99,18 @@ const contentVariants: Variants = {
 const listVariants: Variants = {
   visible: {
     transition: {
-      staggerChildren: 0.35,
+      staggerChildren: 0.12,
     },
   },
 };
 
 const listItemVariants: Variants = {
-  hidden: { opacity: 0, x: -15 },
+  hidden: { opacity: 0, x: -25 },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1,
+      duration: 0.7,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -157,7 +157,9 @@ export function OurApproachSection() {
             <motion.ul className="space-y-4 mt-8" variants={listVariants}>
               {(slide.points as string[]).map((point, index) => (
                 <motion.li key={index} className="flex items-start" variants={listItemVariants}>
-                  <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                  <motion.div initial={{scale: 0.6}} animate={{scale: 1}} transition={{type: 'spring', stiffness: 400, damping: 15, delay: 0.2 + index * 0.12}}>
+                    <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                  </motion.div>
                   <span className='text-foreground/90'>{point}</span>
                 </motion.li>
               ))}
@@ -213,7 +215,9 @@ export function OurApproachSection() {
           <motion.ul className="space-y-4 mt-8" variants={listVariants}>
             {(slide.points as string[]).map((pillar, index) => (
               <motion.li key={index} className="flex items-start" variants={listItemVariants}>
-                <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                 <motion.div initial={{scale: 0.6}} animate={{scale: 1}} transition={{type: 'spring', stiffness: 400, damping: 15, delay: 0.2 + index * 0.12}}>
+                    <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                  </motion.div>
                 <span className='text-foreground/90'>{pillar}</span>
               </motion.li>
             ))}
@@ -249,7 +253,11 @@ export function OurApproachSection() {
                   <motion.h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase" variants={titleVariants}>
                     {currentSlide.title}
                   </motion.h2>
-                  <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
+                  <motion.hr 
+                    className="border-t-2 border-primary w-24 mt-4 mb-8" 
+                    initial={{scaleX: 0, originX: 0}} 
+                    animate={{scaleX: 1, transition: {duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1]}}} 
+                  />
                   <motion.div 
                     initial="hidden" 
                     animate="visible" 
@@ -264,7 +272,7 @@ export function OurApproachSection() {
             <motion.div className="flex items-center justify-between mt-8 pt-4 border-t border-border" variants={footerVariants}>
                 <div className='flex items-center gap-2'>
                     <span className="text-sm font-semibold">{`0${currentIndex + 1}`}</span>
-                    <div className='w-20 h-px bg-border'>
+                    <div className='w-20 h-px bg-border overflow-hidden rounded-full'>
                         <motion.div 
                           className='h-px bg-primary' 
                           initial={{ width: '0%'}}
@@ -275,24 +283,28 @@ export function OurApproachSection() {
                     <span className="text-sm text-muted-foreground">{`0${approachData.length}`}</span>
                 </div>
               <div className="flex items-center gap-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={handlePrev}
-                  className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
-                  aria-label="Slide anterior"
-                >
-                  <ArrowLeft size={20} />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={handleNext}
-                  className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
-                   aria-label="Próximo slide"
-                >
-                  <ArrowRight size={20} />
-                </Button>
+                <motion.div whileHover={{scale: 1.08}} transition={{type: 'spring', stiffness: 300}}>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={handlePrev}
+                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10 group"
+                    aria-label="Slide anterior"
+                  >
+                    <ArrowLeft size={20} className='transition-transform duration-300 group-hover:-translate-x-0.5' />
+                  </Button>
+                </motion.div>
+                 <motion.div whileHover={{scale: 1.08}} transition={{type: 'spring', stiffness: 300}}>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={handleNext}
+                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10 group"
+                    aria-label="Próximo slide"
+                  >
+                    <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-0.5'/>
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </div>
