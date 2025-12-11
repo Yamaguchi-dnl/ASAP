@@ -25,6 +25,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'O nome deve ter pelo menos 2 caracteres.' }),
@@ -74,15 +75,17 @@ export function ContactSection() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const inputStyles = "bg-transparent border-white/50 placeholder:text-white/60 focus-visible:ring-white";
+
   return (
-    <section id="contato" className="py-20 sm:py-32">
+    <section id="contato" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container>
         <div className="max-w-3xl mx-auto text-center">
           <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-6xl font-normal text-foreground">{t.title}</h2>
+            <h2 className="text-4xl md:text-6xl font-normal">{t.title}</h2>
           </MotionWrapper>
           <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-            <p className="mt-4 text-lg text-foreground/80">
+            <p className="mt-4 text-lg text-primary-foreground/80">
               {t.subtitle}
             </p>
           </MotionWrapper>
@@ -98,7 +101,7 @@ export function ContactSection() {
                   <FormItem>
                     <FormLabel>{t.form.name.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t.form.name.placeholder} {...field} />
+                      <Input placeholder={t.form.name.placeholder} {...field} className={inputStyles} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -111,7 +114,7 @@ export function ContactSection() {
                   <FormItem>
                     <FormLabel>{t.form.email.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t.form.email.placeholder} {...field} />
+                      <Input placeholder={t.form.email.placeholder} {...field} className={inputStyles} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -124,7 +127,7 @@ export function ContactSection() {
                   <FormItem>
                     <FormLabel>{t.form.phone.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t.form.phone.placeholder} {...field} />
+                      <Input placeholder={t.form.phone.placeholder} {...field} className={inputStyles} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -138,7 +141,7 @@ export function ContactSection() {
                     <FormLabel>{t.form.service.label}</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className={cn(inputStyles, "text-white")}>
                           <SelectValue placeholder={t.form.service.placeholder} />
                         </SelectTrigger>
                       </FormControl>
@@ -159,7 +162,7 @@ export function ContactSection() {
                   <FormItem>
                     <FormLabel>{t.form.companyName.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t.form.companyName.placeholder} {...field} />
+                      <Input placeholder={t.form.companyName.placeholder} {...field} className={inputStyles}/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -172,7 +175,7 @@ export function ContactSection() {
                   <FormItem>
                     <FormLabel>{t.form.employeeCount.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t.form.employeeCount.placeholder} {...field} />
+                      <Input placeholder={t.form.employeeCount.placeholder} {...field} className={inputStyles}/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -185,7 +188,7 @@ export function ContactSection() {
                   <FormItem className="md:col-span-2">
                     <FormLabel>{t.form.companySite.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t.form.companySite.placeholder} {...field} />
+                      <Input placeholder={t.form.companySite.placeholder} {...field} className={inputStyles}/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -198,7 +201,7 @@ export function ContactSection() {
                   <FormItem className="md:col-span-2">
                     <FormLabel>{t.form.challenge.label}</FormLabel>
                     <FormControl>
-                      <Textarea placeholder={t.form.challenge.placeholder} {...field} />
+                      <Textarea placeholder={t.form.challenge.placeholder} {...field} className={inputStyles} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -211,7 +214,7 @@ export function ContactSection() {
                   <FormItem className="md:col-span-2">
                     <FormLabel>{t.form.goal.label}</FormLabel>
                     <FormControl>
-                      <Textarea placeholder={t.form.goal.placeholder} {...field} />
+                      <Textarea placeholder={t.form.goal.placeholder} {...field} className={inputStyles} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -224,7 +227,7 @@ export function ContactSection() {
                   <FormItem className="md:col-span-2">
                     <FormLabel>{t.form.details.label}</FormLabel>
                     <FormControl>
-                      <Textarea placeholder={t.form.details.placeholder} {...field} />
+                      <Textarea placeholder={t.form.details.placeholder} {...field} className={inputStyles} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -237,7 +240,7 @@ export function ContactSection() {
                   <FormItem className="md:col-span-2">
                     <FormLabel>{t.form.howYouFoundUs.label}</FormLabel>
                     <FormControl>
-                      <Input placeholder={t.form.howYouFoundUs.placeholder} {...field} />
+                      <Input placeholder={t.form.howYouFoundUs.placeholder} {...field} className={inputStyles} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
