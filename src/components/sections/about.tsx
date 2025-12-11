@@ -22,13 +22,14 @@ const sectionVariants: Variants = {
 };
 
 const imageVariants: Variants = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -50, filter: 'blur(10px)' },
   visible: { 
     opacity: 1, 
     x: 0,
+    filter: 'blur(0px)',
     transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] }
   },
-  exit: { opacity: 0, x: 50, transition: { duration: 0.7, ease: 'easeIn' } },
+  exit: { opacity: 0, x: 50, filter: 'blur(10px)', transition: { duration: 0.7, ease: 'easeIn' } },
 };
 
 const textContentVariants: Variants = {
@@ -41,15 +42,15 @@ const textContentVariants: Variants = {
 };
 
 const founderNameVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: 'easeOut' } },
-    exit: { opacity: 0, scale: 0.98, transition: { duration: 0.4, ease: 'easeIn' } },
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.1, ease: 'easeOut' } },
+    exit: { opacity: 0, y: -10, transition: { duration: 0.4, ease: 'easeIn' } },
 };
 
 const bioParagraphsVariants: Variants = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.3 } },
-    exit: { transition: { staggerChildren: 0.15, staggerDirection: -1 } },
+    visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+    exit: { transition: { staggerChildren: 0.1, staggerDirection: -1 } },
 }
 
 const bioParagraphVariant: Variants = {
@@ -105,6 +106,7 @@ export function AboutSection() {
                     fill
                     className="object-cover"
                     data-ai-hint={founderImage.imageHint}
+                    sizes="(max-width: 768px) 80vw, 40vw"
                   />
                 </motion.div>
               )}
@@ -144,7 +146,12 @@ export function AboutSection() {
                 <div className='flex items-center gap-2'>
                     <span className="text-sm font-semibold">{`0${currentIndex + 1}`}</span>
                     <div className='w-20 h-px bg-border'>
-                        <motion.div className='h-px bg-primary' style={{width: `${((currentIndex + 1) / founders.length) * 100}%`}}/>
+                        <motion.div 
+                          className='h-px bg-primary' 
+                          initial={{width: `${((currentIndex) / founders.length) * 100}%`}}
+                          animate={{width: `${((currentIndex + 1) / founders.length) * 100}%`}}
+                          transition={{ duration: 0.6, ease: 'easeOut' }}
+                        />
                     </div>
                     <span className="text-sm text-muted-foreground">{`0${founders.length}`}</span>
                 </div>
