@@ -24,7 +24,7 @@ export function SponsorshipSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
            <MotionWrapper variants={titleVariants}>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground uppercase font-headline">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground font-headline uppercase">
               {t.title}
             </h2>
             <hr className="border-t-2 border-primary w-24 mt-4 mb-8 mx-auto" />
@@ -35,7 +35,7 @@ export function SponsorshipSection() {
             </p>
           </MotionWrapper>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="mt-16 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
           {t.tiers.map((tier, index) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
             <Card  className={`flex flex-col justify-center items-center shadow-lg hover:shadow-2xl transition-all duration-300 h-48 hover:-translate-y-1.5 ${tier.isPopular ? 'border-primary border-2 relative' : 'bg-secondary'}`}>
