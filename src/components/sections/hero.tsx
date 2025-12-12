@@ -89,7 +89,7 @@ export function HeroSection() {
           </motion.p>
           <motion.h1
             variants={h1Variants}
-            className="font-headline text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]"
+            className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]"
           >
             PULSO
             <br />
