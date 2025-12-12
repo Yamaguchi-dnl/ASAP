@@ -44,7 +44,6 @@ const formSchema = z.object({
   role: z.string().optional(),
   department: z.string().optional(),
   companyTime: z.string().optional(),
-  description: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -351,10 +350,10 @@ export function ContactSection() {
                         />
                         <FormField
                           control={form.control}
-                          name="description"
+                          name="challenge"
                           render={({ field }) => (
                             <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>Descrição do problema, dúvida ou solicitação</FormLabel>
+                              <FormLabel className={formLabelStyles}>Descreva o principal desafio que você está enfrentando</FormLabel>
                               <FormControl>
                                 <Textarea placeholder="Descreva aqui..." {...field} className={formInputStyles} />
                               </FormControl>
