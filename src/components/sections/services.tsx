@@ -50,7 +50,7 @@ export function ServicesSection() {
              <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
           </MotionWrapper>
           <MotionWrapper variants={textVariants}>
-            <p className="text-lg text-primary-foreground/80 mt-2">
+            <p className="text-xl text-primary-foreground/80 mt-2">
               {t.description}
             </p>
             <Button 

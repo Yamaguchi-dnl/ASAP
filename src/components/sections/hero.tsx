@@ -82,24 +82,22 @@ export function HeroSection() {
         >
           <motion.p
             variants={pVariants}
-            className="text-lg font-medium text-white max-w-sm md:max-w-2xl ml-1"
+            className="text-xl font-medium text-white max-w-sm md:max-w-2xl ml-1"
           >
             {translations.hero.subtitle.line1} <br />
             {translations.hero.subtitle.line2}
           </motion.p>
           <motion.h1
             variants={h1Variants}
-            className="text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]"
+            className="font-headline text-[100px] sm:text-[140px] md:text-[180px] font-bold text-white uppercase leading-[0.8]"
           >
             PULSO
             <br />
             ASAP
-            <motion.span
+            <motion.div
               variants={pointVariant}
-              className="text-accent inline-block"
-            >
-              .
-            </motion.span>
+              className="bg-accent inline-block rounded-full w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 ml-2 -mb-2"
+            />
           </motion.h1>
         </motion.div>
       </Container>

@@ -127,7 +127,7 @@ export function ContactSection() {
               <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-              <p className="mt-6 text-base text-primary-foreground/80">
+              <p className="mt-6 text-lg text-primary-foreground/80">
                 {t.subtitle}
               </p>
             </MotionWrapper>
