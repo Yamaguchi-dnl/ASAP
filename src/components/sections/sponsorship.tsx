@@ -54,6 +54,7 @@ export function SponsorshipSection() {
                       className="object-contain"
                     />
                   </div>
+                  <CardTitle className="text-xl font-bold mt-4">{tier.name}</CardTitle>
               </CardHeader>
             </Card>
             </MotionWrapper>
