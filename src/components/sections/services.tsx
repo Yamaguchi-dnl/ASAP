@@ -42,7 +42,7 @@ export function ServicesSection() {
   return (
     <section id="servicos" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight uppercase font-headline">
               {t.title.line1}<br className="hidden md:block" />{t.title.line2}
