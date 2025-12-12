@@ -30,7 +30,7 @@ const TextRevealOnScroll: FC<TextRevealOnScrollProps> = ({
 
   return (
     <div>
-      <h2 ref={targetRef} className={cn('text-3xl md:text-5xl font-normal leading-tight', className)}>
+      <h2 ref={targetRef} className={cn('text-3xl md:text-5xl font-headline font-normal leading-tight', className)}>
         {lines.map((line, lineIndex) => (
           <span key={lineIndex} className="block">
             {line.map((word, wordIndex) => {
