@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -58,9 +58,31 @@ export function ContactSection() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       formType: activeTab,
-      service: 'mentorias',
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      companyName: '',
+      employeeCount: '',
+      companySite: '',
+      challenge: '',
+      goal: '',
+      details: '',
+      howYouFoundUs: '',
+      role: '',
+      department: '',
+      companyTime: '',
     },
   });
+  
+  React.useEffect(() => {
+    form.reset();
+    form.setValue('formType', activeTab);
+    if(activeTab === 'empresa') {
+      form.setValue('service', t.form.service.options[0].value);
+    }
+  }, [activeTab, form, t.form.service.options]);
+
 
   const onSubmit = (data: FormValues) => {
     console.log(data);
@@ -71,18 +93,13 @@ export function ContactSection() {
     form.reset();
     form.setValue('formType', activeTab);
     if(activeTab === 'empresa') {
-      form.setValue('service', 'mentorias');
+      form.setValue('service', t.form.service.options[0].value);
     }
   };
   
   const handleTabChange = (value: string) => {
     const tab = value as 'empresa' | 'profissional';
     setActiveTab(tab);
-    form.reset();
-    form.setValue('formType', tab);
-    if(tab === 'empresa') {
-      form.setValue('service', 'mentorias');
-    }
   };
 
   const titleVariants = {
@@ -179,7 +196,7 @@ export function ContactSection() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                  {t.form.service.options.map(option => (
+                                  {t.form.service.options.map((option: { value: string; label: string; }) => (
                                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
                                   ))}
                                 </SelectContent>
@@ -378,3 +395,5 @@ export function ContactSection() {
     </section>
   );
 }
+
+    
