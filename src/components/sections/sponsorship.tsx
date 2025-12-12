@@ -4,6 +4,7 @@ import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { Container } from '../layout/container';
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/context/language-context';
+import Image from 'next/image';
 
 export function SponsorshipSection() {
     const { translations } = useLanguage();
@@ -36,16 +37,23 @@ export function SponsorshipSection() {
           </MotionWrapper>
         </div>
         <div className="mt-16 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
-          {t.tiers.map((tier, index) => (
+          {t.tiers.map((tier: any, index: number) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
-            <Card  className={`flex flex-col justify-center items-center shadow-lg hover:shadow-2xl transition-all duration-300 h-48 hover:-translate-y-1.5 ${tier.isPopular ? 'border-primary border-2 relative' : 'bg-secondary'}`}>
+            <Card  className={`flex flex-col justify-center items-center shadow-lg hover:shadow-2xl transition-all duration-300 h-64 hover:-translate-y-1.5 p-6 ${tier.isPopular ? 'border-primary border-2 relative' : 'bg-secondary'}`}>
                {tier.isPopular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-3 py-1 text-sm font-bold rounded-full">
                   {t.mostPopular}
                 </div>
               )}
               <CardHeader className="text-center">
-                <CardTitle className="text-3xl">{tier.name}</CardTitle>
+                 <div className="relative h-24 w-60">
+                    <Image
+                      src={tier.logoUrl}
+                      alt={tier.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
               </CardHeader>
             </Card>
             </MotionWrapper>
