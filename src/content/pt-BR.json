@@ -219,7 +219,7 @@
           { "value": "treinamento", "label": "Treinamento ASAP" }
         ]
       },
-      "companyName": { "label": "Nome da empresa", "placeholder": "Sua empresa" },
+      "companyName": { "label": "Nome da empresa", "placeholder": "Nome da empresa interessada" },
       "employeeCount": { "label": "Quantos funcionários possui?", "placeholder": "Ex: 50-100" },
       "companySite": { "label": "Site da empresa", "placeholder": "www.suaempresa.com.br" },
       "challenge": {
