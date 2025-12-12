@@ -188,9 +188,9 @@
     "title": "Seja um Apoiador",
     "subtitle": "Associe sua marca a um projeto que transforma o ambiente corporativo. Seja um patrocinador e fortaleça a imagem da sua empresa.",
     "tiers": [
-      { "name": "Cota Prata", "isPopular": false },
-      { "name": "Cota Ouro", "isPopular": true },
-      { "name": "Cota Master", "isPopular": false }
+      { "name": "Apoiador Transformador", "isPopular": false },
+      { "name": "Apoiador Essencial", "isPopular": true },
+      { "name": "Apoiador Estratégico", "isPopular": false }
     ],
     "mostPopular": "Mais Popular",
     "note": "* A aceitação da parceria ocorre somente após o processo de due diligence.",
