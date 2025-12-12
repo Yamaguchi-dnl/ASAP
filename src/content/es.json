@@ -211,7 +211,10 @@
         "label": "Selecciona el servicio deseado",
         "placeholder": "Selecciona un servicio",
         "options": [
-          { "value": "mentorias", "label": "Mentorías ASAP" }
+          { "value": "mentorias", "label": "Mentorías ASAP" },
+          { "value": "palestra", "label": "Conferencia ASAP" },
+          { "value": "solucoes", "label": "Soluciones Regulatorias ASAP" },
+          { "value": "treinamento", "label": "Entrenamiento ASAP" }
         ]
       },
       "companyName": { "label": "Nombre de la empresa", "placeholder": "Nombre de la empresa interesada" },
