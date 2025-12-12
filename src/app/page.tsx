@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <div className="relative z-10 bg-white">
+      <div className="relative z-10 bg-white overflow-x-hidden">
         <BenefitsSection />
         <AboutSection />
         <OurApproachSection />
