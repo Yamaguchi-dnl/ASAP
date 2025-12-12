@@ -18,7 +18,6 @@ export default {
     extend: {
       fontFamily: {
         body: ['Satoshi', 'sans-serif'],
-        headline: ['Silver Streak Extended Light', 'Satoshi', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

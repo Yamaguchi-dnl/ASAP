@@ -113,7 +113,7 @@ export function AboutSection() {
           {/* Coluna de Texto */}
           <div className="flex flex-col justify-between h-full min-h-[550px]">
              <motion.div variants={textContentVariants}>
-               <h2 className="text-3xl md:text-5xl font-headline font-normal text-foreground uppercase">
+               <h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase">
                 {translations.about.title}
               </h2>
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />

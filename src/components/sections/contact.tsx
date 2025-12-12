@@ -104,7 +104,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="lg:sticky lg:top-24">
             <MotionWrapper variants={titleVariants}>
-              <h2 className="text-3xl md:text-5xl font-headline font-normal text-primary-foreground leading-tight">
+              <h2 className="text-3xl md:text-5xl font-normal text-primary-foreground leading-tight">
                 {t.title}
               </h2>
               <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />

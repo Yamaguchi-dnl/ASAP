@@ -251,9 +251,9 @@ export function OurApproachSection() {
                   exit="exit"
                   variants={contentVariants}
                 >
-                  <motion.h2 className="text-3xl md:text-5xl font-headline font-normal text-foreground uppercase" variants={titleVariants}>
+                  <h2 className="text-3xl md:text-5xl font-normal text-foreground uppercase" variants={titleVariants}>
                     {currentSlide.title}
-                  </motion.h2>
+                  </h2>
                   <motion.hr 
                     className="border-t-2 border-primary w-24 mt-4 mb-8" 
                     initial={{scaleX: 0, originX: 0}} 
