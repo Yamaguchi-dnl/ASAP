@@ -221,7 +221,7 @@
       "employeeCount": { "label": "Quantos funcionários possui?", "placeholder": "Ex: 50-100" },
       "companySite": { "label": "Site da empresa", "placeholder": "www.suaempresa.com.br" },
       "challenge": {
-        "label": "Descreva o principal desafio que você ou sua empresa está enfrentando",
+        "label": "Descreva o principal desafio que sua empresa está enfrentando",
         "placeholder": "Descreva aqui..."
       },
       "goal": {
