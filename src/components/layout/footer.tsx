@@ -1,6 +1,6 @@
 'use client';
 
-import { Twitter, Linkedin, Instagram, FileText, Mail, Globe, ChevronDown } from 'lucide-react';
+import { Twitter, Linkedin, Instagram, FileText, Mail, Globe, BookText } from 'lucide-react';
 import { Container } from './container';
 import Link from 'next/link';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
@@ -55,6 +55,11 @@ export function Footer() {
                     <Mail size={16} /> {translations.footer.newsletters}
                   </Link>
                 </li>
+                 <li>
+                  <Link href="#" className="flex items-center gap-2 hover:underline">
+                    <BookText size={16} /> {translations.footer.manuals}
+                  </Link>
+                </li>
               </ul>
             </div>
              <div className="space-y-4">
@@ -85,6 +90,11 @@ export function Footer() {
                     <li>
                       <Link href="#" className="flex items-center gap-2 hover:underline">
                         <Mail size={16} /> {translations.footer.newsletters}
+                      </Link>
+                    </li>
+                     <li>
+                      <Link href="#" className="flex items-center gap-2 hover:underline">
+                        <BookText size={16} /> {translations.footer.manuals}
                       </Link>
                     </li>
                   </ul>

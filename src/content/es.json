@@ -197,8 +197,8 @@
     "ourSponsors": "Nuestros Apoyadores"
   },
   "contact": {
-    "title": "Contáctanos",
-    "subtitle": "Completa el formulario a continuación y nos pondremos en contacto.",
+    "title": "Quer contratar nossos serviços?",
+    "subtitle": "Preencha o formulário abaixo que entraremos em contato.",
     "toast": {
       "title": "¡Mensaje enviado con éxito!",
       "description": "Gracias por contactarnos. Te responderemos en breve."
@@ -279,6 +279,7 @@
     "usefulLinks": "Enlaces Útiles",
     "codeOfConduct": "Código de ética y de conducta",
     "newsletters": "Newsletters",
+    "manuals": "Manuales",
     "contact": "Contacto",
     "copy": "PulsoASAP. Todos los derechos reservados."
   }

@@ -43,7 +43,7 @@ export function Header() {
     >
       <Container>
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center justify-center">
+          <Link href="/" className="flex items-center">
             <div className="relative h-12 w-32">
               <Image
                 src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png"
