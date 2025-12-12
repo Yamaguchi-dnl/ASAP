@@ -19,6 +19,7 @@ export default {
       fontFamily: {
         body: ['Satoshi', 'sans-serif'],
         code: ['monospace'],
+        headline: ['var(--font-headline)'],
       },
       colors: {
         background: 'hsl(var(--background))',
