@@ -5,7 +5,7 @@
 @layer base {
   @font-face {
     font-family: 'Silver Streak Extended Light';
-    src: url('/fonts/Silver-Streak-Extended-Light.woff2') format('woff2');
+    src: url('/fonts/Silver Streak Extended Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
