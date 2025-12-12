@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: 'Silver Streak Extended Light';
-    src: url('/fonts/Silver-Streak-Extended-Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-
   :root {
     --background: 0 0% 100%;
     --foreground: 215 25% 27%;
@@ -45,7 +37,6 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    --font-headline: 'Silver Streak Extended Light', 'Satoshi', sans-serif;
   }
   .dark {
     --background: 240 6% 10%;
