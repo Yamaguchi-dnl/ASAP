@@ -214,7 +214,8 @@
           { "value": "mentorias", "label": "Mentorías ASAP" },
           { "value": "palestra", "label": "Conferencia ASAP" },
           { "value": "solucoes", "label": "Soluciones Regulatorias ASAP" },
-          { "value": "treinamento", "label": "Entrenamiento ASAP" }
+          { "value": "treinamento", "label": "Entrenamiento ASAP" },
+          { "value": "apoiador", "label": "Apoyador ASAP" }
         ]
       },
       "companyName": { "label": "Nombre de la empresa", "placeholder": "Nombre de la empresa interesada" },
