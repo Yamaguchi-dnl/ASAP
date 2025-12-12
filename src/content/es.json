@@ -197,8 +197,8 @@
     "ourSponsors": "Nuestros Apoyadores"
   },
   "contact": {
-    "title": "Quer contratar nossos serviços?",
-    "subtitle": "Preencha o formulário abaixo que entraremos em contato.",
+    "title": "Quiere contratar nuestros servicios?",
+    "subtitle": "Rellene el formulario a continuación y nos pondremos en contacto.",
     "toast": {
       "title": "¡Mensaje enviado con éxito!",
       "description": "Gracias por contactarnos. Te responderemos en breve."
@@ -211,12 +211,7 @@
         "label": "Selecciona el servicio deseado",
         "placeholder": "Selecciona un servicio",
         "options": [
-          { "value": "mentorias", "label": "Mentorías ASAP" },
-          { "value": "palestras", "label": "Conferencias ASAP" },
-          { "value": "patrocinio", "label": "Patrocinio ASAP" },
-          { "value": "produto", "label": "Producto ASAP" },
-          { "value": "solucoes", "label": "Soluciones Regulatorias ASAP" },
-          { "value": "treinamento", "label": "Entrenamiento ASAP" }
+          { "value": "mentorias", "label": "Mentorías ASAP" }
         ]
       },
       "companyName": { "label": "Nombre de la empresa", "placeholder": "Nombre de la empresa interesada" },

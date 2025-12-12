@@ -28,12 +28,12 @@ import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-const companyFormSchema = z.object({
-  formType: z.literal('empresa'),
+const formSchema = z.object({
+  formType: z.enum(['empresa', 'profissional']),
   name: z.string().min(2, { message: 'O nome deve ter pelo menos 2 caracteres.' }),
   email: z.string().email({ message: 'Por favor, insira um email válido.' }),
   phone: z.string().optional(),
-  service: z.string({ required_error: 'Por favor, selecione um serviço.' }),
+  service: z.string().optional(),
   companyName: z.string().optional(),
   employeeCount: z.string().optional(),
   companySite: z.string().optional(),
@@ -41,23 +41,16 @@ const companyFormSchema = z.object({
   goal: z.string().optional(),
   details: z.string().optional(),
   howYouFoundUs: z.string().optional(),
-});
-
-const collaboratorFormSchema = z.object({
-  formType: z.literal('colaborador'),
-  name: z.string().min(2, { message: 'O nome deve ter pelo menos 2 caracteres.' }),
-  email: z.string().email({ message: 'Por favor, insira um email válido.' }),
-  role: z.string().min(2, { message: 'O cargo deve ter pelo menos 2 caracteres.' }),
+  role: z.string().optional(),
   department: z.string().optional(),
   companyTime: z.string().optional(),
-  description: z.string().min(10, { message: 'A descrição deve ter pelo menos 10 caracteres.' }),
+  description: z.string().optional(),
 });
 
-const formSchema = z.discriminatedUnion('formType', [companyFormSchema, collaboratorFormSchema]);
 type FormValues = z.infer<typeof formSchema>;
 
 export function ContactSection() {
-  const [activeTab, setActiveTab] = useState<'empresa' | 'colaborador'>('empresa');
+  const [activeTab, setActiveTab] = useState<'empresa' | 'profissional'>('empresa');
   const { toast } = useToast();
   const { translations } = useLanguage();
   const t = translations.contact;
@@ -66,6 +59,7 @@ export function ContactSection() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       formType: activeTab,
+      service: 'mentorias',
     },
   });
 
@@ -77,13 +71,19 @@ export function ContactSection() {
     });
     form.reset();
     form.setValue('formType', activeTab);
+    if(activeTab === 'empresa') {
+      form.setValue('service', 'mentorias');
+    }
   };
   
   const handleTabChange = (value: string) => {
-    const tab = value as 'empresa' | 'colaborador';
+    const tab = value as 'empresa' | 'profissional';
     setActiveTab(tab);
     form.reset();
     form.setValue('formType', tab);
+    if(tab === 'empresa') {
+      form.setValue('service', 'mentorias');
+    }
   };
 
   const titleVariants = {
@@ -106,13 +106,13 @@ export function ContactSection() {
           <div className="lg:sticky lg:top-24">
             <MotionWrapper variants={titleVariants}>
               <h2 className="text-3xl md:text-5xl font-normal text-primary-foreground leading-tight">
-                Quer contratar nossos serviços?
+                {t.title}
               </h2>
               <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
               <p className="mt-6 text-base text-primary-foreground/80">
-                Preencha o formulário abaixo que entraremos em contato.
+                {t.subtitle}
               </p>
             </MotionWrapper>
           </div>
@@ -122,7 +122,7 @@ export function ContactSection() {
               <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
                 <TabsList className="grid w-full grid-cols-2 bg-primary-foreground/20 text-primary-foreground">
                   <TabsTrigger value="empresa" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Empresas</TabsTrigger>
-                  <TabsTrigger value="colaborador" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Colaboradores</TabsTrigger>
+                  <TabsTrigger value="profissional" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>Para Profissionais</TabsTrigger>
                 </TabsList>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6">
@@ -282,7 +282,7 @@ export function ContactSection() {
                         />
                       </div>
                     </TabsContent>
-                    <TabsContent value="colaborador" forceMount hidden={activeTab !== 'colaborador'}>
+                    <TabsContent value="profissional" forceMount hidden={activeTab !== 'profissional'}>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField
                           control={form.control}

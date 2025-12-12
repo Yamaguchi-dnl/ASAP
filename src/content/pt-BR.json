@@ -211,12 +211,7 @@
         "label": "Selecione o serviço desejado",
         "placeholder": "Selecione um serviço",
         "options": [
-          { "value": "mentorias", "label": "Mentorias ASAP" },
-          { "value": "palestras", "label": "Palestras ASAP" },
-          { "value": "patrocinio", "label": "Patrocínio ASAP" },
-          { "value": "produto", "label": "Produto ASAP" },
-          { "value": "solucoes", "label": "Soluções Regulatórias ASAP" },
-          { "value": "treinamento", "label": "Treinamento ASAP" }
+          { "value": "mentorias", "label": "Mentorias ASAP" }
         ]
       },
       "companyName": { "label": "Nome da empresa", "placeholder": "Nome da empresa interessada" },
@@ -232,7 +227,7 @@
       },
       "details": {
         "label": "Há alguma particularidade ou detalhe que gostaria de compartilhar?",
-        "placeholder": "Descreva aqui..."
+        "placeholder": "Descreva here..."
       },
       "howYouFoundUs": {
         "label": "Como conheceu o Pulso ASAP?",
