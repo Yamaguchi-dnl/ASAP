@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -75,7 +75,7 @@ export function ContactSection() {
     },
   });
   
-  React.useEffect(() => {
+  useEffect(() => {
     form.reset();
     form.setValue('formType', activeTab);
     if(activeTab === 'empresa') {
@@ -395,5 +395,3 @@ export function ContactSection() {
     </section>
   );
 }
-
-    
