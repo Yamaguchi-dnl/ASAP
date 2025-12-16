@@ -45,7 +45,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight uppercase font-headline">
-              {t.title.line1}<br className="hidden md:block" />{t.title.line2}
+              {t.title.line1}{' '}<br className="hidden md:block" />{t.title.line2}
             </h2>
              <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
           </MotionWrapper>
