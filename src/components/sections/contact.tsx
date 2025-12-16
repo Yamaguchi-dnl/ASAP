@@ -380,14 +380,14 @@ export function ContactSection() {
                             </FormItem>
                           )}
                         />
-                         <FormField
+                        <FormField
                           control={form.control}
-                          name="employeeCount"
+                          name="role"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.employeeCount.label}</FormLabel>
+                              <FormLabel className={formLabelStyles}>{tProf.role.label}</FormLabel>
                               <FormControl>
-                                <Input placeholder={tProf.employeeCount.placeholder} {...field} className={formInputStyles}/>
+                                <Input placeholder={tProf.role.placeholder} {...field} className={formInputStyles}/>
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -395,12 +395,25 @@ export function ContactSection() {
                         />
                         <FormField
                           control={form.control}
-                          name="companySite"
+                          name="department"
                           render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{tProf.companySite.label}</FormLabel>
+                            <FormItem>
+                              <FormLabel className={formLabelStyles}>{tProf.department.label}</FormLabel>
                               <FormControl>
-                                <Input placeholder={tProf.companySite.placeholder} {...field} className={formInputStyles}/>
+                                <Input placeholder={tProf.department.placeholder} {...field} className={formInputStyles}/>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="companyTime"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className={formLabelStyles}>{tProf.companyTime.label}</FormLabel>
+                              <FormControl>
+                                <Input placeholder={tProf.companyTime.placeholder} {...field} className={formInputStyles}/>
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -427,19 +440,6 @@ export function ContactSection() {
                               <FormLabel className={formLabelStyles}>{tProf.goal.label}</FormLabel>
                               <FormControl>
                                 <Textarea placeholder={tProf.goal.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="details"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{tProf.details.label}</FormLabel>
-                              <FormControl>
-                                <Textarea placeholder={tProf.details.placeholder} {...field} className={formInputStyles} />
                               </FormControl>
                               <FormMessage />
                             </FormItem>

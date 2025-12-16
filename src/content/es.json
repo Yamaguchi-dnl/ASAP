@@ -257,18 +257,15 @@
         "placeholder": "Selecciona un servicio"
       },
       "companyName": { "label": "Nombre de la empresa (opcional)", "placeholder": "Nombre de la empresa donde trabajas" },
-      "employeeCount": { "label": "¿Cuántos empleados tiene la empresa?", "placeholder": "Ej: 50-100" },
-      "companySite": { "label": "Sitio web de la empresa (opcional)", "placeholder": "www.tuempresa.com" },
+      "role": { "label": "¿Cuál es tu cargo actual?", "placeholder": "Ej: Analista, Gerente, etc." },
+      "department": { "label": "¿Cuál es tu departamento/área de actuación?", "placeholder": "Ej: Finanzas, TI, etc." },
+      "companyTime": { "label": "¿Cuánto tiempo llevas en la empresa actual?", "placeholder": "Ej: 2 años" },
       "challenge": {
         "label": "Describa el principal desafío que estás enfrentando",
         "placeholder": "Describe aquí..."
       },
       "goal": {
         "label": "¿Qué objetivo esperas alcanzar con la mentoría?",
-        "placeholder": "Describe aquí..."
-      },
-      "details": {
-        "label": "¿Hay alguna particularidad o detalle que te gustaría compartir?",
         "placeholder": "Describe aquí..."
       },
       "howYouFoundUs": {

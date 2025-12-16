@@ -257,18 +257,15 @@
         "placeholder": "Selecione um serviço"
       },
       "companyName": { "label": "Nome da empresa (opcional)", "placeholder": "Nome da empresa onde trabalha" },
-      "employeeCount": { "label": "Quantos funcionários a empresa possui?", "placeholder": "Ex: 50-100" },
-      "companySite": { "label": "Site da empresa (opcional)", "placeholder": "www.suaempresa.com.br" },
+      "role": { "label": "Qual seu cargo atual?", "placeholder": "Ex: Analista, Gerente, etc." },
+      "department": { "label": "Qual seu departamento/área de atuação?", "placeholder": "Ex: Financeiro, TI, etc." },
+      "companyTime": { "label": "Há quanto tempo você está na empresa atual?", "placeholder": "Ex: 2 anos" },
       "challenge": {
         "label": "Descreva o principal desafio que você está enfrentando",
         "placeholder": "Descreva aqui..."
       },
       "goal": {
         "label": "Qual objetivo espera alcançar com a mentoria?",
-        "placeholder": "Descreva aqui..."
-      },
-      "details": {
-        "label": "Há alguma particularidade ou detalhe que gostaria de compartilhar?",
         "placeholder": "Descreva aqui..."
       },
       "howYouFoundUs": {
