@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { useLanguage } from '@/context/language-context';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0 },
@@ -60,6 +61,7 @@ export function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { translations } = useLanguage();
   const founders = translations.about.founders;
+  const isMobile = useIsMobile();
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % founders.length);
@@ -70,6 +72,15 @@ export function AboutSection() {
       (prevIndex) => (prevIndex - 1 + founders.length) % founders.length
     );
   };
+
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(() => {
+        handleNext();
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [currentIndex, isMobile]);
 
   const currentFounder = founders[currentIndex];
   const founderImage = PlaceHolderImages.find((p) => p.id === currentFounder.imageId);
