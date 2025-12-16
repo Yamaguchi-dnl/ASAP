@@ -41,7 +41,7 @@ export function Header() {
         isScrolled ? 'bg-primary shadow-md' : 'bg-transparent'
       )}
     >
-      <Container className="px-6 lg:px-8">
+      <Container>
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center -ml-10 md:ml-0">
             <div className="relative h-12 w-32">

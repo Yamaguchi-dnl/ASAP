@@ -232,14 +232,14 @@ export function OurApproachSection() {
 
   return (
     <motion.section 
-      id="nossa-abordagem" 
+      id="quem-somos" 
       className="py-20 sm:py-32 bg-secondary/30 text-foreground"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={sectionVariants}
     >
-      <Container className="px-6 lg:px-8">
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[600px]">
           <div className="flex flex-col justify-between h-full py-8">
             <div className='relative overflow-hidden min-h-[450px]'>

@@ -76,14 +76,14 @@ export function AboutSection() {
 
   return (
     <motion.section 
-      id="sobre" 
+      id="lideranca" 
       className="py-20 sm:py-32 bg-background"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionVariants}
     >
-      <Container className="px-6 lg:px-8">
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
           <motion.div className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>

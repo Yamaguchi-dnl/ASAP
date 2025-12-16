@@ -3,7 +3,8 @@
   "header": {
     "navLinks": [
       { "href": "#beneficios", "label": "Beneficios" },
-      { "href": "#sobre", "label": "Sobre Nosotros" },
+      { "href": "#quem-somos", "label": "Sobre Nosotros" },
+      { "href": "#lideranca", "label": "Liderazgo" },
       { "href": "#servicos", "label": "Servicios" },
       { "href": "#depoimentos", "label": "Testimonios" },
       { "href": "#apoiador", "label": "Apoyadores" }
@@ -43,7 +44,7 @@
     ]
   },
   "about": {
-    "title": "Quiénes somos",
+    "title": "Liderazgo y Fundadoras",
     "founders": [
       {
         "id": "rosa",
@@ -65,7 +66,7 @@
     "slides": [
       {
         "id": "approach",
-        "title": "Nuestro Enfoque",
+        "title": "Quiénes somos",
         "imageId": "service-workshop",
         "description": "Con presencia en Brasil y España, Pulso ASAP (Acción, Sostenibilidad, Autoconocimiento y Propósito) surgió de la necesidad de abordar el tema del agotamiento profesional de manera clara, objetiva y aplicable al día a día corporativo.",
         "points": [
