@@ -13,7 +13,7 @@ export function BenefitsSection() {
 
   return (
     <section id="beneficios" className="py-20 sm:py-32 bg-primary text-primary-foreground">
-      <Container>
+      <Container className="px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <TextRevealOnScroll>

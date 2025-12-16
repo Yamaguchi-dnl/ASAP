@@ -26,7 +26,7 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="py-20 sm:py-32 bg-secondary/30">
-      <Container>
+      <Container className="px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <MotionWrapper variants={titleVariants}>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">

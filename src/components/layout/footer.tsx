@@ -27,7 +27,7 @@ export function Footer() {
 
   return (
     <footer className="bg-secondary text-secondary-foreground py-12">
-      <Container>
+      <Container className="px-6 lg:px-8">
         <MotionWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>

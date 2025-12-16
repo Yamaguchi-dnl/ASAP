@@ -239,7 +239,7 @@ export function OurApproachSection() {
       viewport={{ once: true, amount: 0.1 }}
       variants={sectionVariants}
     >
-      <Container>
+      <Container className="px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[600px]">
           <div className="flex flex-col justify-between h-full py-8">
             <div className='relative overflow-hidden min-h-[450px]'>

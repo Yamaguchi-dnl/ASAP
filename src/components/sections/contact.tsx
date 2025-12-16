@@ -123,7 +123,7 @@ export function ContactSection() {
 
   return (
     <section id="contato" className="py-20 sm:py-32 bg-primary text-primary-foreground">
-      <Container>
+      <Container className="px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="lg:sticky lg:top-24">
             <MotionWrapper variants={titleVariants}>

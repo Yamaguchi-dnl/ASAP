@@ -37,7 +37,7 @@ export function TestimonialsSection() {
       id="depoimentos"
       className="py-20 sm:py-32 bg-background"
     >
-      <Container>
+      <Container className="px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
             <MotionWrapper variants={titleVariants}>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">

@@ -72,7 +72,7 @@ export function HeroSection() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <Container className="relative z-10 h-full">
+      <Container className="relative z-10 h-full px-6 lg:px-8">
         <motion.div
           style={{ opacity, scale }}
           className="absolute bottom-24 md:bottom-32 left-4 sm:left-6 lg:left-8 text-left"

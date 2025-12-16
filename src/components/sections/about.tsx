@@ -83,7 +83,7 @@ export function AboutSection() {
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionVariants}
     >
-      <Container>
+      <Container className="px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
           <motion.div className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>
