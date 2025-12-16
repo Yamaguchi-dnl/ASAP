@@ -13,21 +13,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { cn } from '@/lib/utils';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
   const t = translations.services;
 
   const services = t.items;
-
-  const plugin = React.useRef(
-    Autoplay({ delay: 7000, stopOnInteraction: true })
-  );
 
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -45,7 +38,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight uppercase font-headline">
-              {t.title.line1}{' '}<br className="hidden md:block" />{t.title.line2}
+              {t.title.line1} <br className="hidden md:block" />{t.title.line2}
             </h2>
              <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
           </MotionWrapper>
@@ -67,14 +60,11 @@ export function ServicesSection() {
         
         <div className="mt-16 relative">
           <Carousel
-            plugins={[plugin.current]}
             opts={{
               align: 'start',
               loop: true,
             }}
             className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
           >
              <div className="flex justify-end mt-8 relative gap-2">
                 <CarouselPrevious className="static h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
@@ -104,11 +94,11 @@ export function ServicesSection() {
                         <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full transition-all duration-500 overflow-hidden">
                            <p className="text-white/80 text-sm mt-2">{service.description}</p>
                             {service.subItems && service.subItems.length > 0 && (
-                              <ul className="mt-4 space-y-2 text-sm">
+                              <ol className="mt-4 space-y-2 text-sm list-decimal list-inside">
                                 {service.subItems.map((item: string, i: number) => (
                                   <li key={i} className="font-medium text-white/90">{item}</li>
                                 ))}
-                              </ul>
+                              </ol>
                             )}
                           <Button 
                             variant="outline"
