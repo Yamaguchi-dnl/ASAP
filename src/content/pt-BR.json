@@ -198,13 +198,16 @@
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png"
       }
     ],
-    "mostPopular": "Mais Popular",
     "note": "* A aceitação da parceria ocorre somente após o processo de due diligence.",
     "ourSponsors": "Nossos Apoiadores"
   },
   "contact": {
     "title": "Quer contratar nossos serviços?",
     "subtitle": "Preencha o formulário abaixo que entraremos em contato.",
+    "tabs": {
+      "company": "Para Empresas",
+      "professional": "Para Profissionais"
+    },
     "toast": {
       "title": "Mensagem enviada com sucesso!",
       "description": "Obrigado por entrar em contato. Retornaremos em breve."
@@ -244,6 +247,34 @@
         "placeholder": "Ex: LinkedIn, Indicação..."
       },
       "submitButton": "Enviar Mensagem"
+    },
+    "form_professional": {
+      "name": { "label": "Seu nome", "placeholder": "Seu nome completo" },
+      "email": { "label": "E-mail", "placeholder": "seu@email.com" },
+      "phone": { "label": "Telefone", "placeholder": "(XX) XXXXX-XXXX" },
+      "service": {
+        "label": "Serviço desejado",
+        "placeholder": "Selecione um serviço"
+      },
+      "companyName": { "label": "Nome da empresa (opcional)", "placeholder": "Nome da empresa onde trabalha" },
+      "employeeCount": { "label": "Quantos funcionários a empresa possui?", "placeholder": "Ex: 50-100" },
+      "companySite": { "label": "Site da empresa (opcional)", "placeholder": "www.suaempresa.com.br" },
+      "challenge": {
+        "label": "Descreva o principal desafio que você está enfrentando",
+        "placeholder": "Descreva aqui..."
+      },
+      "goal": {
+        "label": "Qual objetivo espera alcançar com a mentoria?",
+        "placeholder": "Descreva aqui..."
+      },
+      "details": {
+        "label": "Há alguma particularidade ou detalhe que gostaria de compartilhar?",
+        "placeholder": "Descreva aqui..."
+      },
+      "howYouFoundUs": {
+        "label": "Como conheceu o Pulso ASAP?",
+        "placeholder": "Ex: LinkedIn, Indicação..."
+      }
     }
   },
   "faq": {
