@@ -2,9 +2,12 @@
 
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { Container } from '../layout/container';
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/context/language-context';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Check } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export function SponsorshipSection() {
     const { translations } = useLanguage();
@@ -36,33 +39,55 @@ export function SponsorshipSection() {
             </p>
           </MotionWrapper>
         </div>
-        <div className="mt-16 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-16 mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
           {t.tiers.map((tier: any, index: number) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
-            <Card  className="flex flex-col justify-center items-center shadow-lg hover:shadow-2xl transition-all duration-300 h-64 hover:-translate-y-1.5 p-6 bg-background border">
-              <CardHeader className="text-center items-center">
-                 <div className="relative h-24 w-60">
-                    <Image
-                      src={tier.logoUrl}
-                      alt={tier.name}
-                      fill
-                      className="object-contain"
-                    />
+              <div className="group" tabIndex={0}>
+                <Card  className={cn("h-[500px] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col bg-card relative rounded-lg border",
+                "group-focus-within:shadow-2xl group-focus-within:-translate-y-1.5"
+                )}>
+                  <Image
+                    src={tier.logoUrl}
+                    alt={tier.name}
+                    fill
+                    className="object-cover transition-transform duration-500 opacity-5 group-hover:scale-105 group-focus-within:scale-105"
+                  />
+                  <div className="relative flex flex-col h-full p-8 text-foreground justify-between">
+                    <div>
+                      <h3 className="text-2xl font-bold text-primary transition-all duration-500">{tier.name}</h3>
+                      <p className="text-foreground/80 text-base mt-4">{tier.description}</p>
+                    </div>
+                    
+                    <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden">
+                      <ul className="mt-6 space-y-3">
+                        {tier.benefits.map((benefit: string, i: number) => (
+                          <li key={i} className="flex items-start text-sm">
+                            <Check className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button 
+                        variant="default"
+                        className="mt-8 rounded-full"
+                        asChild
+                      >
+                         <a href="#contato">{t.cta}</a>
+                      </Button>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl font-bold mt-4">{tier.name}</CardTitle>
-              </CardHeader>
-            </Card>
+                </Card>
+              </div>
             </MotionWrapper>
           ))}
         </div>
         <MotionWrapper variants={textVariants} transition={{ delay: 1 }}>
-          <p className="text-center mt-8 text-sm text-muted-foreground italic">{t.note}</p>
+          <p className="text-center mt-12 text-sm text-muted-foreground italic">{t.note}</p>
         </MotionWrapper>
         <MotionWrapper variants={textVariants} transition={{ delay: 1.2 }}>
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
              <h3 className="text-xl font-bold text-foreground">{t.ourSponsors}</h3>
              <div className="mt-8 flex justify-center items-center gap-8 flex-wrap">
-                {/* Espaço para logos de patrocinadores */}
                 <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
                 <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
                 <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>

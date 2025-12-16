@@ -191,14 +191,27 @@
     "subtitle": "Asocie su marca a un proyecto que transforma el ambiente corporativo. Sea un patrocinador y fortalezca la imagen de su empresa.",
     "tiers": [
       {
-        "name": "Apoyador Transformador",
-        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png"
+        "name": "Apoyador Esencial",
+        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
+        "description": "Categoría destinada a organizaciones que reconocen la relevancia del tema y apoyan la continuidad de las iniciativas de investigación, contenido y acciones dirigidas a la prevención del agotamiento corporativo, fortaleciendo la agenda de ambientes saludables e integridad.",
+        "benefits": [
+          "Presencia institucional de la marca",
+          "Descuentos en productos y servicios",
+          "Y otros beneficios de visibilidad y relación"
+        ]
       },
       {
-        "name": "Apoyador Esencial",
-        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png"
+        "name": "Apoyador Transformador",
+        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
+        "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando iniciativas de concienciación, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
+        "benefits": [
+          "Exclusividad por sector",
+          "Conferencia corporativa incluida",
+          "Y beneficios adicionales de posicionamiento y protagonismo"
+        ]
       }
     ],
+    "cta": "Quiero ser un apoyador",
     "note": "* La aceptación de la asociación ocurre solo después del proceso de due diligence.",
     "ourSponsors": "Nuestros Apoyadores"
   },
