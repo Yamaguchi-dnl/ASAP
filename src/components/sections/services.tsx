@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/carousel';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
@@ -38,7 +39,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight uppercase font-headline">
-              {t.title.line1} <br className="hidden md:block" />{t.title.line2}
+              {t.title.line1} <br className="md:hidden" />{t.title.line2}
             </h2>
              <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
           </MotionWrapper>
@@ -75,23 +76,25 @@ export function ServicesSection() {
               {services.map((service: any) => {
                  const serviceImage = PlaceHolderImages.find((p) => p.id === service.imageId);
                 return (
-                  <CarouselItem key={service.id} className="pl-4 basis-[90%] sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group">
-                    <Card className="h-[450px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg">
+                  <CarouselItem key={service.id} className="pl-4 basis-[90%] sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group" tabIndex={0}>
+                    <Card className={cn(
+                      "h-[450px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg"
+                    )}>
                       {serviceImage && (
                         <Image
                           src={serviceImage.imageUrl}
                           alt={service.title}
                           fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105 group-focus-within:scale-105"
                           data-ai-hint={serviceImage.imageHint}
                         />
                       )}
-                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-colors duration-500" />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 group-focus-within:bg-black/70 transition-colors duration-500" />
                       
                       <div className="relative flex flex-col h-full p-6 text-white justify-end">
-                        <h3 className="text-2xl font-bold transition-all duration-500 group-hover:mb-2">{service.title}</h3>
+                        <h3 className="text-2xl font-bold transition-all duration-500 group-hover:mb-2 group-focus-within:mb-2">{service.title}</h3>
                         
-                        <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full transition-all duration-500 overflow-hidden">
+                        <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden">
                            <p className="text-white/80 text-sm mt-2">{service.description}</p>
                             {service.subItems && service.subItems.length > 0 && (
                               <ol className="mt-4 space-y-2 text-sm list-decimal list-inside">
