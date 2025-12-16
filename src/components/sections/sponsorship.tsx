@@ -25,7 +25,7 @@ export function SponsorshipSection() {
     
   return (
     <section id="apoiador" className="py-20 sm:py-32 bg-background">
-      <Container className="px-6 lg:px-8">
+      <Container>
         <div className="max-w-3xl mx-auto text-center">
            <MotionWrapper variants={titleVariants}>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground font-headline uppercase">
@@ -52,7 +52,7 @@ export function SponsorshipSection() {
                     fill
                     className="object-cover transition-transform duration-500 opacity-5 group-hover:scale-105 group-focus-within:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/80 group-focus-within:from-black/80 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 group-focus-within:bg-black/70 transition-colors duration-500" />
                   
                   <div className="relative flex flex-col h-full p-8 text-white justify-end">
                     <h3 className="text-3xl font-bold transition-all duration-500 text-primary-foreground group-hover:mb-2 group-focus-within:mb-2">{tier.name}</h3>
