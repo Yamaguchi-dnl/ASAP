@@ -39,13 +39,8 @@ export function SponsorshipSection() {
         <div className="mt-16 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
           {t.tiers.map((tier: any, index: number) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
-            <Card  className={`flex flex-col justify-center items-center shadow-lg hover:shadow-2xl transition-all duration-300 h-64 hover:-translate-y-1.5 p-6 ${tier.isPopular ? 'border-primary border-2 relative' : 'bg-secondary'}`}>
-               {tier.isPopular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-3 py-1 text-sm font-bold rounded-full">
-                  {t.mostPopular}
-                </div>
-              )}
-              <CardHeader className="text-center">
+            <Card  className="flex flex-col justify-center items-center shadow-lg hover:shadow-2xl transition-all duration-300 h-64 hover:-translate-y-1.5 p-6 bg-background border">
+              <CardHeader className="text-center items-center">
                  <div className="relative h-24 w-60">
                     <Image
                       src={tier.logoUrl}
