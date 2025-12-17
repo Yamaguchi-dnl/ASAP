@@ -50,7 +50,7 @@ export function SponsorshipSection() {
                     src={tier.logoUrl}
                     alt={tier.name}
                     fill
-                    className="object-cover transition-transform duration-500 opacity-5 group-hover:scale-105 group-focus-within:scale-105"
+                    className="object-cover transition-transform duration-500 opacity-10 group-hover:scale-105 group-focus-within:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 group-focus-within:bg-black/70 transition-colors duration-500" />
                   
