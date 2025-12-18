@@ -96,7 +96,7 @@ export function HeroSection() {
             ASAP
             <motion.div
               variants={pointVariant}
-              className="bg-accent inline-block rounded-full w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 ml-2 -mb-2"
+              className="bg-gradient-to-br from-yellow-300 via-amber-500 to-yellow-600 inline-block rounded-full w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 ml-2 -mb-2"
             />
           </motion.h1>
         </motion.div>

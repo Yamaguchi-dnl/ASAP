@@ -15,12 +15,12 @@ export function BenefitsSection() {
     <section id="beneficios" className="py-20 sm:py-32 bg-primary text-primary-foreground overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="px-6 lg:px-0">
             <TextRevealOnScroll>
               {translations.benefits.title.line1}
               {translations.benefits.title.line2}
             </TextRevealOnScroll>
-             <Button variant="link" size="lg" className="mt-4 p-0 h-auto text-base text-left whitespace-normal text-primary-foreground hover:text-accent">
+             <Button variant="link" size="lg" className="mt-4 p-0 h-auto text-base text-left whitespace-normal text-primary-foreground hover:text-amber-400">
                 {translations.benefits.exploreSolutions}{' '}
                 <ArrowRight className="ml-2 h-4 w-4 inline-block" />
               </Button>

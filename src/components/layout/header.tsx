@@ -62,7 +62,7 @@ export function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors',
-                  'text-white hover:text-accent'
+                  'text-white hover:text-amber-400'
                 )}
               >
                 {link.label}
@@ -78,13 +78,13 @@ export function Header() {
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="rounded-full text-white hover:text-accent hover:bg-white/20"
+              className="rounded-full text-white hover:text-amber-400 hover:bg-white/20"
             >
               {language === 'pt-BR' ? 'ES' : 'PT'}
             </Button>
             <Button
               variant="outline"
-              className="rounded-full bg-transparent border-white text-white hover:text-accent hover:border-accent"
+              className="rounded-full bg-transparent border-white text-white hover:text-amber-400 hover:border-amber-400"
               asChild
             >
               <a href="#contato">{translations.header.contactButton}</a>
@@ -97,7 +97,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:text-accent hover:bg-white/20"
+                  className="text-white hover:text-amber-400 hover:bg-white/20"
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
@@ -157,7 +157,7 @@ export function Header() {
                   </Button>
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-accent-foreground hover:opacity-90 transition-opacity"
+                    className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-white hover:opacity-90 transition-opacity"
                   >
                     <a
                       href="#contato"
