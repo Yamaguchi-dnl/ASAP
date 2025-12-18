@@ -21,9 +21,16 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { FaqAccordion } from '@/components/sections/faq-accordion';
+import { useEffect, useState } from 'react';
 
 export function Footer() {
   const { translations } = useLanguage();
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
 
   return (
     <footer className="bg-secondary text-secondary-foreground py-12">
@@ -169,7 +176,7 @@ export function Footer() {
           <div className="mt-8 border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
             <p className="text-xs text-muted-foreground">CNPJ XX.XXX.XXX-XX</p>
             <p className="text-xs text-muted-foreground mt-2 sm:mt-0">
-              &copy; {new Date().getFullYear()} {translations.footer.copy}
+              &copy; {year} {translations.footer.copy}
             </p>
           </div>
         </MotionWrapper>
