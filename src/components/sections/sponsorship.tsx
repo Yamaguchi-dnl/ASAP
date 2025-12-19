@@ -52,7 +52,7 @@ export function SponsorshipSection() {
                     fill
                     className={cn(
                       "object-contain transition-all duration-500 p-8",
-                      "opacity-100 group-hover:opacity-10 group-focus-within:opacity-10"
+                      "opacity-100 group-hover:opacity-20 group-focus-within:opacity-20"
                     )}
                   />
                   
