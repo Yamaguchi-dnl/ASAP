@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export function SponsorshipSection() {
     const { translations } = useLanguage();
@@ -79,10 +80,10 @@ export function SponsorshipSection() {
                       </Button>
                     </div>
                   </div>
-                  <div className="relative p-8 pt-0">
-                    <h3 className="text-3xl font-bold text-primary transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
-                      Apoiador {tier.name}
-                    </h3>
+                  <div className="relative p-8 pt-0 transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
+                    <Button asChild variant="link" className="p-0 h-auto text-3xl font-bold text-primary hover:no-underline">
+                      <Link href="#contato">Apoiador {tier.name}</Link>
+                    </Button>
                   </div>
                 </Card>
               </div>
