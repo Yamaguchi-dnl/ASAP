@@ -70,7 +70,7 @@ export const InfiniteMovingWords = ({
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20 w-full overflow-hidden bg-primary py-4 border-t border-white/50',
+        'scroller relative z-20 w-full overflow-hidden bg-primary py-2 border-t border-white/50',
         className
       )}
     >
