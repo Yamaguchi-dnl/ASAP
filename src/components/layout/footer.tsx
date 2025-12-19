@@ -81,7 +81,7 @@ export function Footer() {
                   <span className="sr-only">YouTube</span>
                 </a>
                 <a
-                  href="https://www.tiktok.com/@pulso_asap"
+                  href="https://www.tiktok.com/@pulso_asap?_r=1&_t=ZS-928WAWrCu7J"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-75 transition-opacity"
