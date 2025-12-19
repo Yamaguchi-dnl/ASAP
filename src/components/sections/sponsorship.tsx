@@ -56,22 +56,22 @@ export function SponsorshipSection() {
                     )}
                   />
                   
-                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
-                    <h3 className="text-3xl font-bold transition-all duration-500 text-white translate-y-10 group-hover:translate-y-0 group-focus-within:translate-y-0 group-hover:mb-2 group-focus-within:mb-2">Apoiador {tier.name}</h3>
+                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-card/90 via-card/70 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
+                    <h3 className="text-3xl font-bold transition-all duration-500 text-primary translate-y-10 group-hover:translate-y-0 group-focus-within:translate-y-0 group-hover:mb-2 group-focus-within:mb-2">Apoiador {tier.name}</h3>
                     
-                    <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden text-white">
-                       <p className="text-white/80 text-base mt-4">{tier.description}</p>
+                    <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden text-foreground">
+                       <p className="text-foreground/80 text-base mt-4">{tier.description}</p>
                       <ul className="mt-6 space-y-3">
                         {tier.benefits.map((benefit: string, i: number) => (
                           <li key={i} className="flex items-start text-sm">
-                            <Check className="h-4 w-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-white/90">{benefit}</span>
+                            <Check className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="text-foreground/90">{benefit}</span>
                           </li>
                         ))}
                       </ul>
                       <Button 
                         variant="outline"
-                        className="mt-8 rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary"
+                        className="mt-8 rounded-full bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                         asChild
                       >
                          <a href="#contato">{t.cta}</a>
