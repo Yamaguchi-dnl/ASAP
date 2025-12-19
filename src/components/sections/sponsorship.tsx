@@ -44,18 +44,19 @@ export function SponsorshipSection() {
           {t.tiers.map((tier: any, index: number) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
               <div className="group" tabIndex={0}>
-                <Card className={cn("h-[500px] overflow-hidden shadow-lg transition-all duration-500 flex flex-col justify-end bg-card border-border/50 relative rounded-lg",
+                <Card className={cn("h-[500px] overflow-hidden shadow-lg transition-all duration-500 flex flex-col bg-card border-border/50 relative rounded-lg",
                   "hover:shadow-2xl focus-within:shadow-2xl"
                 )}>
-                  <Image
-                    src={tier.logoUrl}
-                    alt={tier.name}
-                    fill
-                    className={cn(
-                      "object-contain transition-all duration-500 p-8",
-                      "opacity-100 group-hover:opacity-10 group-focus-within:opacity-10"
-                    )}
-                  />
+                  <div className="relative flex-grow transition-opacity duration-500 group-hover:opacity-10 group-focus-within:opacity-10">
+                    <Image
+                      src={tier.logoUrl}
+                      alt={tier.name}
+                      fill
+                      className={cn(
+                        "object-contain transition-all duration-500 p-8",
+                      )}
+                    />
+                  </div>
                   
                   <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-white/90 via-white/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
                     <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden text-foreground">
