@@ -3,12 +3,20 @@
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/context/language-context';
 import { Container } from './container';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { FlagIcon } from '@/components/ui/flag-icon';
+
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -30,8 +38,8 @@ export function Header() {
     };
   }, []);
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'pt-BR' ? 'es' : 'pt-BR');
+  const handleLanguageChange = (lang: 'pt-BR' | 'es') => {
+    setLanguage(lang);
   };
 
   return (
@@ -61,11 +69,12 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'text-sm font-medium transition-colors',
-                  'text-white hover:text-amber-400'
+                  'text-sm font-medium transition-colors text-white',
                 )}
               >
-                {link.label}
+                 <span className="bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 text-transparent bg-clip-text hover:from-yellow-400 hover:to-amber-600">
+                  {link.label}
+                </span>
               </Link>
             ))}
           </nav>
@@ -74,14 +83,28 @@ export function Header() {
             className="hidden md:flex items-center gap-4"
             style={{ minWidth: '220px', justifyContent: 'flex-end' }}
           >
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleLanguage}
-              className="rounded-full text-white hover:text-amber-400 hover:bg-white/20"
-            >
-              {language === 'pt-BR' ? 'ES' : 'PT'}
-            </Button>
+             <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="flex items-center gap-2 text-white hover:bg-white/20 hover:text-white"
+                >
+                  <FlagIcon country={language === 'pt-BR' ? 'br' : 'es'} />
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-40 bg-background/80 backdrop-blur-sm">
+                <DropdownMenuItem onClick={() => handleLanguageChange('pt-BR')}>
+                  <FlagIcon country="br" className="mr-2" />
+                  <span>Português (BR)</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleLanguageChange('es')}>
+                  <FlagIcon country="es" className="mr-2" />
+                  <span>Español</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button
               variant="outline"
               className="rounded-full bg-transparent border-white text-white hover:text-amber-400 hover:border-amber-400"
@@ -142,19 +165,30 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    onClick={() => {
-                      toggleLanguage();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full"
-                  >
-                    {language === 'pt-BR'
-                      ? 'Cambiar a Español'
-                      : 'Mudar para Português'}
-                  </Button>
+                  <div className='flex gap-2'>
+                    <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={() => {
+                          handleLanguageChange('pt-BR');
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="w-full"
+                      >
+                        <FlagIcon country="br" className="mr-2" /> PT-BR
+                      </Button>
+                       <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={() => {
+                          handleLanguageChange('es');
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="w-full"
+                      >
+                       <FlagIcon country="es" className="mr-2" /> ES
+                      </Button>
+                  </div>
                   <Button
                     asChild
                     className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-white hover:opacity-90 transition-opacity"
