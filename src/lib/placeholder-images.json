@@ -14,8 +14,8 @@
     },
     {
       "id": "service-workshop",
-      "description": "Man speaking on a large stage with green lighting and a large screen with a logo.",
-      "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/IMG_5839.PNG",
+      "description": "A team of professionals collaborating in a modern office.",
+      "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/IMG_5837.PNG",
       "imageHint": "conference speaker"
     },
     {
@@ -69,13 +69,13 @@
     {
       "id": "event-image-2",
       "description": "Man speaking on a large stage with green lighting and a large screen with a logo.",
-      "imageUrl": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29uZmVyZW5jZSUyMHNwZWFrZXJ8ZW58MHx8fHwxNzY1MzUzOTQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29uZmVyZW5jZSUyMHNwZWFrZXJ8ZW58MHx8fHwxNzY1MzUzOTQ3fDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "conference speaker"
     },
     {
       "id": "event-image-3",
       "description": "Man speaking on stage with a colorful yellow, blue and green background.",
-      "imageUrl": "https://images.unsplash.com/photo-1627931539006-d5c4677e05ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGVha2VyJTIwc3RhZ2V8ZW58MHx8fHwxNzY1Mzc2NTQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1627931539006-d5c4677e05ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGVha2VyJTIwc3RhZ2V8ZW58MHx8fHwxNzY1Mzc2NTQyfDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "speaker stage"
     }
   ]
