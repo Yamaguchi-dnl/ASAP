@@ -13,8 +13,8 @@ export default function Home() {
       <HeroSection />
       <div className="relative z-10 bg-white overflow-x-hidden">
         <BenefitsSection />
-        <AboutSection />
         <OurApproachSection />
+        <AboutSection />
         <ServicesSection />
         <TestimonialsSection />
         <SponsorshipSection />
