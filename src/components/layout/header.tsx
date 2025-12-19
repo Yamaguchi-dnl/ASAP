@@ -72,9 +72,13 @@ export function Header() {
                   'text-sm font-medium transition-colors text-white',
                 )}
               >
-                 <span className="bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 text-transparent bg-clip-text hover:from-yellow-400 hover:to-amber-600">
-                  {link.label}
-                </span>
+                 {isScrolled ? (
+                  <span className="bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 text-transparent bg-clip-text hover:from-yellow-400 hover:to-amber-600">
+                    {link.label}
+                  </span>
+                ) : (
+                  <span className="hover:text-white/80">{link.label}</span>
+                )}
               </Link>
             ))}
           </nav>
