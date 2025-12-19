@@ -13,10 +13,7 @@
     "contactButtonMobile": "Contáctenos"
   },
   "hero": {
-    "subtitle": {
-      "line1": "Gestión de Riesgos y Compliance para prevenir",
-      "line2": "el agotamiento profesional en el entorno corporativo."
-    }
+    "subtitle": "Gestión de Riesgos y Compliance para prevenir el agotamiento profesional en el entorno corporativo."
   },
   "benefits": {
     "title": {
