@@ -51,12 +51,12 @@ export function SponsorshipSection() {
                     alt={tier.name}
                     fill
                     className={cn(
-                      "object-contain transition-transform duration-500 opacity-20 p-8",
-                      "group-hover:scale-105 group-focus-within:scale-105"
+                      "object-contain transition-all duration-500 p-8",
+                      "opacity-100 group-hover:opacity-10 group-focus-within:opacity-10"
                     )}
                   />
                   
-                  <div className="relative flex flex-col h-full p-8 text-foreground justify-end">
+                  <div className="absolute inset-0 flex flex-col h-full p-8 text-foreground justify-end bg-transparent transition-colors duration-300 group-hover:bg-card/90 group-focus-within:bg-card/90">
                     <h3 className="text-3xl font-bold transition-all duration-500 text-foreground group-hover:mb-2 group-focus-within:mb-2">{tier.name}</h3>
                     
                     <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden">
