@@ -13,7 +13,10 @@
     "contactButtonMobile": "Fale Conosco"
   },
   "hero": {
-    "subtitle": "Gestão de Riscos e Compliance para prevenir a exaustão profissional no ambiente corporativo."
+    "subtitle": {
+      "line1": "Gestão de Riscos e Compliance para prevenir a exaustão",
+      "line2": "profissional no ambiente corporativo."
+    }
   },
   "benefits": {
     "title": {
@@ -252,7 +255,7 @@
       },
       "details": {
         "label": "Há alguma particularidade ou detalhe que gostaria de compartilhar?",
-        "placeholder": "Descreva here..."
+        "placeholder": "Descreva aqui..."
       },
       "howYouFoundUs": {
         "label": "Como conheceu o Pulso ASAP?",

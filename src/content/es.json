@@ -13,7 +13,10 @@
     "contactButtonMobile": "Contáctenos"
   },
   "hero": {
-    "subtitle": "Gestión de Riesgos y Compliance para prevenir el agotamiento profesional en el entorno corporativo."
+    "subtitle": {
+      "line1": "Gestión de Riesgos y Compliance para prevenir el agotamiento",
+      "line2": "profesional en el entorno corporativo."
+    }
   },
   "benefits": {
     "title": {
@@ -248,7 +251,7 @@
       },
       "goal": {
         "label": "¿Qué objetivo esperas alcanzar con los servicios de Pulso ASAP?",
-        "placeholder": "Describe aquí..."
+        "placeholder": "Describe here..."
       },
       "details": {
         "label": "¿Hay alguna particularidad o detalle que te gustaría compartir?",
