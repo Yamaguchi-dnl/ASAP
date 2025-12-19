@@ -62,7 +62,7 @@ export const InfiniteMovingWords = ({
       } else if (speed === 'normal') {
         containerRef.current.style.setProperty('--animation-duration', '40s');
       } else {
-        containerRef.current.style.setProperty('--animation-duration', '80s');
+        containerRef.current.style.setProperty('--animation-duration', '120s');
       }
     }
   };
@@ -84,7 +84,7 @@ export const InfiniteMovingWords = ({
       >
         {words.map((word, idx) => (
           <li
-            className="text-2xl font-semibold uppercase tracking-wider text-primary-foreground"
+            className="text-xl font-medium uppercase tracking-wider text-primary-foreground"
             key={idx}
           >
             {word}
