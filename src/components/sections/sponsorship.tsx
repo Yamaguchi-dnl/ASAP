@@ -58,6 +58,9 @@ export function SponsorshipSection() {
                   
                   <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-white/90 via-white/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
                     <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden text-foreground">
+                       <h3 className="text-3xl font-bold text-primary mb-4">
+                        Apoiador {tier.name}
+                      </h3>
                        <p className="text-foreground/80 text-base mt-4">{tier.description}</p>
                       <ul className="mt-6 space-y-3">
                         {tier.benefits.map((benefit: string, i: number) => (
