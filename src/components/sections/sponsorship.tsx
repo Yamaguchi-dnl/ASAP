@@ -86,16 +86,25 @@ export function SponsorshipSection() {
         <MotionWrapper variants={textVariants} transition={{ delay: 1 }}>
           <p className="text-center mt-12 text-sm text-muted-foreground italic">{t.note}</p>
         </MotionWrapper>
-        <MotionWrapper variants={textVariants} transition={{ delay: 1.2 }}>
-          <div className="mt-16 text-center">
-             <h3 className="text-xl font-bold text-foreground">{t.ourSponsors}</h3>
-             <div className="mt-8 flex justify-center items-center gap-8 flex-wrap">
-                <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
-                <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
-                <div className="h-16 w-32 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">Logo</div>
-             </div>
-          </div>
-        </MotionWrapper>
+        {t.sponsors && t.sponsors.length > 0 && (
+          <MotionWrapper variants={textVariants} transition={{ delay: 1.2 }}>
+            <div className="mt-16 text-center">
+              <h3 className="text-xl font-bold text-foreground">{t.ourSponsors}</h3>
+              <div className="mt-8 flex justify-center items-center gap-8 flex-wrap">
+                {t.sponsors.map((sponsor: { name: string; logoUrl: string; }, index: number) => (
+                   <div key={index} className="h-16 w-32 relative">
+                     <Image
+                        src={sponsor.logoUrl}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain"
+                      />
+                   </div>
+                ))}
+              </div>
+            </div>
+          </MotionWrapper>
+        )}
       </Container>
     </section>
   );

@@ -213,7 +213,8 @@
     ],
     "cta": "Quero ser um apoiador",
     "note": "* A aceitação da parceria ocorre somente após o processo de due diligence.",
-    "ourSponsors": "Nossos Apoiadores"
+    "ourSponsors": "Nossos Apoiadores",
+    "sponsors": []
   },
   "contact": {
     "title": "Quer contratar nossos serviços?",
