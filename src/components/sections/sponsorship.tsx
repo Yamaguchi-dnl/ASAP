@@ -43,7 +43,7 @@ export function SponsorshipSection() {
           {t.tiers.map((tier: any, index: number) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }}>
               <div className="group" tabIndex={0}>
-                <Card className={cn("h-[500px] overflow-hidden shadow-lg transition-all duration-500 flex flex-col bg-card border-border/50 relative rounded-lg",
+                <Card className={cn("h-[500px] overflow-hidden shadow-lg transition-all duration-500 flex flex-col justify-end bg-card border-border/50 relative rounded-lg",
                   "hover:shadow-2xl focus-within:shadow-2xl"
                 )}>
                   <Image
@@ -52,13 +52,11 @@ export function SponsorshipSection() {
                     fill
                     className={cn(
                       "object-contain transition-all duration-500 p-8",
-                      "opacity-100 group-hover:opacity-20 group-focus-within:opacity-20"
+                      "opacity-100 group-hover:opacity-10 group-focus-within:opacity-10"
                     )}
                   />
                   
-                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-card/90 via-card/70 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
-                    <h3 className="text-3xl font-bold transition-all duration-500 text-primary translate-y-10 group-hover:translate-y-0 group-focus-within:translate-y-0 group-hover:mb-2 group-focus-within:mb-2">Apoiador {tier.name}</h3>
-                    
+                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-white/90 via-white/50 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500">
                     <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden text-foreground">
                        <p className="text-foreground/80 text-base mt-4">{tier.description}</p>
                       <ul className="mt-6 space-y-3">
@@ -77,6 +75,11 @@ export function SponsorshipSection() {
                          <a href="#contato">{t.cta}</a>
                       </Button>
                     </div>
+                  </div>
+                  <div className="relative p-8 pt-0">
+                    <h3 className="text-3xl font-bold text-primary transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
+                      Apoiador {tier.name}
+                    </h3>
                   </div>
                 </Card>
               </div>
