@@ -124,7 +124,7 @@ export function ContactSection() {
   return (
     <section id="contato" className="py-20 sm:py-32 bg-primary text-primary-foreground">
       <Container className="px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-start">
           <div className="lg:sticky lg:top-24 self-start">
             <MotionWrapper variants={titleVariants}>
               <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground leading-tight font-headline uppercase">
