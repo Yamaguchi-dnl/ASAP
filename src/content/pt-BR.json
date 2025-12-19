@@ -250,7 +250,7 @@
         "placeholder": "Descreva aqui..."
       },
       "goal": {
-        "label": "Qual objetivo espera alcançar com os services do Pulso ASAP?",
+        "label": "Qual objetivo espera alcançar com os serviços do Pulso ASAP?",
         "placeholder": "Descreva aqui..."
       },
       "details": {
@@ -259,7 +259,12 @@
       },
       "howYouFoundUs": {
         "label": "Como conheceu o Pulso ASAP?",
-        "placeholder": "Ex: LinkedIn, Indicação..."
+        "placeholder": "Selecione uma opção",
+        "options": [
+          { "value": "social_media", "label": "Redes sociais" },
+          { "value": "linkedin", "label": "LinkedIn" },
+          { "value": "recommendation", "label": "Indicação" }
+        ]
       },
       "submitButton": "Enviar Mensagem"
     },
@@ -285,7 +290,12 @@
       },
       "howYouFoundUs": {
         "label": "Como conheceu o Pulso ASAP?",
-        "placeholder": "Ex: LinkedIn, Indicação..."
+        "placeholder": "Selecione uma opção",
+        "options": [
+          { "value": "social_media", "label": "Redes sociais" },
+          { "value": "linkedin", "label": "LinkedIn" },
+          { "value": "recommendation", "label": "Indicação" }
+        ]
       }
     }
   },
@@ -332,3 +342,5 @@
     "copy": "PulsoASAP. Todos os direitos reservados."
   }
 }
+
+    

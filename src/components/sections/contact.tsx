@@ -295,9 +295,18 @@ export function ContactSection() {
                           render={({ field }) => (
                             <FormItem className="md:col-span-2">
                               <FormLabel className={formLabelStyles}>{t.form.howYouFoundUs.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t.form.howYouFoundUs.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
+                               <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl>
+                                  <SelectTrigger className={formInputStyles}>
+                                    <SelectValue placeholder={t.form.howYouFoundUs.placeholder} />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  {t.form.howYouFoundUs.options.map((option: { value: string; label: string; }) => (
+                                     <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
                               <FormMessage />
                             </FormItem>
                           )}
@@ -451,9 +460,18 @@ export function ContactSection() {
                           render={({ field }) => (
                             <FormItem className="md:col-span-2">
                               <FormLabel className={formLabelStyles}>{tProf.howYouFoundUs.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.howYouFoundUs.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
+                              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl>
+                                  <SelectTrigger className={formInputStyles}>
+                                    <SelectValue placeholder={tProf.howYouFoundUs.placeholder} />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  {tProf.howYouFoundUs.options.map((option: { value: string; label: string; }) => (
+                                     <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                                  ))}
+                                </SelectContent>
+                              </Select>
                               <FormMessage />
                             </FormItem>
                           )}
@@ -475,3 +493,5 @@ export function ContactSection() {
     </section>
   );
 }
+
+    

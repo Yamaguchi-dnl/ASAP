@@ -259,7 +259,12 @@
       },
       "howYouFoundUs": {
         "label": "¿Cómo conociste a Pulso ASAP?",
-        "placeholder": "Ej: LinkedIn, Recomendación..."
+        "placeholder": "Selecciona una opción",
+        "options": [
+          { "value": "social_media", "label": "Redes sociales" },
+          { "value": "linkedin", "label": "LinkedIn" },
+          { "value": "recommendation", "label": "Recomendación" }
+        ]
       },
       "submitButton": "Enviar Mensaje"
     },
@@ -285,7 +290,12 @@
       },
       "howYouFoundUs": {
         "label": "¿Cómo conociste a Pulso ASAP?",
-        "placeholder": "Ej: LinkedIn, Recomendación..."
+        "placeholder": "Selecciona una opción",
+        "options": [
+          { "value": "social_media", "label": "Redes sociales" },
+          { "value": "linkedin", "label": "LinkedIn" },
+          { "value": "recommendation", "label": "Recomendación" }
+        ]
       }
     }
   },
@@ -332,3 +342,5 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
+
+    
