@@ -7,9 +7,12 @@ import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/context/language-context';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function BenefitsSection() {
   const { translations } = useLanguage();
+  const wordCloudImage = PlaceHolderImages.find(p => p.id === 'word-cloud-companies');
 
   return (
     <section id="beneficios" className="py-20 sm:py-32 bg-primary text-primary-foreground overflow-hidden">
@@ -38,14 +41,17 @@ export function BenefitsSection() {
               </TabsList>
               <TabsContent value="empresas">
                 <div className="bg-background text-foreground p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
-                  <ul className="space-y-4">
-                    {translations.benefits.benefitsForCompanies.map((benefit, index) => (
-                      <li key={index} className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {wordCloudImage && (
+                    <div className="relative w-full aspect-video">
+                      <Image 
+                        src={wordCloudImage.imageUrl}
+                        alt="Nuvem de palavras com benefícios para empresas"
+                        fill
+                        className="object-contain"
+                        data-ai-hint={wordCloudImage.imageHint}
+                      />
+                    </div>
+                  )}
                 </div>
               </TabsContent>
               <TabsContent value="colaboradores">
