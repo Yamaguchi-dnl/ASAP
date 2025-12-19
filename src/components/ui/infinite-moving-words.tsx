@@ -84,7 +84,7 @@ export const InfiniteMovingWords = ({
       >
         {words.map((word, idx) => (
           <li
-            className="text-xl font-medium uppercase tracking-wider text-primary-foreground"
+            className="text-xl font-normal uppercase tracking-wider text-primary-foreground"
             key={idx}
           >
             {word}
