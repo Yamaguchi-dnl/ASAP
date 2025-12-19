@@ -14,8 +14,8 @@
   },
   "hero": {
     "subtitle": {
-      "line1": "Gestión de Riesgos y Compliance para",
-      "line2": "prevenir el agotamiento profesional."
+      "line1": "Gestión de Riesgos y Compliance para prevenir",
+      "line2": "el agotamiento profesional en el entorno corporativo."
     }
   },
   "benefits": {
@@ -191,7 +191,7 @@
     "subtitle": "Asocie su marca a un proyecto que transforma el ambiente corporativo. Sea un patrocinador y fortalezca la imagen de su empresa.",
     "tiers": [
       {
-        "name": "Apoyador Esencial",
+        "name": "Esencial",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
         "description": "Categoría destinada a organizaciones que reconocen la relevancia del tema y apoyan la continuidad de las iniciativas de investigación, contenido y acciones dirigidas a la prevención del agotamiento corporativo, fortaleciendo la agenda de ambientes saludables e integridad.",
         "benefits": [
@@ -201,7 +201,7 @@
         ]
       },
       {
-        "name": "Apoyador Transformador",
+        "name": "Transformador",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
         "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando iniciativas de concienciación, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
         "benefits": [
