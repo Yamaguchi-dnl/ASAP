@@ -479,7 +479,7 @@ export function ContactSection() {
                       </div>
                     </TabsContent>
                     <div className="mt-8 md:col-span-2">
-                       <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-white hover:opacity-90 transition-all duration-300 hover:scale-105">
+                       <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white hover:opacity-90 transition-all duration-300 hover:scale-105">
                         {t.form.submitButton}
                       </Button>
                     </div>
@@ -493,5 +493,3 @@ export function ContactSection() {
     </section>
   );
 }
-
-    

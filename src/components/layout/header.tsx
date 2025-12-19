@@ -73,7 +73,7 @@ export function Header() {
                 )}
               >
                  {isScrolled ? (
-                  <span className="bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 text-transparent bg-clip-text hover:from-yellow-400 hover:to-amber-600">
+                  <span className="bg-gradient-to-r from-amber-400 to-yellow-500 text-transparent bg-clip-text hover:from-yellow-400 hover:to-amber-600">
                     {link.label}
                   </span>
                 ) : (
@@ -195,7 +195,7 @@ export function Header() {
                   </div>
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-yellow-400 to-amber-500 text-white hover:opacity-90 transition-opacity"
+                    className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white hover:opacity-90 transition-opacity"
                   >
                     <a
                       href="#contato"
