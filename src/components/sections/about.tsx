@@ -77,7 +77,7 @@ export function AboutSection() {
     if (isMobile) {
       const interval = setInterval(() => {
         handleNext();
-      }, 8000);
+      }, 15000);
       return () => clearInterval(interval);
     }
   }, [currentIndex, isMobile]);
