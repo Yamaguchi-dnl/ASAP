@@ -17,7 +17,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Satoshi', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
         code: ['monospace'],
         headline: ['Antonio', 'sans-serif'],
       },
