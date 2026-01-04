@@ -73,7 +73,7 @@ export function Header() {
                 )}
               >
                  {isScrolled ? (
-                  <span className="text-accent hover:text-accent/80">
+                  <span className="text-white hover:text-white/80">
                     {link.label}
                   </span>
                 ) : (
@@ -111,7 +111,7 @@ export function Header() {
 
             <Button
               variant="outline"
-              className="rounded-full bg-transparent border-white text-white hover:text-accent hover:border-accent"
+              className="rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a href="#contato">{translations.header.contactButton}</a>
