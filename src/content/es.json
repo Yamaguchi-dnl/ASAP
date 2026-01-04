@@ -50,7 +50,7 @@
         "id": "rosa",
         "name": "Rosa Azevedo",
         "imageId": "testimonial-1",
-        "bio1": "Licenciada en Administración de Empresas y posgraduada en Gestión de Proyectos por la FAE Business School. Con liderazgo en áreas de GRC y dentro de este ecosistema en frentes de gestión de riesgos, Regulatorio, Canal Ético, Prevención de Fraudes, Due Diligence y PLD-FT.",
+        "bio1": "Licenciada en Administración de Empresas y posgraduada en Gestión de Proyectos por la FAE Business School, actúa en puestos de gestión en el ecosistema de GRC, con responsabilidad en las áreas de gestión de riesgos, compliance regulatorio, canal ético, prevención de fraudes, due diligence y PLD-FT.",
         "bio2": "Con más de 20 años de experiencia, actuó en grandes y medianas empresas, desarrollando una visión estratégica y práctica sobre los desafíos del mundo corporativo. Su vivencia real con el agotamiento profesional fue uno de los principales impulsores para la creación de Pulso ASAP."
       },
       {
@@ -203,7 +203,7 @@
       {
         "name": "Transformador",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
-        "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando iniciativas de concienciación, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
+        "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando initiatives de concienciación, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
         "benefits": [
           "Exclusividad por sector",
           "Conferencia corporativa incluida",
@@ -342,5 +342,3 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
-
-    
