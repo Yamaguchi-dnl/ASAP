@@ -73,7 +73,7 @@ export function Header() {
                 )}
               >
                  {isScrolled ? (
-                  <span className="bg-gradient-to-r from-amber-400 to-yellow-500 text-transparent bg-clip-text hover:from-yellow-400 hover:to-amber-600">
+                  <span className="text-accent hover:text-accent/80">
                     {link.label}
                   </span>
                 ) : (
@@ -111,7 +111,7 @@ export function Header() {
 
             <Button
               variant="outline"
-              className="rounded-full bg-transparent border-white text-white hover:text-amber-400 hover:border-amber-400"
+              className="rounded-full bg-transparent border-white text-white hover:text-accent hover:border-accent"
               asChild
             >
               <a href="#contato">{translations.header.contactButton}</a>
@@ -124,7 +124,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:text-amber-400 hover:bg-white/20"
+                  className="text-white hover:text-accent hover:bg-white/20"
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
@@ -195,7 +195,7 @@ export function Header() {
                   </div>
                   <Button
                     asChild
-                    className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white hover:opacity-90 transition-opacity"
+                    className="w-full bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
                   >
                     <a
                       href="#contato"

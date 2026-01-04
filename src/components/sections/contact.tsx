@@ -116,7 +116,7 @@ export function ContactSection() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const formInputStyles = "bg-transparent border-primary-foreground/50 placeholder:text-primary-foreground/70 focus:border-amber-400 text-base text-primary-foreground";
+  const formInputStyles = "bg-transparent border-primary-foreground/50 placeholder:text-primary-foreground/70 focus:border-accent text-base text-primary-foreground";
   const formLabelStyles = "text-primary-foreground";
   const tProf = translations.contact.form_professional;
 
@@ -130,7 +130,7 @@ export function ContactSection() {
               <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground leading-tight font-headline uppercase">
                 {t.title}
               </h2>
-              <hr className="border-t-2 border-amber-400 w-24 mt-4 mb-8" />
+              <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
             </MotionWrapper>
             <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
               <p className="mt-6 text-xl text-primary-foreground/80">
@@ -479,7 +479,7 @@ export function ContactSection() {
                       </div>
                     </TabsContent>
                     <div className="mt-8 md:col-span-2">
-                       <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-amber-500 to-yellow-600 text-white hover:opacity-90 transition-all duration-300 hover:scale-105">
+                       <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-105">
                         {t.form.submitButton}
                       </Button>
                     </div>
