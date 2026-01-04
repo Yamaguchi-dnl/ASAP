@@ -191,7 +191,7 @@
     "subtitle": "Asocie su marca a un proyecto que transforma el ambiente corporativo. Sea un patrocinador y fortalezca la imagen de su empresa.",
     "tiers": [
       {
-        "name": "Esencial",
+        "name": "Transformador",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
         "description": "Categoría destinada a organizaciones que reconocen la relevancia del tema y apoyan la continuidad de las iniciativas de pesquisa, contenido y acciones dirigidas a la prevención de la agotamiento corporativa, fortaleciendo la agenda de ambientes saludables e integridad.",
         "benefits": [
@@ -201,7 +201,7 @@
         ]
       },
       {
-        "name": "Transformador",
+        "name": "Esencial",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
         "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando iniciativas de concientización, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
         "benefits": [
@@ -331,7 +331,7 @@
       },
       {
         "question": "¿La información de mi empresa se trata con confidencialidad?",
-        "answer": "Sí. Toda la información compartida se trata con rigor ético y confidencialidad, de acuerdo con las prácticas de LGPD, GRC y compliance."
+        "answer": "Sí. Toda la información compartida se trata con rigor ético y confidencialidad, de acuerdo con las prácticas de LGPD y GRC."
       }
     ]
   },
@@ -345,3 +345,5 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
+
+    
