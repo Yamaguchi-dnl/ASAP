@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import TextRevealOnScroll from '@/components/animation/text-reveal-on-scroll';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { Container } from '@/components/layout/container';
@@ -12,7 +12,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function BenefitsSection() {
   const { translations } = useLanguage();
-  const wordCloudImage = PlaceHolderImages.find(p => p.id === 'word-cloud-companies');
 
   return (
     <section id="beneficios" className="py-20 sm:py-32 bg-primary text-primary-foreground overflow-hidden">
@@ -44,7 +43,7 @@ export function BenefitsSection() {
                   <ul className="space-y-4">
                     {translations.benefits.benefitsForCompanies.map((benefit: string, index: number) => (
                       <li key={index} className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                        <div className="h-2 w-2 bg-primary rounded-full mr-3 mt-2.5 flex-shrink-0" />
                         <span>{benefit}</span>
                       </li>
                     ))}
@@ -56,7 +55,7 @@ export function BenefitsSection() {
                   <ul className="space-y-4">
                     {translations.benefits.benefitsForProfessionals.map((benefit: string, index: number) => (
                       <li key={index} className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                        <div className="h-2 w-2 bg-primary rounded-full mr-3 mt-2.5 flex-shrink-0" />
                         <span>{benefit}</span>
                       </li>
                     ))}
