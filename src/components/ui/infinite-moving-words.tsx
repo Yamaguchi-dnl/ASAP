@@ -77,7 +77,7 @@ export const InfiniteMovingWords = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          ' flex min-w-full shrink-0 gap-8 py-2 w-max flex-nowrap',
+          ' flex min-w-full shrink-0 gap-8 py-1 w-max flex-nowrap',
           start && 'animate-scroll',
           pauseOnHover && 'hover:[animation-play-state:paused]'
         )}
