@@ -77,12 +77,6 @@
       "description": "Man speaking on stage with a colorful yellow, blue and green background.",
       "imageUrl": "https://images.unsplash.com/photo-1627931539006-d5c4677e05ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcGVha2VyJTIwc3RhZ2V8ZW58MHx8fHwxNzY1Mzc2NTQyfDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "speaker stage"
-    },
-    {
-      "id": "word-cloud-companies",
-      "description": "Word cloud with words related to corporate benefits.",
-      "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/Captura%20de%20tela%202025-12-19%20160043.png",
-      "imageHint": "word cloud"
     }
   ]
 }
