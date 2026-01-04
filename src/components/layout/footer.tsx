@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/accordion';
 import { FaqAccordion } from '@/components/sections/faq-accordion';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -48,7 +49,16 @@ export function Footer() {
         <MotionWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-bold">PulsoASAP</h3>
+              <Link href="/" className="inline-block mb-4">
+                <div className="relative h-12 w-32">
+                    <Image
+                      src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png?updatedAt=1765460286444"
+                      alt="PulsoASAP Logo"
+                      fill
+                      className="object-contain"
+                    />
+                </div>
+              </Link>
               <p className="mt-2 text-sm text-muted-foreground">
                 {translations.footer.social}
               </p>
