@@ -193,21 +193,21 @@
       {
         "name": "Essencial",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
-        "description": "Categoria destinada a organizações que reconhecem a relevância do tema e apoiam a continuidade das iniciativas de pesquisa, conteúdo e ações voltadas à prevenção da exaustão corporativa, fortalecendo a agenda de ambientes saudáveis e integridade.",
-        "benefits": [
-          "Presença institucional da marca",
-          "Descontos em produtos e serviços",
-          "E outros benefícios de visibilidade e relacionamento"
-        ]
-      },
-      {
-        "name": "Transformador",
-        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
         "description": "Categoria voltada a empresas que desejam ampliar o impacto e atuar estrategicamente na evolução da cultura corporativa, acelerando iniciativas de conscientização, fortalecendo o engajamento interno e expandindo o alcance das ações do projeto.",
         "benefits": [
           "Exclusividade por setor",
           "Palestra corporativa inclusa",
           "E benefícios adicionais de posicionamento e protagonismo"
+        ]
+      },
+      {
+        "name": "Transformador",
+        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
+        "description": "Categoria destinada a organizações que reconhecem a relevância do tema e apoiam a continuidade das iniciativas de pesquisa, conteúdo e ações voltadas à prevenção da exaustão corporativa, fortalecendo a agenda de ambientes saudáveis e integridade.",
+        "benefits": [
+          "Presença institucional da marca",
+          "Descontos em produtos e serviços",
+          "E outros benefícios de visibilidade e relacionamento"
         ]
       }
     ],
@@ -217,7 +217,7 @@
     "sponsors": []
   },
   "contact": {
-    "title": "Deseja saber mais sobre nossos serviços?",
+    "title": "Deseja saber mais sobre nossos services?",
     "subtitle": "Preencha o formulário abaixo que entraremos em contato.",
     "tabs": {
       "company": "Para Empresas",

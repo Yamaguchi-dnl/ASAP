@@ -14,7 +14,7 @@
   },
   "hero": {
     "subtitle": {
-      "line1": "Gestión de Riesgos y Compliance para prevenir el agotamiento",
+      "line1": "Gestión de Riesgos y Compliance para prevenir la agotamiento",
       "line2": "profesional en el entorno corporativo."
     }
   },
@@ -193,21 +193,21 @@
       {
         "name": "Esencial",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
-        "description": "Categoría destinada a organizaciones que reconocen la relevancia del tema y apoyan la continuidad de las iniciativas de investigación, contenido y acciones dirigidas a la prevención del agotamiento corporativo, fortaleciendo la agenda de ambientes saludables e integridad.",
-        "benefits": [
-          "Presencia institucional de la marca",
-          "Descuentos en productos y servicios",
-          "Y otros beneficios de visibilidad y relación"
-        ]
-      },
-      {
-        "name": "Transformador",
-        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
         "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando initiatives de concienciación, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
         "benefits": [
           "Exclusividad por sector",
           "Conferencia corporativa incluida",
           "Y beneficios adicionales de posicionamiento y protagonismo"
+        ]
+      },
+      {
+        "name": "Transformador",
+        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
+        "description": "Categoría destinada a organizaciones que reconocen la relevancia del tema y apoyan la continuidad de las initiatives de investigación, contenido y acciones dirigidas a la prevención del agotamiento corporativo, fortaleciendo la agenda de ambientes saludables e integridad.",
+        "benefits": [
+          "Presencia institucional de la marca",
+          "Descuentos en productos y servicios",
+          "Y otros beneficios de visibilidad y relación"
         ]
       }
     ],
