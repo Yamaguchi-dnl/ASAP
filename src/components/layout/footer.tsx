@@ -49,7 +49,7 @@ export function Footer() {
         <MotionWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <Link href="/" className="inline-block mb-4">
+              <Link href="/" className="inline-block mb-4 -ml-10">
                 <div className="relative h-12 w-32">
                     <Image
                       src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png?updatedAt=1765460286444"
