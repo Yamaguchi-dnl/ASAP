@@ -20,13 +20,13 @@
   },
   "benefits": {
     "title": {
-      "line1": "Empleados que las empresas quieren mantener.",
+      "line1": "Profesionales que las empresas quieren mantener.",
       "line2": "Empresas donde los profesionales quieren trabajar."
     },
     "exploreSolutions": "Explora las soluciones que hacen posibles estos beneficios",
     "tabs": {
       "companies": "Para Empresas",
-      "employees": "Para Colaboradores"
+      "professionals": "Para Profesionales"
     },
     "benefitsForCompanies": [
       "Cultura corporativa más sólida, ética, coherente y sostenible.",
@@ -35,7 +35,7 @@
       "Equipos más estables, preparados y alineados a las prioridades estratégicas.",
       "Mejora consistente en la reputación, confianza interna y marca empleadora."
     ],
-    "benefitsForEmployees": [
+    "benefitsForProfessionals": [
       "Mayor equilibrio emocional y capacidad para lidiar con la presión e incertidumbres.",
       "Claridad sobre límites, prioridades y expectativas en el trabajo.",
       "Fortalecimiento de la autonomía, la responsabilidad y la confianza personal.",
@@ -120,11 +120,11 @@
       "line1": "Productos y",
       "line2": "Servicios"
     },
-    "description": "Operamos con soluciones integradas que fortalecen la cultura corporativa e impulsan transformaciones profesionales que sustentan ambientes de trabajo más productivos y saludables a corto, mediano y largo plazo.",
+    "description": "Actuamos con soluciones integradas que fortalecen la cultura corporativa e impulsan transformaciones profesionales que sustentan ambientes de trabajo más productivos y saludables a corto, mediano y largo plazo.",
     "ctaButton": "Hable con un especialista",
     "items": [
       {
-        "id": "producto",
+        "id": "produto",
         "title": "Libro: Crachá Atómico",
         "imageId": "service-product",
         "description": "Libro Crachá Atómico: Prelanzamiento febrero de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",

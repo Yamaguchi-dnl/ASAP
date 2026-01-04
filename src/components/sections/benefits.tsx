@@ -12,6 +12,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function BenefitsSection() {
   const { translations } = useLanguage();
+  const wordCloudImage = PlaceHolderImages.find(p => p.id === 'word-cloud-companies');
 
   return (
     <section id="beneficios" className="py-20 sm:py-32 bg-primary text-primary-foreground overflow-hidden">
@@ -34,8 +35,8 @@ export function BenefitsSection() {
                 <TabsTrigger value="empresas" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>
                   {translations.benefits.tabs.companies}
                 </TabsTrigger>
-                <TabsTrigger value="colaboradores" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>
-                  {translations.benefits.tabs.employees}
+                <TabsTrigger value="profissionais" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>
+                  {translations.benefits.tabs.professionals}
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="empresas">
@@ -50,10 +51,10 @@ export function BenefitsSection() {
                   </ul>
                 </div>
               </TabsContent>
-              <TabsContent value="colaboradores">
+              <TabsContent value="profissionais">
                 <div className="bg-background text-foreground p-8 rounded-lg h-full transition-transform duration-300 hover:-translate-y-1.5 mt-4">
                   <ul className="space-y-4">
-                    {translations.benefits.benefitsForEmployees.map((benefit, index) => (
+                    {translations.benefits.benefitsForProfessionals.map((benefit: string, index: number) => (
                       <li key={index} className="flex items-start">
                         <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
                         <span>{benefit}</span>

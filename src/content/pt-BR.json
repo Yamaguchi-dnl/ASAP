@@ -20,13 +20,13 @@
   },
   "benefits": {
     "title": {
-      "line1": "Funcionários que as empresas querem manter.",
+      "line1": "Profissionais que as empresas querem manter.",
       "line2": "Empresas onde os profissionais querem trabalhar."
     },
     "exploreSolutions": "Explore as soluções que tornam esses benefícios possíveis",
     "tabs": {
       "companies": "Para Empresas",
-      "employees": "Para Colaboradores"
+      "professionals": "Para Profissionais"
     },
     "benefitsForCompanies": [
       "Cultura corporativa mais sólida, ética, coerente e sustentável.",
@@ -35,7 +35,7 @@
       "Equipes mais estáveis, preparadas e alinhadas às prioridades estratégicas.",
       "Melhoria consistente na reputação, confiança interna e marca empregadora."
     ],
-    "benefitsForEmployees": [
+    "benefitsForProfessionals": [
       "Maior equilíbrio emocional e capacidade de lidar com pressão e incertezas.",
       "Clareza sobre limites, prioridades e expectativas no trabalho.",
       "Fortalecimento da autonomia, da responsabilidade e da confiança pessoal.",
