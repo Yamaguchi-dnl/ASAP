@@ -14,7 +14,7 @@
   },
   "hero": {
     "subtitle": {
-      "line1": "Gestão de Riscos e Compliance para prevenir a exaustão",
+      "line1": "Gestão de Riscos e Compliance para prevenir a exaustão ",
       "line2": "profissional no ambiente corporativo."
     }
   },
@@ -144,7 +144,7 @@
         "title": "Palestra ASAP",
         "imageId": "service-workshop",
         "description": "Trata-se de uma jornada estruturada de reflexão e expansão de consciência sobre comportamento, estratégia de carreira, relações e responsabilidade compartilhada, com insights que permanecem muito além do momento da palestra.",
-        "subItems": ["Crachá Atômico", "Corporativa", "Áreas Redflag"],
+        "subItems": ["Palestra Crachá Atômico", "Palestra Pulso ASAP", "Palestra Áreas Redflag"],
         "cta": "Leve para sua empresa"
       },
       {
@@ -239,7 +239,10 @@
           { "value": "palestra", "label": "Palestra ASAP" },
           { "value": "solucoes", "label": "Soluções Regulatórias ASAP" },
           { "value": "treinamento", "label": "Treinamento ASAP" },
-          { "value": "apoiador", "label": "Apoiador ASAP" }
+          { "value": "apoiador", "label": "Apoiador ASAP" },
+          { "value": "manuais", "label": "Manuais" },
+          { "value": "politicas", "label": "Políticas" },
+          { "value": "codigo_etica", "label": "Código de Ética" }
         ]
       },
       "companyName": { "label": "Nome da empresa", "placeholder": "Nome da empresa interessada" },
