@@ -43,6 +43,24 @@
       "imageHint": "team collaboration"
     },
     {
+      "id": "approach-who-we-are",
+      "description": "A team of professionals collaborating in a modern office.",
+      "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/IMG_5839.PNG?updatedAt=1766169074029",
+      "imageHint": "conference speaker"
+    },
+    {
+      "id": "approach-delivery",
+      "description": "A human resources manager looking at charts.",
+      "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/IMG_5842.PNG",
+      "imageHint": "HR consulting"
+    },
+    {
+      "id": "approach-pillars",
+      "description": "Two people having a one-on-one conversation in a cafe.",
+      "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/IMG_5838.PNG",
+      "imageHint": "mentoring conversation"
+    },
+    {
       "id": "testimonial-1",
       "description": "Portrait of a smiling woman.",
       "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/d067be858_WhatsAppImage2025-10-02at1935124.jpg",

@@ -67,7 +67,7 @@
       {
         "id": "approach",
         "title": "Quem Somos",
-        "imageId": "service-workshop",
+        "imageId": "approach-who-we-are",
         "description": "Com presença no Brasil e na Espanha, o Pulso ASAP (Ação, Sustentabilidade, Autoconhecimento e Propósito) surgiu da necessidade de abordar o tema de exaustão profissional de maneira clara, objetiva e aplicável ao dia a dia corporativo.",
         "points": [
           "Vivência real de exaustão profissional de uma das fundadoras.",
@@ -80,7 +80,7 @@
       {
         "id": "delivery",
         "title": "O que entregamos?",
-        "imageId": "service-consulting",
+        "imageId": "approach-delivery",
         "reputation": "Reputação positiva",
         "description": "Partimos da premissa de que pessoas são o principal ativo de qualquer organização. Por isso, acreditamos que uma mudança verdadeira precisa contemplar, de forma equilibrada, ambos os lados dessa balança:",
         "forCompanies": {
@@ -103,7 +103,7 @@
       {
         "id": "pillars",
         "title": "Nossos Pilares",
-        "imageId": "service-mentorship",
+        "imageId": "approach-pillars",
         "points": [
           "Liderança consciente (Tone at the top e Cuidar de quem cuida)",
           "GRC: Governança, Riscos e Compliance",

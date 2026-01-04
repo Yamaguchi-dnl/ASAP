@@ -67,7 +67,7 @@
       {
         "id": "approach",
         "title": "Quiénes somos",
-        "imageId": "service-workshop",
+        "imageId": "approach-who-we-are",
         "description": "Con presencia en Brasil y España, Pulso ASAP (Acción, Sostenibilidad, Autoconocimiento y Propósito) surgió de la necesidad de abordar el tema del agotamiento profesional de manera clara, objetiva y aplicable al día a día corporativo.",
         "points": [
           "Vivencia real de agotamiento profesional de una de las fundadoras.",
@@ -80,7 +80,7 @@
       {
         "id": "delivery",
         "title": "¿Qué entregamos?",
-        "imageId": "service-consulting",
+        "imageId": "approach-delivery",
         "reputation": "Reputación positiva",
         "description": "Partimos de la premisa de que las personas son el principal activo de cualquier organización. Por eso, creemos que un cambio verdadero necesita contemplar, de forma equilibrada, ambos lados de esta balanza:",
         "forCompanies": {
@@ -103,7 +103,7 @@
       {
         "id": "pillars",
         "title": "Nuestros Pilares",
-        "imageId": "service-mentorship",
+        "imageId": "approach-pillars",
         "points": [
           "Liderazgo consciente (Tone at the top y Cuidar de quien cuida)",
           "GRC: Gobernanza, Riesgos y Compliance",
