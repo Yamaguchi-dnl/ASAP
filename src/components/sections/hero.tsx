@@ -83,7 +83,7 @@ export function HeroSection() {
         >
           <motion.p
             variants={pVariants}
-            className="text-xl font-normal md:font-medium text-white max-w-sm md:max-w-2xl ml-1"
+            className="text-xl font-normal text-white max-w-sm md:max-w-2xl ml-1"
           >
             {translations.hero.subtitle.line1}
             <br className="hidden md:block" />
