@@ -303,7 +303,7 @@ export function OurApproachSection() {
               </div>
             </motion.div>
           </div>
-          <motion.div className="relative w-full mx-auto aspect-[4/5] rounded-lg overflow-hidden hidden lg:block" variants={imageContainerVariants}>
+          <motion.div className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden hidden lg:block" variants={imageContainerVariants}>
              <AnimatePresence mode="wait">
               {slideImage && (
                 <motion.div
