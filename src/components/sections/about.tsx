@@ -86,7 +86,7 @@ export function AboutSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
-          <motion.div className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>
+          <motion.div className="relative w-5/6 mx-auto aspect-square rounded-lg overflow-hidden" variants={imageVariants}>
             <AnimatePresence mode="wait">
               {founderImage && (
                 <motion.div
@@ -130,7 +130,7 @@ export function AboutSection() {
                   {currentFounder.name}
                 </motion.h3>
                 <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio1}</motion.p>
-                <motion.p className="text-foreground/80 mt-4" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
+                <motion.p className="text-foreground/80 mt-2" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
             </motion.div>
 
             <motion.div className="flex items-center justify-between mt-8 pt-4 border-t border-border" variants={textContentVariants}>
