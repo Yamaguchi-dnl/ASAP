@@ -88,7 +88,7 @@ export function AboutSection() {
   return (
     <motion.section 
       id="lideranca" 
-      className="py-20 sm:py-32 bg-background"
+      className="py-16 sm:py-24 bg-background"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -122,7 +122,7 @@ export function AboutSection() {
           </motion.div>
 
           {/* Coluna de Texto */}
-          <div className="flex flex-col justify-between h-full min-h-[550px]">
+          <div className="flex flex-col justify-between h-full min-h-[500px]">
              <motion.div variants={textContentVariants}>
                <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
                 {translations.about.title}
@@ -131,7 +131,7 @@ export function AboutSection() {
             </motion.div>
 
             <motion.div 
-              className="relative overflow-hidden min-h-[350px]"
+              className="relative overflow-hidden min-h-[300px]"
               key={currentFounder.id}
               initial="hidden"
               animate="visible"
