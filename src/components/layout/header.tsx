@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -135,10 +135,10 @@ export function Header() {
                 className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
               >
                 <SheetTitle className="sr-only">Menu Principal</SheetTitle>
-                <div className="p-4 border-b">
+                <div className="py-4 border-b">
                   <Link
                     href="/"
-                    className="flex"
+                    className="flex pl-0"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <div className="h-12 w-32 relative">
