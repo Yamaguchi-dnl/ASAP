@@ -97,7 +97,7 @@ export function ServicesSection() {
                         <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden">
                            <p className="text-white/80 text-sm mt-2">{service.description}</p>
                             {service.subItems && service.subItems.length > 0 && (
-                              <ol className="mt-4 space-y-2 text-sm list-decimal list-inside">
+                              <ol className="mt-4 space-y-1 text-sm list-decimal list-inside">
                                 {service.subItems.map((item: string, i: number) => (
                                   <li key={i} className="font-medium text-white/90">{item}</li>
                                 ))}
