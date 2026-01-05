@@ -88,7 +88,7 @@ export function AboutSection() {
   return (
     <motion.section 
       id="lideranca" 
-      className="py-16 sm:py-24 bg-background"
+      className="py-12 sm:py-16 bg-background"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -122,7 +122,7 @@ export function AboutSection() {
           </motion.div>
 
           {/* Coluna de Texto */}
-          <div className="flex flex-col justify-between h-full min-h-[500px]">
+          <div className="flex flex-col justify-between h-full">
              <motion.div variants={textContentVariants}>
                <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
                 {translations.about.title}
@@ -131,19 +131,17 @@ export function AboutSection() {
             </motion.div>
 
             <motion.div 
-              className="relative overflow-hidden min-h-[300px]"
+              className="relative overflow-hidden min-h-[250px] md:min-h-0"
               key={currentFounder.id}
               initial="hidden"
               animate="visible"
               variants={bioParagraphsVariants}
             >
-                <motion.h3 className="text-2xl font-bold text-foreground mb-6" variants={founderNameVariants}>
+                <motion.h3 className="text-2xl font-bold text-foreground mb-4" variants={founderNameVariants}>
                   {currentFounder.name}
                 </motion.h3>
-                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" variants={bioParagraphsVariants}>
-                    <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio1}</motion.p>
-                    <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
-                </motion.div>
+                <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio1}</motion.p>
+                <motion.p className="text-foreground/80 mt-4" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
             </motion.div>
 
             <motion.div className="flex items-center justify-between mt-8 pt-4 border-t border-border" variants={textContentVariants}>
