@@ -63,6 +63,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
+          controls={false}
           className="absolute z-0 w-auto min-w-full min-h-full max-w-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-20"
         >
           <source
