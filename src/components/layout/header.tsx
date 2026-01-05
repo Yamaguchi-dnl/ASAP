@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/context/language-context';
 import { Container } from './container';
@@ -134,6 +134,7 @@ export function Header() {
                 side="right"
                 className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
               >
+                <SheetTitle className="sr-only">Menu Principal</SheetTitle>
                 <div className="flex items-center p-4 border-b">
                   <Link
                     href="/"
