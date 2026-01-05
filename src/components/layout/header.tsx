@@ -69,7 +69,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'text-base font-medium transition-colors text-white',
+                  'text-sm font-normal transition-colors text-white',
                 )}
               >
                  {isScrolled ? (
