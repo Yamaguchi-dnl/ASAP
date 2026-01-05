@@ -87,7 +87,6 @@ export function ContactSection() {
 
 
   const onSubmit = (data: FormValues) => {
-    console.log(data);
     toast({
       title: t.toast.title,
       description: t.toast.description,

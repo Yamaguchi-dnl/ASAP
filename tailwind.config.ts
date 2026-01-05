@@ -18,7 +18,6 @@ export default {
     extend: {
       fontFamily: {
         body: ['"DM Sans"', 'sans-serif'],
-        code: ['monospace'],
         headline: ['Antonio', 'sans-serif'],
       },
       colors: {

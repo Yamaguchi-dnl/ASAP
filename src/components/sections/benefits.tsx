@@ -7,8 +7,6 @@ import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/context/language-context';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function BenefitsSection() {
   const { translations } = useLanguage();
