@@ -76,16 +76,11 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'text-base font-medium transition-colors text-white font-headline uppercase',
+                  'text-base font-medium transition-colors',
+                   isScrolled ? 'text-accent hover:text-accent/80' : 'text-white hover:text-white/80'
                 )}
               >
-                {isScrolled ? (
-                  <span className="text-white hover:text-white/80">
-                    {link.label}
-                  </span>
-                ) : (
-                  <span className="hover:text-white/80">{link.label}</span>
-                )}
+                {link.label}
               </Link>
             ))}
           </nav>
