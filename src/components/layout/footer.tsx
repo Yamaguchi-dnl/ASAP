@@ -146,9 +146,9 @@ export function Footer() {
           </div>
 
           {/* Mobile Accordion */}
-          <div className="md:hidden mt-8 border-t border-border pt-4">
+          <div className="md:hidden mt-8 pt-4">
             <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
+              <AccordionItem value="item-1" className="border-none">
                 <AccordionTrigger className="text-base font-semibold">
                   {translations.footer.usefulLinks}
                 </AccordionTrigger>
