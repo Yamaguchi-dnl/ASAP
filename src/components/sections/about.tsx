@@ -86,7 +86,7 @@ export function AboutSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
-          <motion.div className="relative w-5/6 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>
+          <motion.div className="relative w-4/5 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>
             <AnimatePresence mode="wait">
               {founderImage && (
                 <motion.div
