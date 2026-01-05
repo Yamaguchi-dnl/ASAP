@@ -135,15 +135,15 @@ export function Header() {
                 className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
               >
                 <SheetTitle className="sr-only">Menu Principal</SheetTitle>
-                <div className="flex items-center p-4 border-b">
+                <div className="p-4 border-b">
                   <Link
                     href="/"
-                    className="flex items-center"
+                    className="flex"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <div className="h-12 w-32 relative">
                       <Image
-                        src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png"
+                        src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg"
                         alt="PulsoASAP Logo"
                         fill
                         className="object-contain"
