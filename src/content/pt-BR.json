@@ -191,8 +191,8 @@
     "subtitle": "Associe sua marca a um projeto que transforma o ambiente corporativo. Seja um patrocinador e fortaleça a imagem da sua empresa.",
     "tiers": [
       {
-        "name": "Essencial (Ouro)",
-        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
+        "name": "Essencial",
+        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
         "description": "Categoria voltada a empresas que desejam ampliar o impacto e atuar estrategicamente na evolução da cultura corporativa, acelerando iniciativas de conscientização, fortalecendo o engajamento interno e expandindo o alcance das ações do projeto.",
         "benefits": [
           "Exclusividade por setor",
@@ -201,8 +201,8 @@
         ]
       },
       {
-        "name": "Transformador (Prata)",
-        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
+        "name": "Transformador",
+        "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO%20prata.png",
         "description": "Categoria destinada a organizações que reconhecem a relevância do tema e apoiam a continuidade das iniciativas de pesquisa, conteúdo e ações voltadas à prevenção da exaustão corporativa, fortalecendo laços e promovendo ambientes de trabalho mais saudáveis e íntegros.",
         "benefits": [
           "Presença institucional da marca",
@@ -345,5 +345,7 @@
     "copy": "PulsoASAP. Todos os direitos reservados."
   }
 }
+
+    
 
     
