@@ -135,7 +135,7 @@ export function Header() {
                 className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
               >
                 <SheetTitle className="sr-only">Menu Principal</SheetTitle>
-                <div className="py-4 border-b">
+                <div className="py-4 px-4 border-b">
                   <Link
                     href="/"
                     className="flex"
@@ -143,7 +143,7 @@ export function Header() {
                   >
                     <div className="h-12 w-32 relative -ml-4">
                       <Image
-                        src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg"
+                        src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg?updatedAt=1766181749842"
                         alt="PulsoASAP Logo"
                         fill
                         className="object-contain"
@@ -162,7 +162,7 @@ export function Header() {
                       {link.label}
                     </Link>
                   ))}
-                  <div className='flex gap-2'>
+                  <div className='grid grid-cols-1 gap-2'>
                     <Button
                         variant="outline"
                         size="lg"
