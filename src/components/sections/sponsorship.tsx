@@ -29,8 +29,8 @@ export function SponsorshipSection() {
       <Container>
         <div className="max-w-3xl mx-auto text-center">
            <MotionWrapper variants={titleVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground font-headline uppercase">
-              {t.title}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground font-headline uppercase">
+              {t.title.split(' ')[0]} <br /> {t.title.split(' ').slice(1).join(' ')}
             </h2>
             <hr className="border-t-2 border-primary w-24 mt-4 mb-8 mx-auto" />
           </MotionWrapper>
