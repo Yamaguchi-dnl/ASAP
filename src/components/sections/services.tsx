@@ -78,7 +78,7 @@ export function ServicesSection() {
                 return (
                   <CarouselItem key={service.id} className="pl-4 basis-[90%] sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group" tabIndex={0}>
                     <Card className={cn(
-                      "min-h-[400px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg"
+                      "h-[400px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg"
                     )}>
                       {serviceImage && (
                         <Image
@@ -94,7 +94,7 @@ export function ServicesSection() {
                       <div className="relative flex flex-col h-full p-6 text-white justify-end">
                         <h3 className="text-2xl font-bold transition-all duration-500 group-hover:mb-2 group-focus-within:mb-2">{service.title}</h3>
                         
-                        <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-hidden">
+                        <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-500 overflow-y-auto">
                            <p className="text-white/80 text-sm mt-2">{service.description}</p>
                             {service.subItems && service.subItems.length > 0 && (
                               <ol className="mt-4 space-y-1 text-sm list-decimal list-inside">
