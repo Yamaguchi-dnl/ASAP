@@ -191,7 +191,7 @@
     "subtitle": "Asocie su marca a un proyecto que transforma el ambiente corporativo. Sea un patrocinador y fortalezca la imagen de su empresa.",
     "tiers": [
       {
-        "name": "MASTER",
+        "name": "Master",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
         "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando iniciativas de concientización, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
         "benefits": [
@@ -343,6 +343,8 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
+
+    
 
     
 
