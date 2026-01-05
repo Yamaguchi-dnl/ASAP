@@ -240,7 +240,7 @@ export function OurApproachSection() {
       variants={sectionVariants}
     >
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col justify-between h-full py-8">
             <div className='relative overflow-hidden min-h-[450px]'>
                <AnimatePresence mode="wait">
@@ -303,7 +303,7 @@ export function OurApproachSection() {
               </div>
             </motion.div>
           </div>
-          <motion.div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden h-full hidden lg:block" variants={imageContainerVariants}>
+          <motion.div className="relative w-full mx-auto aspect-[4/5] rounded-lg overflow-hidden hidden lg:block" variants={imageContainerVariants}>
              <AnimatePresence mode="wait">
               {slideImage && (
                 <motion.div
