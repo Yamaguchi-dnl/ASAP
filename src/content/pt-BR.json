@@ -240,9 +240,7 @@
           { "value": "solucoes", "label": "Soluções Regulatórias ASAP" },
           { "value": "treinamento", "label": "Treinamento ASAP" },
           { "value": "apoiador", "label": "Apoiador ASAP" },
-          { "value": "manuais", "label": "Manuais" },
-          { "value": "politicas", "label": "Políticas" },
-          { "value": "codigo_etica", "label": "Código de Ética" }
+          { "value": "documentos_governanca", "label": "Manuais, Políticas e Códigos de Ética" }
         ]
       },
       "companyName": { "label": "Nome da empresa", "placeholder": "Nome da empresa interessada" },
