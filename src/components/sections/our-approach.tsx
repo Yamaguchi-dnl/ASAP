@@ -233,7 +233,7 @@ export function OurApproachSection() {
   return (
     <motion.section 
       id="quem-somos" 
-      className="py-20 sm:py-32 bg-secondary/30 text-foreground"
+      className="py-20 sm:py-32 bg-background text-foreground"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
