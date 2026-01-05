@@ -138,10 +138,10 @@ export function Header() {
                 <div className="py-4 border-b">
                   <Link
                     href="/"
-                    className="flex pl-0"
+                    className="flex"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <div className="h-12 w-32 relative">
+                    <div className="h-12 w-32 relative -ml-4">
                       <Image
                         src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg"
                         alt="PulsoASAP Logo"
