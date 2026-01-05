@@ -44,7 +44,7 @@ export function SponsorshipSection() {
           {t.tiers.map((tier: any, index: number) => (
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }} className="flex">
               <div className="group w-full" tabIndex={0}>
-                <Card className={cn("h-[500px] overflow-hidden shadow-lg transition-all duration-500 flex flex-col bg-card border-border/50 relative rounded-lg",
+                <Card className={cn("min-h-[500px] overflow-hidden shadow-lg transition-all duration-500 flex flex-col bg-card border-border/50 relative rounded-lg",
                   "hover:shadow-2xl focus-within:shadow-2xl"
                 )}>
                   <div className="relative flex-grow transition-opacity duration-500 group-hover:opacity-10 group-focus-within:opacity-10">
