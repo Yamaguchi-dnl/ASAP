@@ -241,8 +241,8 @@ export function OurApproachSection() {
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col justify-between h-full py-8">
-            <div className='relative overflow-hidden min-h-[450px]'>
+          <div className="flex flex-col justify-between h-full">
+            <div className='relative overflow-hidden'>
                <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide.id}
