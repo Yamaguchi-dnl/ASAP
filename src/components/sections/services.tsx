@@ -78,7 +78,7 @@ export function ServicesSection() {
                 return (
                   <CarouselItem key={service.id} className="pl-4 basis-[90%] sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group" tabIndex={0}>
                     <Card className={cn(
-                      "h-[450px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg"
+                      "h-[400px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg"
                     )}>
                       {serviceImage && (
                         <Image
