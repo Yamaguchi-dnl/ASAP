@@ -134,7 +134,7 @@ export function Header() {
                 side="right"
                 className="w-[300px] sm:w-[400px] bg-background text-foreground p-0"
               >
-                <div className="flex justify-between items-center p-4 border-b">
+                <div className="flex items-center p-4 border-b">
                   <Link
                     href="/"
                     className="flex items-center"
