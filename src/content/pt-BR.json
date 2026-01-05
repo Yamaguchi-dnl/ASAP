@@ -136,7 +136,7 @@
         "title": "Mentoria ASAP",
         "imageId": "service-mentorship",
         "description": "Sem receitas mágicas ou fórmulas prontas. Nossa metodologia foi criada para oferecer uma experiência de mentoria personalizada, alinhada aos objetivos e ao momento de cada profissional.",
-        "subItems": ["ASAP Essencial", "ASAP Social", "ASAP Evolution", "ASAP Anônimos"],
+        "subItems": ["ASAP Essencial", "ASAP Evolution", "ASAP Anônimos", "ASAP Social"],
         "cta": "Explore as opções"
       },
       {
@@ -343,6 +343,8 @@
     "copy": "PulsoASAP. Todos os direitos reservados."
   }
 }
+
+    
 
     
 
