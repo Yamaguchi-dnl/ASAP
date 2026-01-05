@@ -137,7 +137,7 @@ export function Header() {
                 <div className="flex justify-between items-center p-4 border-b">
                   <Link
                     href="/"
-                    className="flex items-center justify-center"
+                    className="flex items-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <div className="h-12 w-32 relative">
