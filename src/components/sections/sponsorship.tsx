@@ -82,8 +82,11 @@ export function SponsorshipSection() {
                     </div>
                   </div>
                   <div className="relative p-8 pt-0 transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
-                    <Button asChild variant="link" className="p-0 h-auto text-3xl font-bold text-primary hover:no-underline">
-                      <Link href="#contato">Apoiador {tier.name}</Link>
+                    <Button asChild variant="link" className="p-0 h-auto text-2xl font-bold text-primary hover:no-underline text-center">
+                      <Link href="#contato">
+                        <span className="block">Apoiador</span>
+                        <span className="block">{tier.name}</span>
+                      </Link>
                     </Button>
                   </div>
                 </Card>
