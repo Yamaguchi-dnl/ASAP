@@ -74,7 +74,7 @@ export function SponsorshipSection() {
                       </ul>
                       <Button 
                         variant="outline"
-                        className="mt-8 rounded-full bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                        className="mt-8 rounded-full bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground hidden md:inline-flex"
                         asChild
                       >
                          <a href="#contato">{t.cta}</a>
@@ -94,6 +94,17 @@ export function SponsorshipSection() {
             </MotionWrapper>
           ))}
         </div>
+
+        <MotionWrapper variants={textVariants} transition={{ delay: 0.8 }} className="mt-12 text-center block md:hidden">
+          <Button 
+            size="lg"
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+            asChild
+          >
+              <a href="#contato">{t.cta}</a>
+          </Button>
+        </MotionWrapper>
+
         <MotionWrapper variants={textVariants} transition={{ delay: 1 }}>
           <p className="text-center mt-12 text-sm text-muted-foreground italic">{t.note}</p>
         </MotionWrapper>
