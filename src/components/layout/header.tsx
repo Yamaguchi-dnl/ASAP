@@ -149,14 +149,6 @@ export function Header() {
                       />
                     </div>
                   </Link>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Fechar menu</span>
-                  </Button>
                 </div>
                 <nav className="flex flex-col gap-6 p-4">
                   {navLinks.map((link) => (
