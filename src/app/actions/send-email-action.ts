@@ -6,7 +6,7 @@ import { Resend } from 'resend';
 const TO_EMAIL = 'Danielyamaguchi409@gmail.com';
 const FROM_EMAIL = 'onboarding@resend.dev'; 
 
-export const ContactFormSchema = z.object({
+const ContactFormSchema = z.object({
   formType: z.enum(['empresa', 'profissional']),
   name: z.string().min(1, 'Nome é obrigatório'),
   email: z.string().email('E-mail inválido'),
@@ -23,7 +23,7 @@ export const ContactFormSchema = z.object({
   department: z.string().optional(),
   companyTime: z.string().optional(),
 });
-export type ContactFormData = z.infer<typeof ContactFormSchema>;
+type ContactFormData = z.infer<typeof ContactFormSchema>;
 
 const generateEmailHtml = (data: ContactFormData): string => {
   let body = `
