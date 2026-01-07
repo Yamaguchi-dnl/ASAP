@@ -105,7 +105,7 @@ export default function AdminPage() {
         <div className="space-y-3 text-sm max-h-[70vh] overflow-y-auto pr-4">
             <p><strong>ID:</strong> {submission.id}</p>
             <p><strong>Data:</strong> {format(new Date(submission.submissionDate), 'dd/MM/yyyy HH:mm')}</p>
-            <p><strong>Tipo:</strong> <Badge variant={isEmpresa ? 'default' : 'secondary'}>{submission.formType}</Badge></p>
+            <div><strong>Tipo:</strong> <Badge variant={isEmpresa ? 'default' : 'secondary'}>{submission.formType}</Badge></div>
             <hr/>
             <p><strong>Nome:</strong> {submission.name}</p>
             <p><strong>Email:</strong> {submission.email}</p>
