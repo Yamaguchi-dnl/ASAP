@@ -29,11 +29,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { sendContactEmail, ContactFormSchema } from '@/ai/flows/send-email-flow';
 import type { ContactFormData } from '@/ai/flows/send-email-flow';
 import { Loader2 } from 'lucide-react';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from '@/components/ui/alert-dialog';
 
 
 export function ContactSection() {
   const [activeTab, setActiveTab] = useState<'empresa' | 'profissional'>('empresa');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const { toast } = useToast();
   const { translations } = useLanguage();
   const t = translations.contact;
@@ -75,10 +85,7 @@ export function ContactSection() {
     try {
       const result = await sendContactEmail(data);
       if (result.success) {
-        toast({
-          title: t.toast.title,
-          description: t.toast.description,
-        });
+        setShowConfirmation(true);
         form.reset();
         form.setValue('formType', activeTab);
         if(activeTab === 'empresa') {
@@ -496,6 +503,19 @@ export function ContactSection() {
           </MotionWrapper>
         </div>
       </Container>
+       <AlertDialog open={showConfirmation} onOpenChange={setShowConfirmation}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t.toast.title}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t.toast.description}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={() => setShowConfirmation(false)}>OK</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </section>
   );
 }
