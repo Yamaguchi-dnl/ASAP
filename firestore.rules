@@ -51,7 +51,7 @@ service cloud.firestore {
      *   usuários autenticados podem ler os dados.
      */
     match /contactFormSubmissions/{contactFormSubmissionId} {
-      allow read: if request.auth != null; // Permite leitura se o usuário estiver autenticado
+      allow get, list: if request.auth != null; // Permite leitura e listagem se o usuário estiver autenticado
       allow update, delete: if false;
 
       /**
