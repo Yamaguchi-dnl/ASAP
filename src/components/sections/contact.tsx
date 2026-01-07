@@ -81,7 +81,10 @@ export function ContactSection() {
         if(activeTab === 'empresa') {
           form.setValue('service', t.form.service.options[0].value);
         } else {
-          form.setValue('service', t.form.service.options.find((o: {value: string}) => o.value === 'mentorias')?.value);
+          const mentoriaService = t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias');
+          if (mentoriaService) {
+            form.setValue('service', mentoriaService.value);
+          }
         }
       } else {
         throw new Error(result.message);
