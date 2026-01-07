@@ -27,6 +27,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type Submission = {
   id: string;
@@ -140,7 +142,17 @@ export default function AdminPage() {
         <div className="min-h-screen bg-secondary/30">
             <header className="bg-background shadow-sm">
                 <Container className="flex h-16 items-center justify-between">
-                    <h1 className="text-xl font-bold text-foreground">Admin</h1>
+                    <Link href="/" className="flex items-center -ml-10">
+                        <div className="relative h-12 w-32">
+                        <Image
+                            src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg?updatedAt=1766181749842"
+                            alt="PulsoASAP Logo"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                        </div>
+                    </Link>
                     <Button variant="outline" onClick={handleLogout}>
                     Sair
                     </Button>
