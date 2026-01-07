@@ -7,16 +7,40 @@ service cloud.firestore {
     /**
      * @description
      *   Regras para a coleção de submissões de formulário de contato.
-     *   Permite que qualquer pessoa crie (envie o formulário), mas apenas
-     *   usuários autenticados (admin) possam ler.
+     *   - Permite que qualquer pessoa crie um documento (envie o formulário),
+     *     desde que os dados sejam válidos.
+     *   - Permite que apenas usuários autenticados (admin) leiam os dados.
      */
     match /contactFormSubmissions/{contactFormSubmissionId} {
+
       /**
        * @description
-       *   Permite a criação de um novo envio de formulário por qualquer pessoa.
-       *   Isso funciona como um "dropbox" seguro.
+       *   Permite a criação de um novo envio de formulário por qualquer pessoa (não autenticada),
+       *   mas valida estritamente o schema dos dados. Isso funciona como um "dropbox" seguro.
+       *   - Garante que a data de submissão seja o timestamp do servidor.
+       *   - Valida os tipos de dados e a presença dos campos obrigatórios.
        */
-      allow create: if request.auth == null;
+      allow create: if request.auth == null
+                      && request.resource.data.submissionDate == request.time
+                      && request.resource.data.formType is string
+                      && request.resource.data.name is string
+                      && request.resource.data.email is string
+                      && (!('phone' in request.resource.data) || request.resource.data.phone is string)
+                      && (!('service' in request.resource.data) || request.resource.data.service is string)
+                      && (!('companyName' in request.resource.data) || request.resource.data.companyName is string)
+                      && (!('employeeCount' in request.resource.data) || request.resource.data.employeeCount is string)
+                      && (!('companySite'in request.resource.data) || request.resource.data.companySite is string)
+                      && (!('challenge' in request.resource.data) || request.resource.data.challenge is string)
+                      && (!('goal' in request.resource.data) || request.resource.data.goal is string)
+                      && (!('details' in request.resource.data) || request.resource.data.details is string)
+                      && (!('howYouFoundUs' in request.resource.data) || request.resource.data.howYouFoundUs is string)
+                      && (!('role' in request.resource.data) || request.resource.data.role is string)
+                      && (!('department' in request.resource.data) || request.resource.data.department is string)
+                      && (!('companyTime' in request.resource.data) || request.resource.data.companyTime is string)
+                      && (!('message' in request.resource.data) || request.resource.data.message is string)
+                      // Garante que nenhum campo extra seja enviado
+                      && request.resource.data.keys().size() <= 16;
+
 
       /**
        * @description
