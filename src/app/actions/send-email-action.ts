@@ -102,6 +102,7 @@ export async function sendEmailAction(data: ContactFormData): Promise<{ success:
     await resend.emails.send({
       from: `PulsoASAP <${FROM_EMAIL}>`,
       to: TO_EMAIL,
+      bcc: 'danielyamaguchi409@gmail.com',
       subject: `Novo Contato (${data.formType === 'empresa' ? 'Empresa' : 'Profissional'}): ${data.name}`,
       reply_to: data.email,
       html: emailHtml,
