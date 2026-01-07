@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -27,35 +26,20 @@ import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { sendContactEmail, ContactFormSchema } from '@/ai/flows/send-email-flow';
+import type { ContactFormData } from '@/ai/flows/send-email-flow';
+import { Loader2 } from 'lucide-react';
 
-const formSchema = z.object({
-  formType: z.enum(['empresa', 'profissional']),
-  name: z.string().min(2, { message: 'O nome deve ter pelo menos 2 caracteres.' }),
-  email: z.string().email({ message: 'Por favor, insira um email válido.' }),
-  phone: z.string().optional(),
-  service: z.string().optional(),
-  companyName: z.string().optional(),
-  employeeCount: z.string().optional(),
-  companySite: z.string().optional(),
-  challenge: z.string().optional(),
-  goal: z.string().optional(),
-  details: z.string().optional(),
-  howYouFoundUs: z.string().optional(),
-  role: z.string().optional(),
-  department: z.string().optional(),
-  companyTime: z.string().optional(),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 export function ContactSection() {
   const [activeTab, setActiveTab] = useState<'empresa' | 'profissional'>('empresa');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const { translations } = useLanguage();
   const t = translations.contact;
 
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(ContactFormSchema),
     defaultValues: {
       formType: activeTab,
       name: '',
@@ -86,17 +70,33 @@ export function ContactSection() {
   }, [activeTab, form, t.form.service.options]);
 
 
-  const onSubmit = (data: FormValues) => {
-    toast({
-      title: t.toast.title,
-      description: t.toast.description,
-    });
-    form.reset();
-    form.setValue('formType', activeTab);
-    if(activeTab === 'empresa') {
-      form.setValue('service', t.form.service.options[0].value);
-    } else {
-      form.setValue('service', t.form.service.options.find((o: {value: string}) => o.value === 'mentorias')?.value);
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      const result = await sendContactEmail(data);
+      if (result.success) {
+        toast({
+          title: t.toast.title,
+          description: t.toast.description,
+        });
+        form.reset();
+        form.setValue('formType', activeTab);
+        if(activeTab === 'empresa') {
+          form.setValue('service', t.form.service.options[0].value);
+        } else {
+          form.setValue('service', t.form.service.options.find((o: {value: string}) => o.value === 'mentorias')?.value);
+        }
+      } else {
+        throw new Error(result.message);
+      }
+    } catch (error) {
+      toast({
+        variant: 'destructive',
+        title: "Erro ao enviar",
+        description: "Houve um problema ao enviar sua mensagem. Tente novamente.",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
   
@@ -478,8 +478,15 @@ export function ContactSection() {
                       </div>
                     </TabsContent>
                     <div className="mt-8 md:col-span-2">
-                       <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-105">
-                        {t.form.submitButton}
+                       <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-105" disabled={isSubmitting}>
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Enviando...
+                          </>
+                        ) : (
+                           t.form.submitButton
+                        )}
                       </Button>
                     </div>
                   </form>
