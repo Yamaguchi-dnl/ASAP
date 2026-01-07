@@ -8,8 +8,17 @@ import { FaqSection } from '@/components/sections/faq';
 import { LanguageProvider } from '@/context/language-context';
 import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 import { FirebaseClientProvider } from '@/firebase';
+import { usePathname } from 'next/navigation';
 
 export function ClientProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isAdminPage = pathname.startsWith('/admin');
+
+  // Do not render public layout for admin pages
+  if (isAdminPage) {
+    return <>{children}</>;
+  }
+  
   return (
     <FirebaseClientProvider>
       <LanguageProvider>
