@@ -1,0 +1,137 @@
+{
+  "entities": {
+    "ContactFormSubmission": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContactFormSubmission",
+      "type": "object",
+      "description": "Represents a contact form submission from the website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the contact form submission."
+        },
+        "submissionType": {
+          "type": "string",
+          "description": "Type of submission: 'individual' for mentorship or 'company' for other services/sponsorships.",
+          "format": "string"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the person submitting the form."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the person submitting the form.",
+          "format": "email"
+        },
+        "message": {
+          "type": "string",
+          "description": "The message content from the contact form."
+        },
+        "companyName": {
+          "type": "string",
+          "description": "Name of the company (if applicable)."
+        },
+        "sponsorshipInterest": {
+          "type": "string",
+          "description": "Level of sponsorship the company is interested in (Master, Ouro, Prata, etc.)."
+        },
+        "submissionDate": {
+          "type": "string",
+          "description": "The date and time when the form was submitted.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "submissionType",
+        "name",
+        "email",
+        "message",
+        "submissionDate"
+      ]
+    },
+    "Testimonial": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Testimonial",
+      "type": "object",
+      "description": "Represents a user testimonial displayed on the website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the testimonial."
+        },
+        "authorName": {
+          "type": "string",
+          "description": "Name of the testimonial author."
+        },
+        "authorTitle": {
+          "type": "string",
+          "description": "Title or position of the testimonial author."
+        },
+        "testimonialText": {
+          "type": "string",
+          "description": "The text content of the testimonial."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the author's image or company logo.",
+          "format": "uri"
+        },
+        "order": {
+          "type": "number",
+          "description": "Order in which the testimonial is displayed."
+        }
+      },
+      "required": [
+        "id",
+        "authorName",
+        "authorTitle",
+        "testimonialText"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/contactFormSubmissions/{contactFormSubmissionId}",
+        "definition": {
+          "entityName": "ContactFormSubmission",
+          "schema": {
+            "$ref": "#/backend/entities/ContactFormSubmission"
+          },
+          "description": "Stores contact form submissions from the website.  No denormalized authorization fields are needed as access to these documents is not based on user roles.",
+          "params": [
+            {
+              "name": "contactFormSubmissionId",
+              "description": "Unique identifier for the contact form submission."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/testimonials/{testimonialId}",
+        "definition": {
+          "entityName": "Testimonial",
+          "schema": {
+            "$ref": "#/backend/entities/Testimonial"
+          },
+          "description": "Stores user testimonials. No denormalized authorization fields are needed as access to these documents is not based on user roles.",
+          "params": [
+            {
+              "name": "testimonialId",
+              "description": "Unique identifier for the testimonial."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore data structure is designed to support the PulsoASAP application, focusing on storing contact form submissions and testimonials.  Authorization Independence is achieved by ensuring no `get()` calls are needed in security rules. This is accomplished by not having any hierarchical dependencies that require looking up parent document data to validate child documents.  Since there are no user-specific private documents and the testimonial/contact forms are accessible without authentication, all list operations (QAPs) are inherently secure. Structural Segregation is used by placing ContactFormSubmissions and Testimonials in separate collections to align with their potentially different security requirements in the future, and to improve query performance. The structure also allows for easier management and scaling of these data types. Naming conventions are strictly adhered to, improving readability and maintainability."
+  }
+}

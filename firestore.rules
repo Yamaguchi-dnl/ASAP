@@ -1,0 +1,83 @@
+/**
+ * This ruleset governs a public-facing website's data, specifically contact
+ * form submissions and public testimonials.
+ *
+ * Core Philosophy:
+ * The security model is based on a "default deny" posture with explicitly
+ * defined public access channels. It assumes no authenticated user sessions are
+ * required for the core functionality. One collection acts as a write-only
+ * "dropbox" for submissions, while the other is a read-only "display case" for
+ * public content.
+ *
+ * Data Structure:
+ * The data is organized into two independent, top-level collections:
+ * - /contactFormSubmissions: Stores private data submitted by visitors.
+ * - /testimonials: Stores public-facing testimonials, likely managed by an admin.
+ *
+ * Key Security Decisions:
+ * - Write-Only Submissions: Anyone can create a document in the
+ *   `contactFormSubmissions` collection, but no one (via client SDKs) can read,
+ *   update, or delete them, ensuring privacy.
+ * - Read-Only Testimonials: The `testimonials` collection is publicly readable
+ *   by anyone but cannot be modified by any client, protecting the integrity of
+ *   the website's content.
+ * - No User Data: There are no user-specific collections or rules, as the
+ *   application does not manage user accounts or private data trees.
+ * - No Data Validation: In this prototyping phase, rules focus solely on
+ *   authorization (who can do what) and not on the shape or type of the data
+ *   being written.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description
+     *   Rules for the contact form submissions collection. This collection acts as a
+     *   secure dropbox. Any visitor can submit a form (create), but the submitted
+     *   data is firewalled from being read, updated, or deleted by any client.
+     * @path
+     *   /contactFormSubmissions/{contactFormSubmissionId}
+     * @allow
+     *   (create) An anonymous website visitor creating a new submission.
+     * @deny
+     *   (get, list, update, delete) Any user attempting to read, list, change, or
+     *   remove existing submissions. This prevents data leaks and tampering.
+     * @principle
+     *   Enforces a write-only pattern for public data collection, ensuring privacy
+     *   and data integrity.
+     */
+    match /contactFormSubmissions/{contactFormSubmissionId} {
+      allow get: if false;
+      allow list: if false;
+      allow create: if true;
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    /**
+     * @description
+     *   Rules for the testimonials collection. This data is intended for public display
+     *   and is therefore readable by anyone. All write operations are denied to
+     *   prevent public users from modifying website content.
+     * @path
+     *   /testimonials/{testimonialId}
+     * @allow
+     *   (get, list) Any website visitor reading a specific testimonial or listing all
+     *   of them.
+     * @deny
+     *   (create, update, delete) Any user attempting to add, modify, or remove a
+     *   testimonial. Content is managed server-side.
+     * @principle
+     *   Establishes a public, read-only data source. Content is considered safe for
+     *   public consumption and is protected from client-side modification.
+     */
+    match /testimonials/{testimonialId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+  }
+}
