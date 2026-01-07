@@ -1,4 +1,3 @@
-import { FirebaseClientProvider } from '@/firebase';
 import { Toaster } from '@/components/ui/toaster';
 import '../globals.css';
 import { Metadata } from 'next';
@@ -14,16 +13,9 @@ export default function AdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico?v=4" type="image/x-icon" />
-      </head>
-      <body>
-        <FirebaseClientProvider>
-          {children}
-          <Toaster />
-        </FirebaseClientProvider>
-      </body>
-    </html>
+    <>
+      {children}
+      <Toaster />
+    </>
   );
 }

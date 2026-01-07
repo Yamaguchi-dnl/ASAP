@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { ClientProvider } from './client-provider';
+import { FirebaseClientProvider } from '@/firebase';
+import { LanguageProvider } from '@/context/language-context';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'PulsoASAP',
@@ -21,7 +24,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <ClientProvider>{children}</ClientProvider>
+        <FirebaseClientProvider>
+          <LanguageProvider>
+            <ClientProvider>{children}</ClientProvider>
+          </LanguageProvider>
+        </FirebaseClientProvider>
       </body>
     </html>
   );
