@@ -10,7 +10,7 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import { Resend } from 'resend';
 import { ContactFormEmail } from '@/ai/emails/contact-form-email';
-import { render } from '@react-email/components';
+import { render } from '@react-email/render';
 
 // Defina o email do destinatário aqui
 const TO_EMAIL = 'Danielyamaguchi409@gmail.com';
