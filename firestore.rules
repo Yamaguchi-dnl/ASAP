@@ -1,83 +1,74 @@
-/**
- * This ruleset governs a public-facing website's data, specifically contact
- * form submissions and public testimonials.
- *
- * Core Philosophy:
- * The security model is based on a "default deny" posture with explicitly
- * defined public access channels. It assumes no authenticated user sessions are
- * required for the core functionality. One collection acts as a write-only
- * "dropbox" for submissions, while the other is a read-only "display case" for
- * public content.
- *
- * Data Structure:
- * The data is organized into two independent, top-level collections:
- * - /contactFormSubmissions: Stores private data submitted by visitors.
- * - /testimonials: Stores public-facing testimonials, likely managed by an admin.
- *
- * Key Security Decisions:
- * - Write-Only Submissions: Anyone can create a document in the
- *   `contactFormSubmissions` collection, but no one (via client SDKs) can read,
- *   update, or delete them, ensuring privacy.
- * - Read-Only Testimonials: The `testimonials` collection is publicly readable
- *   by anyone but cannot be modified by any client, protecting the integrity of
- *   the website's content.
- * - No User Data: There are no user-specific collections or rules, as the
- *   application does not manage user accounts or private data trees.
- * - No Data Validation: In this prototyping phase, rules focus solely on
- *   authorization (who can do what) and not on the shape or type of the data
- *   being written.
- */
+
 rules_version = '2';
+
 service cloud.firestore {
   match /databases/{database}/documents {
 
     /**
-     * @description
-     *   Rules for the contact form submissions collection. This collection acts as a
-     *   secure dropbox. Any visitor can submit a form (create), but the submitted
-     *   data is firewalled from being read, updated, or deleted by any client.
-     * @path
-     *   /contactFormSubmissions/{contactFormSubmissionId}
-     * @allow
-     *   (create) An anonymous website visitor creating a new submission.
-     * @deny
-     *   (get, list, update, delete) Any user attempting to read, list, change, or
-     *   remove existing submissions. This prevents data leaks and tampering.
-     * @principle
-     *   Enforces a write-only pattern for public data collection, ensuring privacy
-     *   and data integrity.
+     * Valida os dados de uma submissão de formulário de contato.
+     * Garante que os campos obrigatórios existam e que os tipos de dados estejam corretos.
      */
-    match /contactFormSubmissions/{contactFormSubmissionId} {
-      allow get: if false;
-      allow list: if false;
-      allow create: if true;
-      allow update: if false;
-      allow delete: if false;
+    function isContactFormSubmissionValid(data) {
+      // Campos obrigatórios para qualquer tipo de formulário
+      let requiredFields = ['formType', 'name', 'email', 'submissionDate'];
+      let areRequiredFieldsPresent = data.keys().hasAll(requiredFields);
+
+      // Validação de tipos de dados comuns
+      let areTypesCorrect = data.formType is string &&
+                             data.name is string &&
+                             data.email is string &&
+                             data.submissionDate is string;
+      
+      // Permite campos opcionais, mas verifica seus tipos se presentes
+      let areOptionalTypesCorrect = 
+        (!data.keys().hasAny(['phone']) || data.phone is string) &&
+        (!data.keys().hasAny(['service']) || data.service is string) &&
+        (!data.keys().hasAny(['companyName']) || data.companyName is string) &&
+        (!data.keys().hasAny(['employeeCount']) || data.employeeCount is string) &&
+        (!data.keys().hasAny(['companySite']) || data.companySite is string) &&
+        (!data.keys().hasAny(['challenge']) || data.challenge is string) &&
+        (!data-keys().hasAny(['goal']) || data.goal is string) &&
+        (!data.keys().hasAny(['details']) || data.details is string) &&
+        (!data.keys().hasAny(['howYouFoundUs']) || data.howYouFoundUs is string) &&
+        (!data.keys().hasAny(['role']) || data.role is string) &&
+        (!data.keys().hasAny(['department']) || data.department is string) &&
+        (!data.keys().hasAny(['companyTime']) || data.companyTime is string);
+
+      // Garante que apenas campos conhecidos sejam enviados
+      let allowedFields = requiredFields.concat([
+        'phone', 'service', 'companyName', 'employeeCount', 'companySite', 
+        'challenge', 'goal', 'details', 'howYouFoundUs', 'role', 'department', 'companyTime'
+      ]);
+      let areOnlyAllowedFieldsPresent = data.keys().hasOnly(allowedFields);
+
+      return areRequiredFieldsPresent && areTypesCorrect && areOptionalTypesCorrect && areOnlyAllowedFieldsPresent;
     }
 
     /**
      * @description
-     *   Rules for the testimonials collection. This data is intended for public display
-     *   and is therefore readable by anyone. All write operations are denied to
-     *   prevent public users from modifying website content.
-     * @path
-     *   /testimonials/{testimonialId}
-     * @allow
-     *   (get, list) Any website visitor reading a specific testimonial or listing all
-     *   of them.
-     * @deny
-     *   (create, update, delete) Any user attempting to add, modify, or remove a
-     *   testimonial. Content is managed server-side.
-     * @principle
-     *   Establishes a public, read-only data source. Content is considered safe for
-     *   public consumption and is protected from client-side modification.
+     *   Regras para a coleção de submissões de formulário de contato.
+     *   Atua como um dropbox seguro. Qualquer visitante pode criar, mas ninguém
+     *   pode ler, atualizar ou deletar dados pelo cliente.
+     */
+    match /contactFormSubmissions/{contactFormSubmissionId} {
+      allow get, list, update, delete: if false;
+
+      /**
+       * @description
+       *   Permite a criação se os dados forem válidos de acordo com a função de validação.
+       * @principle
+       *   Impõe validação de schema na escrita para garantir a integridade dos dados.
+       */
+      allow create: if isContactFormSubmissionValid(request.resource.data);
+    }
+
+    /**
+     * @description
+     *   Regras para a coleção de depoimentos. Estes dados são públicos.
      */
     match /testimonials/{testimonialId} {
-      allow get: if true;
-      allow list: if true;
-      allow create: if false;
-      allow update: if false;
-      allow delete: if false;
+      allow get, list: if true;
+      allow create, update, delete: if false; // Gerenciado apenas pelo lado do servidor/admin
     }
   }
 }
