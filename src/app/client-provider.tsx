@@ -12,10 +12,10 @@ import { usePathname } from 'next/navigation';
 
 export function ClientProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAdminPage = pathname.startsWith('/admin');
+  const isAuthPage = pathname.startsWith('/admin') || pathname.startsWith('/login');
 
-  // Do not render public layout for admin pages
-  if (isAdminPage) {
+  // Do not render public layout for admin or login pages
+  if (isAuthPage) {
     return <>{children}</>;
   }
   

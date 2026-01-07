@@ -9,6 +9,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2 } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -40,7 +42,20 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-secondary/30 p-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-secondary/30 p-4">
+       <div className="mb-8">
+        <Link href="/" className="flex items-center">
+            <div className="relative h-12 w-32">
+            <Image
+                src="https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg?updatedAt=1766181749842"
+                alt="PulsoASAP Logo"
+                fill
+                className="object-contain"
+                priority
+            />
+            </div>
+        </Link>
+      </div>
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Login de Administrador</CardTitle>
