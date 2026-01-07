@@ -23,7 +23,6 @@ import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogContent,
-  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -81,8 +80,10 @@ export default function AdminPage() {
   }, [user, isUserLoading, router]);
 
   const handleLogout = async () => {
-    await auth.signOut();
-    router.push('/login');
+    if (auth) {
+        await auth.signOut();
+        router.push('/login');
+    }
   };
 
   if (isUserLoading || !user) {
@@ -99,7 +100,7 @@ export default function AdminPage() {
   const renderSubmissionDetails = (submission: Submission) => {
     const isEmpresa = submission.formType === 'empresa';
     return (
-        <div className="space-y-3 text-sm">
+        <div className="space-y-3 text-sm max-h-[70vh] overflow-y-auto pr-4">
             <p><strong>ID:</strong> {submission.id}</p>
             <p><strong>Data:</strong> {format(new Date(submission.submissionDate), 'dd/MM/yyyy HH:mm')}</p>
             <p><strong>Tipo:</strong> <Badge variant={isEmpresa ? 'default' : 'secondary'}>{submission.formType}</Badge></p>
@@ -207,14 +208,12 @@ export default function AdminPage() {
             </main>
         </div>
         <AlertDialog open={!!selectedSubmission} onOpenChange={(isOpen) => !isOpen && setSelectedSubmission(null)}>
-            <AlertDialogContent>
+            <AlertDialogContent className="max-w-2xl">
                 <AlertDialogHeader>
                     <AlertDialogTitle>Detalhes da Submissão</AlertDialogTitle>
-                    <AlertDialogDescription>
-                        {selectedSubmission && renderSubmissionDetails(selectedSubmission)}
-                    </AlertDialogDescription>
+                     {selectedSubmission && renderSubmissionDetails(selectedSubmission)}
                 </AlertDialogHeader>
-                <AlertDialogFooter>
+                <AlertDialogFooter className="mt-4">
                     <AlertDialogAction onClick={() => setSelectedSubmission(null)}>Fechar</AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
