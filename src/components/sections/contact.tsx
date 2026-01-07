@@ -15,8 +15,6 @@ import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { sendEmailAction } from '@/app/actions/send-email-action';
-import type { ContactFormData } from '@/app/actions/send-email-action';
 import { Loader2 } from 'lucide-react';
 import {
   AlertDialog,
@@ -28,6 +26,28 @@ import {
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
 import { Label } from '@/components/ui/label';
+import { useFirestore } from '@/firebase';
+import { collection, addDoc } from 'firebase/firestore';
+
+// Define a type for the form data
+type ContactFormData = {
+  formType: 'empresa' | 'profissional';
+  name: string;
+  email: string;
+  phone?: string;
+  service?: string;
+  companyName?: string;
+  employeeCount?: string;
+  companySite?: string;
+  challenge?: string;
+  goal?: string;
+  details?: string;
+  howYouFoundUs?: string;
+  role?: string;
+  department?: string;
+  companyTime?: string;
+};
+
 
 export function ContactSection() {
   const [activeTab, setActiveTab] = useState<'empresa' | 'profissional'>('empresa');
@@ -36,8 +56,9 @@ export function ContactSection() {
   const [error, setError] = useState('');
   const { translations } = useLanguage();
   const t = translations.contact;
+  const firestore = useFirestore();
 
-  const initialFormState = {
+  const initialFormState: ContactFormData = {
       formType: activeTab,
       name: '',
       email: '',
@@ -84,20 +105,22 @@ export function ContactSection() {
     setError('');
 
     try {
-      const result = await sendEmailAction(formData);
-      if (result.success) {
-        setShowConfirmation(true);
-        setFormData({
-            ...initialFormState,
-            formType: activeTab,
-            service: activeTab === 'empresa' 
-                ? t.form.service.options[0].value 
-                : t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias')?.value || '',
-        });
-      } else {
-        throw new Error(result.message || 'Falha ao enviar o e-mail.');
-      }
+      const submissionsCollection = collection(firestore, 'contactFormSubmissions');
+      await addDoc(submissionsCollection, {
+        ...formData,
+        submissionDate: new Date().toISOString(),
+      });
+
+      setShowConfirmation(true);
+      setFormData({
+          ...initialFormState,
+          formType: activeTab,
+          service: activeTab === 'empresa' 
+              ? t.form.service.options[0].value 
+              : t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias')?.value || '',
+      });
     } catch (error) {
+       console.error("Error adding document: ", error);
        setError(error instanceof Error ? error.message : "Houve um problema ao enviar sua mensagem. Tente novamente.");
     } finally {
       setIsSubmitting(false);
@@ -314,5 +337,3 @@ export function ContactSection() {
     </section>
   );
 }
-
-    
