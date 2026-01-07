@@ -5,72 +5,32 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     /**
-     * Valida os dados de uma submissão de formulário de contato.
-     * Garante que os campos obrigatórios existam e que os tipos de dados estejam corretos.
-     */
-    function isContactFormSubmissionValid(data) {
-      // Campos obrigatórios para qualquer tipo de formulário
-      let requiredFields = ['formType', 'name', 'email', 'submissionDate'];
-      let areRequiredFieldsPresent = data.keys().hasAll(requiredFields);
-
-      // Validação de tipos de dados comuns
-      let areTypesCorrect = data.formType is string &&
-                             data.name is string &&
-                             data.email is string &&
-                             data.submissionDate is string;
-      
-      // Permite campos opcionais, mas verifica seus tipos se presentes
-      let areOptionalTypesCorrect = 
-        (!data.keys().hasAny(['phone']) || data.phone is string) &&
-        (!data.keys().hasAny(['service']) || data.service is string) &&
-        (!data.keys().hasAny(['companyName']) || data.companyName is string) &&
-        (!data.keys().hasAny(['employeeCount']) || data.employeeCount is string) &&
-        (!data.keys().hasAny(['companySite']) || data.companySite is string) &&
-        (!data.keys().hasAny(['challenge']) || data.challenge is string) &&
-        (!data.keys().hasAny(['goal']) || data.goal is string) &&
-        (!data.keys().hasAny(['details']) || data.details is string) &&
-        (!data.keys().hasAny(['howYouFoundUs']) || data.howYouFoundUs is string) &&
-        (!data.keys().hasAny(['role']) || data.role is string) &&
-        (!data.keys().hasAny(['department']) || data.department is string) &&
-        (!data.keys().hasAny(['companyTime']) || data.companyTime is string);
-
-      // Garante que apenas campos conhecidos sejam enviados
-      let allowedFields = requiredFields.concat([
-        'phone', 'service', 'companyName', 'employeeCount', 'companySite', 
-        'challenge', 'goal', 'details', 'howYouFoundUs', 'role', 'department', 'companyTime'
-      ]);
-      let areOnlyAllowedFieldsPresent = data.keys().hasOnly(allowedFields);
-
-      return areRequiredFieldsPresent && areTypesCorrect && areOptionalTypesCorrect && areOnlyAllowedFieldsPresent;
-    }
-
-    /**
      * @description
      *   Regras para a coleção de submissões de formulário de contato.
+     *   Permite que qualquer pessoa crie (envie o formulário), mas apenas
+     *   usuários autenticados (admin) possam ler.
      */
     match /contactFormSubmissions/{contactFormSubmissionId} {
       /**
        * @description
-       *   Permite a criação se os dados forem válidos (dropbox seguro).
+       *   Permite a criação de um novo envio de formulário por qualquer pessoa.
+       *   Isso funciona como um "dropbox" seguro.
        */
-      allow create: if isContactFormSubmissionValid(request.resource.data);
+      allow create: if request.auth == null;
 
       /**
        * @description
-       *   Permite a leitura de um documento individual se o usuário estiver autenticado.
+       *   Permite a leitura de um documento individual (get) e a listagem de toda
+       *   a coleção (list) apenas se o usuário estiver autenticado.
+       *   Crucial para a página de admin.
        */
-      allow get: if request.auth != null;
+      allow get, list: if request.auth != null;
       
+      /**
+       * @description
+       *   Ninguém pode atualizar ou deletar envios através do cliente.
+       */
       allow update, delete: if false;
-    }
-
-    /**
-     * @description
-     *   Permite a listagem da coleção inteira se o usuário estiver autenticado.
-     *   Crucial para a página de admin.
-     */
-    match /contactFormSubmissions {
-      allow list: if request.auth != null;
     }
 
     /**
