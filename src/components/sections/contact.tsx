@@ -26,8 +26,8 @@ import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { sendContactEmail, ContactFormSchema } from '@/ai/flows/send-email-flow';
-import type { ContactFormData } from '@/ai/flows/send-email-flow';
+import { sendEmailAction, ContactFormSchema } from '@/app/actions/send-email-action';
+import type { ContactFormData } from '@/app/actions/send-email-action';
 import { Loader2 } from 'lucide-react';
 import {
   AlertDialog,
@@ -83,7 +83,7 @@ export function ContactSection() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      const result = await sendContactEmail(data);
+      const result = await sendEmailAction(data);
       if (result.success) {
         setShowConfirmation(true);
         form.reset();
