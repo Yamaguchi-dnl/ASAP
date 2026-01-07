@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
@@ -51,11 +51,11 @@ export function ContactSection() {
   const form = useForm<ContactFormData>({
     resolver: zodResolver(ContactFormSchema),
     defaultValues: {
-      formType: activeTab,
+      formType: 'empresa',
       name: '',
       email: '',
       phone: '',
-      service: '',
+      service: t.form.service.options[0].value,
       companyName: '',
       employeeCount: '',
       companySite: '',
@@ -69,16 +69,6 @@ export function ContactSection() {
     },
   });
   
-  useEffect(() => {
-    form.reset();
-    form.setValue('formType', activeTab);
-    if(activeTab === 'empresa') {
-      form.setValue('service', t.form.service.options[0].value);
-    } else {
-      form.setValue('service', t.form.service.options.find((o: {value: string}) => o.value === 'mentorias')?.value);
-    }
-  }, [activeTab, form, t.form.service.options]);
-
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -108,8 +98,18 @@ export function ContactSection() {
   };
   
   const handleTabChange = (value: string) => {
-    const tab = value as 'empresa' | 'profissional';
-    setActiveTab(tab);
+    const newTab = value as 'empresa' | 'profissional';
+    setActiveTab(newTab);
+    form.reset(); 
+    form.setValue('formType', newTab);
+    if (newTab === 'empresa') {
+      form.setValue('service', t.form.service.options[0].value);
+    } else {
+      const mentoriaService = t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias');
+      if (mentoriaService) {
+        form.setValue('service', mentoriaService.value);
+      }
+    }
   };
 
   const titleVariants = {
