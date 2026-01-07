@@ -10,10 +10,10 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import { Resend } from 'resend';
 import { ContactFormEmail } from '@/ai/emails/contact-form-email';
-import { render } from '@react-email/render';
+import { render } from '@react-email/components';
 
 // Defina o email do destinatário aqui
-const TO_EMAIL = 'contato@projetoasap.com.br';
+const TO_EMAIL = 'Danielyamaguchi409@gmail.com';
 const FROM_EMAIL = 'onboarding@resend.dev'; // O Resend requer um domínio verificado em produção
 
 // Schema Zod para validação dos dados do formulário
