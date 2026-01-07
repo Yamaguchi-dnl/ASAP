@@ -10,7 +10,8 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import { Resend } from 'resend';
 import { ContactFormEmail } from '@/ai/emails/contact-form-email';
-import { render } from '@react-email/render';
+import React from 'react';
+
 
 // Defina o email do destinatário aqui
 const TO_EMAIL = 'Danielyamaguchi409@gmail.com';
@@ -48,15 +49,13 @@ const emailSender = ai.defineTool(
     // A API Key do Resend será lida das variáveis de ambiente do ambiente de execução.
     const resend = new Resend(process.env.RESEND_API_KEY);
     
-    const emailHtml = render(ContactFormEmail(data));
-
     try {
       await resend.emails.send({
         from: `PulsoASAP <${FROM_EMAIL}>`,
         to: TO_EMAIL,
         subject: `Novo Contato (${data.formType === 'empresa' ? 'Empresa' : 'Profissional'}): ${data.name}`,
         reply_to: data.email,
-        html: emailHtml,
+        react: React.createElement(ContactFormEmail, data),
       });
     } catch (error) {
       console.error('Erro ao enviar e-mail:', error);
