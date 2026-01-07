@@ -3,11 +3,9 @@
 import { z } from 'zod';
 import { Resend } from 'resend';
 
-// Defina o email do destinatário aqui
 const TO_EMAIL = 'Danielyamaguchi409@gmail.com';
-const FROM_EMAIL = 'onboarding@resend.dev'; // O Resend requer um domínio verificado em produção
+const FROM_EMAIL = 'onboarding@resend.dev'; 
 
-// Schema Zod para validação dos dados do formulário
 export const ContactFormSchema = z.object({
   formType: z.enum(['empresa', 'profissional']),
   name: z.string().min(1, 'Nome é obrigatório'),
@@ -27,7 +25,6 @@ export const ContactFormSchema = z.object({
 });
 export type ContactFormData = z.infer<typeof ContactFormSchema>;
 
-// Função para gerar o corpo do e-mail em HTML
 const generateEmailHtml = (data: ContactFormData): string => {
   let body = `
     <h1>Novo Contato Recebido - PulsoASAP (${data.formType === 'empresa' ? 'Empresa' : 'Profissional'})</h1>
@@ -91,7 +88,6 @@ const generateEmailHtml = (data: ContactFormData): string => {
   `;
 };
 
-// Server Action para enviar o e-mail
 export async function sendEmailAction(data: ContactFormData): Promise<{ success: boolean; message: string; }> {
   const validatedFields = ContactFormSchema.safeParse(data);
 

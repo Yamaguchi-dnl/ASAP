@@ -1,17 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -21,12 +11,11 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { sendEmailAction, ContactFormSchema } from '@/app/actions/send-email-action';
+import { sendEmailAction } from '@/app/actions/send-email-action';
 import type { ContactFormData } from '@/app/actions/send-email-action';
 import { Loader2 } from 'lucide-react';
 import {
@@ -38,24 +27,22 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-
+import { Label } from '@/components/ui/label';
 
 export function ContactSection() {
   const [activeTab, setActiveTab] = useState<'empresa' | 'profissional'>('empresa');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const { toast } = useToast();
+  const [error, setError] = useState('');
   const { translations } = useLanguage();
   const t = translations.contact;
 
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(ContactFormSchema),
-    defaultValues: {
-      formType: 'empresa',
+  const initialFormState = {
+      formType: activeTab,
       name: '',
       email: '',
       phone: '',
-      service: t.form.service.options[0].value,
+      service: activeTab === 'empresa' ? t.form.service.options[0].value : 'mentorias',
       companyName: '',
       employeeCount: '',
       companySite: '',
@@ -66,54 +53,57 @@ export function ContactSection() {
       role: '',
       department: '',
       companyTime: '',
-    },
-  });
-  
+  };
 
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    try {
-      const result = await sendEmailAction(data);
-      if (result.success) {
-        setShowConfirmation(true);
-        form.reset();
-        form.setValue('formType', activeTab);
-        if(activeTab === 'empresa') {
-          form.setValue('service', t.form.service.options[0].value);
-        } else {
-          const mentoriaService = t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias');
-          if (mentoriaService) {
-            form.setValue('service', mentoriaService.value);
-          }
-        }
-      } else {
-        throw new Error(result.message);
-      }
-    } catch (error) {
-      toast({
-        variant: 'destructive',
-        title: "Erro ao enviar",
-        description: "Houve um problema ao enviar sua mensagem. Tente novamente.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+  const [formData, setFormData] = useState<ContactFormData>(initialFormState);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (name: keyof ContactFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
   
   const handleTabChange = (value: string) => {
     const newTab = value as 'empresa' | 'profissional';
     setActiveTab(newTab);
-    form.reset(); 
-    form.setValue('formType', newTab);
-    if (newTab === 'empresa') {
-      form.setValue('service', t.form.service.options[0].value);
-    } else {
-      const mentoriaService = t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias');
-      if (mentoriaService) {
-        form.setValue('service', mentoriaService.value);
+    setFormData({
+        ...initialFormState,
+        formType: newTab,
+        service: newTab === 'empresa' 
+            ? t.form.service.options[0].value 
+            : t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias')?.value || '',
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const result = await sendEmailAction(formData);
+      if (result.success) {
+        setShowConfirmation(true);
+        setFormData({
+            ...initialFormState,
+            formType: activeTab,
+            service: activeTab === 'empresa' 
+                ? t.form.service.options[0].value 
+                : t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias')?.value || '',
+        });
+      } else {
+        throw new Error(result.message || 'Falha ao enviar o e-mail.');
       }
+    } catch (error) {
+       setError(error instanceof Error ? error.message : "Houve um problema ao enviar sua mensagem. Tente novamente.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
 
   const titleVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -155,338 +145,141 @@ export function ContactSection() {
                   <TabsTrigger value="empresa" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>{t.tabs.company}</TabsTrigger>
                   <TabsTrigger value="profissional" className='data-[state=active]:bg-background data-[state=active]:text-foreground'>{t.tabs.professional}</TabsTrigger>
                 </TabsList>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="mt-6">
+                
+                  <form onSubmit={handleSubmit} className="mt-6">
                     <TabsContent value="empresa" forceMount hidden={activeTab !== 'empresa'}>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{t.form.name.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t.form.name.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                         <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{t.form.email.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t.form.email.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{t.form.phone.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t.form.phone.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="service"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{t.form.service.label}</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                  <SelectTrigger className={formInputStyles}>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{t.form.name.label}</Label>
+                            <Input name="name" placeholder={t.form.name.placeholder} value={formData.name} onChange={handleInputChange} className={formInputStyles} required />
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{t.form.email.label}</Label>
+                            <Input name="email" type="email" placeholder={t.form.email.placeholder} value={formData.email} onChange={handleInputChange} className={formInputStyles} required/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{t.form.phone.label}</Label>
+                            <Input name="phone" placeholder={t.form.phone.placeholder} value={formData.phone} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{t.form.service.label}</Label>
+                            <Select name="service" onValueChange={(value) => handleSelectChange('service', value)} value={formData.service}>
+                                <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={t.form.service.placeholder} />
-                                  </SelectTrigger>
-                                </FormControl>
+                                </SelectTrigger>
                                 <SelectContent>
-                                  {t.form.service.options.map((option: { value: string; label: string; }) => (
-                                     <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
-                                  ))}
+                                    {t.form.service.options.map((option: { value: string; label: string; }) => (
+                                        <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                                    ))}
                                 </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="companyName"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{t.form.companyName.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t.form.companyName.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                         <FormField
-                          control={form.control}
-                          name="employeeCount"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{t.form.employeeCount.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t.form.employeeCount.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="companySite"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{t.form.companySite.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={t.form.companySite.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="challenge"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{t.form.challenge.label}</FormLabel>
-                              <FormControl>
-                                <Textarea placeholder={t.form.challenge.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="goal"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{t.form.goal.label}</FormLabel>
-                              <FormControl>
-                                <Textarea placeholder={t.form.goal.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="details"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{t.form.details.label}</FormLabel>
-                              <FormControl>
-                                <Textarea placeholder={t.form.details.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="howYouFoundUs"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{t.form.howYouFoundUs.label}</FormLabel>
-                               <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                  <SelectTrigger className={formInputStyles}>
+                            </Select>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{t.form.companyName.label}</Label>
+                            <Input name="companyName" placeholder={t.form.companyName.placeholder} value={formData.companyName} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{t.form.employeeCount.label}</Label>
+                            <Input name="employeeCount" placeholder={t.form.employeeCount.placeholder} value={formData.employeeCount} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{t.form.companySite.label}</Label>
+                            <Input name="companySite" placeholder={t.form.companySite.placeholder} value={formData.companySite} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{t.form.challenge.label}</Label>
+                            <Textarea name="challenge" placeholder={t.form.challenge.placeholder} value={formData.challenge} onChange={handleInputChange} className={formInputStyles} />
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{t.form.goal.label}</Label>
+                            <Textarea name="goal" placeholder={t.form.goal.placeholder} value={formData.goal} onChange={handleInputChange} className={formInputStyles} />
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{t.form.details.label}</Label>
+                            <Textarea name="details" placeholder={t.form.details.placeholder} value={formData.details} onChange={handleInputChange} className={formInputStyles} />
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{t.form.howYouFoundUs.label}</Label>
+                            <Select name="howYouFoundUs" onValueChange={(value) => handleSelectChange('howYouFoundUs', value)} value={formData.howYouFoundUs}>
+                                <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={t.form.howYouFoundUs.placeholder} />
-                                  </SelectTrigger>
-                                </FormControl>
+                                </SelectTrigger>
                                 <SelectContent>
-                                  {t.form.howYouFoundUs.options.map((option: { value: string; label: string; }) => (
-                                     <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
-                                  ))}
+                                    {t.form.howYouFoundUs.options.map((option: { value: string; label: string; }) => (
+                                        <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+                                    ))}
                                 </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                            </Select>
+                        </div>
                       </div>
                     </TabsContent>
                     <TabsContent value="profissional" forceMount hidden={activeTab !== 'profissional'}>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <FormField
-                          control={form.control}
-                          name="name"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.name.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.name.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="email"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.email.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.email.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="phone"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.phone.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.phone.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                         <FormField
-                          control={form.control}
-                          name="service"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.service.label}</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                  <SelectTrigger className={formInputStyles}>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.name.label}</Label>
+                            <Input name="name" placeholder={tProf.name.placeholder} value={formData.name} onChange={handleInputChange} className={formInputStyles} required />
+                        </div>
+                         <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.email.label}</Label>
+                            <Input name="email" type="email" placeholder={tProf.email.placeholder} value={formData.email} onChange={handleInputChange} className={formInputStyles} required />
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.phone.label}</Label>
+                            <Input name="phone" placeholder={tProf.phone.placeholder} value={formData.phone} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.service.label}</Label>
+                            <Select name="service" onValueChange={(value) => handleSelectChange('service', value)} value={formData.service}>
+                                <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={tProf.service.placeholder} />
-                                  </SelectTrigger>
-                                </FormControl>
+                                </SelectTrigger>
                                 <SelectContent>
                                   {t.form.service.options.filter((o: {value:string}) => o.value === 'mentorias').map((option: { value: string; label: string; }) => (
                                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
                                   ))}
                                 </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="companyName"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.companyName.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.companyName.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="role"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.role.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.role.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="department"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.department.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.department.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="companyTime"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className={formLabelStyles}>{tProf.companyTime.label}</FormLabel>
-                              <FormControl>
-                                <Input placeholder={tProf.companyTime.placeholder} {...field} className={formInputStyles}/>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="challenge"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{tProf.challenge.label}</FormLabel>
-                              <FormControl>
-                                <Textarea placeholder={tProf.challenge.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="goal"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{tProf.goal.label}</FormLabel>
-                              <FormControl>
-                                <Textarea placeholder={tProf.goal.placeholder} {...field} className={formInputStyles} />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="howYouFoundUs"
-                          render={({ field }) => (
-                            <FormItem className="md:col-span-2">
-                              <FormLabel className={formLabelStyles}>{tProf.howYouFoundUs.label}</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                  <SelectTrigger className={formInputStyles}>
+                            </Select>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.companyName.label}</Label>
+                            <Input name="companyName" placeholder={tProf.companyName.placeholder} value={formData.companyName} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.role.label}</Label>
+                            <Input name="role" placeholder={tProf.role.placeholder} value={formData.role} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.department.label}</Label>
+                            <Input name="department" placeholder={tProf.department.placeholder} value={formData.department} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2">
+                            <Label className={formLabelStyles}>{tProf.companyTime.label}</Label>
+                            <Input name="companyTime" placeholder={tProf.companyTime.placeholder} value={formData.companyTime} onChange={handleInputChange} className={formInputStyles}/>
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{tProf.challenge.label}</Label>
+                            <Textarea name="challenge" placeholder={tProf.challenge.placeholder} value={formData.challenge} onChange={handleInputChange} className={formInputStyles} />
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{tProf.goal.label}</Label>
+                            <Textarea name="goal" placeholder={tProf.goal.placeholder} value={formData.goal} onChange={handleInputChange} className={formInputStyles} />
+                        </div>
+                        <div className="space-y-2 md:col-span-2">
+                            <Label className={formLabelStyles}>{tProf.howYouFoundUs.label}</Label>
+                             <Select name="howYouFoundUs" onValueChange={(value) => handleSelectChange('howYouFoundUs', value)} value={formData.howYouFoundUs}>
+                                <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={tProf.howYouFoundUs.placeholder} />
-                                  </SelectTrigger>
-                                </FormControl>
+                                </SelectTrigger>
                                 <SelectContent>
                                   {tProf.howYouFoundUs.options.map((option: { value: string; label: string; }) => (
                                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
                                   ))}
                                 </SelectContent>
-                              </Select>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                            </Select>
+                        </div>
                       </div>
                     </TabsContent>
+                    {error && <p className="mt-4 text-sm font-medium text-destructive">{error}</p>}
                     <div className="mt-8 md:col-span-2">
                        <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-105" disabled={isSubmitting}>
                         {isSubmitting ? (
@@ -500,7 +293,6 @@ export function ContactSection() {
                       </Button>
                     </div>
                   </form>
-                </Form>
               </Tabs>
             </div>
           </MotionWrapper>
@@ -522,3 +314,5 @@ export function ContactSection() {
     </section>
   );
 }
+
+    
