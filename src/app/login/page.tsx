@@ -23,24 +23,12 @@ export default function LoginPage() {
     setIsLoading(true);
     setError(null);
 
-    // Hardcoded admin credentials
-    const ADMIN_EMAIL = "admin@projetoasap.com.br";
-    
-    if (email !== ADMIN_EMAIL) {
-        setError("Acesso negado. Este e-mail não tem permissão de administrador.");
-        setIsLoading(false);
-        return;
-    }
-    
-    // For this example, we'll allow any password for the admin email.
-    // In a real app, you would validate the password.
-    // We sign in "anonymously" in the sense that the password isn't checked,
-    // but the user is still a real authenticated user in Firebase.
     try {
+      // Tenta fazer login com o e-mail e senha fornecidos
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/admin');
     } catch (err: any) {
-        // Handle specific Firebase auth errors if needed
+        // Handle specific Firebase auth errors
         if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
             setError('Credenciais inválidas. Verifique o e-mail e a senha.');
         } else {
