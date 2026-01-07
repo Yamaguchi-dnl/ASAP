@@ -27,7 +27,7 @@ service cloud.firestore {
         (!data.keys().hasAny(['employeeCount']) || data.employeeCount is string) &&
         (!data.keys().hasAny(['companySite']) || data.companySite is string) &&
         (!data.keys().hasAny(['challenge']) || data.challenge is string) &&
-        (!data-keys().hasAny(['goal']) || data.goal is string) &&
+        (!data.keys().hasAny(['goal']) || data.goal is string) &&
         (!data.keys().hasAny(['details']) || data.details is string) &&
         (!data.keys().hasAny(['howYouFoundUs']) || data.howYouFoundUs is string) &&
         (!data.keys().hasAny(['role']) || data.role is string) &&
@@ -47,11 +47,12 @@ service cloud.firestore {
     /**
      * @description
      *   Regras para a coleção de submissões de formulário de contato.
-     *   Atua como um dropbox seguro. Qualquer visitante pode criar, mas ninguém
-     *   pode ler, atualizar ou deletar dados pelo cliente.
+     *   Atua como um dropbox seguro. Qualquer visitante pode criar, mas apenas
+     *   usuários autenticados podem ler os dados.
      */
     match /contactFormSubmissions/{contactFormSubmissionId} {
-      allow get, list, update, delete: if false;
+      allow read: if request.auth != null; // Permite leitura se o usuário estiver autenticado
+      allow update, delete: if false;
 
       /**
        * @description
