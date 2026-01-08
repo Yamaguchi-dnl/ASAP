@@ -283,7 +283,7 @@ export function OurApproachSection() {
                     variant="outline"
                     size="icon"
                     onClick={handlePrev}
-                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10 group"
+                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-muted group"
                     aria-label="Slide anterior"
                   >
                     <ArrowLeft size={20} className='transition-transform duration-300 group-hover:-translate-x-0.5' />
@@ -294,7 +294,7 @@ export function OurApproachSection() {
                     variant="outline"
                     size="icon"
                     onClick={handleNext}
-                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10 group"
+                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-muted group"
                     aria-label="Próximo slide"
                   >
                     <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-0.5'/>
