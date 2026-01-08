@@ -1,5 +1,9 @@
 
 {
+  "metadata": {
+    "title": "PulsoASAP | Gestão de Riscos e Bem-Estar Corporativo",
+    "description": "Promovendo saúde e bem-estar no ambiente de trabalho através da gestão de riscos e compliance."
+  },
   "header": {
     "navLinks": [
       { "href": "#beneficios", "label": "Benefícios" },

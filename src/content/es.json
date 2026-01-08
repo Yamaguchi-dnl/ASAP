@@ -1,5 +1,9 @@
 
 {
+  "metadata": {
+    "title": "PulsoASAP | Gestión de Riesgos y Bienestar Corporativo",
+    "description": "Promoviendo la salud y el bienestar en el entorno laboral a través de la gestión de riesgos y compliance."
+  },
   "header": {
     "navLinks": [
       { "href": "#beneficios", "label": "Beneficios" },
@@ -309,7 +313,7 @@
       },
       {
         "question": "¿Qué significa ASAP?",
-        "answer": "En el contexto utilizado por la empresa, ASAP significa Acción, Sostenibilidad, Autoconocimiento y Propósito. Estos pilares orientan todas las práticas y métodos aplicados por la empresa."
+        "answer": "En el contexto utilizado por la empresa, ASAP significa Acción, Sostenibilidad, Autoconocimiento y Propósito. Estos pilares orientan todas las prácticas y métodos aplicados por la empresa."
       },
       {
         "question": "¿Pulso ASAP atiende a empresas fuera de Brasil?",
