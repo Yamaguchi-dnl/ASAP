@@ -8,18 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { useLanguage } from '@/context/language-context';
-
-const sectionVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.25,
-      delayChildren: 0.3,
-      ease: 'easeOut',
-    },
-  },
-};
+import { MotionWrapper } from '../animation/motion-wrapper';
 
 const imageVariants: Variants = {
   hidden: { opacity: 0, x: -50, filter: 'blur(10px)' },
@@ -37,13 +26,9 @@ const imageVariants: Variants = {
   },
 };
 
-const textContentVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: 'easeOut' },
-  },
+const bioParagraphsVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
 };
 
 const founderNameVariants: Variants = {
@@ -53,11 +38,6 @@ const founderNameVariants: Variants = {
     y: 0,
     transition: { duration: 0.7, delay: 0.1, ease: 'easeOut' },
   },
-};
-
-const bioParagraphsVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
 };
 
 const bioParagraphVariant: Variants = {
@@ -90,21 +70,11 @@ export function AboutSection() {
   );
 
   return (
-    <motion.section
-      id="lideranca"
-      className="py-12 sm:py-16 bg-background"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={sectionVariants}
-    >
+    <section id="lideranca" className="py-12 sm:py-16 bg-background">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
-          <motion.div
-            className="relative w-4/5 mx-auto aspect-[4/5] rounded-lg overflow-hidden"
-            variants={imageVariants}
-          >
+          <MotionWrapper className="relative w-4/5 mx-auto aspect-[4/5] rounded-lg overflow-hidden">
             <AnimatePresence mode="wait">
               {founderImage && (
                 <motion.div
@@ -126,16 +96,16 @@ export function AboutSection() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </motion.div>
+          </MotionWrapper>
 
           {/* Coluna de Texto */}
           <div className="flex flex-col justify-between h-full">
-            <motion.div variants={textContentVariants}>
+            <MotionWrapper>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
                 {translations.about.title}
               </h2>
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
-            </motion.div>
+            </MotionWrapper>
 
             <motion.div
               className="relative overflow-hidden min-h-[250px] md:min-h-0"
@@ -164,10 +134,7 @@ export function AboutSection() {
               </motion.p>
             </motion.div>
 
-            <motion.div
-              className="flex items-center justify-between mt-8 pt-4 border-t border-border"
-              variants={textContentVariants}
-            >
+            <MotionWrapper className="flex items-center justify-between mt-8 pt-4 border-t border-border">
               <div className="flex items-center gap-2">
                 <span className="text-sm font-semibold">{`0${
                   currentIndex + 1
@@ -199,7 +166,10 @@ export function AboutSection() {
                     onClick={handlePrev}
                     className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary"
                   >
-                    <ArrowLeft size={20} className='transition-transform duration-300 group-hover:-translate-x-0.5' />
+                    <ArrowLeft
+                      size={20}
+                      className="transition-transform duration-300 group-hover:-translate-x-0.5"
+                    />
                     <span className="sr-only">Anterior</span>
                   </Button>
                 </motion.div>
@@ -213,15 +183,18 @@ export function AboutSection() {
                     onClick={handleNext}
                     className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary"
                   >
-                    <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-0.5' />
+                    <ArrowRight
+                      size={20}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    />
                     <span className="sr-only">Próximo</span>
                   </Button>
                 </motion.div>
               </div>
-            </motion.div>
+            </MotionWrapper>
           </div>
         </div>
       </Container>
-    </motion.section>
+    </section>
   );
 }
