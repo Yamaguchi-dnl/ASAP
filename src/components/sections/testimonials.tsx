@@ -80,8 +80,8 @@ export function TestimonialsSection() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-muted" />
-                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-muted" />
+                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-primary/10" />
+                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-primary/10" />
               </Carousel>
             </MotionWrapper>
         </div>
