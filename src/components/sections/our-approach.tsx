@@ -54,27 +54,6 @@ const imageVariants: Variants = {
   },
 };
 
-const textContainerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const titleVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: [0.22, 1, 0.36, 1], // expo.out
-    },
-  },
-};
-
 const contentVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -252,7 +231,7 @@ export function OurApproachSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div ref={contentRef} className="flex flex-col justify-between h-full">
-            <div className='relative overflow-hidden'>
+            <div className='relative overflow-hidden min-h-[550px] md:min-h-[500px]'>
                <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide.id}
