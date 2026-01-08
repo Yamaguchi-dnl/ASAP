@@ -151,7 +151,7 @@ export function AboutSection() {
                   variant="outline"
                   size="icon"
                   onClick={handlePrev}
-                  className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
+                  className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted"
                 >
                   <ArrowLeft size={20} />
                   <span className="sr-only">Anterior</span>
@@ -160,7 +160,7 @@ export function AboutSection() {
                   variant="outline"
                   size="icon"
                   onClick={handleNext}
-                  className="rounded-full h-12 w-12 border-primary text-primary hover:bg-primary/10"
+                  className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted"
                 >
                   <ArrowRight size={20} />
                   <span className="sr-only">Próximo</span>
