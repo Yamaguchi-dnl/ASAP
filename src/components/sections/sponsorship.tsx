@@ -53,14 +53,15 @@ export function SponsorshipSection() {
                       alt={tier.name}
                       fill
                       className={cn(
-                        "object-contain transition-all duration-300 p-8",
+                        "object-contain transition-all duration-500 p-8",
                         "group-focus-within:scale-105 group-hover:scale-105"
                       )}
                     />
+                     <div className="absolute inset-0 bg-white/95 opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-300 ease-in-out" />
                   </div>
                   
-                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-white via-white/80 to-transparent opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                    <div className="opacity-0 max-h-0 group-focus-within:opacity-100 group-focus-within:max-h-full group-hover:opacity-100 group-hover:max-h-full transition-all duration-300 ease-in-out overflow-hidden text-foreground">
+                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-white via-white/0 to-transparent opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+                    <div className="opacity-0 max-h-0 group-focus-within:opacity-100 group-focus-within:max-h-full group-hover:opacity-100 group-hover:max-h-full transition-all duration-500 ease-in-out overflow-hidden text-foreground">
                        <h3 className="text-3xl font-bold text-primary mb-4">
                         Apoiador {tier.name}
                       </h3>
