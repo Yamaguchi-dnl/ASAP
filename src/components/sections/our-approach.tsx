@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container } from '@/components/layout/container';
 import { Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -135,15 +135,25 @@ export function OurApproachSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { translations } = useLanguage();
   const approachData = translations.ourApproach.slides;
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTop = () => {
+    contentRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % approachData.length);
+    scrollToTop();
   };
 
   const handlePrev = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + approachData.length) % approachData.length
     );
+    scrollToTop();
   };
 
   const currentSlide = approachData[currentIndex];
@@ -241,7 +251,7 @@ export function OurApproachSection() {
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col justify-between h-full">
+          <div ref={contentRef} className="flex flex-col justify-between h-full">
             <div className='relative overflow-hidden'>
                <AnimatePresence mode="wait">
                 <motion.div
@@ -283,7 +293,7 @@ export function OurApproachSection() {
                     variant="outline"
                     size="icon"
                     onClick={handlePrev}
-                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-muted group hover:text-primary"
+                    className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary"
                     aria-label="Slide anterior"
                   >
                     <ArrowLeft size={20} className='transition-transform duration-300 group-hover:-translate-x-0.5' />
@@ -294,7 +304,7 @@ export function OurApproachSection() {
                     variant="outline"
                     size="icon"
                     onClick={handleNext}
-                    className="rounded-full h-12 w-12 border-primary text-primary hover:bg-muted group hover:text-primary"
+                    className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary"
                     aria-label="Próximo slide"
                   >
                     <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-0.5'/>
