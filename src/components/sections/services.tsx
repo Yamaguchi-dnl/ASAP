@@ -16,6 +16,7 @@ import {
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
@@ -53,7 +54,7 @@ export function ServicesSection() {
               asChild
             >
                 <a href="#contato">
-                    {t.ctaButton}
+                    Fale com um especialista
                 </a>
             </Button>
           </MotionWrapper>
