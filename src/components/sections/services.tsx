@@ -86,16 +86,16 @@ export function ServicesSection() {
                           src={serviceImage.imageUrl}
                           alt={service.title}
                           fill
-                          className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-focus-within:scale-105"
+                          className="object-cover transition-transform duration-300 ease-in-out group-focus-within:scale-105 group-hover:scale-105"
                           data-ai-hint={serviceImage.imageHint}
                         />
                       )}
-                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 group-focus-within:bg-black/60 transition-colors duration-300 ease-in-out" />
+                      <div className="absolute inset-0 bg-black/40 group-focus-within:bg-black/60 group-hover:bg-black/60 transition-colors duration-300 ease-in-out" />
                       
                       <div className="relative flex flex-col h-full p-6 text-white justify-end">
-                        <h3 className="text-2xl font-bold transition-transform duration-300 ease-in-out group-hover:-translate-y-2 group-focus-within:-translate-y-2">{service.title}</h3>
+                        <h3 className="text-2xl font-bold transition-transform duration-300 ease-in-out group-focus-within:-translate-y-2 group-hover:-translate-y-2">{service.title}</h3>
                         
-                        <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-300 ease-in-out overflow-y-auto">
+                        <div className="opacity-0 max-h-0 group-focus-within:opacity-100 group-focus-within:max-h-full group-hover:opacity-100 group-hover:max-h-full transition-all duration-300 ease-in-out overflow-y-auto">
                            <p className="text-white/80 text-sm mt-2">{service.description}</p>
                             {service.subItems && service.subItems.length > 0 && (
                               <ol className="mt-4 space-y-1 text-sm list-decimal list-inside">

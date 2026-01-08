@@ -45,9 +45,9 @@ export function SponsorshipSection() {
             <MotionWrapper key={tier.name} variants={textVariants} transition={{ delay: 0.4 + index * 0.2 }} className="flex">
               <div className="group w-full" tabIndex={0}>
                 <Card className={cn("min-h-[500px] overflow-hidden shadow-lg transition-all duration-300 flex flex-col bg-card border-border/50 relative rounded-lg",
-                  "hover:shadow-2xl focus-within:shadow-2xl"
+                  "focus-within:shadow-2xl hover:shadow-2xl"
                 )}>
-                  <div className="relative flex-grow transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
+                  <div className="relative flex-grow transition-opacity duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
                     <Image
                       src={tier.logoUrl}
                       alt={tier.name}
@@ -58,8 +58,8 @@ export function SponsorshipSection() {
                     />
                   </div>
                   
-                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-white via-white/80 to-transparent opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 ease-in-out">
-                    <div className="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-full group-focus-within:opacity-100 group-focus-within:max-h-full transition-all duration-300 ease-in-out overflow-hidden text-foreground">
+                  <div className="absolute inset-0 flex flex-col h-full p-8 justify-end bg-gradient-to-t from-white via-white/80 to-transparent opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                    <div className="opacity-0 max-h-0 group-focus-within:opacity-100 group-focus-within:max-h-full group-hover:opacity-100 group-hover:max-h-full transition-all duration-300 ease-in-out overflow-hidden text-foreground">
                        <h3 className="text-3xl font-bold text-primary mb-4">
                         Apoiador {tier.name}
                       </h3>
@@ -81,7 +81,7 @@ export function SponsorshipSection() {
                       </Button>
                     </div>
                   </div>
-                  <div className="relative p-8 pt-0 transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0">
+                  <div className="relative p-8 pt-0 transition-opacity duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
                     <Button asChild variant="link" className="p-0 h-auto text-2xl font-bold text-primary hover:text-primary/80 hover:no-underline text-center">
                       <Link href="#contato">
                         <span className="block">Apoiador</span>
