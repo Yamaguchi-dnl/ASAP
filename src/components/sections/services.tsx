@@ -17,6 +17,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export function ServicesSection() {
   const { translations } = useLanguage();
@@ -28,38 +29,47 @@ export function ServicesSection() {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
-  
+
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 },
+    },
   };
 
   return (
-    <section id="servicos" className="py-20 sm:py-32 bg-primary text-primary-foreground">
+    <section
+      id="servicos"
+      className="py-20 sm:py-32 bg-primary text-primary-foreground"
+    >
       <Container className="px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          <MotionWrapper variants={titleVariants} className="lg:sticky lg:top-32">
+          <MotionWrapper
+            variants={titleVariants}
+            className="lg:sticky lg:top-32"
+          >
             <h2 className="text-4xl md:text-5xl font-bold leading-tight uppercase font-headline">
-              {t.title.line1} <br className="hidden md:block" />{t.title.line2}
+              {t.title.line1} <br className="hidden md:block" />
+              {t.title.line2}
             </h2>
-             <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
+            <hr className="border-t-2 border-accent w-24 mt-4 mb-8" />
           </MotionWrapper>
           <MotionWrapper variants={textVariants}>
             <p className="text-xl text-primary-foreground/80 mt-2">
               {t.description}
             </p>
-            <Button 
+            <Button
               variant="outline"
               className="mt-6 rounded-full bg-white text-primary hover:bg-white/90 hover:text-primary"
               asChild
             >
-                <a href="#contato">
-                    Fale com um especialista
-                </a>
+              <a href="#contato">Fale com um especialista</a>
             </Button>
           </MotionWrapper>
         </div>
-        
+
         <div className="mt-16 relative">
           <Carousel
             opts={{
@@ -68,19 +78,38 @@ export function ServicesSection() {
             }}
             className="w-full"
           >
-             <div className="flex justify-end mt-8 relative gap-2">
+            <div className="flex justify-end mt-8 relative gap-4">
+              <motion.div
+                whileHover={{ scale: 1.08 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
                 <CarouselPrevious className="static h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.08 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
                 <CarouselNext className="static h-12 w-12 rounded-full border-white text-white bg-transparent hover:bg-white/10" />
+              </motion.div>
             </div>
 
             <CarouselContent className="-ml-4 mt-4">
               {services.map((service: any) => {
-                 const serviceImage = PlaceHolderImages.find((p) => p.id === service.imageId);
+                const serviceImage = PlaceHolderImages.find(
+                  (p) => p.id === service.imageId
+                );
                 return (
-                  <CarouselItem key={service.id} className="pl-4 basis-[90%] sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group" tabIndex={0}>
-                    <Card className={cn(
-                      "h-[400px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg"
-                    )}>
+                  <CarouselItem
+                    key={service.id}
+                    className="pl-4 basis-[90%] sm:basis-4/5 md:basis-1/2 lg:basis-1/3 group"
+                    tabIndex={0}
+                  >
+                    <Card
+                      className={cn(
+                        'h-[400px] overflow-hidden shadow-md transition-all duration-500 flex flex-col bg-card/80 backdrop-blur-sm border-border/50 relative rounded-lg',
+                        'group-focus-within:shadow-2xl group-hover:shadow-2xl'
+                      )}
+                    >
                       {serviceImage && (
                         <Image
                           src={serviceImage.imageUrl}
@@ -91,25 +120,36 @@ export function ServicesSection() {
                         />
                       )}
                       <div className="absolute inset-0 bg-black/40 group-focus-within:bg-black/60 group-hover:bg-black/60 transition-colors duration-300 ease-in-out" />
-                      
+
                       <div className="relative flex flex-col h-full p-6 text-white justify-end">
-                        <h3 className="text-2xl font-bold transition-transform duration-300 ease-in-out group-focus-within:-translate-y-2 group-hover:-translate-y-2">{service.title}</h3>
-                        
-                        <div className="opacity-0 max-h-0 group-focus-within:opacity-100 group-focus-within:max-h-full group-hover:opacity-100 group-hover:max-h-full transition-all duration-300 ease-in-out overflow-y-auto">
-                           <p className="text-white/80 text-sm mt-2">{service.description}</p>
-                            {service.subItems && service.subItems.length > 0 && (
-                              <ol className="mt-4 space-y-1 text-sm list-decimal list-inside">
-                                {service.subItems.map((item: string, i: number) => (
-                                  <li key={i} className="font-medium text-white/90">{item}</li>
-                                ))}
-                              </ol>
-                            )}
-                          <Button 
+                        <h3 className="text-2xl font-bold transition-transform duration-300 ease-in-out group-focus-within:-translate-y-2 group-hover:-translate-y-2">
+                          {service.title}
+                        </h3>
+
+                        <div className="opacity-0 max-h-0 group-focus-within:opacity-100 group-focus-within:max-h-full group-hover:opacity-100 group-hover:max-h-full transition-all duration-500 ease-in-out overflow-y-auto">
+                          <p className="text-white/80 text-sm mt-2">
+                            {service.description}
+                          </p>
+                          {service.subItems && service.subItems.length > 0 && (
+                            <ol className="mt-4 space-y-1 text-sm list-decimal list-inside">
+                              {service.subItems.map(
+                                (item: string, i: number) => (
+                                  <li
+                                    key={i}
+                                    className="font-medium text-white/90"
+                                  >
+                                    {item}
+                                  </li>
+                                )
+                              )}
+                            </ol>
+                          )}
+                          <Button
                             variant="outline"
                             className="mt-6 rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary"
                             asChild
                           >
-                             <a href="#contato">{service.cta}</a>
+                            <a href="#contato">{service.cta}</a>
                           </Button>
                         </div>
                       </div>

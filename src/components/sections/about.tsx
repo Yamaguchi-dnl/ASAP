@@ -23,13 +23,18 @@ const sectionVariants: Variants = {
 
 const imageVariants: Variants = {
   hidden: { opacity: 0, x: -50, filter: 'blur(10px)' },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     x: 0,
     filter: 'blur(0px)',
-    transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] }
+    transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] },
   },
-  exit: { opacity: 0, x: 50, filter: 'blur(10px)', transition: { duration: 0.7, ease: 'easeIn' } },
+  exit: {
+    opacity: 0,
+    x: 50,
+    filter: 'blur(10px)',
+    transition: { duration: 0.7, ease: 'easeIn' },
+  },
 };
 
 const textContentVariants: Variants = {
@@ -42,19 +47,27 @@ const textContentVariants: Variants = {
 };
 
 const founderNameVariants: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.1, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: 0.1, ease: 'easeOut' },
+  },
 };
 
 const bioParagraphsVariants: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
-}
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
+};
 
 const bioParagraphVariant: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
-}
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
+};
 
 export function AboutSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -72,11 +85,13 @@ export function AboutSection() {
   };
 
   const currentFounder = founders[currentIndex];
-  const founderImage = PlaceHolderImages.find((p) => p.id === currentFounder.imageId);
+  const founderImage = PlaceHolderImages.find(
+    (p) => p.id === currentFounder.imageId
+  );
 
   return (
-    <motion.section 
-      id="lideranca" 
+    <motion.section
+      id="lideranca"
       className="py-12 sm:py-16 bg-background"
       initial="hidden"
       whileInView="visible"
@@ -86,7 +101,10 @@ export function AboutSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna da Imagem */}
-          <motion.div className="relative w-4/5 mx-auto aspect-[4/5] rounded-lg overflow-hidden" variants={imageVariants}>
+          <motion.div
+            className="relative w-4/5 mx-auto aspect-[4/5] rounded-lg overflow-hidden"
+            variants={imageVariants}
+          >
             <AnimatePresence mode="wait">
               {founderImage && (
                 <motion.div
@@ -112,59 +130,93 @@ export function AboutSection() {
 
           {/* Coluna de Texto */}
           <div className="flex flex-col justify-between h-full">
-             <motion.div variants={textContentVariants}>
-               <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
+            <motion.div variants={textContentVariants}>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
                 {translations.about.title}
               </h2>
               <hr className="border-t-2 border-primary w-24 mt-4 mb-8" />
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="relative overflow-hidden min-h-[250px] md:min-h-0"
               key={currentFounder.id}
               initial="hidden"
               animate="visible"
               variants={bioParagraphsVariants}
             >
-                <motion.h3 className="text-2xl font-bold text-foreground mb-4" variants={founderNameVariants}>
-                  {currentFounder.name}
-                </motion.h3>
-                <motion.p className="text-foreground/80" variants={bioParagraphVariant}>{currentFounder.bio1}</motion.p>
-                <motion.p className="text-foreground/80 mt-2" variants={bioParagraphVariant}>{currentFounder.bio2}</motion.p>
+              <motion.h3
+                className="text-2xl font-bold text-foreground mb-4"
+                variants={founderNameVariants}
+              >
+                {currentFounder.name}
+              </motion.h3>
+              <motion.p
+                className="text-foreground/80"
+                variants={bioParagraphVariant}
+              >
+                {currentFounder.bio1}
+              </motion.p>
+              <motion.p
+                className="text-foreground/80 mt-2"
+                variants={bioParagraphVariant}
+              >
+                {currentFounder.bio2}
+              </motion.p>
             </motion.div>
 
-            <motion.div className="flex items-center justify-between mt-8 pt-4 border-t border-border" variants={textContentVariants}>
-                <div className='flex items-center gap-2'>
-                    <span className="text-sm font-semibold">{`0${currentIndex + 1}`}</span>
-                    <div className='w-20 h-px bg-border'>
-                        <motion.div 
-                          className='h-px bg-primary' 
-                          initial={{width: `${((currentIndex) / founders.length) * 100}%`}}
-                          animate={{width: `${((currentIndex + 1) / founders.length) * 100}%`}}
-                          transition={{ duration: 0.6, ease: 'easeOut' }}
-                        />
-                    </div>
-                    <span className="text-sm text-muted-foreground">{`0${founders.length}`}</span>
+            <motion.div
+              className="flex items-center justify-between mt-8 pt-4 border-t border-border"
+              variants={textContentVariants}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold">{`0${
+                  currentIndex + 1
+                }`}</span>
+                <div className="w-20 h-px bg-border">
+                  <motion.div
+                    className="h-px bg-primary"
+                    initial={{
+                      width: `${(currentIndex / founders.length) * 100}%`,
+                    }}
+                    animate={{
+                      width: `${
+                        ((currentIndex + 1) / founders.length) * 100
+                      }%`,
+                    }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                  />
                 </div>
+                <span className="text-sm text-muted-foreground">{`0${founders.length}`}</span>
+              </div>
               <div className="flex items-center gap-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={handlePrev}
-                  className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted hover:text-primary"
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <ArrowLeft size={20} />
-                  <span className="sr-only">Anterior</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={handleNext}
-                  className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted hover:text-primary"
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={handlePrev}
+                    className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary"
+                  >
+                    <ArrowLeft size={20} className='transition-transform duration-300 group-hover:-translate-x-0.5' />
+                    <span className="sr-only">Anterior</span>
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <ArrowRight size={20} />
-                  <span className="sr-only">Próximo</span>
-                </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={handleNext}
+                    className="rounded-full h-12 w-12 border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary"
+                  >
+                    <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-0.5' />
+                    <span className="sr-only">Próximo</span>
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </div>

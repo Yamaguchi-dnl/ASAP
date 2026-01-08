@@ -12,6 +12,9 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Container } from '@/components/layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export function TestimonialsSection() {
   const { translations } = useLanguage();
@@ -33,57 +36,66 @@ export function TestimonialsSection() {
   );
 
   return (
-    <section
-      id="depoimentos"
-      className="py-20 sm:py-32 bg-background"
-    >
+    <section id="depoimentos" className="py-20 sm:py-32 bg-background">
       <Container className="px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-            <MotionWrapper variants={titleVariants}>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
-                {t.title}
-              </h2>
-              <hr className="border-t-2 border-primary w-24 mt-4 mb-8 mx-auto" />
-            </MotionWrapper>
-            <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
-              <p className="mt-4 text-xl text-foreground/80">
-                {t.subtitle}
-              </p>
-            </MotionWrapper>
+          <MotionWrapper variants={titleVariants}>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
+              {t.title}
+            </h2>
+            <hr className="border-t-2 border-primary w-24 mt-4 mb-8 mx-auto" />
+          </MotionWrapper>
+          <MotionWrapper variants={textVariants} transition={{ delay: 0.2 }}>
+            <p className="mt-4 text-xl text-foreground/80">{t.subtitle}</p>
+          </MotionWrapper>
         </div>
         <div className="mt-16">
-            <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
-              <Carousel
-                plugins={[plugin.current]}
-                opts={{
-                  align: 'start',
-                  loop: true,
-                }}
-                className="w-full max-w-4xl mx-auto"
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
+          <MotionWrapper variants={textVariants} transition={{ delay: 0.4 }}>
+            <Carousel
+              plugins={[plugin.current]}
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              className="w-full max-w-4xl mx-auto"
+              onMouseEnter={plugin.current.stop}
+              onMouseLeave={plugin.current.reset}
+            >
+              <CarouselContent>
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-4 text-center">
+                      <blockquote className="max-w-3xl mx-auto text-xl md:text-3xl font-semibold text-foreground leading-snug">
+                        “{testimonial.quote}”
+                      </blockquote>
+                      <footer className="mt-6">
+                        <p className="font-semibold text-lg text-foreground/90">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.title}
+                        </p>
+                      </footer>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <motion.div
+                whileHover={{ scale: 1.08 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:block"
               >
-                <CarouselContent>
-                  {testimonials.map((testimonial, index) => (
-                    <CarouselItem key={index}>
-                      <div className="p-4 text-center">
-                        <blockquote className="max-w-3xl mx-auto text-xl md:text-3xl font-semibold text-foreground leading-snug">
-                          “{testimonial.quote}”
-                        </blockquote>
-                        <footer className="mt-6">
-                          <p className="font-semibold text-lg text-foreground/90">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">
-                            {testimonial.title}
-                          </p>
-                        </footer>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-muted hover:text-primary" />
-                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:flex h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-muted hover:text-primary" />
-              </Carousel>
-            </MotionWrapper>
+                <CarouselPrevious className="static h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary" />
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.08 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block"
+              >
+                <CarouselNext className="static h-12 w-12 rounded-full border-primary bg-secondary text-primary hover:bg-muted group hover:text-primary" />
+              </motion.div>
+            </Carousel>
+          </MotionWrapper>
         </div>
       </Container>
     </section>
