@@ -49,7 +49,7 @@ export function ServicesSection() {
             </p>
             <Button 
               variant="outline"
-              className="mt-6 rounded-full bg-white text-primary hover:bg-white/90"
+              className="mt-6 rounded-full bg-white text-primary hover:bg-white/90 hover:text-primary"
               asChild
             >
                 <a href="#contato">
