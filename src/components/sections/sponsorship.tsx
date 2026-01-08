@@ -47,13 +47,14 @@ export function SponsorshipSection() {
                 <Card className={cn("min-h-[500px] overflow-hidden shadow-lg transition-all duration-300 flex flex-col bg-card border-border/50 relative rounded-lg",
                   "focus-within:shadow-2xl hover:shadow-2xl"
                 )}>
-                  <div className="relative flex-grow transition-opacity duration-300 group-focus-within:opacity-0 group-hover:opacity-0">
+                  <div className="relative flex-grow">
                     <Image
                       src={tier.logoUrl}
                       alt={tier.name}
                       fill
                       className={cn(
                         "object-contain transition-all duration-300 p-8",
+                        "group-focus-within:scale-105 group-hover:scale-105"
                       )}
                     />
                   </div>
