@@ -7,6 +7,7 @@ import { Container } from '@/components/layout/container';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/context/language-context';
+import Link from 'next/link';
 
 export function BenefitsSection() {
   const { translations } = useLanguage();
@@ -20,9 +21,11 @@ export function BenefitsSection() {
               {translations.benefits.title.line1}
               {translations.benefits.title.line2}
             </TextRevealOnScroll>
-             <Button variant="link" size="lg" className="mt-4 p-0 h-auto text-base text-left whitespace-normal text-primary-foreground hover:text-accent">
-                {translations.benefits.exploreSolutions}{' '}
-                <ArrowRight className="ml-2 h-4 w-4 inline-block" />
+             <Button asChild variant="link" size="lg" className="mt-4 p-0 h-auto text-base text-left whitespace-normal text-primary-foreground hover:text-accent">
+                <Link href="#servicos">
+                    {translations.benefits.exploreSolutions}{' '}
+                    <ArrowRight className="ml-2 h-4 w-4 inline-block" />
+                </Link>
               </Button>
           </div>
 
