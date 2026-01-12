@@ -239,17 +239,19 @@
         "label": "Selecione o serviço desejado",
         "placeholder": "Selecione um serviço",
         "options": [
-          { "value": "mentorias", "label": "Mentorias ASAP" },
+          { "value": "mentoria_coletiva", "label": "Mentoria Coletiva" },
           { "value": "palestra", "label": "Palestra ASAP" },
           { "value": "solucoes", "label": "Soluções Regulatórias ASAP" },
           { "value": "treinamento", "label": "Treinamento ASAP" },
           { "value": "apoiador", "label": "Apoiador ASAP" },
-          { "value": "documentos_governanca", "label": "Manuais, Políticas e Códigos de Ética" }
+          { "value": "documentos_governanca", "label": "Manuais, Políticas e Códigos de Ética" },
+          { "value": "outros", "label": "Outros Assuntos" }
         ],
         "mentorshipOptions": [
           { "value": "mentoria_individual", "label": "Mentoria Individual" },
           { "value": "mentoria_coletiva", "label": "Mentoria Coletiva" },
-          { "value": "mentoria_social", "label": "Mentoria Social" }
+          { "value": "mentoria_social", "label": "Mentoria Social" },
+          { "value": "outros", "label": "Outros Assuntos" }
         ]
       },
       "companyName": { "label": "Nome da empresa", "placeholder": "Nome da empresa interessada" },
@@ -273,7 +275,8 @@
         "options": [
           { "value": "social_media", "label": "Redes sociais" },
           { "value": "linkedin", "label": "LinkedIn" },
-          { "value": "recommendation", "label": "Indicação" }
+          { "value": "recommendation", "label": "Indicação" },
+          { "value": "outros", "label": "Outros" }
         ]
       },
       "submitButton": "Enviar Mensagem"
@@ -304,7 +307,8 @@
         "options": [
           { "value": "social_media", "label": "Redes sociais" },
           { "value": "linkedin", "label": "LinkedIn" },
-          { "value": "recommendation", "label": "Indicação" }
+          { "value": "recommendation", "label": "Indicação" },
+          { "value": "outros", "label": "Outros" }
         ]
       }
     }

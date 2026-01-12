@@ -239,17 +239,19 @@
         "label": "Selecciona el servicio deseado",
         "placeholder": "Selecciona un servicio",
         "options": [
-          { "value": "mentorias", "label": "Mentorías ASAP" },
+          { "value": "mentoria_coletiva", "label": "Mentoría Colectiva" },
           { "value": "palestra", "label": "Conferencia ASAP" },
           { "value": "solucoes", "label": "Soluciones Regulatorias ASAP" },
           { "value": "treinamento", "label": "Entrenamiento ASAP" },
           { "value": "apoiador", "label": "Apoyador ASAP" },
-          { "value": "documentos_governanca", "label": "Manuales, Políticas y Códigos de Ética" }
+          { "value": "documentos_governanca", "label": "Manuales, Políticas y Códigos de Ética" },
+          { "value": "outros", "label": "Otros Asuntos" }
         ],
         "mentorshipOptions": [
           { "value": "mentoria_individual", "label": "Mentoría Individual" },
           { "value": "mentoria_coletiva", "label": "Mentoría Colectiva" },
-          { "value": "mentoria_social", "label": "Mentoría Social" }
+          { "value": "mentoria_social", "label": "Mentoría Social" },
+          { "value": "outros", "label": "Otros Asuntos" }
         ]
       },
       "companyName": { "label": "Nombre de la empresa", "placeholder": "Nombre de la empresa interesada" },
@@ -273,7 +275,8 @@
         "options": [
           { "value": "social_media", "label": "Redes sociales" },
           { "value": "linkedin", "label": "LinkedIn" },
-          { "value": "recommendation", "label": "Recomendación" }
+          { "value": "recommendation", "label": "Recomendación" },
+          { "value": "outros", "label": "Otros" }
         ]
       },
       "submitButton": "Enviar Mensaje"
@@ -304,7 +307,8 @@
         "options": [
           { "value": "social_media", "label": "Redes sociales" },
           { "value": "linkedin", "label": "LinkedIn" },
-          { "value": "recommendation", "label": "Recomendación" }
+          { "value": "recommendation", "label": "Recomendación" },
+          { "value": "outros", "label": "Otros" }
         ]
       }
     }
