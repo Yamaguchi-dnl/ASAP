@@ -234,7 +234,7 @@
     "form": {
       "name": { "label": "Tu nombre", "placeholder": "Tu nombre completo" },
       "email": { "label": "E-mail", "placeholder": "tu@email.com" },
-      "phone": { "label": "Teléfono", "placeholder": "(XX) XXXXX-XXXX" },
+      "phone": { "label": "Teléfono", "placeholder": "+34 XXXXXXXXX" },
       "service": {
         "label": "Selecciona el servicio deseado",
         "placeholder": "Selecciona un servicio",
@@ -276,7 +276,7 @@
     "form_professional": {
       "name": { "label": "Tu nombre", "placeholder": "Tu nombre completo" },
       "email": { "label": "E-mail", "placeholder": "tu@email.com" },
-      "phone": { "label": "Teléfono", "placeholder": "(XX) XXXXX-XXXX" },
+      "phone": { "label": "Teléfono", "placeholder": "+34 XXXXXXXXX" },
       "service": {
         "label": "Servicio deseado",
         "placeholder": "Selecciona un servicio"
@@ -347,13 +347,5 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
-
-    
-
-    
-
-    
-
-    
 
     
