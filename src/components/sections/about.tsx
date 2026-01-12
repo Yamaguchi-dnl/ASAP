@@ -72,9 +72,17 @@ export function AboutSection() {
   return (
     <section id="lideranca" className="py-12 sm:py-16 bg-background">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Título para Mobile */}
+        <MotionWrapper className="lg:hidden mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
+                {translations.about.title}
+            </h2>
+            <hr className="border-t-2 border-primary w-24 mt-4" />
+        </MotionWrapper>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Coluna da Imagem */}
-          <MotionWrapper className="relative w-4/5 mx-auto aspect-[4/5] rounded-lg overflow-hidden">
+          <MotionWrapper className="relative w-4/5 mx-auto aspect-[4/5] rounded-lg overflow-hidden lg:order-1">
             <AnimatePresence mode="wait">
               {founderImage && (
                 <motion.div
@@ -99,8 +107,9 @@ export function AboutSection() {
           </MotionWrapper>
 
           {/* Coluna de Texto */}
-          <div className="flex flex-col justify-between h-full">
-            <MotionWrapper>
+          <div className="flex flex-col justify-between h-full lg:order-2">
+             {/* Título para Desktop */}
+            <MotionWrapper className="hidden lg:block">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase font-headline">
                 {translations.about.title}
               </h2>
