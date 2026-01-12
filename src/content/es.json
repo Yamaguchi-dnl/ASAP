@@ -245,6 +245,11 @@
           { "value": "treinamento", "label": "Entrenamiento ASAP" },
           { "value": "apoiador", "label": "Apoyador ASAP" },
           { "value": "documentos_governanca", "label": "Manuales, Políticas y Códigos de Ética" }
+        ],
+        "mentorshipOptions": [
+          { "value": "mentoria_individual", "label": "Mentoría Individual" },
+          { "value": "mentoria_coletiva", "label": "Mentoría Colectiva" },
+          { "value": "mentoria_social", "label": "Mentoría Social" }
         ]
       },
       "companyName": { "label": "Nombre de la empresa", "placeholder": "Nombre de la empresa interesada" },
@@ -347,5 +352,3 @@
     "copy": "PulsoASAP. Todos los derechos reservados."
   }
 }
-
-    

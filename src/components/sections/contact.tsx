@@ -63,7 +63,7 @@ export function ContactSection() {
       name: '',
       email: '',
       phone: '',
-      service: activeTab === 'empresa' ? t.form.service.options[0].value : 'mentorias',
+      service: activeTab === 'empresa' ? t.form.service.options[0].value : t.form.service.mentorshipOptions[0].value,
       companyName: '',
       employeeCount: '',
       companySite: '',
@@ -95,7 +95,7 @@ export function ContactSection() {
         formType: newTab,
         service: newTab === 'empresa' 
             ? t.form.service.options[0].value 
-            : t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias')?.value || '',
+            : t.form.service.mentorshipOptions[0].value,
     });
   };
 
@@ -117,7 +117,7 @@ export function ContactSection() {
           formType: activeTab,
           service: activeTab === 'empresa' 
               ? t.form.service.options[0].value 
-              : t.form.service.options.find((o: { value: string; }) => o.value === 'mentorias')?.value || '',
+              : t.form.service.mentorshipOptions[0].value,
       });
     } catch (error) {
        console.error("Error adding document: ", error);
@@ -257,7 +257,7 @@ export function ContactSection() {
                                     <SelectValue placeholder={tProf.service.placeholder} />
                                 </SelectTrigger>
                                 <SelectContent>
-                                  {t.form.service.options.filter((o: {value:string}) => o.value === 'mentorias').map((option: { value: string; label: string; }) => (
+                                  {t.form.service.mentorshipOptions.map((option: { value: string; label: string; }) => (
                                      <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
                                   ))}
                                 </SelectContent>
