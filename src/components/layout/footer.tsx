@@ -193,9 +193,8 @@ export function Footer() {
             </Accordion>
           </div>
 
-          <div className="mt-8 border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-            <p className="text-xs text-muted-foreground">CNPJ XX.XXX.XXX-XX</p>
-            <p className="text-xs text-muted-foreground mt-2 sm:mt-0">
+          <div className="mt-8 border-t border-border pt-8 flex flex-col sm:flex-row justify-center items-center text-center sm:text-left">
+            <p className="text-xs text-muted-foreground">
               &copy; {year} {translations.footer.copy}
             </p>
           </div>
