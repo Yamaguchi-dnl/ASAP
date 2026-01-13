@@ -82,6 +82,13 @@ export function ContactSection() {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+  
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    // Allow only numbers and a leading +
+    const sanitizedValue = value.replace(/[^0-9+]/g, '');
+    setFormData(prev => ({ ...prev, phone: sanitizedValue }));
+  };
 
   const handleSelectChange = (name: keyof ContactFormData, value: string) => {
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -105,6 +112,9 @@ export function ContactSection() {
     setError('');
 
     try {
+      if (!firestore) {
+        throw new Error("Firestore is not initialized");
+      }
       const submissionsCollection = collection(firestore, 'contactFormSubmissions');
       await addDoc(submissionsCollection, {
         ...formData,
@@ -182,7 +192,7 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{t.form.phone.label}</Label>
-                            <Input name="phone" placeholder={t.form.phone.placeholder} value={formData.phone} onChange={handleInputChange} className={formInputStyles}/>
+                            <Input name="phone" placeholder={t.form.phone.placeholder} value={formData.phone} onChange={handlePhoneChange} className={formInputStyles}/>
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{t.form.service.label}</Label>
@@ -248,7 +258,7 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{tProf.phone.label}</Label>
-                            <Input name="phone" placeholder={tProf.phone.placeholder} value={formData.phone} onChange={handleInputChange} className={formInputStyles}/>
+                            <Input name="phone" placeholder={tProf.phone.placeholder} value={formData.phone} onChange={handlePhoneChange} className={formInputStyles}/>
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{tProf.service.label}</Label>
