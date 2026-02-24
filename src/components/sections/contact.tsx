@@ -56,6 +56,7 @@ type ContactFormData = {
   companyTime?: string;
 };
 
+type PhoneCountry = 'br' | 'es' | 'ar' | 'mx' | 'co' | 'world';
 
 export function ContactSection() {
   const [activeTab, setActiveTab] = useState<'empresa' | 'profissional'>('empresa');
@@ -66,7 +67,7 @@ export function ContactSection() {
   const t = translations.contact;
   const firestore = useFirestore();
 
-  const [phoneCountry, setPhoneCountry] = useState<'br' | 'es'>(language === 'es' ? 'es' : 'br');
+  const [phoneCountry, setPhoneCountry] = useState<PhoneCountry>(language === 'es' ? 'es' : 'br');
 
   useEffect(() => {
     setPhoneCountry(language === 'es' ? 'es' : 'br');
@@ -110,8 +111,6 @@ export function ContactSection() {
     const newTab = value as 'empresa' | 'profissional';
     setActiveTab(newTab);
     
-    // Atualiza apenas os campos necessários, mantendo o que o usuário já digitou (nome, email, etc)
-    // Reseta o serviço para vazio para exibir o placeholder 'Selecione a opção'
     setFormData(prev => ({ 
       ...prev, 
       formType: newTab,
@@ -132,10 +131,10 @@ export function ContactSection() {
       await addDoc(submissionsCollection, {
         ...formData,
         submissionDate: new Date().toISOString(),
+        phonePrefix: phoneCountry,
       });
 
       setShowConfirmation(true);
-      // Reseta o formulário mantendo o tipo de aba ativo e serviço vazio
       setFormData({
         formType: activeTab,
         name: '',
@@ -158,6 +157,17 @@ export function ContactSection() {
        setError(error instanceof Error ? error.message : "Houve um problema ao enviar sua mensagem. Tente novamente.");
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const getPhonePlaceholder = () => {
+    switch (phoneCountry) {
+      case 'br': return '+55 (XX) XXXXX-XXXX';
+      case 'es': return '+34 XXXXXXXXX';
+      case 'ar': return '+54 XXXXXXXXX';
+      case 'mx': return '+52 XXXXXXXXX';
+      case 'co': return '+57 XXXXXXXXX';
+      default: return '+ (Código) Número';
     }
   };
 
@@ -233,11 +243,27 @@ export function ContactSection() {
                                     <FlagIcon country="es" className="mr-2 w-5" />
                                     <span>+34 (ES)</span>
                                   </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('ar')} className="cursor-pointer">
+                                    <FlagIcon country="ar" className="mr-2 w-5" />
+                                    <span>+54 (AR)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('mx')} className="cursor-pointer">
+                                    <FlagIcon country="mx" className="mr-2 w-5" />
+                                    <span>+52 (MX)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('co')} className="cursor-pointer">
+                                    <FlagIcon country="co" className="mr-2 w-5" />
+                                    <span>+57 (CO)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('world')} className="cursor-pointer">
+                                    <FlagIcon country="world" className="mr-2 w-5" />
+                                    <span>Outros</span>
+                                  </DropdownMenuItem>
                                 </DropdownMenuContent>
                               </DropdownMenu>
                               <Input 
                                 name="phone" 
-                                placeholder={phoneCountry === 'br' ? '+55 (XX) XXXXX-XXXX' : '+34 XXXXXXXXX'} 
+                                placeholder={getPhonePlaceholder()} 
                                 value={formData.phone || ''} 
                                 onChange={handlePhoneChange} 
                                 className={formInputStyles} 
@@ -329,11 +355,27 @@ export function ContactSection() {
                                     <FlagIcon country="es" className="mr-2 w-5" />
                                     <span>+34 (ES)</span>
                                   </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('ar')} className="cursor-pointer">
+                                    <FlagIcon country="ar" className="mr-2 w-5" />
+                                    <span>+54 (AR)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('mx')} className="cursor-pointer">
+                                    <FlagIcon country="mx" className="mr-2 w-5" />
+                                    <span>+52 (MX)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('co')} className="cursor-pointer">
+                                    <FlagIcon country="co" className="mr-2 w-5" />
+                                    <span>+57 (CO)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('world')} className="cursor-pointer">
+                                    <FlagIcon country="world" className="mr-2 w-5" />
+                                    <span>Outros</span>
+                                  </DropdownMenuItem>
                                 </DropdownMenuContent>
                               </DropdownMenu>
                               <Input 
                                 name="phone" 
-                                placeholder={phoneCountry === 'br' ? '+55 (XX) XXXXX-XXXX' : '+34 XXXXXXXXX'} 
+                                placeholder={getPhonePlaceholder()} 
                                 value={formData.phone || ''} 
                                 onChange={handlePhoneChange} 
                                 className={formInputStyles} 

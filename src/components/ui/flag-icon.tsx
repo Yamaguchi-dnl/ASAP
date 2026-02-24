@@ -1,9 +1,10 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { Globe } from 'lucide-react';
 
 type FlagIconProps = {
-  country: 'br' | 'es';
+  country: 'br' | 'es' | 'ar' | 'mx' | 'co' | 'world';
   className?: string;
 };
 
@@ -33,6 +34,51 @@ export function FlagIcon({ country, className }: FlagIconProps) {
         <rect y="250" width="1500" height="500" fill="#ffc400" />
       </svg>
     );
+  }
+
+  if (country === 'ar') {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 500"
+        className={cn('w-6 h-auto rounded-sm', className)}
+      >
+        <rect width="800" height="500" fill="#74ACDF" />
+        <rect y="166.6" width="800" height="166.6" fill="#FFFFFF" />
+      </svg>
+    );
+  }
+
+  if (country === 'mx') {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 980 560"
+        className={cn('w-6 h-auto rounded-sm', className)}
+      >
+        <rect width="326.6" height="560" fill="#006847" />
+        <rect x="326.6" width="326.6" height="560" fill="#FFFFFF" />
+        <rect x="653.2" width="326.6" height="560" fill="#CE1126" />
+      </svg>
+    );
+  }
+
+  if (country === 'co') {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 900 600"
+        className={cn('w-6 h-auto rounded-sm', className)}
+      >
+        <rect width="900" height="300" fill="#FCD116" />
+        <rect y="300" width="900" height="150" fill="#003893" />
+        <rect y="450" width="900" height="150" fill="#CE1126" />
+      </svg>
+    );
+  }
+
+  if (country === 'world') {
+    return <Globe className={cn('w-6 h-6 text-primary-foreground/70', className)} />;
   }
 
   return null;
