@@ -27,7 +27,7 @@
       "line1": "Profesionales que las empresas quieren mantener.",
       "line2": "Empresas donde los profesionales quieren trabajar."
     },
-    "exploreSolutions": "Explora las soluciones que hacen posibles estos beneficios",
+    "exploreSolutions": "Explora las soluciones que fazem possíveis estes beneficios",
     "tabs": {
       "companies": "Para Empresas",
       "professionals": "Para Profesionales"
@@ -44,7 +44,7 @@
       "Claridad sobre límites, prioridades y expectativas en el trabajo.",
       "Fortalecimiento de la autonomía, la responsabilidad y la confianza personal.",
       "Mejor comunicación, relaciones más saludables y menos conflictos.",
-      "Evolución profesional alineada al propósito, a las habilidades y al momento de carrera."
+      "Evolución profesional alineada al propósito, a las habilidades e al momento de carrera."
     ]
   },
   "about": {
@@ -61,7 +61,7 @@
         "id": "helga",
         "name": "Helga Orue",
         "imageId": "testimonial-3",
-        "bio1": "Licenciada en Administración de Empresas por la PUC-Pr y posgraduada en Contabilidad y con un Máster en compliance por la PUC de Buenos Aires. Con actuación en prevención de fraudes, compliance y controles internos.",
+        "bio1": "Licenciada en Administración de Empresas por la PUC-Pr e posgraduada en Contabilidad y con un Máster en compliance por la PUC de Buenos Aires. Con actuación en prevención de fraudes, compliance y controles internos.",
         "bio2": "Aporta una sólida experiencia en la implementación de programas de integridad y en la creación de culturas organizacionales éticas. Su pericia contribuye al enfoque equilibrado de Pulso ASAP, que une el bienestar de los colaboradores con la robustez de la gobernanza corporativa."
       }
     ]
@@ -77,7 +77,7 @@
           "Vivencia real de agotamiento profesional de una de las fundadoras.",
           "Más de 20 años de actuación en el ambiente corporativo.",
           "Experiencia profesional en las áreas de Compliance, Gestión de Riesgos, Canal Ético y Controles internos.",
-          "Metodología con un triple enfoque: emocional, estratégico y cultural.",
+          "Metodologia con un triple enfoque: emocional, estratégico y cultural.",
           "Soluciones personalizadas para el cliente, ya sea empresa o colaborador."
         ]
       },
@@ -139,7 +139,7 @@
         "id": "mentoria",
         "title": "Mentoría ASAP",
         "imageId": "service-mentorship",
-        "description": "Sin recetas mágicas ni fórmulas listas. Nuestra metodología fue creada para ofrecer una experiencia de mentoría personalizada, alineada a los objetivos y al momento de cada profesional.",
+        "description": "Sin recetas mágicas ni fórmulas listas. Nuestra metodologia fue creada para oferecer una experiencia de mentoría personalizada, alineada a los objetivos y al momento de cada profesional.",
         "subItems": ["ASAP Esencial", "ASAP Evolution", "ASAP Anónimos", "ASAP Social"],
         "cta": "Explore las opciones"
       },
@@ -163,7 +163,7 @@
         "id": "treinamento",
         "title": "Entrenamiento ASAP",
         "imageId": "service-training",
-        "description": "Una metodología creada para actuar directamente en comportamientos, prácticas y percepciones que impactan la seguridad, la ética y la cultura corporativa.",
+        "description": "Una metodologia creada para actuar directamente en comportamientos, prácticas y percepciones que impactan la seguridad, la ética y la cultura corporativa.",
         "subItems": ["Entrenamiento Interventivo"],
         "cta": "Capacite a su equipo"
       }
@@ -171,20 +171,20 @@
   },
   "testimonials": {
     "title": "Lo que Dicen Nuestros Clientes",
-    "subtitle": "Historias reales de quienes ya han sido transformados por nuestra metodología y enfoque único.",
+    "subtitle": "Historias reales de quienes ya han sido transformados por nuestra metodologia y enfoque único.",
     "items": [
       {
-        "quote": "La mentoría me hizo ver mi carrera con una visión mucho más estratégica y madura. Fue un verdadero punto de inflexión. La metodología es práctica, humana y profundamente transformadora, al unir autoconocimiento con orientaciones de carrera. Sin duda, la mejor inversión que he hecho.",
+        "quote": "La mentoría me hizo ver mi carrera con una visión mucho más estratégica y madura. Fue un verdadero punto de inflexión. La metodologia es práctica, humana y profundamente transformadora, al unir autoconocimiento con orientaciones de carrera. Sin duda, la mejor inversión que he hecho.",
         "name": "Dafini Boldrini",
         "title": "Participante del programa ASAP Esencial"
       },
       {
-        "quote": "El programa de mentoría fue un punto de inflexión en mi carrera. Logré claridad y confianza para asumir nuevos desafíos.",
+        "quote": "El programa de mentoría fue um punto de inflexión en mi carrera. Logré claridad y confianza para asumir nuevos desafíos.",
         "name": "Marcos Andrade",
         "title": "Desarrollador Senior, FinSolutions"
       },
       {
-        "quote": "Nunca imaginé que invertir en bienestar traería tanto retorno en productividad. PulsoASAP fue esencial en este proceso.",
+        "quote": "Nunca imaginé que invertir en bienestar traería tanto retorno en produtividade. PulsoASAP fue esencial en este proceso.",
         "name": "Beatriz Lima",
         "title": "CEO, Creative Co."
       }
@@ -195,7 +195,7 @@
     "subtitle": "Asocie su marca a un proyecto que transforma el ambiente corporativo. Sea un patrocinador y fortalezca la imagen de su empresa.",
     "tiers": [
       {
-        "name": "Master",
+        "name": "Oro",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ASAP%20-%20VETORIZADO%20E%20SEM%20FUNDO.png",
         "description": "Categoría dirigida a empresas que desean ampliar el impacto y actuar estratégicamente en la evolución de la cultura corporativa, acelerando iniciativas de concientización, fortaleciendo el compromiso interno y expandiendo el alcance de las acciones del proyecto.",
         "benefits": [
@@ -209,7 +209,7 @@
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg?updatedAt=1767633964566",
         "description": "Categoría destinada a organizaciones que reconocen la relevancia del tema y apoyan la continuidad de las initiatives de pesquisa, contenido y acciones dirigidas a la prevención de la agotamiento corporativa, fortaleciendo la agenda de ambientes saludables e integridad.",
         "benefits": [
-          "Presencia institucional de la marca",
+          "Presencia institucional da marca",
           "Descuentos en productos y servicios",
           "Y otros beneficios de visibilidad y relación"
         ]
@@ -258,16 +258,16 @@
       "employeeCount": { "label": "¿Cuántos empleados tiene?", "placeholder": "Ej: 50-100" },
       "companySite": { "label": "Sitio web de la empresa", "placeholder": "www.tuempresa.com" },
       "challenge": {
-        "label": "Describa el principal desafío que su empresa está enfrentando",
-        "placeholder": "Describe aquí..."
+        "label": "Descreva o principal desafio que su empresa está enfrentando",
+        "placeholder": "Descreva aqui..."
       },
       "goal": {
         "label": "¿Qué objetivo esperas alcanzar con los servicios de Pulso ASAP?",
-        "placeholder": "Describe here..."
+        "placeholder": "Descreva aqui..."
       },
       "details": {
         "label": "¿Hay alguna particularidad o detalle adicional que te gustaría compartir?",
-        "placeholder": "Describe aquí..."
+        "placeholder": "Descreva aqui..."
       },
       "howYouFoundUs": {
         "label": "¿Cómo conociste a Pulso ASAP?",
@@ -294,12 +294,12 @@
       "department": { "label": "¿Cuál es tu departamento/área de actuación?", "placeholder": "Ej: Finanzas, TI, etc." },
       "companyTime": { "label": "¿Cuánto tiempo llevas en la empresa actual?", "placeholder": "Ej: 2 años" },
       "challenge": {
-        "label": "Describa el principal desafío que estás enfrentando",
-        "placeholder": "Describe aquí..."
+        "label": "Descreva o principal desafío que estás enfrentando",
+        "placeholder": "Descreva aqui..."
       },
       "goal": {
         "label": "¿Qué objetivo esperas alcanzar con la mentoría?",
-        "placeholder": "Describe aquí..."
+        "placeholder": "Descreva aqui..."
       },
       "howYouFoundUs": {
         "label": "¿Cómo conociste a Pulso ASAP?",
@@ -318,7 +318,7 @@
     "items": [
       {
         "question": "¿Pulso ASAP es un programa terapéutico?",
-        "answer": "Pulso ASAP no ofrece services terapéuticos. Toda la metodología se fundamenta en GRC y en desarrollo profesional, sin carácter clínico."
+        "answer": "Pulso ASAP no ofrece services terapéuticos. Toda la metodologia se fundamenta en GRC y en desarrollo profesional, sin carácter clínico."
       },
       {
         "question": "¿Qué significa ASAP?",
@@ -338,21 +338,21 @@
       },
       {
         "question": "¿Cómo se adapta el contenido a diferentes niveles jerárquicos o áreas de la empresa?",
-        "answer": "El contenido se personaliza después de la alineación inicial, considerando las necesidades de la empresa, del equipo, del sector o del profesional."
+        "answer": "El contenido se personaliza después de la alineación inicial, considerando las necesidades da empresa, do equipo, do sector o do profissional."
       },
       {
         "question": "¿La información de mi empresa se trata con confidencialidad?",
-        "answer": "Sí. Toda la información compartida se trata con rigor ético y confidencialidad, de acuerdo con las prácticas de LGPD y GRC."
+        "answer": "Sí. Toda la información compartida se trata com rigor ético y confidencialidad, de acuerdo con las prácticas de LGPD y GRC."
       }
     ]
   },
   "footer": {
     "social": "Accede a nuestras redes:",
     "usefulLinks": "Enlaces Úteis",
-    "codeOfConduct": "Código de ética y de conducta",
+    "codeOfConduct": "Código de ética e de conduta",
     "newsletters": "Newsletters",
     "manuals": "Manuales",
     "contact": "Contacto",
-    "copy": "PulsoASAP. Todos los derechos reservados."
+    "copy": "PulsoASAP. Todos os direitos reservados."
   }
 }
