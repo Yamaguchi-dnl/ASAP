@@ -36,7 +36,7 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function Footer() {
   const { translations } = useLanguage();
-  const [year, setYear] = useState(new Date().getFullYear());
+  const [year, setYear] = useState<number | null>(null);
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -195,7 +195,7 @@ export function Footer() {
 
           <div className="mt-8 border-t border-border pt-8 flex flex-col sm:flex-row justify-center items-center text-center sm:text-left">
             <p className="text-xs text-muted-foreground">
-              &copy; {year} {translations.footer.copy}
+              &copy; {year || ''} {translations.footer.copy}
             </p>
           </div>
         </MotionWrapper>

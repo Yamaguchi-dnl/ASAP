@@ -67,9 +67,12 @@ export function ContactSection() {
   const t = translations.contact;
   const firestore = useFirestore();
 
-  const [phoneCountry, setPhoneCountry] = useState<PhoneCountry>(language === 'es' ? 'es' : 'br');
+  // Defer phone country selection to after mount to avoid hydration mismatch
+  const [phoneCountry, setPhoneCountry] = useState<PhoneCountry>('br');
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     setPhoneCountry(language === 'es' ? 'es' : 'br');
   }, [language]);
 
@@ -186,6 +189,18 @@ export function ContactSection() {
   const formLabelStyles = "text-primary-foreground";
   const tProf = translations.contact.form_professional;
 
+  // Render a consistent skeleton until mounted to prevent hydration mismatches with complex inputs/IDs
+  if (!isMounted) {
+    return (
+      <section id="contato" className="py-20 sm:py-32 bg-primary text-primary-foreground">
+        <Container className="px-6 lg:px-8">
+          <div className="h-96 flex items-center justify-center">
+             <Loader2 className="h-8 w-8 animate-spin opacity-20" />
+          </div>
+        </Container>
+      </section>
+    );
+  }
 
   return (
     <section id="contato" className="py-20 sm:py-32 bg-primary text-primary-foreground">
