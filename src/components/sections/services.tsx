@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -16,7 +17,6 @@ import {
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export function ServicesSection() {
@@ -115,6 +115,7 @@ export function ServicesSection() {
                           src={serviceImage.imageUrl}
                           alt={service.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover transition-transform duration-300 ease-in-out group-focus-within:scale-105 group-hover:scale-105"
                           data-ai-hint={serviceImage.imageHint}
                         />

@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useRef } from 'react';
@@ -64,6 +65,7 @@ export function HeroSection() {
           muted
           playsInline
           preload="metadata"
+          poster="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?auto=format&fit=crop&q=60&w=1200"
           className="absolute z-0 w-auto min-w-full min-h-full max-w-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-20"
         >
           <source
