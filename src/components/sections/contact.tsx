@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -15,7 +15,7 @@ import { Container } from '../layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Loader2 } from 'lucide-react';
+import { Loader2, ChevronDown } from 'lucide-react';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -28,6 +28,14 @@ import {
 import { Label } from '@/components/ui/label';
 import { useFirestore } from '@/firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { FlagIcon } from '@/components/ui/flag-icon';
+import { cn } from '@/lib/utils';
 
 // Define a type for the form data
 type ContactFormData = {
@@ -54,9 +62,15 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [error, setError] = useState('');
-  const { translations } = useLanguage();
+  const { translations, language } = useLanguage();
   const t = translations.contact;
   const firestore = useFirestore();
+
+  const [phoneCountry, setPhoneCountry] = useState<'br' | 'es'>(language === 'es' ? 'es' : 'br');
+
+  useEffect(() => {
+    setPhoneCountry(language === 'es' ? 'es' : 'br');
+  }, [language]);
 
   const initialFormState: ContactFormData = {
       formType: activeTab,
@@ -192,7 +206,33 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{t.form.phone.label}</Label>
-                            <Input name="phone" placeholder={t.form.phone.placeholder} value={formData.phone} onChange={handlePhoneChange} className={formInputStyles}/>
+                            <div className="flex gap-2">
+                              <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                  <Button variant="outline" className={cn(formInputStyles, "w-[70px] px-2 flex shrink-0 gap-1 hover:bg-white/10")}>
+                                    <FlagIcon country={phoneCountry} className="w-5" />
+                                    <ChevronDown className="h-3 w-3 opacity-50" />
+                                  </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-primary/20">
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('br')} className="cursor-pointer">
+                                    <FlagIcon country="br" className="mr-2 w-5" />
+                                    <span>+55 (BR)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('es')} className="cursor-pointer">
+                                    <FlagIcon country="es" className="mr-2 w-5" />
+                                    <span>+34 (ES)</span>
+                                  </DropdownMenuItem>
+                                </DropdownMenuContent>
+                              </DropdownMenu>
+                              <Input 
+                                name="phone" 
+                                placeholder={phoneCountry === 'br' ? '+55 (XX) XXXXX-XXXX' : '+34 XXXXXXXXX'} 
+                                value={formData.phone} 
+                                onChange={handlePhoneChange} 
+                                className={formInputStyles} 
+                              />
+                            </div>
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{t.form.service.label}</Label>
@@ -258,7 +298,33 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{tProf.phone.label}</Label>
-                            <Input name="phone" placeholder={tProf.phone.placeholder} value={formData.phone} onChange={handlePhoneChange} className={formInputStyles}/>
+                            <div className="flex gap-2">
+                              <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                  <Button variant="outline" className={cn(formInputStyles, "w-[70px] px-2 flex shrink-0 gap-1 hover:bg-white/10")}>
+                                    <FlagIcon country={phoneCountry} className="w-5" />
+                                    <ChevronDown className="h-3 w-3 opacity-50" />
+                                  </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="bg-background/95 backdrop-blur-sm border-primary/20">
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('br')} className="cursor-pointer">
+                                    <FlagIcon country="br" className="mr-2 w-5" />
+                                    <span>+55 (BR)</span>
+                                  </DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setPhoneCountry('es')} className="cursor-pointer">
+                                    <FlagIcon country="es" className="mr-2 w-5" />
+                                    <span>+34 (ES)</span>
+                                  </DropdownMenuItem>
+                                </DropdownMenuContent>
+                              </DropdownMenu>
+                              <Input 
+                                name="phone" 
+                                placeholder={phoneCountry === 'br' ? '+55 (XX) XXXXX-XXXX' : '+34 XXXXXXXXX'} 
+                                value={formData.phone} 
+                                onChange={handlePhoneChange} 
+                                className={formInputStyles} 
+                              />
+                            </div>
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{tProf.service.label}</Label>
