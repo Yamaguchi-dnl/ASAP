@@ -72,12 +72,12 @@ export function ContactSection() {
     setPhoneCountry(language === 'es' ? 'es' : 'br');
   }, [language]);
 
-  const initialFormState: ContactFormData = {
-      formType: activeTab,
+  const [formData, setFormData] = useState<ContactFormData>({
+      formType: 'empresa',
       name: '',
       email: '',
       phone: '',
-      service: activeTab === 'empresa' ? t.form.service.options[0].value : t.form.service.mentorshipOptions[0].value,
+      service: '',
       companyName: '',
       employeeCount: '',
       companySite: '',
@@ -88,9 +88,18 @@ export function ContactSection() {
       role: '',
       department: '',
       companyTime: '',
-  };
+  });
 
-  const [formData, setFormData] = useState<ContactFormData>(initialFormState);
+  // Atualiza o serviço padrão quando as traduções carregam ou a aba muda
+  useEffect(() => {
+    if (t && !formData.service) {
+      const defaultService = activeTab === 'empresa' 
+        ? t.form.service.options[0].value 
+        : t.form.service.mentorshipOptions[0].value;
+      
+      setFormData(prev => ({ ...prev, service: defaultService }));
+    }
+  }, [t, activeTab, formData.service]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -111,13 +120,15 @@ export function ContactSection() {
   const handleTabChange = (value: string) => {
     const newTab = value as 'empresa' | 'profissional';
     setActiveTab(newTab);
-    setFormData({
-        ...initialFormState,
-        formType: newTab,
-        service: newTab === 'empresa' 
-            ? t.form.service.options[0].value 
-            : t.form.service.mentorshipOptions[0].value,
-    });
+    
+    // Atualiza apenas os campos necessários, mantendo o que o usuário já digitou (nome, email, etc)
+    setFormData(prev => ({ 
+      ...prev, 
+      formType: newTab,
+      service: newTab === 'empresa' 
+          ? t.form.service.options[0].value 
+          : t.form.service.mentorshipOptions[0].value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -136,12 +147,25 @@ export function ContactSection() {
       });
 
       setShowConfirmation(true);
+      // Reseta o formulário mantendo o tipo de aba ativo
       setFormData({
-          ...initialFormState,
-          formType: activeTab,
-          service: activeTab === 'empresa' 
-              ? t.form.service.options[0].value 
-              : t.form.service.mentorshipOptions[0].value,
+        formType: activeTab,
+        name: '',
+        email: '',
+        phone: '',
+        service: activeTab === 'empresa' 
+            ? t.form.service.options[0].value 
+            : t.form.service.mentorshipOptions[0].value,
+        companyName: '',
+        employeeCount: '',
+        companySite: '',
+        challenge: '',
+        goal: '',
+        details: '',
+        howYouFoundUs: '',
+        role: '',
+        department: '',
+        companyTime: '',
       });
     } catch (error) {
        console.error("Error adding document: ", error);
@@ -194,7 +218,7 @@ export function ContactSection() {
                 </TabsList>
                 
                   <form onSubmit={handleSubmit} className="mt-6">
-                    <TabsContent value="empresa" forceMount hidden={activeTab !== 'empresa'}>
+                    <TabsContent value="empresa">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{t.form.name.label}</Label>
@@ -228,7 +252,7 @@ export function ContactSection() {
                               <Input 
                                 name="phone" 
                                 placeholder={phoneCountry === 'br' ? '+55 (XX) XXXXX-XXXX' : '+34 XXXXXXXXX'} 
-                                value={formData.phone} 
+                                value={formData.phone || ''} 
                                 onChange={handlePhoneChange} 
                                 className={formInputStyles} 
                               />
@@ -236,7 +260,11 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{t.form.service.label}</Label>
-                            <Select name="service" onValueChange={(value) => handleSelectChange('service', value)} value={formData.service}>
+                            <Select 
+                              name="service" 
+                              onValueChange={(value) => handleSelectChange('service', value)} 
+                              value={formData.service || ''}
+                            >
                                 <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={t.form.service.placeholder} />
                                 </SelectTrigger>
@@ -273,7 +301,7 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2 md:col-span-2">
                             <Label className={formLabelStyles}>{t.form.howYouFoundUs.label}</Label>
-                            <Select name="howYouFoundUs" onValueChange={(value) => handleSelectChange('howYouFoundUs', value)} value={formData.howYouFoundUs}>
+                            <Select name="howYouFoundUs" onValueChange={(value) => handleSelectChange('howYouFoundUs', value)} value={formData.howYouFoundUs || ''}>
                                 <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={t.form.howYouFoundUs.placeholder} />
                                 </SelectTrigger>
@@ -286,7 +314,7 @@ export function ContactSection() {
                         </div>
                       </div>
                     </TabsContent>
-                    <TabsContent value="profissional" forceMount hidden={activeTab !== 'profissional'}>
+                    <TabsContent value="profissional">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{tProf.name.label}</Label>
@@ -320,7 +348,7 @@ export function ContactSection() {
                               <Input 
                                 name="phone" 
                                 placeholder={phoneCountry === 'br' ? '+55 (XX) XXXXX-XXXX' : '+34 XXXXXXXXX'} 
-                                value={formData.phone} 
+                                value={formData.phone || ''} 
                                 onChange={handlePhoneChange} 
                                 className={formInputStyles} 
                               />
@@ -328,7 +356,11 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2">
                             <Label className={formLabelStyles}>{tProf.service.label}</Label>
-                            <Select name="service" onValueChange={(value) => handleSelectChange('service', value)} value={formData.service}>
+                            <Select 
+                              name="service" 
+                              onValueChange={(value) => handleSelectChange('service', value)} 
+                              value={formData.service || ''}
+                            >
                                 <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={tProf.service.placeholder} />
                                 </SelectTrigger>
@@ -365,7 +397,7 @@ export function ContactSection() {
                         </div>
                         <div className="space-y-2 md:col-span-2">
                             <Label className={formLabelStyles}>{tProf.howYouFoundUs.label}</Label>
-                             <Select name="howYouFoundUs" onValueChange={(value) => handleSelectChange('howYouFoundUs', value)} value={formData.howYouFoundUs}>
+                             <Select name="howYouFoundUs" onValueChange={(value) => handleSelectChange('howYouFoundUs', value)} value={formData.howYouFoundUs || ''}>
                                 <SelectTrigger className={formInputStyles}>
                                     <SelectValue placeholder={tProf.howYouFoundUs.placeholder} />
                                 </SelectTrigger>
