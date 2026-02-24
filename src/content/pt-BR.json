@@ -1,4 +1,3 @@
-
 {
   "metadata": {
     "title": "PulsoASAP | Gestão de Riscos e Bem-Estar Corporativo",
@@ -34,7 +33,7 @@
     },
     "benefitsForCompanies": [
       "Cultura corporativa mais sólida, ética, coerente e sustentável.",
-      "Redução de custos com turnover, absenteísmo e improdutividade.",
+      "Redução de custos com turnover, absenteísmo e improductividade.",
       "Redução de riscos organizacionais ligados à exaustão, clima e relações de trabalho.",
       "Equipes mais estáveis, preparadas e alinhadas às prioridades estratégicas.",
       "Melhoria consistente na reputação, confiança interna e marca empregadora."
@@ -76,7 +75,7 @@
         "points": [
           "Vivência real de exaustão profissional de uma das fundadoras.",
           "Mais de 20 anos de atuação em ambiente corporativo.",
-          "Experiência profissional nas áreas de Compliance, Gestão de Riscos, Canal Ético e Controles internos.",
+          "Experience profissional nas áreas de Compliance, Gestão de Riscos, Canal Ético e Controles internos.",
           "Metodologia com abordagem tripla: emocional, estratégica e cultural.",
           "Soluções personalizadas para o cliente, seja empresa ou colaborador."
         ]
@@ -237,7 +236,7 @@
       "phone": { "label": "Telefone", "placeholder": "+55 (XX) XXXXX-XXXX" },
       "service": {
         "label": "Selecione o serviço desejado",
-        "placeholder": "Selecione um serviço",
+        "placeholder": "Selecione a opção",
         "options": [
           { "value": "mentoria_coletiva", "label": "Mentoria Coletiva" },
           { "value": "palestra", "label": "Palestra ASAP" },
@@ -287,7 +286,7 @@
       "phone": { "label": "Telefone", "placeholder": "+55 (XX) XXXXX-XXXX" },
       "service": {
         "label": "Serviço desejado",
-        "placeholder": "Selecione um serviço"
+        "placeholder": "Selecione a opção"
       },
       "companyName": { "label": "Nome da empresa (opcional)", "placeholder": "Nome da empresa onde trabalha" },
       "role": { "label": "Qual seu cargo atual?", "placeholder": "Ex: Analista, Gerente, etc." },

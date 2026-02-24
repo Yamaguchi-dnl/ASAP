@@ -1,4 +1,3 @@
-
 {
   "metadata": {
     "title": "PulsoASAP | Gestión de Riesgos y Bienestar Corporativo",
@@ -42,7 +41,7 @@
     "benefitsForProfessionals": [
       "Mayor equilibrio emocional y capacidad para lidiar con la presión e incertidumbres.",
       "Claridad sobre límites, prioridades y expectativas en el trabajo.",
-      "Fortalecimiento de la autonomía, la responsabilidad y la confianza personal.",
+      "Fortalecimento da autonomia, da responsabilidade e da confiança pessoal.",
       "Mejor comunicación, relaciones más saludables y menos conflictos.",
       "Evolución profesional alineada al propósito, a las habilidades e al momento de carrera."
     ]
@@ -55,7 +54,7 @@
         "name": "Rosa Azevedo",
         "imageId": "testimonial-1",
         "bio1": "Licenciada en Administración de Empresas y posgraduada en Gestión de Proyectos por la FAE Business School, actúa en puestos de gestión en el ecosistema de GRC, con responsabilidad en las áreas de gestión de riesgos, compliance regulatorio, canal ético, prevención de fraudes, due diligence y PLD-FT.",
-        "bio2": "Con más de 20 años de experiencia, actuó en grandes y medianas empresas, desarrollando una visión estratégica y práctica sobre los desafíos del mundo corporativo. Su vivencia real con el agotamiento profesional fue uno de los principales impulsores para la creación de Pulso ASAP."
+        "bio2": "Con más de 20 años de experiencia, actuó en grandes y medianas empresas, desarrollando una visión estratégica y práctica sobre los desafíos del mundo corporativo. Su vivencia real con el agotamiento profissional fue uno de los principales impulsores para la creación de Pulso ASAP."
       },
       {
         "id": "helga",
@@ -72,11 +71,11 @@
         "id": "approach",
         "title": "Quiénes somos",
         "imageId": "approach-who-we-are",
-        "description": "Con presencia en Brasil y España, Pulso ASAP (Acción, Sostenibilidad, Autoconocimiento y Propósito) surgió de la necesidad de abordar el tema del agotamiento profesional de manera clara, objetiva y aplicable al día a día corporativo.",
+        "description": "Con presencia en Brasil y España, Pulso ASAP (Acción, Sostenibilidad, Autoconocimiento y Propósito) surgió de la necesidad de abordar el tema del agotamiento profesional de manera clara, objetiva e aplicable al día a día corporativo.",
         "points": [
-          "Vivencia real de agotamiento profesional de una de las fundadoras.",
+          "Vivencia real de agotamiento profissional de una de las fundadoras.",
           "Más de 20 años de actuación en el ambiente corporativo.",
-          "Experiencia profesional en las áreas de Compliance, Gestión de Riesgos, Canal Ético y Controles internos.",
+          "Experiencia profissional en las áreas de Compliance, Gestión de Riesgos, Canal Ético y Controles internos.",
           "Metodologia con un triple enfoque: emocional, estratégico y cultural.",
           "Soluciones personalizadas para el cliente, ya sea empresa o colaborador."
         ]
@@ -155,7 +154,7 @@
         "id": "solucoes",
         "title": "Soluciones Regulatorias ASAP",
         "imageId": "service-consulting",
-        "description": "Actuamos en la intersección entre gestión de riesgos, compliance y cultura organizacional, ofreciendo diagnósticos precisos, implementaciones eficientes y prácticas que fortalecen la responsabilidad institucional.",
+        "description": "Actuamos en la intersección entre gestión de riesgos, compliance y cultura organizacional, ofreciendo diagnósticos precisos, implementaciones eficientes y práticas que fortalecen la responsabilidad institucional.",
         "subItems": ["DRPS NR1", "Implementación NR1", "Assessment GRC"],
         "cta": "Fortalezca su gobernanza"
       },
@@ -179,12 +178,12 @@
         "title": "Participante del programa ASAP Esencial"
       },
       {
-        "quote": "El programa de mentoría fue um punto de inflexión en mi carrera. Logré claridad y confianza para asumir nuevos desafíos.",
+        "quote": "El programa de mentoría foi um ponto de inflexão em minha carreira. Logré claridad y confianza para asumir nuevos desafíos.",
         "name": "Marcos Andrade",
         "title": "Desarrollador Senior, FinSolutions"
       },
       {
-        "quote": "Nunca imaginé que invertir en bienestar traería tanto retorno en produtividade. PulsoASAP fue esencial en este proceso.",
+        "quote": "Nunca imaginé que invertir en bienestar traería tanto retorno en produtividade. PulsoASAP foi esencial en este processo.",
         "name": "Beatriz Lima",
         "title": "CEO, Creative Co."
       }
@@ -207,11 +206,11 @@
       {
         "name": "Transformador",
         "logoUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/2.jpg?updatedAt=1767633964566",
-        "description": "Categoría destinada a organizaciones que reconocen la relevancia del tema y apoyan la continuidad de las initiatives de pesquisa, contenido y acciones dirigidas a la prevención de la agotamiento corporativa, fortaleciendo la agenda de ambientes saludables e integridad.",
+        "description": "Categoría destinada a organizaciones que reconhecen a relevancia do tema e apoiam a continuidade das initiatives de pesquisa, conteúdo e ações dirigidas a la prevención de la agotamiento corporativa, fortaleciendo la agenda de ambientes saludables e integridad.",
         "benefits": [
           "Presencia institucional da marca",
-          "Descuentos en productos y servicios",
-          "Y otros beneficios de visibilidad y relación"
+          "Descontos em produtos e serviços",
+          "Y otros benefícios de visibilidad y relação"
         ]
       }
     ],
@@ -237,7 +236,7 @@
       "phone": { "label": "Teléfono", "placeholder": "+34 XXXXXXXXX" },
       "service": {
         "label": "Selecciona el servicio deseado",
-        "placeholder": "Selecciona un servicio",
+        "placeholder": "Seleccione la opción",
         "options": [
           { "value": "mentoria_coletiva", "label": "Mentoría Colectiva" },
           { "value": "palestra", "label": "Conferencia ASAP" },
@@ -287,14 +286,14 @@
       "phone": { "label": "Teléfono", "placeholder": "+34 XXXXXXXXX" },
       "service": {
         "label": "Servicio deseado",
-        "placeholder": "Selecciona un servicio"
+        "placeholder": "Seleccione la opción"
       },
       "companyName": { "label": "Nombre de la empresa (opcional)", "placeholder": "Nombre de la empresa donde trabajas" },
       "role": { "label": "¿Cuál es tu cargo actual?", "placeholder": "Ej: Analista, Gerente, etc." },
       "department": { "label": "¿Cuál es tu departamento/área de actuación?", "placeholder": "Ej: Finanzas, TI, etc." },
       "companyTime": { "label": "¿Cuánto tiempo llevas en la empresa actual?", "placeholder": "Ej: 2 años" },
       "challenge": {
-        "label": "Descreva o principal desafío que estás enfrentando",
+        "label": "Descreva o principal desafio que estás enfrentando",
         "placeholder": "Descreva aqui..."
       },
       "goal": {
@@ -318,31 +317,31 @@
     "items": [
       {
         "question": "¿Pulso ASAP es un programa terapéutico?",
-        "answer": "Pulso ASAP no ofrece services terapéuticos. Toda la metodologia se fundamenta en GRC y en desarrollo profesional, sin carácter clínico."
+        "answer": "Pulso ASAP no oferece services terapêuticos. Toda a metodologia se fundamenta em GRC e em desenvolvimento profissional, sem caráter clínico."
       },
       {
         "question": "¿Qué significa ASAP?",
-        "answer": "En el contexto utilizado por la empresa, ASAP significa Acción, Sostenibilidad, Autoconocimiento y Propósito. Estos pilares orientan todas las prácticas y métodos aplicados por la empresa."
+        "answer": "En el contexto utilizado por la empresa, ASAP significa Acción, Sostenibilidad, Autoconocimiento y Propósito. Estos pilares orientan todas las práticas e métodos aplicados por la empresa."
       },
       {
         "question": "¿Pulso ASAP atiende a empresas fuera de Brasil?",
-        "answer": "Sí. Trabajamos en portugués, español e inglés. Realizamos atenciones presenciales en Brasil y en España. Para otras localidades, basta con ponerse en contacto con nuestro equipo para evaluar la mejor forma de atención."
+        "answer": "Sí. Trabalhamos em português, espanhol e inglês. Realizamos atenciones presenciales en Brasil y en España. Para outras localidades, basta con ponerse en contacto con nuestro equipo para avaliar a melhor forma de atenção."
       },
       {
-        "question": "¿Existen beneficios para clientes que contratan más de un servicio?",
-        "answer": "Sí, póngase en contacto con nuestro equipo de atención."
+        "question": "¿Existen benefícios para clientes que contratan más de un serviço?",
+        "answer": "Sí, póngase en contacto con nuestro equipo de atenção."
       },
       {
-        "question": "¿Es posible medir el retorno de la inversión (ROI) del entrenamiento?",
-        "answer": "Sí. Podemos ayudar en la definición de indicadores de resultado y acompañar los impactos en el compromiso y bienestar del equipo."
+        "question": "¿Es posible medir o retorno do investimento (ROI) do treinamento?",
+        "answer": "Sí. Podemos ajudar na definição de indicadores de resultado e acompanhar os impactos no engajamento e bem-estar da equipe."
       },
       {
-        "question": "¿Cómo se adapta el contenido a diferentes niveles jerárquicos o áreas de la empresa?",
-        "answer": "El contenido se personaliza después de la alineación inicial, considerando las necesidades da empresa, do equipo, do sector o do profissional."
+        "question": "¿Cómo se adapta o conteúdo a diferentes niveles hierárquicos ou áreas da empresa?",
+        "answer": "O conteúdo é customizado após o alinhamento inicial, considerando as necessidades da empresa, da equipe, do setor ou do profissional."
       },
       {
-        "question": "¿La información de mi empresa se trata con confidencialidad?",
-        "answer": "Sí. Toda la información compartida se trata com rigor ético y confidencialidad, de acuerdo con las prácticas de LGPD y GRC."
+        "question": "¿La información de mi empresa se trata con confidencialidade?",
+        "answer": "Sí. Toda a informação compartilhada se trata com rigor ético e confidencialidade, de acordo com as práticas de LGPD e GRC."
       }
     ]
   },

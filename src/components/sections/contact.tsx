@@ -90,17 +90,6 @@ export function ContactSection() {
       companyTime: '',
   });
 
-  // Atualiza o serviço padrão quando as traduções carregam ou a aba muda
-  useEffect(() => {
-    if (t && !formData.service) {
-      const defaultService = activeTab === 'empresa' 
-        ? t.form.service.options[0].value 
-        : t.form.service.mentorshipOptions[0].value;
-      
-      setFormData(prev => ({ ...prev, service: defaultService }));
-    }
-  }, [t, activeTab, formData.service]);
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -122,12 +111,11 @@ export function ContactSection() {
     setActiveTab(newTab);
     
     // Atualiza apenas os campos necessários, mantendo o que o usuário já digitou (nome, email, etc)
+    // Reseta o serviço para vazio para exibir o placeholder 'Selecione a opção'
     setFormData(prev => ({ 
       ...prev, 
       formType: newTab,
-      service: newTab === 'empresa' 
-          ? t.form.service.options[0].value 
-          : t.form.service.mentorshipOptions[0].value,
+      service: '',
     }));
   };
 
@@ -147,15 +135,13 @@ export function ContactSection() {
       });
 
       setShowConfirmation(true);
-      // Reseta o formulário mantendo o tipo de aba ativo
+      // Reseta o formulário mantendo o tipo de aba ativo e serviço vazio
       setFormData({
         formType: activeTab,
         name: '',
         email: '',
         phone: '',
-        service: activeTab === 'empresa' 
-            ? t.form.service.options[0].value 
-            : t.form.service.mentorshipOptions[0].value,
+        service: '',
         companyName: '',
         employeeCount: '',
         companySite: '',
