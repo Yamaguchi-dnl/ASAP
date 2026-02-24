@@ -5,7 +5,7 @@ import { HeroSection } from '@/components/sections/hero';
 import { BenefitsSection } from '@/components/sections/benefits';
 import { InfiniteMovingWords } from '@/components/ui/infinite-moving-words';
 
-// Carregamento dinâmico para seções abaixo da dobra para reduzir o bundle inicial de JS
+// Carregamento dinâmico para seções abaixo da dobra para reduzir o bundle inicial de JS e melhorar o PageSpeed
 const AboutSection = dynamic(() => import('@/components/sections/about').then(mod => mod.AboutSection), { ssr: false });
 const ServicesSection = dynamic(() => import('@/components/sections/services').then(mod => mod.ServicesSection), { ssr: false });
 const TestimonialsSection = dynamic(() => import('@/components/sections/testimonials').then(mod => mod.TestimonialsSection), { ssr: false });
