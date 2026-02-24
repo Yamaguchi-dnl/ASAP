@@ -1,11 +1,23 @@
 'use client';
 
-import type { Metadata } from 'next';
 import { useEffect } from 'react';
 import { ClientProvider } from './client-provider';
 import { FirebaseClientProvider } from '@/firebase';
 import { LanguageProvider, useLanguage } from '@/context/language-context';
+import { DM_Sans, Antonio } from 'next/font/google';
 import './globals.css';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+});
+
+const antonio = Antonio({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-antonio',
+});
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   const { language, translations } = useLanguage();
@@ -32,15 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning className={`${dmSans.variable} ${antonio.variable}`}>
       <head>
-        {/* A metatag de descrição será atualizada dinamicamente */}
         <meta name="description" content="Promovendo saúde e bem-estar no ambiente de trabalho." />
         <link rel="icon" href="/favicon.ico?v=4" type="image/x-icon" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500;1,9..40,700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body>
         <FirebaseClientProvider>

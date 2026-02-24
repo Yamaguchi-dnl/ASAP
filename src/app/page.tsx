@@ -1,14 +1,17 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { HeroSection } from '@/components/sections/hero';
 import { BenefitsSection } from '@/components/sections/benefits';
-import { AboutSection } from '@/components/sections/about';
-import { ServicesSection } from '@/components/sections/services';
-import { TestimonialsSection } from '@/components/sections/testimonials';
-import { SponsorshipSection } from '@/components/sections/sponsorship';
-import { ContactSection } from '@/components/sections/contact';
-import { OurApproachSection } from '@/components/sections/our-approach';
 import { InfiniteMovingWords } from '@/components/ui/infinite-moving-words';
+
+// Carregamento dinâmico para seções abaixo da dobra para reduzir o bundle inicial de JS
+const AboutSection = dynamic(() => import('@/components/sections/about').then(mod => mod.AboutSection), { ssr: false });
+const ServicesSection = dynamic(() => import('@/components/sections/services').then(mod => mod.ServicesSection), { ssr: false });
+const TestimonialsSection = dynamic(() => import('@/components/sections/testimonials').then(mod => mod.TestimonialsSection), { ssr: false });
+const SponsorshipSection = dynamic(() => import('@/components/sections/sponsorship').then(mod => mod.SponsorshipSection), { ssr: false });
+const ContactSection = dynamic(() => import('@/components/sections/contact').then(mod => mod.ContactSection), { ssr: false });
+const OurApproachSection = dynamic(() => import('@/components/sections/our-approach').then(mod => mod.OurApproachSection), { ssr: false });
 
 export default function Home() {
   const words = [

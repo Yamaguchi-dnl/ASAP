@@ -55,7 +55,7 @@ export function HeroSection() {
     <section
       id="home"
       ref={targetRef}
-      className="sticky top-0 h-screen min-h-[700px] w-full -mt-20"
+      className="sticky top-0 h-screen min-h-[600px] w-full -mt-20"
     >
       <div className="absolute inset-0 z-0 bg-black overflow-hidden">
         <video
@@ -63,7 +63,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          controls={false}
+          preload="metadata"
           className="absolute z-0 w-auto min-w-full min-h-full max-w-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-cover opacity-20"
         >
           <source

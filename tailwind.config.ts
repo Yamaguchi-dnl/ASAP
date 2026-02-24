@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"DM Sans"', 'sans-serif'],
-        headline: ['Antonio', 'sans-serif'],
+        body: ['var(--font-dm-sans)', 'sans-serif'],
+        headline: ['var(--font-antonio)', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

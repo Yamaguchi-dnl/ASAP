@@ -52,6 +52,7 @@ export function SponsorshipSection() {
                       src={tier.logoUrl}
                       alt={tier.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className={cn(
                         "object-contain transition-all duration-500 p-8",
                         "group-focus-within:scale-105 group-hover:scale-105"
@@ -122,6 +123,7 @@ export function SponsorshipSection() {
                         src={sponsor.logoUrl}
                         alt={sponsor.name}
                         fill
+                        sizes="128px"
                         className="object-contain"
                       />
                    </div>
