@@ -136,10 +136,10 @@ export function Footer() {
               <h3 className="text-lg font-bold">{translations.footer.contact}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <Mail size={16} /> contato@projetoasap.com.br
+                  <Mail size={16} /> contato@pulsoasap.com
                 </li>
                 <li className="flex items-center gap-2">
-                  <Globe size={16} /> www.projetoasap.com.br
+                  <Globe size={16} /> www.pulsoasap.com
                 </li>
               </ul>
             </div>
