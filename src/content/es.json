@@ -269,15 +269,15 @@
         "label": "Selecciona el servicio deseado",
         "placeholder": "Seleccione la opción",
         "options": [
-          { "value": "mentoria_coletiva", "label": "Mentoría Colectiva" },
+          { "value": "livro", "label": "Libro Crachá Atômico" },
           { "value": "palestra", "label": "Conferencia ASAP" },
           { "value": "solucoes", "label": "Soluciones Regulatorias ASAP" },
+          { "value": "laboratorio", "label": "Laboratorio ASAP" },
           { "value": "treinamento", "label": "Entrenamiento ASAP" },
-          { "value": "apoiador", "label": "Apoyador ASAP" },
-          { "value": "documentos_governanca", "label": "Manuales, Políticas y Códigos de Ética" },
           { "value": "outros", "label": "Otros Asuntos" }
         ],
         "mentorshipOptions": [
+          { "value": "livro", "label": "Libro Crachá Atômico" },
           { "value": "mentoria_individual", "label": "Mentoría Individual" },
           { "value": "mentoria_coletiva", "label": "Mentoría Colectiva" },
           { "value": "mentoria_social", "label": "Mentoría Social" },
