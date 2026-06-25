@@ -37,6 +37,12 @@
       "imageHint": "book open"
     },
     {
+      "id": "livro-crache-atomico",
+      "description": "Capa do livro Crachá Atômico.",
+      "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/ChatGPT%20Image%2025%20de%20jun.%20de%202026,%2011_41_12.png",
+      "imageHint": "livro crache atomico"
+    },
+    {
       "id": "service-training",
       "description": "A team of professionals collaborating in a modern office.",
       "imageUrl": "https://ik.imagekit.io/leosmc2zb/PULSOASAP/IMG_5841.PNG",
