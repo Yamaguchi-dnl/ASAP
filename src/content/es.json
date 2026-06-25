@@ -128,9 +128,17 @@
         "id": "produto",
         "title": "Libro: Crachá Atómico",
         "imageId": "service-product",
-        "description": "Libro Crachá Atómico: Prelanzamiento febrero de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",
+        "description": "Lanzamiento en octubre de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",
         "subItems": [],
         "cta": "Quiero ser notificado"
+      },
+      {
+        "id": "laboratorio",
+        "title": "Laboratorio ASAP",
+        "imageId": "service-product",
+        "description": "Una experiencia de lectura guiada y reflexión colectiva a partir del libro Crachá Atômico, conectando vivencias reales a prácticas de desarrollo personal y organizacional.",
+        "subItems": [],
+        "cta": "Saber más"
       },
       {
         "id": "mentoria",
@@ -184,6 +192,31 @@
         "quote": "Nunca imaginé que invertir en bienestar traería tanto retorno en produtividade. PulsoASAP foi esencial en este processo.",
         "name": "Beatriz Lima",
         "title": "CEO, Creative Co."
+      },
+      {
+        "quote": "Comecei a ler e não consigo mais parar. Muito bom!",
+        "name": "Maria C Magalhães",
+        "title": "Editorial"
+      },
+      {
+        "quote": "Há muito tempo eu não lia algo que não fosse técnico, e, ao ler Crachá Atômico, a identificação com a primeira parte, ao abordar o mundo corporativo, foi quase imediata. Uma leitura obrigatória para quem faz parte desse cenário.",
+        "name": "Ricardo Pain",
+        "title": "Empresário, fundador do app Faltaum"
+      },
+      {
+        "quote": "De forma leve e envolvente, a obra Crachá Atômico me marcou profundamente, é um mergulho sincero no autoconhecimento, trazendo reflexões práticas que permanecem além das páginas. É uma leitura rica e transformadora, daquelas que realmente agregam valor à vida.",
+        "name": "Débora Setim",
+        "title": "Empresária, fundadora da Comunidade Lux"
+      },
+      {
+        "quote": "Crachá Atômico apresenta uma narrativa pessoal, honesta e envolvente sobre a exaustão profissional e a reconstrução de sentido no trabalho, conectando experiências concretas a reflexões práticas. Apresenta linguagem acessível e aprendizados que favorecem identificação imediata.",
+        "name": "Leitura prévia",
+        "title": "Editorial"
+      },
+      {
+        "quote": "Uma leitura sensível, profunda e necessária. Ao iniciar o livro, imaginei que encontraria uma abordagem mais técnica sobre burnout, mas fui surpreendida por uma obra que vai muito além do tema. Em vários momentos, me vi conectada à narrativa e provocada a olhar para a minha própria trajetória, escolhas e formas de lidar com a vida. Uma das mensagens mais fortes da obra é que não precisamos esperar chegar ao limite para agir. Por isso, considero este livro um alerta sensível e um verdadeiro convite à consciência. Uma leitura capaz de tocar, despertar e ajudar muitas pessoas.",
+        "name": "Nayara",
+        "title": "Leitora Beta"
       }
     ]
   },
