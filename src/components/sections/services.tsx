@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import { MotionWrapper } from '@/components/animation/motion-wrapper';
 import { useLanguage } from '@/context/language-context';
+import { renderItalics } from '@/lib/render-utils';
 import { Card } from '@/components/ui/card';
 import {
   Carousel,
@@ -124,7 +125,7 @@ export function ServicesSection() {
 
                       <div className="relative flex flex-col h-full p-6 text-white justify-end">
                         <h3 className="text-2xl font-bold transition-transform duration-300 ease-in-out group-focus-within:-translate-y-2 group-hover:-translate-y-2">
-                          {service.title}
+                          {renderItalics(service.title)}
                         </h3>
 
                         <div className="opacity-0 max-h-0 group-focus-within:opacity-100 group-focus-within:max-h-full group-hover:opacity-100 group-hover:max-h-full transition-all duration-500 ease-in-out overflow-y-auto">

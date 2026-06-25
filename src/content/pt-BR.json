@@ -17,8 +17,8 @@
   },
   "hero": {
     "subtitle": {
-      "line1": "Gestão de Riscos e Compliance para prevenir a exaustão ",
-      "line2": "profissional no ambiente corporativo."
+      "line1": "Governança, Riscos e Compliance como pilares para a construção de uma",
+      "line2": "cultura corporativa sustentável no longo prazo."
     }
   },
   "benefits": {
@@ -53,8 +53,8 @@
         "id": "rosa",
         "name": "Rosa Azevedo",
         "imageId": "testimonial-1",
-        "bio1": "Formada em Administração de Empresas e pós-graduada em Gestão de Projetos pela FAE Business School, atua em posições de gestão no ecossistema de GRC, com responsabilidade pelas frentes de gestão de riscos, compliance regulatório, canal ético, prevenção a fraudes, due diligence e PLD-FT.",
-        "bio2": "Com mais de 20 anos de experiência, atuou em grandes e médias empresas, desenvolvendo uma visão estratégica e prática sobre os desafios do mundo corporativo. Sua vivência real com exaustão profissional foi um dos principais impulsionadores para a criação do Pulso ASAP."
+        "bio1": "Formada em Administração de Empresas e pós-graduada em Gestão de Projetos pela FAE Business School, atua em posições dentro no ecossistema de GRC, com responsabilidade pelas frentes de gestão de riscos, compliance regulatório, canal ético, prevenção a fraudes, due diligence e PLD-FT.",
+        "bio2": "Com mais de 20 anos de experiência, atuou em grandes e médias empresas, desenvolvendo uma visão estratégica e prática sobre os desafios do mundo corporativo."
       },
       {
         "id": "helga",
@@ -71,13 +71,11 @@
         "id": "approach",
         "title": "Quem Somos",
         "imageId": "approach-who-we-are",
-        "description": "Com presença no Brasil e na Espanha, o Pulso ASAP (Ação, Sustentabilidade, Autoconhecimento e Propósito) surgiu da necessidade de abordar o tema de exaustão profissional de maneira clara, objetiva e aplicável ao dia a dia corporativo.",
+        "description": "Com presença no Brasil e na Espanha, o Pulso ASAP (Ação, Sustentabilidade, Autoconhecimento e Propósito) nasceu da experiência prática no ambiente corporativo. Desenvolvemos soluções personalizadas para empresas e profissionais, favorecendo a evolução da cultura organizacional e o desenvolvimento de competências essenciais.",
         "points": [
-          "Vivência real de exaustão profissional de uma das fundadoras.",
           "Mais de 20 anos de atuação em ambiente corporativo.",
           "Experience profissional nas áreas de Compliance, Gestão de Riscos, Canal Ético e Controles internos.",
-          "Metodologia com abordagem tripla: emocional, estratégica e cultural.",
-          "Soluções personalizadas para o cliente, seja empresa ou colaborador."
+          "Metodologia com abordagem tripla: emocional, estratégica e cultural."
         ]
       },
       {

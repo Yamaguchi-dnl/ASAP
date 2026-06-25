@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Container } from '@/components/layout/container';
 import { useLanguage } from '@/context/language-context';
+import { renderItalics } from '@/lib/render-utils';
 
 export function HeroSection() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -87,7 +88,7 @@ export function HeroSection() {
             variants={pVariants}
             className="text-xl font-light text-white max-w-sm md:max-w-2xl ml-1"
           >
-            {translations.hero.subtitle.line1}
+            {renderItalics(translations.hero.subtitle.line1)}
             <br className="hidden md:block" />
             {translations.hero.subtitle.line2}
           </motion.p>

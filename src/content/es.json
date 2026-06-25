@@ -17,8 +17,8 @@
   },
   "hero": {
     "subtitle": {
-      "line1": "Gestión de Riesgos y Compliance para prevenir la agotamiento ",
-      "line2": "profesional en el entorno corporativo."
+      "line1": "Gobernanza, Riesgos y Compliance como pilares para la construcción de una",
+      "line2": "cultura corporativa sostenible a largo plazo."
     }
   },
   "benefits": {
@@ -53,8 +53,8 @@
         "id": "rosa",
         "name": "Rosa Azevedo",
         "imageId": "testimonial-1",
-        "bio1": "Licenciada en Administración de Empresas y posgraduada en Gestión de Proyectos por la FAE Business School, actúa en puestos de gestión en el ecosistema de GRC, con responsabilidad en las áreas de gestión de riesgos, compliance regulatorio, canal ético, prevención de fraudes, due diligence y PLD-FT.",
-        "bio2": "Con más de 20 años de experiencia, actuó en grandes y medianas empresas, desarrollando una visión estratégica y práctica sobre los desafíos del mundo corporativo. Su vivencia real con el agotamiento profissional fue uno de los principales impulsores para la creación de Pulso ASAP."
+        "bio1": "Licenciada en Administración de Empresas y posgraduada en Gestión de Proyectos por la FAE Business School, actúa en puestos dentro del ecosistema de GRC, con responsabilidad en las áreas de gestión de riesgos, compliance regulatorio, canal ético, prevención de fraudes, due diligence y PLD-FT.",
+        "bio2": "Con más de 20 años de experiencia, actuó en grandes y medianas empresas, desarrollando una visión estratégica y práctica sobre los desafíos del mundo corporativo."
       },
       {
         "id": "helga",
@@ -71,13 +71,11 @@
         "id": "approach",
         "title": "Quiénes somos",
         "imageId": "approach-who-we-are",
-        "description": "Con presencia en Brasil y España, Pulso ASAP (Acción, Sostenibilidad, Autoconocimiento y Propósito) surgió de la necesidad de abordar el tema del agotamiento profesional de manera clara, objetiva e aplicable al día a día corporativo.",
+        "description": "Con presencia en Brasil y España, Pulso ASAP (Acción, Sostenibilidad, Autoconocimiento y Propósito) nació de la experiencia práctica en el ambiente corporativo. Desarrollamos soluciones personalizadas para empresas y profesionales, favoreciendo la evolución de la cultura organizacional y el desarrollo de competencias esenciales.",
         "points": [
-          "Vivencia real de agotamiento profissional de una de las fundadoras.",
           "Más de 20 años de actuación en el ambiente corporativo.",
           "Experiencia profissional en las áreas de Compliance, Gestión de Riesgos, Canal Ético y Controles internos.",
-          "Metodologia con un triple enfoque: emocional, estratégico y cultural.",
-          "Soluciones personalizadas para el cliente, ya sea empresa o colaborador."
+          "Metodologia con un triple enfoque: emocional, estratégico y cultural."
         ]
       },
       {

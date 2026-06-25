@@ -9,6 +9,7 @@ import { Container } from '@/components/layout/container';
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { useLanguage } from '@/context/language-context';
 import { MotionWrapper } from '../animation/motion-wrapper';
+import { renderItalics } from '@/lib/render-utils';
 
 const imageVariants: Variants = {
   hidden: { opacity: 0, x: -50, filter: 'blur(10px)' },
@@ -133,13 +134,13 @@ export function AboutSection() {
                 className="text-foreground/80"
                 variants={bioParagraphVariant}
               >
-                {currentFounder.bio1}
+                {renderItalics(currentFounder.bio1)}
               </motion.p>
               <motion.p
                 className="text-foreground/80 mt-2"
                 variants={bioParagraphVariant}
               >
-                {currentFounder.bio2}
+                {renderItalics(currentFounder.bio2)}
               </motion.p>
             </motion.div>
 

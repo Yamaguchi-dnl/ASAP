@@ -14,7 +14,6 @@ const OurApproachSection = dynamic(() => import('@/components/sections/our-appro
 const AboutSection = dynamic(() => import('@/components/sections/about').then(mod => mod.AboutSection));
 const ServicesSection = dynamic(() => import('@/components/sections/services').then(mod => mod.ServicesSection));
 const TestimonialsSection = dynamic(() => import('@/components/sections/testimonials').then(mod => mod.TestimonialsSection));
-const SponsorshipSection = dynamic(() => import('@/components/sections/sponsorship').then(mod => mod.SponsorshipSection));
 const ContactSection = dynamic(() => import('@/components/sections/contact').then(mod => mod.ContactSection));
 
 export default function Home() {
@@ -34,7 +33,6 @@ export default function Home() {
         <AboutSection />
         <ServicesSection />
         <TestimonialsSection />
-        <SponsorshipSection />
         <ContactSection />
       </div>
     </>

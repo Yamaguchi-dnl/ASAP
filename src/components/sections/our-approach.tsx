@@ -10,6 +10,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useLanguage } from '@/context/language-context';
 import { Building, Users, ArrowLeft, ArrowRight } from 'lucide-react';
+import { renderItalics } from '@/lib/render-utils';
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0 },
@@ -150,7 +151,7 @@ export function OurApproachSection() {
                   <motion.div initial={{scale: 0.6}} animate={{scale: 1}} transition={{type: 'spring', stiffness: 400, damping: 15, delay: 0.2 + index * 0.12}}>
                     <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
                   </motion.div>
-                  <span className='text-foreground/90'>{point}</span>
+                  <span className='text-foreground/90'>{renderItalics(point)}</span>
                 </motion.li>
               ))}
             </motion.ul>
@@ -174,7 +175,7 @@ export function OurApproachSection() {
                   <CardContent>
                     <ul className="space-y-2 text-sm">
                       {delivery.forCompanies.points.map((point: string, index: number) => (
-                        <li key={index} className="flex items-start"><Check className="h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0" /><span>{point}</span></li>
+                        <li key={index} className="flex items-start"><Check className="h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0" /><span>{renderItalics(point)}</span></li>
                       ))}
                     </ul>
                   </CardContent>
@@ -191,7 +192,7 @@ export function OurApproachSection() {
                   <CardContent>
                     <ul className="space-y-2 text-sm">
                       {delivery.forEmployees.points.map((point: string, index: number) => (
-                        <li key={index} className="flex items-start"><Check className="h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0" /><span>{point}</span></li>
+                        <li key={index} className="flex items-start"><Check className="h-4 w-4 text-primary mr-2 mt-1 flex-shrink-0" /><span>{renderItalics(point)}</span></li>
                       ))}
                     </ul>
                   </CardContent>
@@ -208,7 +209,7 @@ export function OurApproachSection() {
                  <motion.div initial={{scale: 0.6}} animate={{scale: 1}} transition={{type: 'spring', stiffness: 400, damping: 15, delay: 0.2 + index * 0.12}}>
                     <Check className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
                   </motion.div>
-                <span className='text-foreground/90'>{pillar}</span>
+                <span className='text-foreground/90'>{renderItalics(pillar)}</span>
               </motion.li>
             ))}
           </motion.ul>

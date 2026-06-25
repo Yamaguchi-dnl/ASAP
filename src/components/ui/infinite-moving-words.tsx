@@ -7,7 +7,7 @@ export const InfiniteMovingWords = ({
   words,
   direction = 'left',
   speed = 'slow',
-  pauseOnHover = true,
+  pauseOnHover = false,
   className,
 }: {
   words: string[];
@@ -83,12 +83,14 @@ export const InfiniteMovingWords = ({
         )}
       >
         {words.map((word, idx) => (
-          <li
-            className="text-lg font-normal uppercase tracking-wider text-primary-foreground"
-            key={idx}
-          >
-            {word}
-          </li>
+          <React.Fragment key={idx}>
+            <li className="text-lg font-normal uppercase tracking-wider text-primary-foreground">
+              {word}
+            </li>
+            <li className="text-lg text-accent select-none" aria-hidden="true">
+              •
+            </li>
+          </React.Fragment>
         ))}
       </ul>
     </div>
