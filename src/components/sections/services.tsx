@@ -151,7 +151,13 @@ export function ServicesSection() {
                             className="mt-6 rounded-full bg-transparent border-white text-white hover:bg-white hover:text-primary"
                             asChild
                           >
-                            <a href="#contato">{service.cta}</a>
+                            <a
+                              href={service.ctaUrl || '#contato'}
+                              target={service.ctaUrl ? '_blank' : undefined}
+                              rel={service.ctaUrl ? 'noopener noreferrer' : undefined}
+                            >
+                              {service.cta}
+                            </a>
                           </Button>
                         </div>
                       </div>

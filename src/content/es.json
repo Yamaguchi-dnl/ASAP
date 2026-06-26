@@ -130,12 +130,13 @@
         "imageId": "livro-crache-atomico",
         "description": "Lanzamiento en octubre de 2026. Un relato profundo sobre los bastidores de la rutina corporativa, el agotamiento profesional y el autoconocimiento.",
         "subItems": [],
-        "cta": "Quiero ser notificado"
+        "cta": "Quiero ser notificado",
+        "ctaUrl": "https://livro.pulsoasap.com"
       },
       {
         "id": "laboratorio",
         "title": "Laboratorio ASAP",
-        "imageId": "service-product",
+        "imageId": "laboratorio-asap",
         "description": "Una experiencia de lectura guiada y reflexión colectiva a partir del libro Crachá Atômico, conectando vivencias reales a prácticas de desarrollo personal y organizacional.",
         "subItems": [],
         "cta": "Saber más"
